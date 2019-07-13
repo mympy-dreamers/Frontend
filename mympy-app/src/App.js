@@ -3,19 +3,24 @@ import axios from 'axios';
 import './App.css';
 
 class App extends React.Component {
+  state = {
+    data: ""
+  }
 
   componentDidMount() {
-    axios.get(`https://jsonplaceholder.typicode.com/users`)
+    axios.get(`https://mympy-dreamers.herokuapp.com`)
       .then(res => {
-        const persons = res.data;
-        this.setState({ persons });
-    })
+        console.log(res.data);
+        this.setState({ 
+          data: res.data
+        });
+      })
   }
 
   render() {
     return (
       <div className="App">
-        <h1>Hello World</h1>
+        <h1>{this.state.data.Title}</h1>
       </div>
     );
   }
