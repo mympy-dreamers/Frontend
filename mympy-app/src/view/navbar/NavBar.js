@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import '../../scss/navbar/navbar.scss';
+import './navbar.scss';
 
 const NavBar = () => {
     return (
@@ -15,13 +15,13 @@ const NavBar = () => {
                     {/* Replace all 'href' with 'to' and all 'a' tags with 'Link' tags
                         once routes are available
                     */}
-                        <a href="#">Search For Dreamers</a>
+                        <a href="#">Search For Dreams</a>
                     </li>
                     <li className="item">
                         <a href="#">Sign Up</a>
                     </li>
-                    <li className="item">
-                        <a href="#">Login</a>
+                    <li className="item sign-in">
+                        <a href="#">Sign In</a>
                     </li>
                 </ul>
             </div>
