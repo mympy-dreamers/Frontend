@@ -1,0 +1,53 @@
+@import '../../scss/general/mixin';
+@import '../../scss/general/variables';
+
+.caro-main{
+    display: flex;
+
+    .left{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .title {
+            text-align: left;
+            height: 51%;
+
+            h1{
+                font-family: $large-font;
+                font-weight: 900;
+                font-size: 16.1rem;
+                color: $dream-font-color;
+                line-height: 0;
+                padding: 20px;
+
+            } // end of h1
+
+        } // end of title
+
+        .para-wrap {
+            text-align: left;
+            padding-top: 0;
+            padding: 20px;
+
+            p{
+                margin-top: .2rem;
+                width: 60%;
+                font-family: $body-font;
+                color: $body-font-color;
+                font-size: 2.6rem;
+                padding: 10px;
+
+            } // end of p
+
+        } // end of para-wrap
+
+    } // end of left
+
+    .right{
+        width: 40%;
+
+    } //end of right
+
+} // end of caro-main
