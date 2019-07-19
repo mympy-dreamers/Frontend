@@ -1,2 +1,40 @@
-$sign-in-font-color: #6BB231;
-$nav-font-color: #002244;
+@import url('https://fonts.googleapis.com/css?family=Roboto:700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+// Colors
+
+$sushi: #6BB231;
+$prussianBlue: #002244;
+$goldenTainoi: #FFD166;
+$mineShaft: #363636;
+$ginFizz: #FFF8E3;
+$endeavour: #004F99;
+$cerulean: #01BAEF;
+$amaranth: #F03A47;
+
+// Fonts
+
+$roboto: 'Roboto', sans-serif;
+$openSans: 'Open Sans', sans-serif;
+
+
+// Assign values below!
+
+    // below values are for colors
+
+$sign-in-font-color: $sushi; // sign in font color
+$nav-font-color: $prussianBlue; // nav font color
+$dream-font-color: $goldenTainoi; // 'Dream Big' color
+$body-font-color: $mineShaft; // main, small font color
+$desc-page-color: $ginFizz; // middle cream color of page
+$large-font-color: $endeavour; // large font in middle and bottom of page color
+$dreamer-btn-color: $cerulean; // dreamer button color
+$support-btn-color: $amaranth; //supporter button color
+
+
+    // below values are for fonts
+
+$nav-font: $roboto;
+// ^ difference between black and bold is 200 in font-weight black={900}, bold={700} -HitzeD
+$body-font: $openSans;
+
