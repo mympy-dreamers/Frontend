@@ -1,5 +1,28 @@
+// Mixins
+
 @mixin test {
     border: 1px solid red;
+}
+
+@mixin front-btn ($bg-color, $self-align, ) {
+    align-self: $self-align;
+    font-family: $large-font;
+    font-size: 1.5rem;
+    background-color: $bg-color;
+    color: white;
+    padding: 15px;
+    border-radius: 25px;
+    margin-right: 20px;
+    width: 25%;
+}
+
+@mixin bottom-half {
+    width: 50%;
+    height: 393px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 // Media Queries
