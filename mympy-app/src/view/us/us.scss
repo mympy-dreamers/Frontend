@@ -11,12 +11,18 @@
         font-weight: 900;
         font-size: 6rem;
         color: $large-font-color;
+
+        @include small-desktop {
+            font-size: 4rem;
+        }
+
     } // end of h1
 
     p {
         font-family: $body-font;
         color: $desc-body-color;
         font-size: 1.2rem;
+
     } // end of p
 
     .left {

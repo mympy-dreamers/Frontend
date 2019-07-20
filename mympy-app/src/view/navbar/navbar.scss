@@ -1,4 +1,5 @@
 @import '../../scss/general/variables';
+@import '../../scss/general/mixin';
 
 .main{
     display: flex;
@@ -25,6 +26,10 @@
                     color: $nav-font-color;
                     font-size: 2.4rem;
                     font-family: $large-font;
+
+                    @include small-desktop {
+                        font-size: 1.8rem;
+                    }
                 }
             }
 
