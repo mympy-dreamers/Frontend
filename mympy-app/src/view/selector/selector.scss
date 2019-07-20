@@ -1,6 +1,11 @@
 @import '../../scss/general/mixin';
 @import '../../scss/general/variables';
 
+// All variables can be found in in proper above file
+
+// @include is how SCSS handles mixins 
+// variables called with `$variableName` 
+
 .select-main {
     display: flex;
 
@@ -8,7 +13,8 @@
         @include bottom-half;
 
         button {
-            @include front-btn($dreamer-btn-color, flex-end);
+            // button is in _mixin.scss file, takes background-color, align-self value, and property value for margin
+            @include front-btn($dreamer-btn-color, flex-end, margin-right);
         
         }
     }
@@ -35,7 +41,7 @@
         @include bottom-half;
 
         button {
-            @include front-btn($support-btn-color, flex-start);
+            @include front-btn($support-btn-color, flex-start, margin-left);
             
         }
     }
