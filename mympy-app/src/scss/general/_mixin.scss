@@ -1,3 +1,19 @@
 @mixin test {
     border: 1px solid red;
 }
+
+@mixin mobile {
+    @media (max-width:) { @content; }
+}
+
+@mixin tablet-landscape {
+    @media (max-width: 900px) { @content; }
+}
+
+@mixin tablet-portrait {
+    @media (max-width: 600px) { @content; }
+}
+
+@mixin small-desktop {
+    @media (max-width: 1200px) { @content; }
+}
