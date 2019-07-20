@@ -1,0 +1,48 @@
+@import '../../scss/general/mixin';
+@import '../../scss/general/variables';
+
+.us-main {
+    display: flex;
+    background-color: $desc-page-color;
+    
+
+    h1 {
+        font-family: $large-font;
+        font-weight: 900;
+        font-size: 6rem;
+        color: $large-font-color;
+    } // end of h1
+
+    p {
+        font-family: $body-font;
+        color: $desc-body-color;
+        font-size: 1.2rem;
+    } // end of p
+
+    .left {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        .inner-left {
+            width: 75%;
+
+        } // end of inner-left
+
+    } // end of left
+
+    .right {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        .inner-right {
+            width: 75%;
+
+        } // end of inner-right
+
+    } // end of right
+
+} // end of us-main
