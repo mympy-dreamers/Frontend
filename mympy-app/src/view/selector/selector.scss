@@ -11,13 +11,15 @@
 
     .left {
         @include bottom-half;
+        // background-image: url('../../img/');
 
         button {
             // button is in _mixin.scss file, takes background-color, align-self value, and property value for margin
             @include front-btn($dreamer-btn-color, flex-end, margin-right);
         
-        }
-    }
+        } // end of left button
+
+    } // end of left
 
     .offset {
         position: absolute;
@@ -33,16 +35,22 @@
 
             @include small-desktop {
                 font-size: 4rem;
-            }
-        }
-    }
+
+            } // end of small-desktop query
+
+        } // end of h1
+
+    } // end of offset
 
     .right {
         @include bottom-half;
+        // background-image: url('../../img/');
 
         button {
             @include front-btn($support-btn-color, flex-start, margin-left);
             
-        }
-    }
-}
+        } // end of right button
+
+    } // end of right
+
+} // end of select-main
