@@ -1,0 +1,53 @@
+@import '../../scss/general/mixin';
+@import '../../scss/general/variables';
+
+.select-main {
+    display: flex;
+
+    .left {
+        @include test;
+        width: 50%;
+        height: 393px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            align-self: flex-end;
+            font-family: $large-font;
+            font-size: 1.5rem;
+            background-color: $dreamer-btn-color;
+            color: white;
+            padding: 15px;
+            border-radius: 25px;
+        }
+    }
+
+    .offset {
+        position: relative;
+        width: 10%;
+        z-index: 1;
+        
+    }
+
+    .right {
+        @include test;
+        width: 50%;
+        height: 393px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            align-self: flex-start;
+            font-family: $large-font;
+            font-size: 1.5rem;
+            background-color: $support-btn-color;
+            color: white;
+            padding: 15px;
+            border-radius: 25px;
+        }
+    }
+}
