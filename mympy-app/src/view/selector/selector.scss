@@ -15,10 +15,20 @@
 
     .offset {
         position: absolute;
-        left: 40%;
-        width: 20%;
+        left: 35%;
+        width: 30%;
         z-index: 1;
         
+        h1 {
+            font-family: $large-font;
+            font-weight: 900;
+            font-size: 6rem;
+            color: $large-font-color;
+
+            @include small-desktop {
+                font-size: 4rem;
+            }
+        }
     }
 
     .right {
