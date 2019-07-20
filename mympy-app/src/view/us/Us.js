@@ -7,7 +7,7 @@ const Us = () => {
         <div className="us-main">
             <div className="left">
                 <div className="inner-left">
-                    <h1>What do we do</h1>
+                    <h1>What Do We Do</h1>
                     <p>Many of wise words will be here!
                     </p>
                     <img src="" alt="" />
@@ -15,7 +15,7 @@ const Us = () => {
             </div>
             <div className="right">
                 <div className="inner-right">
-                    <h1>How do we do it</h1>
+                    <h1>How Do We Do It</h1>
                     <p>Many more wise words from our sponsors
                     </p>
                 </div>
