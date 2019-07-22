@@ -8,9 +8,9 @@ const NavBar = () => {
     return (
         <div className="main">
             <div className="left">
-                // <Link to="/">
+                <Link to="/">
                     <img src={logo} alt="Company Logo" />
-                // </Link>
+                </Link>
             </div>
             <div className="right">
                 <ul className="list">
