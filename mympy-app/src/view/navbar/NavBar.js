@@ -21,7 +21,7 @@ const NavBar = () => {
                         <a href="#">Search For Dreams</a>
                     </li>
                     <li className="item">
-                        <a href="#">Sign Up</a>
+                        <Link to="/register">Sign Up</Link>
                     </li>
                     <li className="item sign-in">
                         <Link to="/login">Sign In</Link>
