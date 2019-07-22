@@ -1,7 +1,3 @@
-@import '../../scss/general/mixin';
-@import '../../scss/general/variables';
-
-
 .caro-main{
     display: flex;
 
@@ -61,6 +57,13 @@
 
     .right{
         width: 60%;
+        height: 93vh;
+
+        img {
+            width: 100%;
+            height: 100%;
+
+        } // end of img
 
     } //end of right
 
