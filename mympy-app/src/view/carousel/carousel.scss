@@ -12,6 +12,7 @@
         flex-direction: column;
         align-items: flex-start;
         position: absolute;
+        z-index: 1;
 
         .title {
             text-align: left;
