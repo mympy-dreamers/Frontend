@@ -1,5 +1,8 @@
 import React from 'react';
 
+import bigImage from '../../img/Galaxyvr/galaxyvr2x.png';
+import smallImage from '../../img/Galaxyvr/galaxyvr.png';
+
 
 const Carousel = () => {
     return (
@@ -17,7 +20,9 @@ const Carousel = () => {
                     </p>
                 </div>
             </div>
-            <div className="right"></div>
+            <div className="right">
+                <img src={bigImage} alt="" />
+            </div>
         </div>
     )
 }
