@@ -1,10 +1,10 @@
 import React from 'react';
 
-import './carousel.scss';
 
 const Carousel = () => {
     return (
         <div className="caro-main">
+        <div className="empty"></div>
             <div className="left">
                 <div className="title">
                     <h1 className="top-title">DREAM</h1>

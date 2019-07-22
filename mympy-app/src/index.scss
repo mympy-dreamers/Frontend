@@ -1,0 +1,14 @@
+// var & mixin
+
+@import './scss/general/variables', './scss/general/mixin';
+
+// Reset & Global styles
+
+@import './scss/general/_reset.scss', './scss/general/global';
+
+// Components
+@import './view/navbar/navbar.scss';
+@import './view/home/home.scss';
+@import './view/carousel/carousel.scss';
+@import './view/us/us.scss';
+@import './view/selector/selector.scss';

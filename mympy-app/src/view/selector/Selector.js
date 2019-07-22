@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './selector.scss';
 
 const Selector = () => {
     return (
