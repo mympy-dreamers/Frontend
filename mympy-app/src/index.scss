@@ -2,13 +2,20 @@
 
 @import './scss/general/variables', './scss/general/mixin';
 
+// End of Var & Mixins
+
 // Reset & Global styles
 
 @import './scss/general/_reset.scss', './scss/general/global';
 
+// End of Reset and Global 
+
 // Components
+
 @import './view/navbar/navbar.scss';
 @import './view/home/home.scss';
 @import './view/carousel/carousel.scss';
 @import './view/us/us.scss';
 @import './view/selector/selector.scss';
+
+// End of Components
