@@ -22,7 +22,7 @@
             font-weight: 900;
             color: $desc-body-color;
             position: absolute;
-            top: 40%;
+            top: 30%;
 
             @include small-desktop {
                 top: 30%;
@@ -35,19 +35,20 @@
             flex-direction: column;
             justify-content: center;
             align-content: center;
+            align-items: flex-start;
+            width: 30%;
+            align-self: center;
+
+            @include small-desktop {
+                width: 40%;
+            }
 
             h4 {
                 color: $desc-body-color;
                 font-family: $body-font;
                 font-size: 1.2rem;
-                align-self: center;
-                position: relative;
-                right: 12.8%;
                 margin-bottom: 1%;
-
-                @include small-desktop {
-                    right: 17.5%;
-                }
+                margin-top: 2%;
             }
 
             input {
@@ -57,13 +58,12 @@
                 border-radius: 10px;
                 font-size: 1.4rem;
                 font-family: $body-font;
+                margin-bottom: 2%;
             }
 
             button {
-                align-self: center;
-                position: relative;
-                left: 11%;
-                margin-top: 2%;
+                align-self: flex-end;
+                margin-top: 3%;
                 font-family: $large-font;
                 font-weight: 900;
                 font-size: 1.4rem;
@@ -72,11 +72,6 @@
                 border-radius: 23px;
                 width: 95px;
                 height: 48px;
-
-                @include small-desktop {
-                    left: 16%;
-                }
-
             }
         }
     }
