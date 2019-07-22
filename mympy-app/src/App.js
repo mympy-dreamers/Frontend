@@ -4,7 +4,6 @@ import { Route } from 'react-router-dom';
 
 import NavBar from './view/navbar/NavBar';
 import Home from './view/home/Home';
-import './App.css';
 
 class App extends React.Component {
   state = {
