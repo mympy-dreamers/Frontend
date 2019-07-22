@@ -1,0 +1,83 @@
+.login-main {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    width: 100vw;
+
+    .login {
+        background-color: $dream-font-color;
+        width: 70%;
+        height: 75%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-self: center;
+
+        h3 {
+            align-self: center;
+            font-size: 3.2rem;
+            font-family: $large-font;
+            font-weight: 900;
+            color: $desc-body-color;
+            position: absolute;
+            top: 40%;
+
+            @include small-desktop {
+                top: 30%;
+            }
+
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+
+            h4 {
+                color: $desc-body-color;
+                font-family: $body-font;
+                font-size: 1.2rem;
+                align-self: center;
+                position: relative;
+                right: 12.8%;
+                margin-bottom: 1%;
+
+                @include small-desktop {
+                    right: 17.5%;
+                }
+            }
+
+            input {
+                align-self: center;
+                width: 398px;
+                height: 50px;
+                border-radius: 10px;
+                font-size: 1.4rem;
+                font-family: $body-font;
+            }
+
+            button {
+                align-self: center;
+                position: relative;
+                left: 11%;
+                margin-top: 2%;
+                font-family: $large-font;
+                font-weight: 900;
+                font-size: 1.4rem;
+                background-color: $login-btn-color;
+                color: white;
+                border-radius: 23px;
+                width: 95px;
+                height: 48px;
+
+                @include small-desktop {
+                    left: 16%;
+                }
+
+            }
+        }
+    }
+}
