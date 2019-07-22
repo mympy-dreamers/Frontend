@@ -21,9 +21,15 @@
 
     .offset {
         position: absolute;
-        left: 35%;
+        left: 37%;
         width: 30%;
         z-index: 1;
+
+        @include small-desktop {
+            width: 25%;
+            top: 200%;
+            left: 39%;
+        }
         
         h1 {
             font-family: $large-font;
