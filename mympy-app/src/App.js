@@ -1,6 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import './App.css';
+import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+
+import DreamMarket from './components/DreamMarket';
+
+import './App.scss';
 
 class App extends React.Component {
   state = {
@@ -8,7 +12,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`https://mympy-dreamers.herokuapp.com`)
+    axios.get(`https://mympy-dreamers-staging.herokuapp.com`)
       .then(res => {
         console.log(res.data);
         this.setState({ 
@@ -19,9 +23,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <h1>{this.state.data.Title}</h1>
-      </div>
+      <Router>
+        <div className="App">
+          <h1>{this.state.data.Title}</h1>
+          <Route path="" component={DreamMarket} />
+        </div>
+      </Router>
     );
   }
 }
