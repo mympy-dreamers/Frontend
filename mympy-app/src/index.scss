@@ -1,0 +1,23 @@
+// Var & Mixins
+
+@import './scss/general/variables', './scss/general/mixin';
+
+// End of Var & Mixins
+// -----------------------------------------------------------------------
+// Reset & Global styles
+
+@import './scss/general/reset', './scss/general/global';
+
+// End of Reset and Global
+// -----------------------------------------------------------------------
+// Components
+
+@import './view/navbar/navbar.scss';
+@import './view/home/home.scss';
+@import './view/carousel/carousel.scss';
+@import './view/us/us.scss';
+@import './view/selector/selector.scss';
+// @import './components/login/login.scss';  both are built on my local machine, waiting for this branch to be merged so variables will be available
+// @import './components/newUser/newUser.scss';
+
+// End of Components

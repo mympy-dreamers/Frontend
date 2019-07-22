@@ -1,26 +1,26 @@
 import React from 'react';
 import axios from 'axios';
-import './App.css';
+import { Route } from 'react-router-dom';
+
+import NavBar from './view/navbar/NavBar';
+import Home from './view/home/Home';
+{/* import Login from './components/login/Login'; */}
 
 class App extends React.Component {
   state = {
-    data: ""
+    
   }
 
   componentDidMount() {
-    axios.get(`https://mympy-dreamers.herokuapp.com`)
-      .then(res => {
-        console.log(res.data);
-        this.setState({ 
-          data: res.data
-        });
-      })
+    axios.get(`https://mympy-dreamers.herokuapp.com`);
   }
 
   render() {
     return (
       <div className="App">
-        <h1>{this.state.data.Title}</h1>
+        <NavBar />
+        <Route exact path="/" component={Home} />
+        {/* <Route path="/login" component={Login} /> */}
       </div>
     );
   }

@@ -1,0 +1,45 @@
+@import '../../scss/general/variables';
+@import '../../scss/general/mixin';
+
+.main{
+    display: flex;
+    justify-content: space-between;
+
+    .left{
+
+        img {
+            margin: 10%;
+            width: 100%;
+            height: 50px;
+        }
+    }
+
+    .right{
+        width: 40%;
+
+        .list{
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+
+            .item{
+                margin: 15px;
+
+                a{
+                    text-decoration: none;
+                    color: $nav-font-color;
+                    font-size: 2.4rem;
+                    font-family: $large-font;
+
+                    @include small-desktop {
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+
+            .sign-in a{
+                color: $sign-in-font-color;
+            }
+        }
+    }
+}
