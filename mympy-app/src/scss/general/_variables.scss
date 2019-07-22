@@ -9,10 +9,11 @@ $goldenTainoi: #FFD166;
 $mineShaft: #363636;
 $ginFizz: #FFF8E3;
 $endeavour: #004F99;
-$cerulean: #01BAEF;
+$lightCerulean: #01BAEF;
 $amaranth: #F03A47;
 $codGray: #1A1818;
 $cornflowerBlue : #57A1E6;
+$cerulean: #09A8E6;
 
 // Fonts
 
@@ -31,9 +32,9 @@ $body-font-color: $mineShaft; // main, small font color
 $desc-page-color: $ginFizz; // middle cream color of page
 $desc-body-color: $codGray; // middle page body font color
 $large-font-color: $endeavour; // large font in middle and bottom of page color
-$dreamer-btn-color: $cerulean; // dreamer button color
+$dreamer-btn-color: $lightCerulean; // dreamer button color
 $support-btn-color: $amaranth; //supporter button color
-$login-btn-color: $cornflowerBlue; // login page next button color
+$login-btn-color: $cerulean; // login page next button color
 
 
     // below values are for fonts
