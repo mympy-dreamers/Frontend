@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import logo from '../../img/logo.svg';
+
 
 const NavBar = () => {
     return (
         <div className="main">
             <div className="left">
-                <h1>Image goes here!</h1>
+                <Link to="/">
+                    <img src={logo} alt="Company Logo" />
+                </Link>
             </div>
             <div className="right">
                 <ul className="list">
@@ -20,7 +24,7 @@ const NavBar = () => {
                         <a href="#">Sign Up</a>
                     </li>
                     <li className="item sign-in">
-                        <a href="#">Sign In</a>
+                        <Link to="/login">Sign In</Link>
                     </li>
                 </ul>
             </div>
