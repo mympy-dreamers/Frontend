@@ -97,15 +97,15 @@ We chose this because...
 
 #### PostgreSQL
 
--   
+-   We chose this over SQLite3 due to the limitations of SQLite3 and how it         interacts with Heroku.
 
 #### Express
 
 -   
 
-#### 
+#### BCrypt.js
 
-🚫 List the rest of the back end end features and libraries in the same format as the framework above
+-   Library for securing passwords 
 
 # APIs
 
