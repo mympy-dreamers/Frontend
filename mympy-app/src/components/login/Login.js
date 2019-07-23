@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { login, register } from '../../actions/index';
-import React from 'react';
 import { Spinner } from 'reactstrap';
 
 class Login extends React.Component {
