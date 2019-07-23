@@ -56,27 +56,47 @@ Mympy Dreams is a marketplace where individuals can create a profile and post th
 
 ### Front end built using:
 
-#### React.js
+### #React.js
 
 We chose this because...
 
--    point one
--    point two
+-    Faster loading times.
+-    Most of team knows React
 -    point three
 -    point four
 
-🚫List the rest of the front end features and libraries in the same format as the framework above.
+Other Libraries
 
-#### Front end deployed to `Netlify`
+#### Redux
 
-#### [Back end](https://mympy-dreamers.herokuapp.com/) built using:
+-   React can be complicated, Redux can help mitigate some of this issue.
+
+#### Axios
+
+-   Most Members know Axios as a way to handle promises
+
+#### ReactStrap
+
+-   Quick and easy reusable components
+-   Using Bootstrap and Reacstrap to implement forms and search bars can save       time on simple yet sometimes time consuming engineering tasks.
+-   Using SCSS everywhere else allows us to design everything else in a             completely custom manner.
+
+#### Formidable Victory
+
+-   Formidable's Victory is open source and aesthetically pleasing. 
+
+##### Front end deployed to `Netlify`
+
+### [Back end](https://mympy-dreamers.herokuapp.com/) built using:
 
 #### Node.js
 
 We chose this because...
 
--    point one
+-    NodeJs and express are relatively simple to implement compared to Java          which is more verbose.
+
 -    point two
+
 -    point three
 
 🚫 List the rest of the back end end features and libraries in the same format as the framework above
