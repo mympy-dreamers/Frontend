@@ -29,7 +29,7 @@ class App extends React.Component {
           <NavBar />
           <Route exact path="/" component={Home} />
         {/* <Route path="/login" component={Login} /> */}
-          <Route path="" component={DreamMarket} />
+          <Route exact path="/market" component={DreamMarket} />
         </div>
       </Router>
     );
