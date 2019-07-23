@@ -2,6 +2,7 @@ import axios from "axios";
 
 
 // LOGIN --------------------------------------------
+
 export const LOGIN_START = 'LOGIN_START';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
@@ -17,8 +18,11 @@ export const login = creds => dispatch => {
 		dispatch({ type: LOGIN_FAILURE, payload: err });
 	});
 }
+
 // END OF LOGIN -------------------------------------------------
+
 // REGISTER -------------------------------------------------
+
 export const REGISTER_START = 'REGISTER_START';
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 export const REGISTER_FAILURE = 'REGISTER_FAILURE';
@@ -32,4 +36,6 @@ export const register = creds => dispatch => {
 	})
 	.catch(err => console.log(err));
 }
+
 // END OF REGISTER -------------------------------------------------
+
