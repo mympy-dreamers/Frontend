@@ -1,9 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import { Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link} from "react-router-dom";
 
 import NavBar from './view/navbar/NavBar';
 import Home from './view/home/Home';
+import DreamMarket from './components/DreamMarket';
 {/* import Login from './components/login/Login'; */}
 
 class App extends React.Component {
@@ -12,16 +13,25 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`https://mympy-dreamers.herokuapp.com`);
+    axios.get(`https://mympy-dreamers-staging.herokuapp.com`)
+      .then(res => {
+        console.log(res.data);
+        this.setState({ 
+          data: res.data
+        });
+      })
   }
 
   render() {
     return (
-      <div className="App">
-        <NavBar />
-        <Route exact path="/" component={Home} />
+      <Router>
+        <div className="App">
+          <NavBar />
+          <Route exact path="/" component={Home} />
         {/* <Route path="/login" component={Login} /> */}
-      </div>
+          <Route exact path="/market" component={DreamMarket} />
+        </div>
+      </Router>
     );
   }
 }
