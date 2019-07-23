@@ -15,10 +15,7 @@ const NavBar = () => {
             <div className="right">
                 <ul className="list">
                     <li className="item">
-                    {/* Replace all 'href' with 'to' and all 'a' tags with 'Link' tags
-                        once routes are available
-                    */}
-                        <a href="#">Search For Dreams</a>
+                        <Link to="#">Search For Dreams</Link>
                     </li>
                     <li className="item">
                         <Link to="/register">Sign Up</Link>
