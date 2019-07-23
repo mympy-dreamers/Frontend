@@ -18,7 +18,7 @@
 @import './view/carousel/carousel.scss';
 @import './view/us/us.scss';
 @import './view/selector/selector.scss';
-// @import './components/login/login.scss';  both are built on my local machine, waiting for this branch to be merged so variables will be available
-// @import './components/newUser/newUser.scss';
+@import './components/login/login.scss';
+@import './components/login/newUser.scss';
 
 // End of Components

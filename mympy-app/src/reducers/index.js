@@ -3,8 +3,12 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAILURE
 } from '../actions';
+import { REGISTER_START, REGISTER_SUCCESS, REGISTER_FAILURE } from '../actions';
 
 const initialState = {
+	token: '',
+	message: '',
+	error: '',
 	dreams: [
 		{title: "Dream #1",
 			cardImg: "https://images.pexels.com/photos/532559/pexels-photo-532559.jpeg?cs=srgb&dl=electronics-grass-lawn-532559.jpg&fm=jpg", 
@@ -159,10 +163,30 @@ const reducer = (state = initialState, action) => {
 			};
 		case LOGIN_SUCCESS:
 			return {
+				...state,
+				token: action.payload.token,
+				message: action.payload.message,
 			};
 		case LOGIN_FAILURE:
 			return {
+				...state,
+				error: action.payload,
 			};
+		case REGISTER_START:
+			return {
+				...state,
+				
+			}
+		case REGISTER_SUCCESS:
+			return {
+				...state,
+
+			}
+		case REGISTER_FAILURE:
+			return {
+				...state,
+				error: action.payload,
+			}
 		default:
 			return state;
 	}	
