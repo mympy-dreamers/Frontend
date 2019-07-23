@@ -8,6 +8,7 @@
         font-weight: 900;
         font-size: 6rem;
         color: $large-font-color;
+        text-align: center;
 
         @include small-desktop {
             font-size: 4rem;
