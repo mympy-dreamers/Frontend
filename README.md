@@ -62,8 +62,6 @@ We chose this because...
 
 -    Faster loading times.
 -    Most of team knows React
--    point three
--    point four
 
 Other Libraries
 
