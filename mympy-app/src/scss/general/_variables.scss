@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+// Colors
+
+$sushi: #6BB231;
+$prussianBlue: #002244;
+$goldenTainoi: #FFD166;
+$mineShaft: #363636;
+$ginFizz: #FFF8E3;
+$endeavour: #004F99;
+$lightCerulean: #01BAEF;
+$amaranth: #F03A47;
+$codGray: #1A1818;
+$cornflowerBlue : #57A1E6;
+$cerulean: #09A8E6;
+
+// Fonts
+
+$roboto: 'Roboto', sans-serif;
+$openSans: 'Open Sans', sans-serif;
+
+
+// Assign values below!
+
+    // below values are for colors
+
+$sign-in-font-color: $sushi; // sign in font color
+$nav-font-color: $prussianBlue; // nav font color
+$dream-font-color: $goldenTainoi; // 'Dream Big' color
+$body-font-color: $mineShaft; // main, small font color
+$desc-page-color: $ginFizz; // middle cream color of page
+$desc-body-color: $codGray; // middle page body font color
+$large-font-color: $endeavour; // large font in middle and bottom of page color
+$dreamer-btn-color: $lightCerulean; // dreamer button color
+$support-btn-color: $amaranth; //supporter button color
+$login-btn-color: $cerulean; // login page next button color
+
+
+    // below values are for fonts
+
+$large-font: $roboto;
+// ^ font-weight black={900}, bold={700} -HitzeD
+$body-font: $openSans;
+

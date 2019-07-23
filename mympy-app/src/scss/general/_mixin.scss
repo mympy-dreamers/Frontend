@@ -1,0 +1,61 @@
+@import './variables'; // not sure if this is needed to bring in variables in this file, or if they are brought in where they are initiated
+
+
+// Mixins
+
+@mixin test {
+    border: 1px solid red;
+}
+
+@mixin front-btn ($bg-color, $self-align, $margin) {
+    align-self: $self-align;
+    font-family: $large-font;
+    font-size: 1.5rem;
+    background-color: $bg-color;
+    color: white;
+    padding: 15px;
+    border-radius: 25px;
+    #{$margin}: 5%;
+    width: 25%;
+}
+
+@mixin bottom-half {
+    width: 50%;
+    height: 393px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+// Media Queries
+
+@mixin mobile {
+    @media (max-width: 400px) { @content; }
+}
+
+@mixin tablet-landscape {
+    @media (max-width: 900px) { @content; }
+}
+
+@mixin tablet-portrait {
+    @media (max-width: 600px) { @content; }
+}
+
+@mixin small-desktop {
+    @media (max-width: 1450px) { @content; }
+}
+
+
+
+
+
+// inside of file, use mixin media query as such
+
+// .className {
+//      font-size: 2rem;
+// 
+//      @include mobile {
+//          font-size: 1rem;
+//      }
+// }

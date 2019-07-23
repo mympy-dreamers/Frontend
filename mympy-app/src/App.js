@@ -2,13 +2,14 @@ import React from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Link} from "react-router-dom";
 
+import NavBar from './view/navbar/NavBar';
+import Home from './view/home/Home';
 import DreamMarket from './components/DreamMarket';
-
-import './App.scss';
+{/* import Login from './components/login/Login'; */}
 
 class App extends React.Component {
   state = {
-    data: ""
+    
   }
 
   componentDidMount() {
@@ -25,7 +26,9 @@ class App extends React.Component {
     return (
       <Router>
         <div className="App">
-          <h1>{this.state.data.Title}</h1>
+          <NavBar />
+          <Route exact path="/" component={Home} />
+        {/* <Route path="/login" component={Login} /> */}
           <Route path="" component={DreamMarket} />
         </div>
       </Router>

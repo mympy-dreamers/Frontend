@@ -1,0 +1,61 @@
+
+
+// @include is how SCSS handles mixins 
+// variables called with `$variableName` 
+
+.select-main {
+    display: flex;
+
+    .left {
+        @include bottom-half;
+        // background-image: url('../../img/');
+        margin-right: 5%;
+
+        button {
+            // button is in _mixin.scss file, takes background-color, align-self value, and property value for margin
+            @include front-btn($dreamer-btn-color, flex-end, margin-right);
+        
+        } // end of left button
+
+    } // end of left
+
+    .offset {
+        position: absolute;
+        left: 37%;
+        width: 30%;
+        z-index: 1;
+
+        @include small-desktop {
+            width: 25%;
+            top: 200%;
+            left: 39%;
+        }
+        
+        h1 {
+            font-family: $large-font;
+            font-weight: 900;
+            font-size: 6rem;
+            color: $large-font-color;
+
+            @include small-desktop {
+                font-size: 4rem;
+
+            } // end of small-desktop query
+
+        } // end of h1
+
+    } // end of offset
+
+    .right {
+        @include bottom-half;
+        // background-image: url('../../img/');
+        margin-left: 5%;
+
+        button {
+            @include front-btn($support-btn-color, flex-start, margin-left);
+            
+        } // end of right button
+
+    } // end of right
+
+} // end of select-main

@@ -1,0 +1,60 @@
+.us-main {
+    display: flex;
+    background-color: $desc-page-color;
+    
+
+    h1 {
+        font-family: $large-font;
+        font-weight: 900;
+        font-size: 6rem;
+        color: $large-font-color;
+
+        @include small-desktop {
+            font-size: 4rem;
+        }
+
+    } // end of h1
+
+    p {
+        font-family: $body-font;
+        color: $desc-body-color;
+        font-size: 1.2rem;
+        text-align: center;
+
+    } // end of p
+
+    .left {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        .inner-left {
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+
+            img {
+                margin: 5%;
+            } // end of img
+
+        } // end of inner-left
+
+    } // end of left
+
+    .right {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        .inner-right {
+            width: 75%;
+
+        } // end of inner-right
+
+    } // end of right
+
+} // end of us-main
