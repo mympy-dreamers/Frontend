@@ -58,7 +58,7 @@ Mympy Dreams is a marketplace where individuals can create a profile and post th
 
 #### React.js
 
-🚫 Why did you choose this framework?
+We chose this because...
 
 -    point one
 -    point two
@@ -72,6 +72,8 @@ Mympy Dreams is a marketplace where individuals can create a profile and post th
 #### [Back end](https://mympy-dreamers.herokuapp.com/) built using:
 
 #### Node.js
+
+We chose this because...
 
 -    point one
 -    point two
