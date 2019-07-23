@@ -8,9 +8,9 @@ const NavBar = () => {
     return (
         <div className="main">
             <div className="left">
-                // <Link to="/">
+                <Link to="/">
                     <img src={logo} alt="Company Logo" />
-                // </Link>
+                </Link>
             </div>
             <div className="right">
                 <ul className="list">
@@ -18,7 +18,7 @@ const NavBar = () => {
                     {/* Replace all 'href' with 'to' and all 'a' tags with 'Link' tags
                         once routes are available
                     */}
-                        <a href="#">Search For Dreams</a>
+                        <Link to="/market">Search For Dreams</Link>
                     </li>
                     <li className="item">
                         <a href="#">Sign Up</a>
