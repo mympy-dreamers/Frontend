@@ -33,11 +33,11 @@
 
 ## Project Overview
 
-1️⃣ [Trello Board](🚫add link to trello board here)
+1️⃣ [Trello Board](https://trello.com/b/zTEE5gJy/labs14mympy)
 
-1️⃣ [Product Canvas](🚫add link to product canvas here)
+1️⃣ [Product Canvas](https://www.notion.so/Mympy-Dreams-SIXR-69cc926207334efa9f833df97517fe38)
 
-1️⃣ [UX Design files](🚫add link to design files here) - 🚫 delete if not applicable
+1️⃣ [UX Design files](https://xd.adobe.com/spec/37d3d449-4a08-454e-438d-e6815d9468d8-41e2/screen/9ed441a3-4c11-442d-b649-9a754aeee717/DASHBOARD-1/)
 
 🚫 Replace lorem ipsum with a description of your project
 
