@@ -18,11 +18,9 @@ class Login extends React.Component {
             confirm: '',
             match: true,
         }
-        console.log(this.state.cred);
     }
 
     handleLoginChanges = e => {
-        console.log(e.target.name, e.target.value);
         this.setState({
             cred: {
                 ...this.state.cred,
@@ -36,7 +34,6 @@ class Login extends React.Component {
     }
 
     handleSignupChanges = e => {
-        console.log(e.target.name, e.target.value);
         this.setState({
             signup: {
                 ...this.state.signup,
@@ -47,7 +44,6 @@ class Login extends React.Component {
     }
 
     login = e => {
-        console.log(this.state.cred);
         e.preventDefault();
         this.props.login(this.state.cred);
         this.setState({
