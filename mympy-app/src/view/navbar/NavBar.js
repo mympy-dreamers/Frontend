@@ -15,7 +15,7 @@ const NavBar = () => {
             <div className="right">
                 <ul className="list">
                     <li className="item">
-                        <Link to="#">Search For Dreams</Link>
+                        <Link to="/market">Search For Dreams</Link>
                     </li>
                     <li className="item">
                         <Link to="/register">Sign Up</Link>
