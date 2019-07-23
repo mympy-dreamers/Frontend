@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
+// REMOVE FOR PRODUCTION
+import Logger from 'redux-logger';
 import { BrowserRouter as Router, withRouter } from 'react-router-dom';
 import './index.scss';
 
 import rootReducer from './reducers';
 import App from './App';
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
-const AppwithRouter = withRouter(App);
+// composeEnhancer allows for redux store dev view in chrome
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk, Logger))
+);
 
+const AppwithRouter = withRouter(App);
 ReactDOM.render(
     <Provider store={store}>
         <Router>
