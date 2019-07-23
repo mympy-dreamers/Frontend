@@ -58,7 +58,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 
 ### Front end built using:
 
-#### _Front end framework goes here_
+#### React.js
 
 🚫 Why did you choose this framework?
 
@@ -69,11 +69,11 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 
 🚫List the rest of the front end features and libraries in the same format as the framework above.
 
-#### Front end deployed to `🚫insert service here`
+#### Front end deployed to `Netlify`
 
-#### [Back end](🚫link to back end repo here) built using:
+#### [Back end](https://mympy-dreamers.herokuapp.com/) built using:
 
-#### 🚫 back end framework goes here
+#### Node.js
 
 -    point one
 -    point two
