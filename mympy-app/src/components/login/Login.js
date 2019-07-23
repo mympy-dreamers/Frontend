@@ -1,31 +1,75 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { login, register } from '../../actions/index';
 
 class Login extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            creds: {
-                email: '',
-                password: '',
+            cred: {
+                username: '',
+                password: ''
             },
             signup: {
                 email: '',
                 username: '',
                 password: '',
-                confirm: '',
-            }
+            },
+            confirm: '',
+            match: true,
         }
+        console.log(this.state.cred);
     }
 
-    handleChanges = e => {
+    handleLoginChanges = e => {
+        console.log(e.target.name, e.target.value);
         this.setState({
-            creds: {
-                email: e.target.value,
-            },
-            signup: {
+            cred: {
+                ...this.state.cred,
                 [e.target.name]: e.target.value,
             }
         })
+    }
+
+    handleConfirmChange = e => {
+        this.setState({ confirm: e.target.value });
+    }
+
+    handleSignupChanges = e => {
+        console.log(e.target.name, e.target.value);
+        this.setState({
+            signup: {
+                ...this.state.signup,
+                [e.target.name]: e.target.value,
+            },
+            match: true,
+        })
+    }
+
+    login = e => {
+        console.log(this.state.cred);
+        e.preventDefault();
+        this.props.login(this.state.cred);
+        this.setState({
+            cred: {
+                username: '',
+                password: '',
+            }
+        })
+    }
+
+    register = e => {
+        e.preventDefault();
+        this.props.register(this.state.signup);
+        this.setState({
+            signup: {
+                email: '',
+                username: '',
+                password: '',
+            },
+            confirm: '',
+        });
+        this.props.history.push('/login');
     }
 
     render(){
@@ -34,26 +78,26 @@ class Login extends React.Component {
             {(this.props.type === 'login') ? (
                 <div className="login">
                     <h3>LOG IN</h3>
-                    <form>
+                    <form onSubmit={this.login}>
                         <h4>Email</h4>
-                        <input type="email" placeholder="Enter Email" value={this.state.creds.email} />
+                        <input onChange={this.handleLoginChanges} name="username" type="text" placeholder="Enter Username" value={this.state.cred.username} />
                         <h4>Password</h4>
-                        <input type="password" placeholder="Enter Password" value={this.state.creds.password} />
+                        <input onChange={this.handleLoginChanges} name="password" type="password" placeholder="Enter Password" value={this.state.cred.password} />
                         <button>Next</button>
                     </form>
                 </div>
             ) : (
                 <div className="newUse-main">
                     <h3>SIGN UP</h3>
-                    <form>
+                    <form onSubmit={this.register}>
                         <h4>Email</h4>
-                        <input onChange={this.handleChanges} placeholder="Enter Email" name="email" value={this.state.signup.email}/>
+                        <input onChange={this.handleSignupChanges} placeholder="Enter Email" name="email" value={this.state.signup.email}/>
                         <h4>Username</h4>
-                        <input onChange={this.handleChanges} placeholder="Enter Username" name="username" value={this.state.signup.username}/>
+                        <input onChange={this.handleSignupChanges} placeholder="Enter Username" name="username" value={this.state.signup.username}/>
                         <h4>Password</h4>
-                        <input onChange={this.handleChanges} placeholder="Enter Password" name="password" value={this.state.signup.password}/>
+                        <input onChange={this.handleSignupChanges} placeholder="Enter Password" type="password" name="password" value={this.state.signup.password}/>
                         <h4>Confirm Password</h4>
-                        <input onChange={this.handleChanges} placeholder="Confirm Your Password" name="confirm" value={this.state.signup.confirm}/>
+                        <input onChange={this.handleConfirmChange} placeholder="Confirm Your Password" type="password" name="confirm" value={this.state.confirm}/>
                         <button>Submit</button>
                     </form>
                 </div>
@@ -63,4 +107,4 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+export default connect(null, { login, register })(Login);
