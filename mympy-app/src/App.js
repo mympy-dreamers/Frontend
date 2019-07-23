@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import { Route } from 'react-router-dom';
 
 import NavBar from './view/navbar/NavBar';
@@ -9,10 +8,6 @@ import Login from './components/login/Login';
 class App extends React.Component {
   state = {
     
-  }
-
-  componentDidMount() {
-    axios.get(`https://mympy-dreamers.herokuapp.com`);
   }
 
   render() {
