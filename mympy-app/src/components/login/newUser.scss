@@ -1,7 +1,7 @@
 .newUse-main {
     background-color: $dream-font-color;
-    width: 70%;
-    height: 75%;
+    width: 50%;
+    height: 85%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,11 +28,11 @@
         justify-content: center;
         align-content: center;
         align-items: flex-start;
-        width: 30%;
+        width: 41.5%;
         align-self: center;
 
         @include small-desktop {
-            width: 40%;
+            width: 55%;
         }
 
         h4{
