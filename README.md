@@ -56,7 +56,7 @@ Mympy Dreams is a marketplace where individuals can create a profile and post th
 
 ### Front end built using:
 
-### #React.js
+#### React.js
 
 We chose this because...
 
