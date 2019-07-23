@@ -39,11 +39,7 @@
 
 1️⃣ [UX Design files](https://xd.adobe.com/spec/37d3d449-4a08-454e-438d-e6815d9468d8-41e2/screen/9ed441a3-4c11-442d-b649-9a754aeee717/DASHBOARD-1/)
 
-🚫 Replace lorem ipsum with a description of your project
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Mympy Dreams is a marketplace where individuals can create a profile and post their project and needs and find funding from the Mymphy Dreams community.
 
 
 ### 4️⃣ Key Features
