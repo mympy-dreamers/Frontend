@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import '../scss/dreamMarket.scss';
-
 class DreamMarket extends React.Component {
   constructor() {
   	super();

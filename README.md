@@ -4,9 +4,9 @@
 
 🚫 Each student has a required minimum number of meaningful PRs each week per the rubric. Contributing to docs does NOT count as a PR to meet your weekly requirements.
 
-# 1️⃣ Title of project goes here
+# 1️⃣ Mympy Dreamers
 
-1️⃣ You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
+1️⃣ You can find the deployed project at [Mympy Dreamers](https://mympydreamers.netlify.com/).
 
 ## 4️⃣ Contributors
 
@@ -33,17 +33,15 @@
 
 ## Project Overview
 
-1️⃣ [Trello Board](🚫add link to trello board here)
+1️⃣ [Trello Board](https://trello.com/b/zTEE5gJy/labs14mympy)
 
-1️⃣ [Product Canvas](🚫add link to product canvas here)
+1️⃣ [Product Canvas](https://www.notion.so/Mympy-Dreams-SIXR-69cc926207334efa9f833df97517fe38)
 
-1️⃣ [UX Design files](🚫add link to design files here) - 🚫 delete if not applicable
+1️⃣ [UX Design files](https://xd.adobe.com/spec/37d3d449-4a08-454e-438d-e6815d9468d8-41e2/screen/9ed441a3-4c11-442d-b649-9a754aeee717/DASHBOARD-1/)
 
-🚫 Replace lorem ipsum with a description of your project
+### About Mympy Dreamers
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Mympy Dreams is a marketplace where individuals can create a profile and post their project and needs and find funding from the Mymphy Dreams community.
 
 
 ### 4️⃣ Key Features
@@ -58,60 +56,77 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 
 ### Front end built using:
 
-#### _Front end framework goes here_
+#### React.js
 
-🚫 Why did you choose this framework?
+We chose this because...
 
--    point one
--    point two
--    point three
--    point four
+-    Faster loading times.
+-    Most of team knows React
 
-🚫List the rest of the front end features and libraries in the same format as the framework above.
+Other Libraries
 
-#### Front end deployed to `🚫insert service here`
+#### Redux
 
-#### [Back end](🚫link to back end repo here) built using:
+-   React can be complicated, Redux can help mitigate some of this issue.
 
-#### 🚫 back end framework goes here
+#### Axios
 
--    point one
--    point two
--    point three
+-   Most Members know Axios as a way to handle promises
 
-🚫 List the rest of the back end end features and libraries in the same format as the framework above
+#### ReactStrap
+
+-   Quick and easy reusable components
+-   Using Bootstrap and Reacstrap to implement forms and search bars can save       time on simple yet sometimes time consuming engineering tasks.
+-   Using SCSS everywhere else allows us to design everything else in a             completely custom manner.
+
+#### Formidable Victory
+
+-   Formidable's Victory is open source and aesthetically pleasing. 
+
+##### Front end deployed to `Netlify`
+
+### [Back end](https://mympy-dreamers.herokuapp.com/) built using:
+
+#### Node.js
+
+We chose this because...
+
+-    NodeJs and express are relatively simple to implement compared to Java          which is more verbose.
+
+-    Some of the advantages of a java back-end aren't noticeable in a smaller        application such as Mympy.
+
+#### PostgreSQL
+
+-   We chose this over SQLite3 due to the limitations of SQLite3 and how it         interacts with Heroku.
+
+#### Express
+
+-   
+
+#### BCrypt.js
+
+-   Library for securing passwords 
 
 # APIs
 
-## 2️⃣ Authentication API here
+## 2️⃣ Auth0
 
-🚫Replace text below with a description of the API
+-   Authentication limits access to only authorized users.
+-   We chose Auth0 because it works better with payment api's and is      more integrated in the app then passport.   
 
-Water's like me. It's laaazy ... Boy, it always looks for the easiest way to do things A little happy sunlight shining through there. Let all these little things happen. Don't fight them. Learn to use them. Even the worst thing we can do here is good.
+## 2️⃣ Stripe
 
-## 2️⃣ Payment API here
+-   Receiving payments and possibly keeping money in escrow.
+-   we chose stripe because we wanted an api that was easy to learn       and works with payments, and stripe can accomplish that for us.
 
-🚫Replace text below with a description of the API
+## 3️⃣ Cloudinary
 
-This is the way you take out your flustrations. Get away from those little Christmas tree things we used to make in school. Isn't it fantastic that you can change your mind and create all these happy things? Everything's not great in life, but we can still find beauty in it.
+-   Cloudinary allows users to add pictures to user profiles and          Dream profiles.
+-   Cloudinary is a popular and well supported API for storing and        retrieving photos. 
 
-## 3️⃣ Misc API here
+## 3️⃣ SendGrid
 
-🚫Replace text below with a description of the API
-
-You can do anything your heart can imagine. In life you need colors. This is where you take out all your hostilities and frustrations. It's better than kicking the puppy dog around and all that so. I'm sort of a softy, I couldn't shoot Bambi except with a camera. Trees get lonely too, so we'll give him a little friend. We'll lay all these little funky little things in there.
-
-## 3️⃣ Misc API here
-
-🚫Replace text below with a description of the API
-
-When you do it your way you can go anywhere you choose. Let your heart take you to wherever you want to be. If I paint something, I don't want to have to explain what it is. A tree needs to be your friend if you're going to paint him. That's a son of a gun of a cloud. Even the worst thing we can do here is good.
-
-## 3️⃣ Misc API here
-
-🚫Replace text below with a description of the API
-
-Volunteering your time; it pays you and your whole community fantastic dividends. Maybe there's a happy little waterfall happening over here. You can spend all day playing with mountains. We don't have to be committed. We are just playing here. You have freedom here. The only guide is your heart. It's cold, but it's beautiful.
+-   emails, for payments and interactions
 
 # 3️⃣ Environment Variables
 
@@ -194,4 +209,4 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 
 ## Documentation
 
-See [Backend Documentation](🚫_link to your backend readme here_) for details on the backend of our project..
+See [Backend Documentation](https://github.com/mympy-dreamers/Backend/blob/master/README.md) for details on the backend of our project..
