@@ -1,4 +1,10 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
+
+import UserBar from '../userBar/UserBar';
+import Stats from '../stats/Stats';
+import News from '../news/News';
+import Feature from '../feature/Feature';
 
 class Dashboard extends React.Component {
     constructor() {
@@ -11,7 +17,16 @@ class Dashboard extends React.Component {
     render() {
         return(
             <div className="dash-main">
-                <h1>I am the Dashboard!</h1>
+                <div className="top-bar">
+                    <UserBar />
+                </div>
+                <div className="mid-sec">
+                    <Stats />
+                    <News />
+                </div>
+                <div className="feature">
+                    <Feature />
+                </div>
             </div>
         )
     }
