@@ -53,6 +53,11 @@ class Login extends React.Component {
                 password: '',
             }
         })
+        setTimeout(() => {
+            if(localStorage.getItem('token')) {
+                this.props.history.push('/dashboard');
+            }
+        }, 700);
     }
 
     passwordMatch = () => {
@@ -62,7 +67,11 @@ class Login extends React.Component {
     register = e => {
         e.preventDefault();
         this.props.register(this.state.signup);
-        this.props.history.push('/login')
+        setTimeout(() => {
+            if(this.props.status === 201) {
+                this.props.history.push('/login');
+            }
+        }, 725);
     }
 
     render(){
@@ -100,4 +109,9 @@ class Login extends React.Component {
     }
 }
 
-export default connect(null, { login, register })(Login);
+const mapStateToProps = state => ({
+    error: state.error,
+    status: state.status,
+})
+
+export default connect(mapStateToProps, { login, register })(Login);
