@@ -31,10 +31,11 @@ export const register = creds => dispatch => {
 	dispatch({ type: REGISTER_START });
 	axios.post('https://mympy-dreamers.herokuapp.com/auth/register', creds)
 	.then(res => {
-		console.log(res);
-		dispatch({ type: REGISTER_SUCCESS, payload: res.data })
+		dispatch({ type: REGISTER_SUCCESS, payload: res })
 	})
-	.catch(err => console.log(err));
+	.catch(err => {
+		dispatch({ type: REGISTER_FAILURE, payload: err.response });
+	});
 }
 
 // END OF REGISTER -------------------------------------------------

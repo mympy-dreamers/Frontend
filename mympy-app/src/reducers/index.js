@@ -9,6 +9,7 @@ const initialState = {
 	token: '',
 	message: '',
 	error: '',
+	status: '',
 	dreams: [
 		{title: "Dream #1",
 			cardImg: "https://images.pexels.com/photos/532559/pexels-photo-532559.jpeg?cs=srgb&dl=electronics-grass-lawn-532559.jpg&fm=jpg", 
@@ -180,12 +181,13 @@ const reducer = (state = initialState, action) => {
 		case REGISTER_SUCCESS:
 			return {
 				...state,
-
+				status: action.payload.status,
 			}
 		case REGISTER_FAILURE:
 			return {
 				...state,
 				error: action.payload,
+				status: action.payload.status,
 			}
 		default:
 			return state;
