@@ -1,0 +1,30 @@
+.user-main {
+    // background-color: white;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    .wrapper {
+        width: 90%;
+        background-color: white;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+            align-self: flex-start;
+            margin: 1%;
+            font-size: 1.6rem
+        }
+
+        .flexing {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+
+            p {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
