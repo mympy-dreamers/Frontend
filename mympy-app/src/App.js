@@ -5,23 +5,10 @@ import { BrowserRouter as Router, Route, Link} from "react-router-dom";
 import NavBar from './view/navbar/NavBar';
 import Home from './view/home/Home';
 import DreamMarket from './components/DreamMarket';
-import DreamPage from './components/DreamPage';
+import DreamPage from './components/DreamPage.js';
 {/* import Login from './components/login/Login'; */}
 
 class App extends React.Component {
-  state = {
-    
-  }
-
-  componentDidMount() {
-    axios.get(`https://mympy-dreamers-staging.herokuapp.com`)
-      .then(res => {
-        console.log(res.data);
-        this.setState({ 
-          data: res.data
-        });
-      })
-  }
 
   render() {
     return (
@@ -31,7 +18,7 @@ class App extends React.Component {
           <Route exact path="/" component={Home} />
         {/* <Route path="/login" component={Login} /> */}
           <Route exact path="/market" component={DreamMarket} />
-          <Route exact path="/market/:id" component={DreamPage} />
+          <Route path="/market/:id" component={DreamPage} />
         </div>
       </Router>
     );
