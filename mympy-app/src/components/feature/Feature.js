@@ -26,7 +26,10 @@ class Feature extends React.Component {
                         {/* Component will go here of featured -- DUMMY DATA CURRENTLY */}
                         {this.props.featured.map(f => {
                             return(
-                                <div className="single" key={f.id} style={{backgroundImage: demo}}>
+                                <div className="single" key={f.id}>
+                                    <div className="image-div">
+                                        <img src={demo} alt={f.id} />
+                                    </div>
                                     <div className="info-wrap">
                                         <div className="name-city">
                                             <h3>{f.user.username}</h3>
