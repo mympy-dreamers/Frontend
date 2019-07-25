@@ -1,7 +1,8 @@
 
 .recent-donations {
-	border: 1px solid black;
 	width: 305px;
+	background-color: #92CC62;
+	border: 1px solid black;
 	.header {
 		padding: 8px;
 		font-size: 24px;
@@ -13,7 +14,6 @@
 
 	.donations-container {
 		padding: 36px;
-		background-color: #92CC62;
 		.donation {
 			display: flex;
 			align-items: center;
