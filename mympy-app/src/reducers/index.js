@@ -10,6 +10,10 @@ const initialState = {
 	message: '',
 	error: '',
 	status: '',
+	news: {
+		image: 'https://source.unsplash.com/random/400x200',
+		text: 'We\'re currently in Development! Check Back Soon for More!',
+	},
 	featured: [
 		{
 			id: 1,
