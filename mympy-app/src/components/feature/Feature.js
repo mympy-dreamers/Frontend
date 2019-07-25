@@ -28,7 +28,7 @@ class Feature extends React.Component {
                             return(
                                 <div className="single" key={f.id}>
                                     <div className="image-div">
-                                        <img src={demo} alt={f.id} />
+                                        <img src={f.cardImg} alt={f.id} />
                                     </div>
                                     <div className="info-wrap">
                                         <div className="name-city">
