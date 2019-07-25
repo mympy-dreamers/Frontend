@@ -1,0 +1,91 @@
+.feature-main {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    .wrapper {
+        width: 90%;
+        background-color: white;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+            align-self: flex-start;
+            margin: 1%;
+            font-size: 1.6rem
+
+        } // end of h3
+
+    } // end of wrapper
+
+} // end of feature-main
+
+.featured {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    height: 100%;
+    @include test;
+
+    .single {
+        width: 30%;
+        height: 30%;
+        border-radius: 20px;
+        border: 1px solid lightslategray;
+        background-size: cover;
+
+        
+
+        .info-wrap {
+            // @include test;
+            border-radius: 0 0 20px 20px;
+            border: 1px solid lightslategray;
+            background-color: white;
+            font-family: $large-font;
+            font-weight: 900;
+            // height: 
+            
+            .name-city {
+                display: flex;
+                justify-content: space-evenly;
+                
+                h4 {
+                    font-size: 1.3rem;
+                    font-family: $body-font;
+                } // end of h4
+
+            } // end of name-city
+
+            .type {
+                font-weight: 700;
+
+            } // end of type
+
+            p {
+                font-family: $body-font;
+                font-size: 1.2rem;
+            } // end of p
+
+            .progressBar {
+                margin: 10% auto;
+
+            } // end progressBar
+
+            button {
+                width: 20%;
+                line-height: 1.6rem;
+                font-family: $large-font;
+                font-weight: 700;
+                font-size: 1rem;
+                background-color: $large-font-color;
+                color: white;
+            }
+
+        } // end of info-wrap
+
+    } // end of single
+
+} // end of featured
