@@ -8,8 +8,6 @@ import RecentDonations from './dreamPage/RecentDonations.js';
 import Tabs from './dreamPage/Tabs.js';
 import Carousel	from './dreamPage/Carousel.js';
 
-import '../scss/dreamPage.scss';
-
 const DreamPageDiv = styled.div`
   display: flex;
   flex-direction: column;
