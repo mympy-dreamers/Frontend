@@ -13,12 +13,13 @@ import '../scss/dreamPage.scss';
 const DreamPageDiv = styled.div`
   display: flex;
   flex-direction: column;
+	margin: 0 auto;
+	width: 1200px;
 `;
 
 const MidSection = styled.div`
   display: flex;
   justify-content: center;
-  // width: 70%;
 `;
 
 class DreamPage extends React.Component {
