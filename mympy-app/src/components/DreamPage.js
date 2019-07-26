@@ -18,6 +18,7 @@ const DreamPageDiv = styled.div`
 const MidSection = styled.div`
   display: flex;
   justify-content: center;
+  margin-bottom: 8rem;
 `;
 
 class DreamPage extends React.Component {

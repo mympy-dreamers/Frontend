@@ -4,11 +4,12 @@ import styled from 'styled-components';
 const TopSectionDiv = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 0.2rem;
+  margin-top: 2rem;
+  margin-bottom: 8rem;
+	height: 500px;
 
   .banner {
-		width: 65%;
-		height: 590px;
+		width: 70%;
   	border: 1px solid black;
   }
 
@@ -16,8 +17,8 @@ const TopSectionDiv = styled.div`
   	display: flex;
 		flex-direction: column;
 		align-items: center;
-		width: 35%;
-		padding: 70px;
+		width: 30%;
+		padding: 32px;
 		border: 1px solid black;
 
 		.data-viz {
