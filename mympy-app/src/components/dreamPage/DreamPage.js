@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import TopSection	from './dreamPage/TopSection.js';
-import RecentDonations from './dreamPage/RecentDonations.js';
-import Tabs from './dreamPage/Tabs.js';
-import Carousel	from './dreamPage/Carousel.js';
+import TopSection	from './TopSection.js';
+import RecentDonations from './RecentDonations.js';
+import Tabs from './Tabs.js';
+import Carousel	from './Carousel.js';
 
 const DreamPageDiv = styled.div`
   display: flex;

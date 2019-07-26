@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route, Link} from "react-router-dom";
 
 import NavBar from './view/navbar/NavBar';
 import Home from './view/home/Home';
-import DreamMarket from './components/DreamMarket';
-import DreamPage from './components/DreamPage.js';
+import DreamMarket from './components/dreamMarket/DreamMarket';
+import DreamPage from './components/dreamPage/DreamPage.js';
 {/* import Login from './components/login/Login'; */}
 
 class App extends React.Component {
