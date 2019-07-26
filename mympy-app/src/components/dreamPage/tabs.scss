@@ -1,6 +1,6 @@
 
 .tabs-component {
-	width: 56%;
+	width: 100%;
 	margin-left: 4px;
 
 	.tabs-container {
@@ -19,6 +19,10 @@
 			color: white;
 			border-right: 3px solid white;
 			border-bottom: 1px solid #92CC62;
+
+			&:last-child {
+				border-right: none;
+			}
 		}
 
 		.active {
