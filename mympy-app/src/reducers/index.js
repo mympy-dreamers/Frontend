@@ -11,7 +11,6 @@ const initialState = {
 	error: '',
 	status: '',
 	news: {
-		image: 'https://source.unsplash.com/random/400x200',
 		text: 'We\'re currently in Development! Check Back Soon for More!',
 	},
 	featured: [
@@ -34,7 +33,7 @@ const initialState = {
 		{
 			id: 2,
 			title: "Dream #2", 
-			cardImg: "https://blogs.nvidia.com/wp-content/uploads/2016/07/bioflight.jpg", 
+			cardImg: "https://idahovirtualreality.com/wp-content/uploads/2017/06/IMG_0309-e1498159311484.jpg", 
 			shortDescription: "A brief description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 
 			longDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean neque eros, dignissim sed ultrices at, lacinia vehicula diam. Proin leo nisl, luctus vel consectetur ut, porttitor a turpis. Duis et metus vitae lectus pulvinar efficitur. Integer sodales gravida libero, ut dapibus risus gravida in. Quisque vitae justo imperdiet, sollicitudin velit a, facilisis elit. Donec eu lectus finibus, ornare felis eu, fermentum metus. Fusce pellentesque urna nec sapien facilisis auctor. Vestibulum eu ipsum sed dolor condimentum sollicitudin eu non nisi. Nunc eleifend malesuada vulputate. Praesent aliquam erat mauris, quis eleifend nunc cursus et. Cras hendrerit non odio vel fringilla.",
 			type: 'VR Health Education',
@@ -50,7 +49,7 @@ const initialState = {
 		{
 			id: 3,
 			title: "Dream #3", 
-			cardImg: "https://primesportsnet.com/wp-content/uploads/2017/08/attempting-to-bring-the-game-to-your-living-room-vr-and-sports-2-800x600.png", 
+			cardImg: "https://idahovirtualreality.com/wp-content/uploads/2017/06/IMG_0309-e1498159311484.jpg", 
 			shortDescription: "A brief description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 
 			longDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean neque eros, dignissim sed ultrices at, lacinia vehicula diam. Proin leo nisl, luctus vel consectetur ut, porttitor a turpis. Duis et metus vitae lectus pulvinar efficitur. Integer sodales gravida libero, ut dapibus risus gravida in. Quisque vitae justo imperdiet, sollicitudin velit a, facilisis elit. Donec eu lectus finibus, ornare felis eu, fermentum metus. Fusce pellentesque urna nec sapien facilisis auctor. Vestibulum eu ipsum sed dolor condimentum sollicitudin eu non nisi. Nunc eleifend malesuada vulputate. Praesent aliquam erat mauris, quis eleifend nunc cursus et. Cras hendrerit non odio vel fringilla.",
 			type: 'VR Sports',
