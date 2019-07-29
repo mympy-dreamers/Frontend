@@ -1,0 +1,44 @@
+
+.recent-donations {
+	width: 305px;
+	background-color: #92CC62;
+	border: 1px solid black;
+	.header {
+		padding: 8px;
+		font-size: 24px;
+		text-align: center;
+		background-color: #0A2243;
+		color: white;
+		border-bottom: 1px solid green;
+	}
+
+	.donations-container {
+		padding: 36px;
+		.donation {
+			display: flex;
+			align-items: center;
+			margin-bottom: 26px;
+			.user-img {
+				border: 1px solid #0A2243;
+				background-color: #0A2243;
+				width:82px;
+				height:82px;
+				border-radius: 50%;
+				margin-right: 12px;
+			}
+
+			.donations-name-wrapper {
+				.amount {
+					font-size: 42px;
+					font-weight: bold;
+					color: white;
+					margin-bottom: 6px;
+				}
+				.name {
+					font-size: 20px;
+					font-weight: bold;		
+				}
+			}
+		}
+	}
+}

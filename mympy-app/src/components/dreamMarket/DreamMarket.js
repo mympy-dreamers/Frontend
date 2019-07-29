@@ -20,7 +20,7 @@ class DreamMarket extends React.Component {
         		//card
         		return <div className="card-wrapper">
 	        		<div className="card" key={dream.id}>
-	        			<Link to={`/DreamMarket/${dream.id}`} style={{ textDecoration: 'none' }}>
+	        			<Link to={`/market/${dream.id}`} style={{ textDecoration: 'none' }}>
 
 	        				<img className="card-img" src={dream.cardImg} />
 
