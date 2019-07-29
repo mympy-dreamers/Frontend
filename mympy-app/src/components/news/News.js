@@ -1,26 +1,26 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-
+import logo from '../../img/logo.svg';
 
 class News extends React.Component {
     constructor() {
         super();
         this.state = {
-
+            image: '',
         }
     }
+
+
 
     render() {
         return(
             <div className="news-main">
-                <div className="news-wrap">
-                    <div className="img-wrap">
-                        <img src={this.props.news.image} alt="" />
-                    </div>
-                    <div className="text-wrap">
-                        <p>{this.props.news.text}</p>
-                    </div>
+                <div className="img-wrap">
+                    <img src={logo} alt="" />
+                </div>
+                <div className="text-wrap">
+                    <p>{this.props.news.text}</p>
                 </div>
             </div>
         )
