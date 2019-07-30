@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import ProgressCircle from './ProgressCircle.js'
+
 const TopSectionDiv = styled.div`
   display: flex;
   justify-content: center;
@@ -21,10 +23,8 @@ const TopSectionDiv = styled.div`
 		padding: 32px;
 
 		.data-viz {
-			border: 7px solid #92CC62;
-			border-radius: 50%;
-			width: 150px;
-			height: 150px;
+			width: 170px;
+			height: 170px;
 			margin-bottom: 16px;
 		}
 
@@ -72,23 +72,28 @@ const TopSectionDiv = styled.div`
   }
 `;
 
-const TopSection = () => {
+const TopSection = ({ dream }) => {
 	return (
 		<TopSectionDiv>
 			<img className="banner" src="https://images.unsplash.com/photo-1506031765313-0bc574a405f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1374&q=80" />
   		
   		<div className="right-dash">
-				<img className="data-viz" />
+  			<div className="data-viz">
+  				<ProgressCircle 
+  					donationGoal={dream.donationGoal} 
+  					donationsReceived={dream.donationsReceived}
+  				/>
+  			</div>
 				<h3 className="days-left">7 Days Left</h3>
 				<button className="give-btn"><img />Give</button>
 				<h4 className="share-title">Share Dream</h4>
 				<div className="share-buttons">
-					<i class="fab fa-facebook fa-5x"></i>
-					<i class="fab fa-instagram fa-5x"></i>
+					<i className="fab fa-facebook fa-5x"></i>
+					<i className="fab fa-instagram fa-5x"></i>
 				</div>
 				<div className="contact-section">
 					<h4>CONTACT</h4>
-					<i class="fas fa-envelope fa-2x"></i>
+					<i className="fas fa-envelope fa-2x"></i>
 				</div>
 
   		</div>
