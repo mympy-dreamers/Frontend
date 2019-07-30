@@ -4,15 +4,15 @@ import {
   LOGIN_FAILURE
 } from '../actions';
 import { REGISTER_START, REGISTER_SUCCESS, REGISTER_FAILURE } from '../actions';
+import { FETCH_DREAMS_START, FETCH_DREAMS_SUCCESS, FETCH_DREAMS_FAILURE } from '../actions';
 
 const initialState = {
 	token: '',
+	username: '',
 	message: '',
 	error: '',
 	status: '',
-	news: {
-		text: 'We\'re currently in Development! Check Back Soon for More!',
-	},
+	decoded: '',
 	featured: [
 		{
 			id: 1,
@@ -214,12 +214,13 @@ const reducer = (state = initialState, action) => {
 	switch (action.type) {
 		case LOGIN_START:
 			return {
+				...state,
 			};
 		case LOGIN_SUCCESS:
 			return {
 				...state,
-				token: action.payload.token,
-				message: action.payload.message,
+				token: action.payload,
+				decoded: action.decoded,
 			};
 		case LOGIN_FAILURE:
 			return {
@@ -241,6 +242,22 @@ const reducer = (state = initialState, action) => {
 				...state,
 				error: action.payload,
 				status: action.payload.status,
+			}
+		case FETCH_DREAMS_START:
+			return {
+				...state,
+				error: '',
+				dreams: [],
+			}
+		case FETCH_DREAMS_SUCCESS:
+			return {
+				...state,
+				// dreams: [...state.dreams, action.payload],
+			}
+		case FETCH_DREAMS_FAILURE:
+			return {
+				...state,
+				error: action.payload,
 			}
 		default:
 			return state;
