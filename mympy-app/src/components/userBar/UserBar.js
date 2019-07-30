@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Spinner } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 import { fetchAllDreams } from '../../actions';
 import demo from '../../img/demo.jpg'
@@ -52,26 +53,36 @@ class UserBar extends React.Component {
                         <img src={demo} alt='user' />
                     </div>
                     <div className="flexing">
-                        <div className="user-tab">
-                            <img src='#' alt='cloud with a plus sign' />
-                            <p>Create Dream</p>
-                        </div>
-                        <div className="user-tab">
-                            <img src='#' alt='cloud with pencil inside' />
-                            <p>Edit Dreams</p>
-                        </div>
-                        <div className="user-tab">
-                            <img src='#' alt='pencil scribbling' />
-                            <p>Journal</p>
-                        </div>
-                        <div className="user-tab">
-                            <img src='#' alt='message logo' />
-                            <p>Messages</p>
-                        </div>
-                        <div className="user-tab">
-                            <img src='#' alt='person with a pencil' />
-                            <p>Edit Bio</p>
-                        </div>
+                        <Link to="#">
+                            <div className="user-tab">
+                                <img src='#' alt='cloud with a plus sign' />
+                                <p>Create Dream</p>
+                            </div>
+                        </Link>
+                        <Link to="#">
+                            <div className="user-tab">
+                                <img src='#' alt='cloud with pencil inside' />
+                                <p>Edit Dreams</p>
+                            </div>
+                        </Link>
+                        <Link to="#">
+                            <div className="user-tab">
+                                <img src='#' alt='pencil scribbling' />
+                                <p>Journal</p>
+                            </div>
+                        </Link>
+                        <Link to="#">
+                            <div className="user-tab">
+                                <img src='#' alt='message logo' />
+                                <p>Messages</p>
+                            </div>
+                        </Link>
+                        <Link to="#">
+                            <div className="user-tab">
+                                <img src='#' alt='person with a pencil' />
+                                <p>Edit Bio</p>
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>
