@@ -21,6 +21,12 @@
                 margin: 1%;
                 font-size: 1.6rem;
                 margin: 2% auto;
+                color: $body-font-color;
+
+                small-font {
+                    border: 1px solid black;
+                    
+                }
 
             } // end of h3
 
@@ -30,6 +36,7 @@
                 margin: 2% auto;
                 border-radius: 20px;
                 @include box-shadow;
+
             } // end of img
 
         } // end of user-left
@@ -55,6 +62,7 @@
 
                 p {
                     font-size: 1.2rem;
+                    color: $body-font-color;
 
                 }
 
