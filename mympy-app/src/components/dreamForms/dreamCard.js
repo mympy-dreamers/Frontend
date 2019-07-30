@@ -17,15 +17,7 @@ class DreamCard extends React.Component {
     render() {
     return (
         <div className='dreamer-card'>
-        <div>
-            
-        </div>
-          <div>
-           <form>
-               <input placeholder='Full Name'></input>
-               <input placeholder='About Dream'></input>
-           </form>
-          </div>
+        
         </div>
 )
 }
