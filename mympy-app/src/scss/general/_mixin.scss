@@ -35,6 +35,12 @@
     justify-content: space-evenly;
 }
 
+@mixin box-shadow {
+    -webkit-box-shadow: 2px 10px 15px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 10px 15px -8px rgba(0,0,0,0.75);
+    box-shadow: 2px 10px 15px -8px rgba(0,0,0,0.75);
+}
+
 // Media Queries
 
 @mixin mobile {
