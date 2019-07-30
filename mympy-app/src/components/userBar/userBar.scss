@@ -14,6 +14,7 @@
             display: flex;
             flex-direction: column;
             width: 25%;
+            margin: .5%;
 
             h3 {
                 align-self: flex-start;
@@ -28,6 +29,7 @@
                 height: 150px;
                 margin: 2% auto;
                 border-radius: 20px;
+                @include box-shadow;
             } // end of img
 
         } // end of user-left
