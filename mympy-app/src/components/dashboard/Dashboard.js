@@ -1,10 +1,9 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
 
 import UserBar from '../userBar/UserBar';
 import Stats from '../stats/Stats';
 import News from '../news/News';
-import Feature from '../feature/Feature';
+// import Feature from '../feature/Feature';
 
 class Dashboard extends React.Component {
     constructor() {

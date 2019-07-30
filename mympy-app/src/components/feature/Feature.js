@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
-import demo from '../../img/demo.jpg'
+import { withRouter } from "react-router-dom";
 
 class Feature extends React.Component {
     constructor() {
@@ -9,10 +8,11 @@ class Feature extends React.Component {
         this.state = {
 
         }
+        console.log(this.props.featured === null);
     }
 
     componentDidMount(){
-        
+        console.log(this.props.featured);
     }
 
     render() {
@@ -54,8 +54,13 @@ class Feature extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({
-    featured: state.featured,
+const mapStateToProps = ({ featured }) => ({
+    featured,
 })
 
-export default connect(mapStateToProps, {})(Feature);
+export default withRouter(
+    connect(
+        mapStateToProps, 
+        {  }
+    )(Feature)
+);

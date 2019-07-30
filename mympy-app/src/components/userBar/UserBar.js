@@ -5,13 +5,6 @@ import { Spinner } from 'reactstrap';
 import { fetchAllDreams } from '../../actions';
 import demo from '../../img/demo.jpg'
 
-
-
-// used to decode the token for the username
-
-const token = localStorage.getItem('token');
-
-// End of token decoding
 class UserBar extends React.Component {
     constructor(){
         super();
