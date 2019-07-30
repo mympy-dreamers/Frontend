@@ -9,22 +9,57 @@
         background-color: white;
         border-radius: 20px;
         display: flex;
-        flex-direction: column;
 
-        h3 {
-            align-self: flex-start;
-            margin: 1%;
-            font-size: 1.6rem
-        }
+        .user-left {
+            display: flex;
+            flex-direction: column;
+            width: 25%;
+
+            h3 {
+                align-self: flex-start;
+                margin: 1%;
+                font-size: 1.6rem;
+                margin: 2% auto;
+
+            } // end of h3
+
+            img {
+                width: 150px;
+                height: 150px;
+                margin: 2% auto;
+                border-radius: 20px;
+            } // end of img
+
+        } // end of user-left
 
         .flexing {
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
+            width: 75%;
+            align-items: center;
 
-            p {
-                font-size: 1.2rem;
-            }
-        }
-    }
-}
+
+            .user-tab {
+                display: flex;
+                flex-direction: column;
+
+                img {
+                    width: 150px;
+                    height: 150px;
+                    margin: 2% auto;
+
+                }
+
+                p {
+                    font-size: 1.2rem;
+
+                }
+
+            } // end of user-tab
+            
+        } // end of flexing
+
+    } // end of wrapper
+
+} // end of user-main

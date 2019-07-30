@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Spinner } from 'reactstrap';
 
 import { fetchAllDreams } from '../../actions';
+import demo from '../../img/demo.jpg'
 
 
 
@@ -16,6 +17,7 @@ class UserBar extends React.Component {
         super();
         this.state = {
             username: '',
+            id: 0,
         }
         
     }
@@ -37,6 +39,10 @@ class UserBar extends React.Component {
         }
     }
 
+    fetchUserInfo = id => {
+
+    }
+
     // method for decoding a token
 
     decodeToken = token => {
@@ -48,14 +54,31 @@ class UserBar extends React.Component {
         return(
             <div className="user-main">
                 <div className="wrapper">
-                    {this.isReady()}
+                    <div className="user-left">
+                        {this.isReady()}
+                        <img src={demo} alt='user' />
+                    </div>
                     <div className="flexing">
-                        <p>img here</p>
-                        <p>create dream</p>
-                        <p>edit dreams</p>
-                        <p>journal</p>
-                        <p>messages</p>
-                        <p>edit bio</p>
+                        <div className="user-tab">
+                            <img src='#' alt='cloud with a plus sign' />
+                            <p>Create Dream</p>
+                        </div>
+                        <div className="user-tab">
+                            <img src='#' alt='cloud with pencil inside' />
+                            <p>Edit Dreams</p>
+                        </div>
+                        <div className="user-tab">
+                            <img src='#' alt='pencil scribbling' />
+                            <p>Journal</p>
+                        </div>
+                        <div className="user-tab">
+                            <img src='#' alt='message logo' />
+                            <p>Messages</p>
+                        </div>
+                        <div className="user-tab">
+                            <img src='#' alt='person with a pencil' />
+                            <p>Edit Bio</p>
+                        </div>
                     </div>
                 </div>
             </div>
