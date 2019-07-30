@@ -25,7 +25,7 @@ class Dashboard extends React.Component {
                     <News />
                 </div>
                 <div className="feature">
-                    <Feature />
+                    
                 </div>
             </div>
         )
