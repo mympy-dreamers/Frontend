@@ -20,15 +20,12 @@ class News extends React.Component {
                     <img src={logo} alt="" />
                 </div>
                 <div className="text-wrap">
-                    <p>{this.props.news.text}</p>
+                    <p>We are currently in development!</p>
                 </div>
             </div>
         )
     }
 }
 
-const mapStateToProps = state => ({
-    news: state.news,
-})
 
-export default connect(mapStateToProps, {})(News);
+export default News;
