@@ -6,6 +6,7 @@ import Home from './view/home/Home';
 import DreamMarket from './components/dreamMarket/DreamMarket';
 import Login from './components/login/Login';
 import Dashboard from './components/dashboard/Dashboard';
+import PrivateRoute from './components/login/PrivateRoute';
 
 class App extends React.Component {
   state = {
@@ -32,7 +33,7 @@ class App extends React.Component {
             />
           )} />
           <Route exact path="/market" component={DreamMarket} />
-          <Route path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
         </div>
       </Router>
     );
