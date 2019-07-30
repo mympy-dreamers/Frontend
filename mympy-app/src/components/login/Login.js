@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { login, register } from '../../actions/index';
-import { Spinner } from 'reactstrap';
 
 class Login extends React.Component {
     constructor(props){
@@ -52,26 +51,14 @@ class Login extends React.Component {
                 username: '',
                 password: '',
             }
-        })
-        setTimeout(() => {
-            if(localStorage.getItem('token')) {
-                this.props.history.push('/dashboard');
-            }
-        }, 700);
-    }
-
-    passwordMatch = () => {
-
+        });
+        setTimeout(() => this.props.history.push('/dashboard'), 650);
     }
 
     register = e => {
         e.preventDefault();
         this.props.register(this.state.signup);
-        setTimeout(() => {
-            if(this.props.status === 201) {
-                this.props.history.push('/login');
-            }
-        }, 725);
+        this.props.history.push('/login');
     }
 
     render(){
@@ -109,9 +96,11 @@ class Login extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({
-    error: state.error,
-    status: state.status,
+const mapStateToProps = ({ error , status, token, username }) => ({
+    error,
+    status,
+    token,
+    username,
 })
 
 export default connect(mapStateToProps, { login, register })(Login);
