@@ -58,7 +58,7 @@ class Tabs extends React.Component {
 						<button className="donate-button">Donate Now</button>
 						<h5 className="more-from">More Dreams by {this.props.user.firstname}</h5>
 						{this.props.allUserDreams.map( dream => {
-							return <img className="dream-pic" key={this.props.dream.id}/>
+							return <img className="dream-pic" key={dream.id}/>
 						})}
 					</div>
 				</div>
