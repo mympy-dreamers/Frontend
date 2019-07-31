@@ -2468,8 +2468,6 @@ const reducer = (state = initialState, action) => {
 		case FETCH_DREAMS_START:
 			return {
 				...state,
-				error: '',
-				dreams: [],
 			}
 		case FETCH_DREAMS_SUCCESS:
 			return {
