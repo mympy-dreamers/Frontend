@@ -1,16 +1,19 @@
 import {
 	LOGIN_START,
   LOGIN_SUCCESS,
-  LOGIN_FAILURE
+  LOGIN_FAILURE,
+  UPDATE_SEARCH
 } from '../actions';
 import { REGISTER_START, REGISTER_SUCCESS, REGISTER_FAILURE } from '../actions';
 
+
 const initialState = {
+	searchDreams:"",
 	token: '',
 	message: '',
 	error: '',
 	dreams: [
-		{title: "Dream #1",
+		{title: "John's Dream",
 			id: 1,
 			cardImg: "https://images.pexels.com/photos/532559/pexels-photo-532559.jpeg?cs=srgb&dl=electronics-grass-lawn-532559.jpg&fm=jpg", 
 			shortDescription: "A brief description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 
@@ -225,7 +228,7 @@ const initialState = {
 				]
 			}
 		},
-		{title: "Dream #2", 
+		{title: "Jill's Dream", 
 			id: 2,
 			cardImg: "https://images.pexels.com/photos/532559/pexels-photo-532559.jpeg?cs=srgb&dl=electronics-grass-lawn-532559.jpg&fm=jpg", 
 			shortDescription: "A brief description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 
@@ -2409,6 +2412,12 @@ const reducer = (state = initialState, action) => {
 				...state,
 				error: action.payload,
 			}
+			case UPDATE_SEARCH:
+			return{
+				...state,
+				searchDreams: action.payload
+      } 
+		
 		default:
 			return state;
 	}	
