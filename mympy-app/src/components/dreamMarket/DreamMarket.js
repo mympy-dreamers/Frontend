@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import SearchBar from '../search_bar/DreamSerachbar'
+import SearchBar from '../search_bar/DreamSearchbar'
 class DreamMarket extends React.Component {
   constructor() {
   	super();
