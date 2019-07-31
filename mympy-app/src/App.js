@@ -6,6 +6,8 @@ import NavBar from './view/navbar/NavBar';
 import Home from './view/home/Home';
 import DreamMarket from './components/dreamMarket/DreamMarket';
 import DreamPage from './components/dreamPage/DreamPage.js';
+import Dashboard from './components/dashboard/Dashboard';
+import PrivateRoute from './components/login/PrivateRoute';
 
 class App extends React.Component {
   state = {
@@ -32,6 +34,7 @@ class App extends React.Component {
           )} />
           <Route exact path="/market" component={DreamMarket} />
           <Route path="/market/:id" component={DreamPage} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
         </div>
       </Router>
     );

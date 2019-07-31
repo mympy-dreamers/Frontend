@@ -1,0 +1,17 @@
+.dash-main {
+    background-color: $login-btn-color;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    .top-bar {
+        margin-top: 20px;
+    }
+
+    .mid-sec {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+    }
+}
