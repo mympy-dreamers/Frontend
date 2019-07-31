@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
 class DreamMarket extends React.Component {
   constructor() {
@@ -18,8 +19,8 @@ class DreamMarket extends React.Component {
         	{this.props.dreams.map( dream => {
 
         		//card
-        		return <div className="card-wrapper">
-	        		<div className="card" key={dream.id}>
+        		return <div className="card-wrapper" key={dream.id}>
+	        		<div className="card">
 	        			<Link to={`/market/${dream.id}`} style={{ textDecoration: 'none' }}>
 
 	        				<img className="card-img" src={dream.cardImg} />
@@ -31,6 +32,7 @@ class DreamMarket extends React.Component {
 	        						<div className="dream-city">{dream.user.city}</div>
 	        					</div>	
 	        					<div className="description">{dream.shortDescription}</div>
+	        					<ProgressBar now={60} />
 	        					<div className="goal-remaining">{"$" + (dream.donationGoal - dream.donationsReceived) + " "} to go!</div>
 	        					<div className="button-wrapper">
 	        						<button className="donate-button">Give $25</button>

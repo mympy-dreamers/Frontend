@@ -41,7 +41,17 @@
 
 				.description {
 					font-size: 1.5vw;
-					margin-bottom: 5.6em;
+					margin-bottom: 2.6em;
+				}
+
+				.progress {
+					height: 40px;
+					width: 95%;
+					margin: 0 auto;
+					margin-bottom: 20px;
+					.progress-bar {
+						  background-color: #92CC62;
+					}
 				}
 
 				.goal-remaining{

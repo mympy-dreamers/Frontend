@@ -8,7 +8,6 @@ const RecentDonations = (props) => {
 			<h2 className="header">Recent Donations</h2>
   		
   		<div className="donations-container">
-  			{console.log(props.donations)}
 				{props.donations.map( donation => {
 
 					return <div className="donation" key={donation.donation}>
