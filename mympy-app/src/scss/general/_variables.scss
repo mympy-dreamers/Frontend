@@ -15,6 +15,7 @@ $amaranth: #F03A47;
 $codGray: #1A1818;
 $cornflowerBlue : #57A1E6;
 $cerulean: #09A8E6;
+$midnight: #012345;
 
 // Fonts
 
@@ -28,7 +29,7 @@ $poppins: 'Poppins', sans-serif;
     // below values are for colors
 
 $sign-in-font-color: $sushi; // sign in font color
-$nav-font-color: $prussianBlue; // nav font color
+$nav-font-color: $midnight; // nav font color
 $dream-font-color: $goldenTainoi; // 'Dream Big' color
 $body-font-color: $mineShaft; // main, small font color
 $desc-page-color: $ginFizz; // middle cream color of page
