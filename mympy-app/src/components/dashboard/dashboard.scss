@@ -1,7 +1,8 @@
 .dash-main {
     display: flex;
     flex-direction: column;
-    background-color: $login-btn-color;
+    background: rgb(118,71,182);
+    background: linear-gradient(0deg, rgba(118,71,182,1) 0%, rgba(25,73,128,1) 100%);
     padding: 0 3.4%;
     padding-bottom: 2%;
 
