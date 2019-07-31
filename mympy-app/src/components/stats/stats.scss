@@ -39,4 +39,10 @@
     .support-dreams {
         @include dreams;
     }
+
+    .bar {
+        width: 75%;
+        height: 75%;
+        margin: 1% auto;
+    }
 }
