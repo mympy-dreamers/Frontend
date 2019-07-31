@@ -1,10 +1,12 @@
 .dash-main {
-    background-color: $login-btn-color;
-    text-align: center;
     display: flex;
     flex-direction: column;
+    background-color: $login-btn-color;
+    padding: 0 3.4%;
+    padding-bottom: 2%;
 
     .top-bar {
+        text-align: center;
         margin-top: 20px;
     }
 
@@ -13,5 +15,6 @@
         flex-direction: row;
         justify-content: center;
         align-content: center;
+        text-align: center;
     }
 }
