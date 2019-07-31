@@ -75,7 +75,7 @@ const TopSectionDiv = styled.div`
 const TopSection = ({ dream }) => {
 	return (
 		<TopSectionDiv>
-			<img className="banner" src="https://images.unsplash.com/photo-1506031765313-0bc574a405f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1374&q=80" />
+			<img className="banner" src="https://images.unsplash.com/photo-1506031765313-0bc574a405f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1374&q=80" alt="" />
   		
   		<div className="right-dash">
   			<div className="data-viz">
@@ -85,7 +85,7 @@ const TopSection = ({ dream }) => {
   				/>
   			</div>
 				<h3 className="days-left">7 Days Left</h3>
-				<button className="give-btn"><img />Give</button>
+				<button className="give-btn"><img  alt="" />Give</button>
 				<h4 className="share-title">Share Dream</h4>
 				<div className="share-buttons">
 					<i className="fab fa-facebook fa-5x"></i>

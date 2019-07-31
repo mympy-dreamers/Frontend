@@ -9,9 +9,8 @@ const RecentDonations = (props) => {
   		
   		<div className="donations-container">
 				{props.donations.map( donation => {
-
 					return <div className="donation" key={donation.donation}>
-						<img className="user-img"/>
+						<img className="user-img" alt="" />
 						<div className="donations-name-wrapper">
 							<h2 className="amount">{"$" + donation.donation}</h2>
 							<p className="name">{donation.user.firstname + " " + donation.user.lastname}</p>

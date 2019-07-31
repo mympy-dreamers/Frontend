@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
@@ -27,12 +26,12 @@ class DreamPage extends React.Component {
 
   	this.state = {
   		dream: {
-        id: null,
-        cardImg: '',
-        shortDescription: "",
-        longDescription: "",
-        donationsReceived: 0,
-        donationGoal: 0,
+			id: null,
+			cardImg: '',
+			shortDescription: "",
+			longDescription: "",
+			donationsReceived: 0,
+			donationGoal: 0,
   			recentDonations: [],
   		},
   		user: {

@@ -1,0 +1,21 @@
+.dash-main {
+    display: flex;
+    flex-direction: column;
+    background: rgb(118,71,182);
+    background: linear-gradient(0deg, rgba(118,71,182,1) 0%, rgba(25,73,128,1) 100%);
+    padding: 0 3.4%;
+    padding-bottom: 2%;
+
+    .top-bar {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .mid-sec {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+    }
+}
