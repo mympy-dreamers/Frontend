@@ -3,7 +3,7 @@ import React from 'react';
 import UserBar from '../userBar/UserBar';
 import Stats from '../stats/Stats';
 import News from '../news/News';
-// import Feature from '../feature/Feature';
+import Featured from '../featured/Featured';
 
 class Dashboard extends React.Component {
     constructor() {
@@ -24,7 +24,7 @@ class Dashboard extends React.Component {
                     <News />
                 </div>
                 <div className="feature">
-                    
+                    <Featured />
                 </div>
             </div>
         )

@@ -48,7 +48,7 @@ class Tabs extends React.Component {
 					{/*Right side of Project Story tab*/}
 					<div className="user-section">
 						<div className="user-profile">
-							<img className="user-pic"  />
+							<img className="user-pic" alt=""  />
 							<h2 className="pic-footer">MY STORY</h2>
 						</div>
 
@@ -58,7 +58,7 @@ class Tabs extends React.Component {
 						<button className="donate-button">Donate Now</button>
 						<h5 className="more-from">More Dreams by {this.props.user.firstname}</h5>
 						{this.props.allUserDreams.map( dream => {
-							return <img className="dream-pic" key={this.props.dream.id}/>
+							return <img className="dream-pic" key={dream.id} alt="" />
 						})}
 					</div>
 				</div>

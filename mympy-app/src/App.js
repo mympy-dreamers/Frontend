@@ -1,13 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 
 import Login from './components/login/Login';
 import NavBar from './view/navbar/NavBar';
 import Home from './view/home/Home';
 import DreamMarket from './components/dreamMarket/DreamMarket';
+import DreamPage from './components/dreamPage/DreamPage.js';
 import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/login/PrivateRoute';
-import DreamPage from './components/dreamPage/DreamPage.js';
 
 class App extends React.Component {
   state = {
@@ -16,7 +16,6 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router>
         <div className="App">
           <NavBar />
           <Route exact path="/" component={Home} />
@@ -36,7 +35,6 @@ class App extends React.Component {
           <Route path="/market/:id" component={DreamPage} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
         </div>
-      </Router>
     );
   }
 }

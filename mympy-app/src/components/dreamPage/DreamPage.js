@@ -27,7 +27,13 @@ class DreamPage extends React.Component {
 
   	this.state = {
   		dream: {
-  			recentDonations: []
+			id: null,
+			cardImg: '',
+			shortDescription: "",
+			longDescription: "",
+			donationsReceived: 0,
+			donationGoal: 0,
+  			recentDonations: [],
   		},
   		user: {
   			username: "",
@@ -55,7 +61,7 @@ class DreamPage extends React.Component {
   render() {
     return (
       <DreamPageDiv>
-      	<TopSection />
+      	<TopSection dream={this.state.dream} />
 
 				<MidSection>
 					<RecentDonations donations={this.state.dream.recentDonations} />
