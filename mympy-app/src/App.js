@@ -5,7 +5,6 @@ import Login from './components/login/Login';
 import NavBar from './view/navbar/NavBar';
 import Home from './view/home/Home';
 import DreamMarket from './components/dreamMarket/DreamMarket';
-import Login from './components/login/Login';
 import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/login/PrivateRoute';
 import DreamPage from './components/dreamPage/DreamPage.js';
