@@ -5,9 +5,11 @@ import styled from 'styled-components';
 
 const CardDiv = styled.div`
 	border: 1px solid grey;
+	border-radius: 22px;
 
 	.card-img {
-		width: 100%;
+		max-width: 100%;
+		border-radius: 20px 20px 0 0;
 	}
 
 	.card-body {
@@ -34,7 +36,7 @@ const CardDiv = styled.div`
 
 		.description {
 			font-size: 1.5vw;
-			margin-bottom: 2.6em;
+			margin-bottom: 1.8em;
 		}
 
 		.progress {
@@ -60,11 +62,12 @@ const CardDiv = styled.div`
 				height: 2.2em;				
 				width: 46%;
 				border: none;
+				border-radius: 16px;
 				background-color: #0B2343;
 				color: white;
 				font-size: 1.4vw;
 				font-weight: bold;
-				margin-bottom: 1.3em;
+				margin-bottom: 0.6em;
 			}
 		}
 	}
@@ -88,7 +91,7 @@ const Card = ({ dream }) => {
 					<ProgressBar now={60} />
 					<div className="goal-remaining">{"$" + (dream.donationGoal - dream.donationsReceived) + " "} to go!</div>
 					<div className="button-wrapper">
-						<button className="donate-button">Give $25</button>
+						<button className="donate-button">Learn More</button>
 					</div>
 				</div>
 			</Link>
