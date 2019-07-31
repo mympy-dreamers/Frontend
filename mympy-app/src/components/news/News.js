@@ -1,6 +1,6 @@
 import React from 'react';
 
-import logo from '../../img/logo.svg';
+import logo from '../../img/unusedImgs/logo.svg';
 
 class News extends React.Component {
     constructor() {
