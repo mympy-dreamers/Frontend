@@ -18,7 +18,7 @@ class App extends React.Component {
       <Router>
         <div className="App">
           <NavBar />
-          <DreamCard />
+          <Route exact path="/dreamer" component={DreamCard} />
           <Route exact path="/" component={Home} />
           <Route path="/login" render={(props) => (
             <Login
