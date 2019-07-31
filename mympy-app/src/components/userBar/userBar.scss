@@ -19,14 +19,9 @@
             h3 {
                 align-self: flex-start;
                 margin: 1%;
-                font-size: 1.6rem;
+                font-size: 2rem;
                 margin: 2% auto;
                 color: $body-font-color;
-
-                small-font {
-                    border: 1px solid black;
-                    
-                }
 
             } // end of h3
 
@@ -56,13 +51,16 @@
                 img {
                     width: 100px;
                     height: 100px;
+                    padding: 2%;
                     margin: 2% auto;
 
                 }
 
                 p {
-                    font-size: 1.2rem;
+                    font-size: 1.6rem;
                     color: $body-font-color;
+                    margin: 3% auto;
+                    // align-self: flex-end;
 
                 }
 
