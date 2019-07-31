@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import { updateSearch } from '../../actions'
+import "./Dreams.css"
 
 
 class SearchBar extends React.Component{
@@ -20,7 +21,11 @@ class SearchBar extends React.Component{
     render(){
         return(
             <form>
-            <input className="input" type="text" value={this.state.search} placeholder="Search" onChange={this.changeSearch}/>
+         
+         <div class="searchContainer">
+            <i class="fa fa-search searchIcon"></i>
+            <input class="searchBox" type="text" value={this.state.search} placeholder="search" onChange={this.changeSearch}/>
+            </div>
         </form> 
         )
     }
