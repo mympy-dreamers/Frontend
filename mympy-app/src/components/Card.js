@@ -79,7 +79,7 @@ const Card = ({ dream }) => {
 		<CardDiv className="card">
 			<Link to={`/market/${dream.id}`} style={{ textDecoration: 'none' }}>
 
-				<img className="card-img" src={dream.cardImg} />
+				<img className="card-img" src={dream.cardImg} alt="" />
 
 				<div className="card-body">
 					<div className="user-name">{dream.user.firstname + " " + dream.user.lastname}</div>

@@ -6,8 +6,6 @@ import Slider from "react-slick";
 
 import Card from '../Card.js'
 
-import demo from '../../img/demo.jpg'
-
 const FeaturedMain = styled.div`
     display: flex;
     flex-direction: column;

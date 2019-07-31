@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { VictoryPie, VictoryLabel, VictoryAnimation } from "victory";
 
 export default class ProgressCircle extends React.Component {
