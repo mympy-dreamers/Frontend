@@ -39,3 +39,9 @@ export const register = creds => dispatch => {
 
 // END OF REGISTER -------------------------------------------------
 
+// UPDATING SEARCH TERM
+export const UPDATE_SEARCH="UPDATE_SEARCH"
+
+export const updateSearch = searchTerm => dispatch => {
+	dispatch({type: UPDATE_SEARCH, payload: searchTerm})
+}
