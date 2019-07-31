@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Spinner } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-import { fetchAllDreams } from '../../actions';
+import { fetchAllDreams, fetchUserById } from '../../actions';
 import demo from '../../img/demo.jpg'
 
 class UserBar extends React.Component {
@@ -11,13 +11,14 @@ class UserBar extends React.Component {
         super();
         this.state = {
             username: '',
-            id: 0,
+            id: 25,
         }
         
     }
 
     componentDidMount(){
         this.props.fetchAllDreams();
+        // this.fetchUserInfo();
     }
 
     isReady = () => {
@@ -34,7 +35,7 @@ class UserBar extends React.Component {
     }
 
     fetchUserInfo = id => {
-
+        this.props.fetchUserById(id);
     }
 
     // method for decoding a token
@@ -90,4 +91,4 @@ class UserBar extends React.Component {
     }
 }
 
-export default connect(null, { fetchAllDreams })(UserBar);
+export default connect(null, { fetchAllDreams, fetchUserById })(UserBar);
