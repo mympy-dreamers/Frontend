@@ -2,8 +2,8 @@
     border: 1px solid black;
     height: 500px;
     width: 600px;
-    margin: 80px 790px;
     background-color: #FFD166;
+    margin-top: 50px;
 }
 
 .inputs {
@@ -42,4 +42,15 @@
     background-color: #09A8E6;
     font-weight: bold;
     color: white;
+}
+
+.dream-Home-Img {
+    height: 600px;
+    width: 600px;
+}
+
+.dream-Home-Page {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 30px;
 }
