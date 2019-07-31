@@ -2,7 +2,7 @@ import React from 'react';
 
 const JournalTab = props => {
     return (
-        <div>
+        <div className="journalTab-main">
             <h1>I am the Journal!</h1>
         </div>
     )
