@@ -5,6 +5,11 @@ import { Link } from 'react-router-dom';
 
 import { fetchAllDreams, fetchUserById } from '../../actions';
 import demo from '../../img/demo.jpg'
+import cloudPencil from '../../img/userbar-img/cloudPencil.png';
+import cloudPlus from '../../img/userbar-img/cloudPlus.png';
+import journal from '../../img/userbar-img/journal.png';
+import messageLogo from '../../img/userbar-img/messageLogo.png';
+import userLogo from '../../img/userbar-img/userLogo.png';
 
 class UserBar extends React.Component {
     constructor(){
@@ -56,31 +61,31 @@ class UserBar extends React.Component {
                     <div className="flexing">
                         <Link to="#">
                             <div className="user-tab">
-                                <img src='#' alt='cloud with a plus sign' />
+                                <img src={cloudPlus} alt='cloud with a plus sign' />
                                 <p>Create Dream</p>
                             </div>
                         </Link>
                         <Link to="#">
                             <div className="user-tab">
-                                <img src='#' alt='cloud with pencil inside' />
+                                <img src={cloudPencil} alt='cloud with pencil inside' />
                                 <p>Edit Dreams</p>
                             </div>
                         </Link>
                         <Link to="#">
                             <div className="user-tab">
-                                <img src='#' alt='pencil scribbling' />
+                                <img src={journal} alt='pencil scribbling' />
                                 <p>Journal</p>
                             </div>
                         </Link>
                         <Link to="#">
                             <div className="user-tab">
-                                <img src='#' alt='message logo' />
+                                <img src={messageLogo} alt='message logo' />
                                 <p>Messages</p>
                             </div>
                         </Link>
                         <Link to="#">
                             <div className="user-tab">
-                                <img src='#' alt='person with a pencil' />
+                                <img src={userLogo} alt='person with a pencil' />
                                 <p>Edit Bio</p>
                             </div>
                         </Link>
