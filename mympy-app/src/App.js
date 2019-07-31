@@ -31,7 +31,7 @@ class App extends React.Component {
             type="register"
             />
           )} />
-          <Route exact path="/market" component={DreamMarket} />
+          <Route path="/market" component={DreamMarket} />
           <Route path="/market/:id" component={DreamPage} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
         </div>
