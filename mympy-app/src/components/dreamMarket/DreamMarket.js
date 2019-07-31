@@ -11,6 +11,8 @@ class DreamMarket extends React.Component {
   	}
   }
   render() {
+	let filteredDreams = this.props.dreams.filter(dream => dream.title.includes(this.props.searchDreams))
+	let dreams = this.props.searchDreams ? filteredDreams : this.props.dreams
 	
     return (
       <div className="dream-market">
