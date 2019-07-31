@@ -15,12 +15,12 @@
     }
 
     .right{
-        width: 40%;
+        width: 60%;
 
         .list{
             list-style-type: none;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-evenly;
 
             .item{
                 margin: 15px;
@@ -28,17 +28,14 @@
                 a{
                     text-decoration: none;
                     color: $nav-font-color;
-                    font-size: 2.4rem;
+                    font-size: 1.6rem;
                     font-family: $large-font;
+                    font-weight: 900;
 
                     @include small-desktop {
                         font-size: 1.8rem;
                     }
                 }
-            }
-
-            .sign-in a{
-                color: $sign-in-font-color;
             }
         }
     }
