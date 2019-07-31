@@ -32,7 +32,7 @@ class App extends React.Component {
             />
           )} />
           <Route exact path="/market" component={DreamMarket} />
-          <Route exact path="/market/:id" component={DreamPage} />
+          <Route path="/market/:id" component={DreamPage} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
         </div>
     );
