@@ -36,9 +36,9 @@ class DreamPage extends React.Component {
   		},
   		user: {
   			username: "",
-				firstname: "",
-				lastname: "",
-				city: "",
+			firstname: "",
+			lastname: "",
+			city: "",
   		},
   		allUserDreams: []
   	};
@@ -49,7 +49,7 @@ class DreamPage extends React.Component {
   	const thisDream = this.props.dreams.find( dream => 
   		(parseInt(dream.id) === parseInt(this.props.match.params.id)) 
   	);
-
+		console.log(thisDream);
   	this.setState({
   		dream: thisDream,
   		user: thisDream.user,
