@@ -61,7 +61,7 @@ class Featured extends React.Component {
             <FeaturedMain>
                 <h3>Featured Dreams</h3>
                 <Slider {...settings}>
-                  {this.state.featured.map( dream => {
+                    {this.state.featured.map( dream => {
                         return <Card dream={dream} key={dream.id}/>
                     })}
                 </Slider>
