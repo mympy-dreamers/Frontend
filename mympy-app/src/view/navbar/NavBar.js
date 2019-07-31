@@ -12,11 +12,14 @@ const NavBar = () => {
                     <img src={logo} alt="Company Logo" />
                 </Link>
             </div>
+
             <div className="right">
                 <ul className="list">
+               
                     <li className="item">
                         <Link to="/market">Search For Dreams</Link>
                     </li>
+                   
                     <li className="item">
                         <Link to="/register">Sign Up</Link>
                     </li>
