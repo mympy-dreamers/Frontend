@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import SearchBar from '../search_bar/DreamSerachbar'
 class DreamMarket extends React.Component {
   constructor() {
   	super();
@@ -10,12 +10,13 @@ class DreamMarket extends React.Component {
 
   	}
   }
-
   render() {
+	
     return (
       <div className="dream-market">
+		  <SearchBar />
         <div className="cards-container">
-        	{this.props.dreams.map( dream => {
+        	{dreams.map( dream => {
 
         		//card
         		return <div className="card-wrapper">
@@ -46,8 +47,9 @@ class DreamMarket extends React.Component {
   }
 }
 
-const mapStateToProps = ({ dreams }) => ({
-	dreams
+const mapStateToProps = ({ dreams, searchDreams }) => ({
+	dreams,
+	searchDreams
 });
 
 export default connect(mapStateToProps)(DreamMarket);
