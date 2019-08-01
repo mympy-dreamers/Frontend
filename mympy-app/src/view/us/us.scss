@@ -1,14 +1,16 @@
 .us-main {
     display: flex;
-    background-color: $desc-page-color;
+    flex-direction: column;
+    background-color:white;
     
 
     h1 {
         font-family: $large-font;
         font-weight: 900;
-        font-size: 6rem;
+        font-size: 2.3rem;
         color: $large-font-color;
-        text-align: center;
+        text-align: left;
+        margin: 1rem 0 2rem 0;
 
         @include small-desktop {
             font-size: 4rem;
@@ -19,42 +21,57 @@
     p {
         font-family: $body-font;
         color: $desc-body-color;
-        font-size: 1.2rem;
-        text-align: center;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        text-align: left;
+        width: 80%;
+        
+
 
     } // end of p
 
     .left {
-        width: 50%;
+        width: 100%;
         display: flex;
-        justify-content: center;
-        align-content: center;
+        margin: .75rem 0 0 30.5rem;
 
         .inner-left {
-            width: 75%;
+            width: 50%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-content: center;
 
-            img {
-                margin: 5%;
-            } // end of img
+            
 
         } // end of inner-left
+
+        img {
+            margin: 1rem 4rem 0 0;
+        }
 
     } // end of left
 
     .right {
-        width: 50%;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-content: center;
+        margin: 3.2rem 0 0 18rem;
 
         .inner-right {
             width: 75%;
 
         } // end of inner-right
+
+        img {
+            width: 20rem;
+            margin-right: 1rem;
+        }
+
+        p {
+            width: 100%;
+        }
 
     } // end of right
 
