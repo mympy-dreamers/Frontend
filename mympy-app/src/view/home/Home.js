@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Us from '../us/Us';
-import Selector from '../selector/Selector';
 import Carousel from '../carousel/Carousel';
 import MidSec from '../midSec/MidSec';
 
@@ -17,7 +16,6 @@ const Home = () => {
             </div>
             <Us />
             <MidSec />
-            <Selector />
             <div>
                 <img src={swirl} alt="styling" />
             </div>
