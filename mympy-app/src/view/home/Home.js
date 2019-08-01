@@ -3,6 +3,8 @@ import React from 'react';
 import Us from '../us/Us';
 import Selector from '../selector/Selector';
 import Carousel from '../carousel/Carousel';
+import MidSec from '../midSec/MidSec';
+
 import swirl from '../../img/swirl.png';
 import bPoint from '../../img/break.png';
 
@@ -14,9 +16,7 @@ const Home = () => {
                 <img src={bPoint} alt="scene" />
             </div>
             <Us />
-            <div className="quest-sec">
-                
-            </div>
+            <MidSec />
             <Selector />
             <div>
                 <img src={swirl} alt="styling" />
