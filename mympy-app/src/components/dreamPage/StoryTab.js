@@ -1,6 +1,9 @@
 import React from 'react';
 
+import demo from '../../img/demo.jpg';
+
 const StoryTab = props => {
+    console.log(props.user);
     return(
         <div className="story-content">
             {/*Left side of Project Story tab*/}
@@ -12,7 +15,7 @@ const StoryTab = props => {
             {/*Right side of Project Story tab*/}
             <div className="user-section">
                 <div className="user-profile">
-                    <img className="user-pic" alt=""  />
+                    <img className="user-pic" src={demo} alt=""  />
                     <h2 className="pic-footer">MY STORY</h2>
                 </div>
 
@@ -22,7 +25,7 @@ const StoryTab = props => {
                 <button className="donate-button">Donate Now</button>
                 <h5 className="more-from">More Dreams by {props.user.firstname}</h5>
                 {props.allUserDreams.map( dream => {
-                    return <img className="dream-pic" key={dream.id} alt="" />
+                    return <img className="dream-pic" src={dream.cardImg} key={dream.id} alt="" />
                 })}
             </div>
 		</div>
