@@ -3,13 +3,24 @@ import React from 'react';
 import Us from '../us/Us';
 import Selector from '../selector/Selector';
 import Carousel from '../carousel/Carousel';
+import swirl from '../../img/swirl.png';
+import bPoint from '../../img/break.png';
 
 const Home = () => {
     return (
-        <div>
+        <div className="home-main">
             <Carousel />
+            <div className="break">
+                <img src={bPoint} alt="scene" />
+            </div>
             <Us />
+            <div className="quest-sec">
+                
+            </div>
             <Selector />
+            <div>
+                <img src={swirl} alt="styling" />
+            </div>
         </div>
     )
 }
