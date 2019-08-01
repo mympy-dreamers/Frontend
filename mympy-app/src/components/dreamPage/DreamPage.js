@@ -63,7 +63,7 @@ class DreamPage extends React.Component {
       	<TopSection dream={this.state.dream} />
 
 				<MidSection>
-					<RecentDonations donations={this.state.dream.recentDonations} />
+					<RecentDonations donations={this.state.dream.recentDonations} user={this.state.user} />
 					<Tabs dream={this.state.dream} user={this.state.user} allUserDreams={this.state.allUserDreams}/>
 				</MidSection>
 
