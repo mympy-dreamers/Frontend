@@ -13,13 +13,27 @@
     font-family: $large-font;
     font-size: 1.5rem;
     background-color: $bg-color;
-    color: $midnight;
+    color: $nav-font-color;
     padding: 15px;
     border-radius: 25px;
     #{$margin}: 5%;
     margin-top: 4%;
     width: 13em;
     
+}
+
+@mixin mid-btn ($bg-color, $margin) {
+    border: none;
+    font-family: $body-font;
+    font-weight: 900;
+    font-size: 3.2rem;
+    background-color: $bg-color;
+    color: $nav-font-color;
+    padding: 15px;
+    border-radius: 25px;
+    #{$margin}: 5%;
+    margin-top: 3%;
+    width: 20rem;
 }
 
 // gives each page the correct margin to be centered
