@@ -2,14 +2,22 @@
 @import '../../scss/general/mixin';
 
 .main{
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // justify-content: space-between;
     // background-color: rgba(118,71,182,1);
+    // border-bottom: 1px solid lightslategray;
+    @include box-shadow;
+
+    .nav-wrap {
+        display: flex;
+        justify-content: space-between;
+        @include main-margin;
+    }
 
     .left{
 
         img {
-            margin: 10%;
+            margin: 2%;
             width: 100%;
             height: 50px;
         }
