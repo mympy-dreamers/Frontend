@@ -47,11 +47,11 @@ return (
             <div className='inputs'>
                 <div>
                     <p>Where you first had your Dream?</p>
-                    <input className='input-style' placeholder='+' name='firstDream' value={this.state.projectTitle} onChange={this.handleChanges}></input>
+                    <input className='input-style' placeholder='+' name='firstDream' value={this.state.firstDream} onChange={this.handleChanges}></input>
                 </div>
                 <div>
                     <p>What inspire you about your Dream?</p>
-                    <input className='input-style' placeholder='+' name='inspiration' value={this.state.journal} onChange={this.handleChanges}></input>
+                    <input className='input-style' placeholder='+' name='inspiration' value={this.state.inspiration} onChange={this.handleChanges}></input>
                 </div>
                 <div>
                     <p>What you want to share to people about your Dream?</p>

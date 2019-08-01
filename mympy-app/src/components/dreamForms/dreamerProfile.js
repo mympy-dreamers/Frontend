@@ -46,11 +46,11 @@ return (
             <div className='inputs'>
                 <div>
                     <p>Name of your Dream?</p>
-                    <input className='input-info' placeholder='' name='firstDream' value={this.state.projectTitle} onChange={this.handleChanges}></input>
+                    <input className='input-info' placeholder='' name='dreamName' value={this.state.dreamName} onChange={this.handleChanges}></input>
                 </div>
                 <div>
                     <p>Enter your goal here</p>
-                    <input className='input-info' placeholder='$' name='inspiration' value={this.state.journal} onChange={this.handleChanges}></input>
+                    <input className='input-info' placeholder='$' name='amount' value={this.state.amount} onChange={this.handleChanges}></input>
                 </div>
                 
             </div> {/* inputs end */}
