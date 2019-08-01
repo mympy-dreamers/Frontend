@@ -1,4 +1,85 @@
 .mid-main {
     background-color: black;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-end;
+
+    .top-mid {
+        height: 85%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: flex-end;
+
+
+        .div-wrap {
+            height: 700px;
+            width: 1000px;
+            background-color: white;
+
+            .meteor {
+                position: relative;
+                top: 10%;
+
+                .meteor-img {
+                    position: relative;
+                    left: 80%;
+                    opacity: 1;
+                    width: 23%;
+                }
+            }
+    
+            .top-div {
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                
+                h1 {
+                    margin-top: 2%;
+                    font-size: 3.8rem;
+                    font-weight: 900;
+                    font-family: $large-font;
+                    color: $nav-font-color;
+                }
+            }
+    
+            .btns {
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                
+                .dreamer {
+                    @include mid-btn($dreamer-btn-color, margin-right);
+                }
+
+                .supporter {
+                    @include mid-btn($support-btn-color, margin-left);
+                }
+            }
+
+        }
+
+    }
+
+    .empty {
+        height: 15%;
+        width: 100%;
+
+        img {
+            position: relative;
+            bottom: 25.2rem;
+            left: 36%;
+            width: 28%;
+
+            @include small-desktop {
+                bottom: 24.7rem;
+                left: 33%;
+                width: 35%;
+            }
+        }
+    }
 }
