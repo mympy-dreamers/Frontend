@@ -1,5 +1,7 @@
 .caro-main{
     display: flex;
+    padding: 1%;
+    @include main-margin;
 
     .empty {
         width: 40%;
@@ -52,13 +54,29 @@
 
             } // end of p
 
+            .btn-div {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-content: center;
+                width: 30%;
+
+                .dreamer {
+                    @include front-btn($dreamer-btn-color, margin-right);
+                }
+
+                .supporter {
+                    @include front-btn($support-btn-color, margin-left);
+                }
+            }
+
         } // end of para-wrap
 
     } // end of left
 
     .right{
         width: 60%;
-        height: 93vh;
+        height: 86.1vh;
 
         img {
             width: 100%;
