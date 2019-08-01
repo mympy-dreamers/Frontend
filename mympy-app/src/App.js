@@ -7,6 +7,7 @@ import Home from './view/home/Home';
 import DreamMarket from './components/dreamMarket/DreamMarket';
 import DreamPage from './components/dreamPage/DreamPage.js';
 import DreamCard from './components/dreamForms/dreamCard';
+import DreamerProfile from './components/dreamForms/dreamerCard';
 
 class App extends React.Component {
   state = {
@@ -19,6 +20,7 @@ class App extends React.Component {
         <div className="App">
           <NavBar />
           <Route exact path="/dreamer" component={DreamCard}/>
+          <Route exact path="/dreamerProfile" component={DreamerProfile}/>
           <Route exact path="/" component={Home} />
           <Route path="/login" render={(props) => (
             <Login
@@ -34,7 +36,6 @@ class App extends React.Component {
           )} />
           <Route exact path="/market" component={DreamMarket} />
           <Route path="/market/:id" component={DreamPage} />
-          {/* <Route exact path="dreamer" component={DreamCard} /> */}
         </div>
       </Router>
     );

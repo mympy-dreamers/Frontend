@@ -15,6 +15,9 @@ const NavBar = () => {
             <div className="right">
                 <ul className="list">
                     <li className='item'>
+                        <Link to="/dreamerProfile">Dream Team</Link>
+                    </li>
+                    <li className='item'>
                         <Link to="/dreamer">Dreamers</Link>
                     </li>
                     <li className="item">

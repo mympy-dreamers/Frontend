@@ -12,6 +12,7 @@ class DreamCard extends React.Component {
         fullName: '',
         city: '',
         aboutDream: '',
+        inputText: ''
      }
     }
 }
@@ -21,7 +22,12 @@ handleChanges = e => {
 const {fullName , value} = e.target
 this.setState({ [fullName]: value})
 }
-  
+
+saveInfo = dreamer => {
+    const addToSavedList = this.props.addToSavedList;
+    addToSavedList(this.state.dreamer)
+}
+
 render() {
 return (
     <div className='dream-Home-Page'> 
@@ -49,8 +55,8 @@ return (
 
                 </div> {/* inputs end */}
 
-            <button type='submit' className='submit-button'>Submit</button>
-            
+            <button onClick={this.saveInfo} type='submit' className='submit-button'>Submit</button>
+
           </form> {/* dreamer-card end  */}
 
         </div>  {/* dreamer-card-app end  */}

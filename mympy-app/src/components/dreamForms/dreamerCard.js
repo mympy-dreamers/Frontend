@@ -1,15 +1,14 @@
  import React from 'react';
- import dreamCard from '../dreamForms/dreamCard.js'
+ import dreamCard from '../dreamForms/dreamCard'
 
- class DreamerProfile extends React.Component {
-  
- render() {
+ const DreamerProfile = props => {
      return (
-         <div>
-
-         </div>
+         <div className='dreamer-info'>
+            <div>
+               
+            </div>
+         </div> /* dreamer-info end */
      )
- }
  }
 
  export default DreamerProfile;
