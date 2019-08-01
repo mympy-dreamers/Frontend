@@ -21,7 +21,7 @@ class Stats extends React.Component {
                             donationsReceived={75}
                         />
                       </div>
-                    <button>more info</button>
+                    {/* <button>more info</button> */}
                 </div>
                 <div className="support-dreams">
                     <h1>Dreams Supported</h1>
@@ -31,7 +31,7 @@ class Stats extends React.Component {
                             donationsReceived={75}
                         />
                         </div>
-                    <button>more info</button>
+                    {/* <button>more info</button> */}
                 </div>
             </div>
         )
