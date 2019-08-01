@@ -77,18 +77,20 @@ class UserBar extends React.Component {
                                 <p>Journal</p>
                             </div>
                         </Link>
-                        <Link to="#">
-                            <div className="user-tab">
+                        {/* <Link to="#"> */}
+                            <div className="user-tab develop">
                                 <img src={messageLogo} alt='message logo' />
                                 <p>Messages</p>
+                                <h6>(Under Develpoment)</h6>
                             </div>
-                        </Link>
-                        <Link to="#">
-                            <div className="user-tab">
+                        {/* </Link> */}
+                        {/* <Link to="#"> */}
+                            <div className="user-tab develop">
                                 <img src={userLogo} alt='person with a pencil' />
                                 <p>Edit Bio</p>
+                                <h6>(Under Develpoment)</h6>
                             </div>
-                        </Link>
+                        {/* </Link> */}
                     </div>
                 </div>
             </div>
