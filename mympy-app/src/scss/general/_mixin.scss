@@ -7,16 +7,26 @@
     border: 1px solid red;
 }
 
-@mixin front-btn ($bg-color, $self-align, $margin) {
-    align-self: $self-align;
+@mixin front-btn ($bg-color, $margin) {
+    // align-self: $self-align;
+    border: none;
     font-family: $large-font;
     font-size: 1.5rem;
     background-color: $bg-color;
-    color: white;
+    color: $midnight;
     padding: 15px;
     border-radius: 25px;
     #{$margin}: 5%;
-    width: 25%;
+    margin-top: 4%;
+    width: 13em;
+    
+}
+
+// gives each page the correct margin to be centered
+
+@mixin main-margin {
+    width: 1440px;
+    margin: 0 auto;
 }
 
 @mixin bottom-half {
