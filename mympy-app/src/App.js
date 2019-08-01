@@ -7,7 +7,7 @@ import Home from './view/home/Home';
 import DreamMarket from './components/dreamMarket/DreamMarket';
 import DreamPage from './components/dreamPage/DreamPage.js';
 import DreamCard from './components/dreamForms/dreamCard';
-import DreamerProfile from './components/dreamForms/dreamerCard';
+import DreamerProfile from './components/dreamForms/dreamerProfile';
 
 class App extends React.Component {
   state = {
