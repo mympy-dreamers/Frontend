@@ -2,20 +2,20 @@ import React from 'react';
 import './dreamCard.css';
 
 
-class DreamCard extends React.Component {
+class Dreamer extends React.Component {
     constructor(props) {
     super(props);
     this.state = {
         // dreamName: '',
         // amount: '',
-        firstDream: '',
-        inspiration: '',
-        aboutDream: '',
-        dreamImpact: '',
-        // location: '',
-        // aboutYou: '',
-        // goals: '',
-        // extraInfo: '',
+        // firstDream: '',
+        // inspiration: '',
+        // aboutDream: '',
+        // dreamImpact: '',
+        location: '',
+        aboutYou: '',
+        goals: '',
+        extraInfo: '',
 
 
 };
@@ -39,26 +39,26 @@ return (
 
                 <div className='form-title'>
                     <h1>Make your dream in reality!</h1>
-                    <h2>My Dream</h2>
+                    <h2>Tell me about yourself!</h2>
                 </div>
 
         <div className='card-section'>
           <form onSubmit={this.props.saveInfo} className='dreamer-card'>
             <div className='inputs'>
                 <div>
-                    <p>Where you first had your Dream?</p>
+                    <p>Tell me about where are you from?</p>
                     <input className='input-style' placeholder='+' name='firstDream' value={this.state.projectTitle} onChange={this.handleChanges}></input>
                 </div>
                 <div>
-                    <p>What inspire you about your Dream?</p>
+                    <p>What do you want people to know about you?</p>
                     <input className='input-style' placeholder='+' name='inspiration' value={this.state.journal} onChange={this.handleChanges}></input>
                 </div>
                 <div>
-                    <p>What you want to share to people about your Dream?</p>
+                    <p>What are your goals now?</p>
                     <input id='dream-box' className='input-style' placeholder='+' name='aboutDream' value={this.state.aboutDream} onChange={this.handleChanges}></input>   
                 </div>
                 <div>
-                    <p>How can your Dream impact people?</p>
+                    <p>What other things you want people to now about you?</p>
                     <input className='input-style' placeholder='+' name='dreamImpact' value={this.state.dreamImpact} onChange={this.handleChanges}></input>   
                 </div>
             </div> {/* inputs end */}
@@ -77,4 +77,4 @@ return (
 }
 
 {/* <div></div> */}
-export default DreamCard
+export default Dreamer

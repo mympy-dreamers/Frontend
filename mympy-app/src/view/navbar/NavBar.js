@@ -15,10 +15,13 @@ const NavBar = () => {
             <div className="right">
                 <ul className="list">
                     <li className='item'>
-                        <Link to="/dreamerProfile">Dream Team</Link>
+                        <Link to="/dreamerProfile">Dream Info</Link>
                     </li>
                     <li className='item'>
-                        <Link to="/dreamer">Dreamers</Link>
+                        <Link to="/dreamer">Dreams</Link>
+                    </li>
+                    <li className='item'>
+                        <Link to="/profileDreamer">About You</Link>
                     </li>
                     <li className="item">
                         <Link to="/market">Search For Dreams</Link>

@@ -1,22 +1,28 @@
+.dream-Home-Page {
+    background-color: #2B70AC;
+}
+
 .dreamer-card-app {
-    border: 1px solid black;
-    height: 500px;
-    width: 980px;
+    text-align: center;
     background-color: white; /* #FFD166; */
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
 .inputs {
     display: flex;
     flex-direction: column;
-    margin: 80px 125px;
+    margin: 0px 125px;
 }
 
 .input-style {   /* input box styling */
-    width: 350px;
-    height: 35px;
-    font-size: 15px;
+    width: 550px;
+    height: 150px;
+    text-align: center;
+    font-size: 25px;
     padding-left: 15px;
+    border: 1px solid black;
+    margin-bottom: 100px;
+    /* border-bottom: 1px solid black; */
 }  
 
 .form-title {
@@ -27,12 +33,11 @@
     color: #FFD166;
     text-shadow: 1px 1px grey;
     font-weight: bolder;
+    margin-bottom: 50px;
 }
 
-#dream-box {
-    height: 150px;
-    text-align: center;
-    font-size: 25px;
+.form-title h1 {
+    font-size: 40px;
 }
 
 .submit-button {
@@ -40,8 +45,7 @@
     width: 100px;
     border-radius: 5%;
     font-size: 20px;
-    margin: 0 260px;
-    margin-bottom: 50px;
+    margin: 50px 260px;
     background-color: #09A8E6;
     font-weight: bold;
     color: white;
@@ -76,6 +80,11 @@
 
 .card-section {
     display: flex;
+}
+
+.card-section p {
+    font-size: 20px;
+    margin-bottom: 8px;
 }
 
 li {
