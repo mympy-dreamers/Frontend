@@ -1,0 +1,78 @@
+.story-content {
+    display: flex;
+    
+    .story {
+        .dream-title {
+            font-size: 34px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .dream-description {
+            font-size: 20px;
+            line-height: 27px;
+            font-weight: bold;
+        }
+    }
+
+    .user-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 70px;
+
+        .user-profile {
+            margin-bottom: 15px;
+
+            .user-pic {
+                width: 220px;
+                height: 160px;
+                background-color: #0A2243;
+            }
+            .pic-footer {
+                height: 36px;
+                padding-top: 10px;
+                background-color: #92CC62;
+                color: white;
+                font-size: 24px;
+                text-align: center;					
+            }
+        }
+
+        .user-name {
+            color: #0A2243;
+            font-weight: bold;
+            font-size: 28px;
+            margin-bottom: 2px;
+        }
+        .city {
+            color: #92CC62;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .donate-button {
+            width: 150px;
+            height: 50px;
+            color: white;
+            background-color: #0A2243;
+            border: none;
+            margin-bottom: 68px;
+        }
+
+        .more-from {
+            color: #0A2243;
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .dream-pic {
+            width: 104px;
+            height: 104px;
+            border-radius: 50%;
+            background-color: #0A2243;
+            border: 1px solid #0A2243;
+            margin-bottom: 16px;
+        }
+    }
+}

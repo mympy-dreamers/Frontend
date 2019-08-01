@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
@@ -27,19 +26,19 @@ class DreamPage extends React.Component {
 
   	this.state = {
   		dream: {
-        id: null,
-        cardImg: '',
-        shortDescription: "",
-        longDescription: "",
-        donationsReceived: 0,
-        donationGoal: 0,
+			id: null,
+			cardImg: '',
+			shortDescription: "",
+			longDescription: "",
+			donationsReceived: 0,
+			donationGoal: 0,
   			recentDonations: [],
   		},
   		user: {
   			username: "",
-				firstname: "",
-				lastname: "",
-				city: "",
+			firstname: "",
+			lastname: "",
+			city: "",
   		},
   		allUserDreams: []
   	};
@@ -50,7 +49,7 @@ class DreamPage extends React.Component {
   	const thisDream = this.props.dreams.find( dream => 
   		(parseInt(dream.id) === parseInt(this.props.match.params.id)) 
   	);
-
+		console.log(thisDream);
   	this.setState({
   		dream: thisDream,
   		user: thisDream.user,
@@ -64,7 +63,7 @@ class DreamPage extends React.Component {
       	<TopSection dream={this.state.dream} />
 
 				<MidSection>
-					<RecentDonations donations={this.state.dream.recentDonations} />
+					<RecentDonations donations={this.state.dream.recentDonations} user={this.state.user} />
 					<Tabs dream={this.state.dream} user={this.state.user} allUserDreams={this.state.allUserDreams}/>
 				</MidSection>
 

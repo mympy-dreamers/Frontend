@@ -1,7 +1,10 @@
 import React from 'react';
-import { Route, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { Route } from 'react-router-dom';
 
 import './tabs.scss';
+import StoryTab from './StoryTab';
+import JournalTab from './JournalTab';
 
 class Tabs extends React.Component {
 	constructor(props) {
@@ -33,38 +36,20 @@ class Tabs extends React.Component {
 	render() {
 		return (
 			<div className="tabs-component">
-				<div className="tabs-container">
-					<NavLink className="story-tab tab" onClick={() => this.toggleClass()} to={`/market/${this.props.dream.id}/project_story`} >PROJECT STORY</NavLink>
-					<NavLink className= "journal-tab tab" onClick={() => this.toggleClass()} to={`/market/${this.props.dream.id}/journal`}>JOURNAL</NavLink>
-				</div>
+				<nav className="tabs-container">
+					<NavLink className="story-tab tab" to={`/market/${this.props.dream.id}`} >PROJECT STORY</NavLink>
+					<NavLink className= "journal-tab tab" to={`/market/${this.props.dream.id}/journal`}>JOURNAL</NavLink>
+				</nav>
 
-				<div className={this.state.storyContentClass}>
-					{/*Left side of Project Story tab*/}
-					<div className="story">
-						<h1 className="dream-title">{this.props.dream.title}</h1>
-						<p className="dream-description">{this.props.dream.longDescription}</p>
-					</div>
-
-					{/*Right side of Project Story tab*/}
-					<div className="user-section">
-						<div className="user-profile">
-							<img className="user-pic"  />
-							<h2 className="pic-footer">MY STORY</h2>
-						</div>
-
-						<h2 className="user-name">{this.props.user.firstname + " " + this.props.user.lastname}</h2>
-						<h3 className="city">{this.props.user.city}</h3>
-
-						<button className="donate-button">Donate Now</button>
-						<h5 className="more-from">More Dreams by {this.props.user.firstname}</h5>
-						{this.props.allUserDreams.map( dream => {
-							return <img className="dream-pic" key={dream.id}/>
-						})}
-					</div>
-				</div>
-
-				<div className={this.state.journalContentClass}>
-				</div>
+				<Route
+					exact
+					path="/market/:id"
+					render={props => <StoryTab {...props} dream={this.props.dream} user={this.props.user} allUserDreams={this.props.allUserDreams} />}
+				/>
+				<Route
+					path="/market/:id/journal"
+					render={props => <JournalTab {...props} />}
+				/>
 	   	</div>
 		)
 	}
