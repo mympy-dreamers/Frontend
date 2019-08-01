@@ -43,6 +43,22 @@
             width: 75%;
             align-items: center;
 
+            .develop {
+
+                p {
+                    opacity: 0.5;
+                }
+
+                img {
+                    opacity: 0.2;
+                    filter: alpha(opacity=50);
+                }
+
+                h6 {
+                    font-size: 1rem;
+                }
+            }
+
 
             .user-tab {
                 display: flex;
