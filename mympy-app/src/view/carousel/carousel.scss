@@ -3,6 +3,10 @@
     padding: 1%;
     @include main-margin;
 
+    @include small-desktop {
+        @include small-desktop-margin;
+    }
+
     .empty {
         width: 40%;
         height: 93vh;
@@ -23,7 +27,7 @@
             h1{
                 font-family: $large-font;
                 font-weight: 900;
-                font-size: 13.6rem;
+                font-size: 7.5rem;
                 color: $new-dream-color;
                 line-height: .70;
                 padding: 20px;
@@ -51,6 +55,9 @@
 
                 @include small-desktop {
                     font-size: 2rem; 
+                    margin-top: 1%;
+                    width: 40%;
+                    line-height: 2.5rem;
                 }
 
             } // end of p

@@ -4,6 +4,10 @@
     display: flex;
     flex-direction: column;
 
+    @include small-desktop {
+        @include small-desktop-margin;
+    }
+
     .rocket {
         align-self: flex-end;
     }

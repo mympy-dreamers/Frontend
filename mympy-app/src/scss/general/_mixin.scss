@@ -43,6 +43,11 @@
     margin: 0 auto;
 }
 
+@mixin small-desktop-margin {
+    width: 1100px;
+    margin: 0 auto;
+}
+
 @mixin bottom-half {
     width: 50%;
     height: 393px;
