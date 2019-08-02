@@ -40,6 +40,7 @@ class DreamInfo extends React.Component {
 
                     <div className='card-section'>
                         <form onSubmit={this.saveInfo} className='dreamer-card'>
+
                             <div className='inputs'>
                                 <div>
                                     <p>Name of your Dream?</p>
@@ -52,13 +53,22 @@ class DreamInfo extends React.Component {
 
                             </div> {/* inputs end */}
 
-                            <button type='submit' className='submit-button'>Next</button>
+                            <div className='circle-Button'>
+                                <div className='page-circles1'>  
+                                    <div><i class="far fa-circle"></i></div>
+                                    <div><i class="fas fa-circle"></i></div>    
+                                    <div><i class="far fa-circle"></i></div>                  
+                                </div>
+                                
+                                <button type='submit' className='submit-button'>Next</button>
+                                
+                            </div> {/* circle-Button end */}
+                            
+                            
 
                         </form> {/* dreamer-card end  */}
                     </div> {/* card-section end */}
                 </div>  {/* dreamer-card-app end  */}
-
-
             </div> /* dream-Home-Page end */
 
         )

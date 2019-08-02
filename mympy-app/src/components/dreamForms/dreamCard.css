@@ -90,3 +90,27 @@
 li {
     font-size: 20px;
 }
+
+.input-info {
+    height: 40px;
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.page-circles1 {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-left: 210px;
+    margin-top: 50px;
+}
+
+.page-circles2 {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-left: 300px;
+}
+
+
+
