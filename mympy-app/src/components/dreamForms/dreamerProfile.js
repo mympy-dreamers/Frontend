@@ -14,6 +14,7 @@ class DreamInfo extends React.Component {
     }
 
     handleChanges = e => {
+        console.log(this.state.dreamCard)
         const { name, value } = e.target
         const updatedCard = {...this.state.dreamCard}
         updatedCard[name] = value
@@ -21,6 +22,7 @@ class DreamInfo extends React.Component {
     }
 
     saveInfo = e => {
+        console.log(this.state.dreamCards)
         e.preventDefault()
         this.setState({
             dreamCards: [...this.state.dreamCards, this.state.dreamCard]

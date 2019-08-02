@@ -4,33 +4,30 @@ import './dreamCard.css';
 
 class DreamCard extends React.Component {
     constructor(props) {
-    super(props);
-    this.state = {
-        dreamCards: [],
-        dreamCard: {
-        firstDream: '',
-        inspiration: '',
-        aboutDream: '',
-        dreamImpact: '',
-        }
-    };
+        super(props);
+        this.state = {
+            dreamCards: [],
+            dreamCard: {}
+        };
+        this.handleChanges = this.handleChanges.bind(this);
+        this.saveInfo = this.saveInfo.bind(this)
+    }
 
-}
+    handleChanges = e => {
+        console.log(this.state.dreamCard)
+        const { name, value } = e.target
+        const updatedCard = {...this.state.dreamCard}
+        updatedCard[name] = value
+        this.setState({ dreamCard: updatedCard })
+    }
 
-handleChanges = e => {
-// const {name , value} = e.target
-console.log('yasjhi')
-// this.setState({ [name]: value})
-this.setState()
-}
-
-saveInfo = e => { 
-    e.preventDefault()
-    console.log(this.state.dreamCard)
-    this.setState({
-      dreamCards: this.state.dreamCards.push(this.state.dreamCard)
-    })
-}
+    saveInfo = e => {
+        console.log(this.state.dreamCards)
+        e.preventDefault()
+        this.setState({
+            dreamCards: [...this.state.dreamCards, this.state.dreamCard]
+        })
+    }
 
 render() {
 return (

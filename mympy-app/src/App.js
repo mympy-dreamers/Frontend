@@ -9,6 +9,7 @@ import DreamPage from './components/dreamPage/DreamPage.js';
 import DreamCard from './components/dreamForms/dreamCard';
 import DreamerProfile from './components/dreamForms/dreamerProfile';
 import Dreamer from './components/dreamForms/dreamers';
+import PostDreamer from './components/dreamForms/dreamers'
 
 class App extends React.Component {
   state = {
@@ -23,6 +24,7 @@ class App extends React.Component {
           <Route exact path="/dreamer" component={DreamCard}/>
           <Route exact path="/dreamerProfile" component={DreamerProfile}/>
           <Route exact path="/profileDreamer" component={Dreamer}/>
+          <Route exact path="/profilePage" component={PostDreamer}/>
           <Route exact path="/" component={Home} />
           <Route path="/login" render={(props) => (
             <Login

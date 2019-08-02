@@ -23,6 +23,9 @@ const NavBar = () => {
                     <li className='item'>
                         <Link to="/profileDreamer">About You</Link>
                     </li>
+                    <li className='item'>
+                        <Link to="/profilePage">Meet Dreamers</Link>
+                    </li>
                     <li className="item">
                         <Link to="/market">Search For Dreams</Link>
                     </li>
