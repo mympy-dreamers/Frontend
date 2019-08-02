@@ -6,17 +6,13 @@ class Dreamer extends React.Component {
     constructor(props) {
     super(props);
     this.state = {
-        // dreamName: '',
-        // amount: '',
-        // firstDream: '',
-        // inspiration: '',
-        // aboutDream: '',
-        // dreamImpact: '',
+        dreamCards: [],
+        dreamCard: {
         location: '',
         aboutYou: '',
         goals: '',
         extraInfo: '',
-
+ }
 
 };
 }
@@ -29,7 +25,10 @@ this.setState({ [name]: value})
 
 saveInfo = e => { 
     e.preventDefault()
-    console.log(this.state)
+    console.log(this.state.dreamCard)
+    this.setState({
+      dreamCards: [...this.state.dreamCards, this.state.dreamCard]
+    })
 }
 
 render() {
@@ -63,7 +62,7 @@ return (
                 </div>
             </div> {/* inputs end */}
 
-                <button /* onClick={this.saveInfo} */ type='submit' className='submit-button'>Next</button>
+                <button /* onClick={this.saveInfo} */ type='submit' className='submit-button'>Submit</button>
 
           </form> {/* dreamer-card end  */}
         </div> {/* card-section end */}

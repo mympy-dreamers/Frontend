@@ -6,30 +6,30 @@ class DreamCard extends React.Component {
     constructor(props) {
     super(props);
     this.state = {
-        // dreamName: '',
-        // amount: '',
+        dreamCards: [],
+        dreamCard: {
         firstDream: '',
         inspiration: '',
         aboutDream: '',
         dreamImpact: '',
-        // location: '',
-        // aboutYou: '',
-        // goals: '',
-        // extraInfo: '',
+        }
+    };
 
-
-};
 }
 
 handleChanges = e => {
-    console.log(this.state)
-const {name , value} = e.target
-this.setState({ [name]: value})
+// const {name , value} = e.target
+console.log('yasjhi')
+// this.setState({ [name]: value})
+this.setState()
 }
 
 saveInfo = e => { 
     e.preventDefault()
-    console.log(this.state)
+    console.log(this.state.dreamCard)
+    this.setState({
+      dreamCards: this.state.dreamCards.push(this.state.dreamCard)
+    })
 }
 
 render() {
@@ -63,7 +63,7 @@ return (
                 </div>
             </div> {/* inputs end */}
 
-                <button /* onClick={this.saveInfo} */ type='submit' className='submit-button'>Next</button>
+                <button  onClick={this.saveInfo}  type='submit' className='submit-button'>Next</button>
 
           </form> {/* dreamer-card end  */}
         </div> {/* card-section end */}
