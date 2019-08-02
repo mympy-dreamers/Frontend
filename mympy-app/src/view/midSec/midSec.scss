@@ -1,11 +1,11 @@
 .mid-main {
-    background-color: black;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items: flex-end;
+    // background-color: black;
+    // height: 100vh;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-content: center;
+    // align-items: flex-end;
 
     .top-mid {
         height: 85%;
@@ -20,6 +20,11 @@
             height: 700px;
             width: 1000px;
             background-color: white;
+
+            @include small-desktop {
+                @include test;
+                height: 600px;
+            }
 
             .meteor {
                 position: relative;
