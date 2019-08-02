@@ -5,7 +5,6 @@ import rocket from '../../img/rocket.svg';
 const Supporter = () => {
     return (
         <div className="support-main">
-            <img className="rocket" src={rocket} alt="rocket" />
             <div className="top">
                 <h1>Be a Supporter</h1>
                 <p>Poster can be one of the effective marketing and advertising materials. 
