@@ -22,7 +22,6 @@ const Us = () => {
                     blog blue bottle wayfarers lomo cold-pressed.
                     </p>
                 </div>
-                <div><img src={rocket} alt="rocketImg" /></div>
             </div>
             <div className="right">
                 <div><img src="https://source.unsplash.com/random/600x400" alt="" /></div>
