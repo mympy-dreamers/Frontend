@@ -1,11 +1,11 @@
 import React from 'react';
 
 import rocket from '../../img/rocket.svg';
+import otherSwirl from '../../img/otherSwirl.svg';
 
 const Dreamer = () => {
     return (
         <div className="dream-main">
-            <img className="rocket" src={rocket} alt="rocket" />
             <div className="top">
                 <h1>Be a Dreamer</h1>
                 <p>Poster can be one of the effective marketing and advertising materials. 
@@ -15,6 +15,9 @@ const Dreamer = () => {
                     If you having trouble about creating a good 4 color poster print, a 4 color printing 
                     company that has 4 color poster printing service may be able to help you made your poster.
                 </p>
+            </div>
+            <div className="bottom">
+                
             </div>
         </div>
     )
