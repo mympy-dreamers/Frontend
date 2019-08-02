@@ -1,5 +1,11 @@
 .home-main {
 
+    .break {
+        @include small-desktop {
+            height: 300px;    
+        }
+    }
+
     .rocket-contain {
         display: flex;
         flex-direction: column;
@@ -10,7 +16,11 @@
             align-self: flex-end;
             position: sticky;
             top: 2%;
-            right: 7.7%;
+            right: 4%;
+
+            @include small-desktop {
+                right: 3%;
+            }
             
             .rocket {
                 // align-self: flex-end;
