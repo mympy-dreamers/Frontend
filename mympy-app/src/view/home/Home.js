@@ -29,11 +29,13 @@ const bottomStyle = {
 const Home = () => {
     return (
         <div className="home-main">
-            <Carousel />
+            <Carousel id="top" />
             <div className="break" style={ breakStyle }>
             </div>
             <div className="rocket-contain">
-                <img className="rocket" src={rocket} alt="" />
+                <a href="#top">
+                    <img className="rocket" src={rocket} alt="" />
+                </a>
                 <Us />
                 <MidSec />
                 <Support />
