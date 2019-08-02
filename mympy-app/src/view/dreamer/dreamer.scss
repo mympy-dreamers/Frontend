@@ -1,0 +1,30 @@
+.dream-main {
+
+    @include main-margin;
+    display: flex;
+    flex-direction: column;
+
+    .rocket {
+        align-self: flex-end;
+    }
+
+    .top {
+
+
+        h1 {
+            padding: 2%;
+            width: 40%;
+            font-family: $large-font;
+            font-size: 11.6rem;
+            font-weight: 900;
+            color: $new-dream-color;
+        }
+
+        p {
+            padding: 2%;
+            font-family: $body-font;
+            color: $new-dream-color;
+            font-size: 2.4rem;
+        }
+    } // end of top
+}
