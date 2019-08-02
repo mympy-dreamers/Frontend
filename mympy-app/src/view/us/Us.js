@@ -15,8 +15,11 @@ const Us = () => {
                     quinoa vice subway tile, 8-bit four dollar toast 
                     neutra blue bottle gastropub. Typewriter chia 
                     heirloom truffaut cliche hella celiac health goth 
-                    synth roof party disrupt hexagon gluten-free XOXO. 
-                    Viral bitters portland cronut chartreuse vinyl palo 
+                    synth roof party disrupt hexagon gluten-free.</p><br/>
+
+
+
+                    <p>Viral bitters portland cronut chartreuse vinyl palo 
                     santo taxidermy hoodie vice retro kickstarter aesthetic 
                     messenger bag dreamcatcher. Flannel gastropub gluten-free, 
                     blog blue bottle wayfarers lomo cold-pressed.
@@ -24,7 +27,7 @@ const Us = () => {
                 </div>
             </div>
             <div className="right">
-                <div><img src="https://source.unsplash.com/random/600x400" alt="" /></div>
+                <div className="imgDiv"><img src="https://source.unsplash.com/random/600x400" alt="" /></div>
                 <div className="inner-right">
                     <h1>How Do We Do It?</h1>
                     <p>Drinking vinegar next level affogato, 
@@ -32,13 +35,7 @@ const Us = () => {
                     normcore raclette godard PBR&B. Hoodie tattooed 
                     copper mug intelligentsia sustainable. Pork belly 
                     quinoa vice subway tile, 8-bit four dollar toast 
-                    neutra blue bottle gastropub. Typewriter chia 
-                    heirloom truffaut cliche hella celiac health goth 
-                    synth roof party disrupt hexagon gluten-free XOXO. 
-                    Viral bitters portland cronut chartreuse vinyl palo 
-                    santo taxidermy hoodie vice retro kickstarter aesthetic 
-                    messenger bag dreamcatcher. Flannel gastropub gluten-free, 
-                    blog blue bottle wayfarers lomo cold-pressed. <br/><br/>
+                    neutra blue bottle gastropub. <br/><br/>
                     </p>
                     
                 </div>
