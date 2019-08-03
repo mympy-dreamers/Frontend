@@ -10,26 +10,28 @@ import cloudPlus from '../../img/userbar-img/cloudPlus.png';
 import journal from '../../img/userbar-img/journal.png';
 import messageLogo from '../../img/userbar-img/messageLogo.png';
 import userLogo from '../../img/userbar-img/userLogo.png';
+import { useAuth0 } from "../../auth/react-auth0-wrapper";
 
 class UserBar extends React.Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
             username: '',
             id: 25,
         }
-        
+
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.fetchAllDreams();
         // this.fetchUserInfo();
     }
 
     isReady = () => {
-        const name = localStorage.getItem('username');
-        if(name === null){
-            return(
+        const { loading, user } = useAuth0();
+        const name = user && !loading ? user.name : localStorage.getItem('username');
+        if (name === null) {
+            return (
                 <Spinner size="sm" color="secondary" />
             )
         } else {
@@ -51,7 +53,7 @@ class UserBar extends React.Component {
     }
 
     render() {
-        return(
+        return (
             <div className="user-main">
                 <div className="wrapper">
                     <div className="user-left">
@@ -78,18 +80,18 @@ class UserBar extends React.Component {
                             </div>
                         </Link>
                         {/* <Link to="#"> */}
-                            <div className="user-tab develop">
-                                <img src={messageLogo} alt='message logo' />
-                                <p>Messages</p>
-                                <h6>(Under Develpoment)</h6>
-                            </div>
+                        <div className="user-tab develop">
+                            <img src={messageLogo} alt='message logo' />
+                            <p>Messages</p>
+                            <h6>(Under Develpoment)</h6>
+                        </div>
                         {/* </Link> */}
                         {/* <Link to="#"> */}
-                            <div className="user-tab develop">
-                                <img src={userLogo} alt='person with a pencil' />
-                                <p>Edit Bio</p>
-                                <h6>(Under Develpoment)</h6>
-                            </div>
+                        <div className="user-tab develop">
+                            <img src={userLogo} alt='person with a pencil' />
+                            <p>Edit Bio</p>
+                            <h6>(Under Develpoment)</h6>
+                        </div>
                         {/* </Link> */}
                     </div>
                 </div>
