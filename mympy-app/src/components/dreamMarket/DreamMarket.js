@@ -16,7 +16,9 @@ class DreamMarket extends React.Component {
 	
     return (
       <div className="dream-market">
+	
 		  <SearchBar />
+		  
         <div className="cards-container">
         	{dreams.map( dream => {
 
