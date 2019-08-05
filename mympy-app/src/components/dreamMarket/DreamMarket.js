@@ -1,7 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+
 import SearchBar from '../search_bar/DreamSearchbar'
+
+import Card from '../Card.js';
+import styled from 'styled-components';
+
+const DreamMarketDiv = styled.div`
+	
+	.cards-container {
+		display: flex;
+		flex-wrap: wrap;
+    padding: 0 1%;
+
+		.card-wrapper {
+			width: 33.33%;
+
+      .card{
+        margin: 1% 2%;
+      }
+		}
+	}
+`
+
 class DreamMarket extends React.Component {
   constructor() {
   	super();
@@ -15,36 +36,20 @@ class DreamMarket extends React.Component {
 	let dreams = this.props.searchDreams ? filteredDreams : this.props.dreams
 	
     return (
-      <div className="dream-market">
-		  
+
+
+
+      <DreamMarketDiv>
         <div className="cards-container">
-        	{dreams.map( dream => {
+        	{this.props.dreams.map( dream => {
 
         		//card
-        		return <div className="card-wrapper">
-	        		<div className="card" key={dream.id}>
-	        			<Link to={`/market/${dream.id}`} style={{ textDecoration: 'none' }}>
-
-	        				<img className="card-img" src={dream.cardImg} />
-
-	        				<div className="card-body">
-	        					<div className="user-name">{dream.user.firstname + " " + dream.user.lastname}</div>
-	        					<div className="title-city-wrapper">
-	        						<div className="dream-title">{dream.title}</div>
-	        						<div className="dream-city">{dream.user.city}</div>
-	        					</div>	
-	        					<div className="description">{dream.shortDescription}</div>
-	        					<div className="goal-remaining">{"$" + (dream.donationGoal - dream.donationsReceived) + " "} to go!</div>
-	        					<div className="button-wrapper">
-	        						<button className="donate-button">Give $25</button>
-	        					</div>
-	        				</div>
-	        			</Link>
-	        		</div>
-	        	</div>
+        		return <div className="card-wrapper" key={dream.id}>
+        			<Card dream={dream} />
+        		</div>
         	})}
         </div>
-      </div>
+      </DreamMarketDiv>
     );
   }
 }

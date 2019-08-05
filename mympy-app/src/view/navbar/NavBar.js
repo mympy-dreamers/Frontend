@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Searchbar from '../../components/search_bar/DreamSearchbar'
 
-import logo from '../../img/logo.svg';
+import logo from '../../img/logo.png';
 
 
 const NavBar = () => {
@@ -18,13 +18,16 @@ const NavBar = () => {
                 <ul className="list">
                     <Searchbar/>    
                     <li className="item">
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li className="item">
                         <Link to="/market">Search For Dreams</Link>
                     </li>
                    
                     <li className="item">
                         <Link to="/register">Sign Up</Link>
                     </li>
-                    <li className="item sign-in">
+                    <li className="item">
                         <Link to="/login">Sign In</Link>
                     </li>
                 </ul>

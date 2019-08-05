@@ -1,0 +1,36 @@
+.news-main {
+    background-color: white;
+    width: 40%;
+    margin: 2%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+
+    .img-wrap {
+        margin: 2%;
+    
+        img {
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        // height: 50%;
+
+        } // end of img
+            
+    } // end of img-wrap
+    
+    .text-wrap {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin: 2%;
+
+        p{
+            font-size: 1.5rem;
+            height: 50%;
+            color: $body-font-color;
+
+        } // end of p
+
+    } // end of text-wrap
+
+} // end of news-main
