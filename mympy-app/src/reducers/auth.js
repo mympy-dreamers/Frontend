@@ -13,13 +13,13 @@ import jwtDecode from 'jwt-decode';
 const INITIAL_STATE = (token => ({
     loggedIn: false,
     currentUser: token ? jwtDecode(token) : null,
+    registerSuccess: false,
     errors: []
 }))( localStorage.getItem('jwt'))
 
 export default function authReducer(state=INITIAL_STATE, action) {
     switch(action.type) {
         case LOGOUT_USER:
-            localStorage.getItem('jwt');
             localStorage.removeItem('jwt');
             return {
                 ...state,
@@ -43,7 +43,6 @@ export default function authReducer(state=INITIAL_STATE, action) {
                 loggedIn: false,
                 errors: action.payload
             }
-
         case REGISTER_START:
             return {
                  ...state,
@@ -51,7 +50,8 @@ export default function authReducer(state=INITIAL_STATE, action) {
         case REGISTER_SUCCESS:
             return {
                 ...state,
-                errors: null
+                errors: null,
+                registerSuccess: true
             }
         case REGISTER_FAILURE:
             return {
