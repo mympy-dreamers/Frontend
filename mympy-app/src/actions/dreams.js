@@ -45,7 +45,7 @@ export const fetchDreamById = (id) => (dispatch) => {
     })
 }
 
-export const fetchDreams = () => (dispatch) => {
+export const fetchAllDreams = () => (dispatch) => {
     dispatch({ type: FETCH_DREAMS_START });
 
     axios
