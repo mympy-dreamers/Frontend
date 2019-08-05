@@ -60,9 +60,11 @@ class Login extends React.Component {
     register = e => {
         e.preventDefault();
         this.props.register(this.state.signup);
-        if(this.props.registerSuccess) {
-            this.props.history.push('/login')
-        }  
+        setTimeout(() => {   
+            if(this.props.registerSuccess) {
+                this.props.history.push('/login')
+            }  
+        }, 1000);
     }
 
     render(){
