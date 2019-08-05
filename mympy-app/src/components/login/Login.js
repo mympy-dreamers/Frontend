@@ -52,13 +52,19 @@ class Login extends React.Component {
                 password: '',
             }
         });
-        setTimeout(() => this.props.history.push('/dashboard'), 650);
+        setTimeout(() => {   
+            if(this.props.currentUser !== null) {
+                this.props.history.push('/dashboard');
+            } 
+        }, 650);
     }
 
     register = e => {
         e.preventDefault();
         this.props.register(this.state.signup);
-        this.props.history.push('/login');
+        if(this.props.registerSuccess) {
+            this.props.history.push('/login')
+        }  
     }
 
     render(){
@@ -96,11 +102,8 @@ class Login extends React.Component {
     }
 }
 
-const mapStateToProps = ({ error , status, token, username }) => ({
-    error,
-    status,
-    token,
-    username,
-})
+const mapStateToProps = state => {
+    return state.auth
+}
 
 export default connect(mapStateToProps, { login, register })(Login);
