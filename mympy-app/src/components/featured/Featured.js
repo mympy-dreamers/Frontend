@@ -72,7 +72,7 @@ class Featured extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        dreams: state.dreams.dreams
+        dreams: state.dreams.featured
     }
 }
 
