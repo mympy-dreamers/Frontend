@@ -75,7 +75,7 @@ class DreamPage extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        dreams: state.dreams.dreams
+        dreams: state.dreams.dummyDreams
     }
 }
 
