@@ -20,7 +20,6 @@ export const register = (user) => dispatch => {
     axios
     .post(`${BASE_URL}/auth/register`, user)
     .then(res => {
-        localStorage.setItem('jwt', res.data.token);
         dispatch({
             type: REGISTER_SUCCESS,
             payload: res.data
