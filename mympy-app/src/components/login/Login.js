@@ -53,9 +53,7 @@ class Login extends React.Component {
             }
         });
         setTimeout(() => {   
-            if(this.props.currentUser !== null) {
-                this.props.history.push('/dashboard');
-            } 
+                this.props.history.push('/dashboard')
         }, 650);
     }
 
