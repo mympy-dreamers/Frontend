@@ -6,8 +6,9 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
-    margin-left:400px;
-    margin-bottom: 40px;
+    margin-right:10px;
+    margin-bottom: 30px;
+    margin-top:40px;
   }
   
   .searchIcon {
@@ -35,6 +36,8 @@
     color:grey;
   
  }
+
+
 
  
 

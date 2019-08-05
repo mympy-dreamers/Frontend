@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Searchbar from '../../components/search_bar/DreamSearchbar'
 
 import logo from '../../img/logo.svg';
 
@@ -15,7 +16,7 @@ const NavBar = () => {
 
             <div className="right">
                 <ul className="list">
-               
+                    <Searchbar/>    
                     <li className="item">
                         <Link to="/market">Search For Dreams</Link>
                     </li>
