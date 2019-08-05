@@ -25,13 +25,13 @@ class UserBar extends React.Component {
     }
 
     isReady = () => {
-        if(name === null){
+        if(this.props.currentUser.username === null){
             return(
                 <Spinner size="sm" color="secondary" />
             )
         } else {
             return (
-                <h3>Hello {this.props.currentUser.subject.toUpperCase()}!</h3>
+                <h3>Hello {this.props.currentUser.username.toUpperCase()}!</h3>
             )
         }
     }
