@@ -3,10 +3,11 @@ import React from 'react';
 import midSwirl from '../../img/midSwirl.png';
 import meteor from '../../img/meteor.png';
 import female from '../../img/female.svg';
+import midSecImg from '../../img/midSecImg.jpg';
 
 const midMain = {
     height: "100vh",
-    backgroundColor: "black",
+    backgroundImage: `url(${midSecImg})`,
     backgroundAttachment: "fixed",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
