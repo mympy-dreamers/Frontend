@@ -13,7 +13,6 @@ import {
 const INITIAL_STATE = {
     fetching: false,
     errors: [],
-    dreams: [],
     deletingDream: false,
     featured: [
 		{
