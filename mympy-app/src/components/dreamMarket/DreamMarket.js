@@ -47,7 +47,7 @@ class DreamMarket extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        dreams: state.dreams.featured
+        dreams: state.dreams.dummyDreams
     }
 }
 
