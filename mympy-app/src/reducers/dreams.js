@@ -14,6 +14,7 @@ const INITIAL_STATE = {
     fetching: false,
     errors: [],
     deletingDream: false,
+    dreams: [],
     featured: [
 		{
 			id: 1,
@@ -64,7 +65,7 @@ const INITIAL_STATE = {
 			}
 		}
 	],
-	dreams: [
+	dummyDreams: [
 		{title: "Dream #1",
 			id: 1,
 			cardImg: "https://images.pexels.com/photos/532559/pexels-photo-532559.jpeg?cs=srgb&dl=electronics-grass-lawn-532559.jpg&fm=jpg", 
