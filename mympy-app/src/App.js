@@ -9,7 +9,7 @@ import DreamPage from './components/dreamPage/DreamPage.js';
 import DreamCard from './components/dreamForms/dreamCard';
 import DreamerProfile from './components/dreamForms/dreamerProfile';
 import Dreamer from './components/dreamForms/dreamers';
-import PostDreamer from './components/dreamForms/dreamers'
+import PostDreamer from './components/dreamForms/postDream'
 
 class App extends React.Component {
   state = {
