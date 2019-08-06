@@ -33,7 +33,7 @@
     .left {
         width: 100%;
         display: flex;
-        margin: .75rem 0 0 30.5rem;
+        margin: 0 0 0 30.5rem;
 
         .inner-left {
             width: 50%;
@@ -41,6 +41,10 @@
             flex-direction: column;
             justify-content: center;
             align-content: center;
+
+            .secondLeft {
+                margin-top: 2rem;
+            }
         } // end of inner-left
 
         img {
@@ -48,7 +52,7 @@
         }
 
         h1 {
-            margin: 1rem 0 2rem 0;
+            margin: 0 0 2rem 0;
         }
 
     } // end of left

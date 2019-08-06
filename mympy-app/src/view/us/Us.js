@@ -17,9 +17,7 @@ const Us = () => {
                     heirloom truffaut cliche hella celiac health goth 
                     synth roof party disrupt hexagon gluten-free.</p><br/>
 
-
-
-                    <p>Viral bitters portland cronut chartreuse vinyl palo 
+                    <p className="secondLeft">Viral bitters portland cronut chartreuse vinyl palo 
                     santo taxidermy hoodie vice retro kickstarter aesthetic 
                     messenger bag dreamcatcher. Flannel gastropub gluten-free, 
                     blog blue bottle wayfarers lomo cold-pressed.
