@@ -70,8 +70,10 @@ class Featured extends React.Component {
     }
 }
 
-const mapStateToProps = ({ dreams }) => ({
-    dreams: dreams
-})
+const mapStateToProps = (state) => {
+    return {
+        dreams: state.dreams.featured
+    }
+}
 
 export default connect(mapStateToProps, { fetchAllDreams })(Featured);

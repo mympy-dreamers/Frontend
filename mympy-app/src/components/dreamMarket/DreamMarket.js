@@ -45,9 +45,9 @@ class DreamMarket extends React.Component {
   }
 }
 
-const mapStateToProps = ({ dreams, searchDreams }) => ({
-	dreams,
-	searchDreams
+const mapStateToProps = ({ dreams }) => ({
+	dreams: dreams.featured,
+	searchDreams: dreams.searchDreams
 });
 
 export default connect(mapStateToProps)(DreamMarket);
