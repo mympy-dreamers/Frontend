@@ -20,11 +20,10 @@ class SearchBar extends React.Component{
     }
     render(){
         return(
-            <form>
-         
-         <div class="searchContainer">
-            <i class="fa fa-search searchIcon"></i>
-            <input class="searchBox" type="text" value={this.state.search} placeholder="search" onChange={this.changeSearch}/>
+        <form  className="search-bar">
+            <div>
+              <input className="searchBox" type="text" value={this.state.search} placeholder="search" onChange={this.changeSearch}/>
+              <i className="fa fa-search searchIcon"></i>
             </div>
         </form> 
         )
