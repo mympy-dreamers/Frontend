@@ -1,92 +1,116 @@
 .us-main {
+    @include main-margin;
     display: flex;
     flex-direction: column;
-    background-color:white;
-    
+    align-items: center;
 
-    h1 {
-        font-family: $large-font;
-        font-weight: 900;
-        font-size: 2.3rem;
-        color: $large-font-color;
-        text-align: left;
+    @include small-desktop {
+        @include small-desktop-margin;
+    }
 
-        @include small-desktop {
-            font-size: 4rem;
-        }
-
-    } // end of h1
-
-    p {
-        font-family: $body-font;
-        color: $desc-body-color;
-        font-size: 1.6rem;
-        line-height: 2.2rem;
-        text-align: left;
-        width: 80%;
-        font-weight: 590;
-        
-
-
-    } // end of p
+    @include mid-break {
+        width: 100%;
+    }
 
     .left {
-        width: 100%;
-        display: flex;
-        margin: 0 0 0 30.5rem;
+        margin-bottom: 5%;
 
         .inner-left {
-            width: 50%;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-content: center;
+            width: 100%;
+            text-align: center;
 
-            .secondLeft {
-                margin-top: 2rem;
+            @include mid-break {
+                align-items: center;
+                width: 100%;
             }
-        } // end of inner-left
 
-        img {
-            margin: 1rem 4rem 0 0;
+            h1 {
+                align-self: flex-start;
+                font-size: 2.4rem;
+                font-family: $large-font;
+                color: $large-font-color;
+                margin-left: 2%;
+
+                @include mid-break {
+                    align-self: center;
+                }
+            }
+
+            p {
+                align-self: center;
+                text-align: left;
+                padding: 1%;
+                font-size: 1.6rem;
+                width: 100%;
+                font-family: $body-font;
+                color: $new-dream-color;
+                
+                @include mid-break {
+                    width: 60%;
+                }
+            }
+        }
+    }
+
+    .right {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-bottom: 5%;
+
+        .imgDiv {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include mid-break {
+                display: none;
+            }
+
+            img {
+                padding: 2%;
+                width: 400px;
+                height: 400px;
+            }
+        }
+
+        .inner-right {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            @include mid-break {
+                width: 100%;
+                align-self: center;
+            }
+
         }
 
         h1 {
-            margin: 0 0 2rem 0;
+            font-size: 2.4rem;
+            font-family: $large-font;
+            color: $large-font-color
+
         }
-
-    } // end of left
-
-    .right {
-        width: 100%;
-        display: flex;
-        margin: 4rem 0 0 30.5rem;
-
-        .inner-right {
-            margin: 0 0 0 2rem;
-            width: 35%;
-
-        } // end of inner-right
-
-        .imgDiv{
-            width: 15%;
-
-            img {
-                width: 100%;
-                margin-right: 1rem;
-            }
-        }
-
-        h1{
-            margin: 0 0 2rem 0;
-        }
-
-        
 
         p {
-            width: 67%;
+            text-align: center;
+            padding: 1%;
+            font-size: 1.6rem;
+            width: 100%;
+            font-family: $body-font;
+            color: $new-dream-color;
+
+            @include mid-break {
+                width: 60%;
+            }
         }
+    }
 
-    } // end of right
-
-} // end of us-main
+}
