@@ -10,7 +10,7 @@ import cloudPlus from '../../img/userbar-img/cloudPlus.png';
 import journal from '../../img/userbar-img/journal.png';
 import messageLogo from '../../img/userbar-img/messageLogo.png';
 import userLogo from '../../img/userbar-img/userLogo.png';
-import { useAuth0 } from "../../auth/react-auth0-wrapper";
+import { useAuth0 } from "../../react-auth0-wrapper";
 
 class UserBar extends React.Component {
     constructor() {
