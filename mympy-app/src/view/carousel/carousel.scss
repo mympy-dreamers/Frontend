@@ -3,26 +3,59 @@
     padding: 1%;
     display: flex;
     justify-content: space-between;
-    
     @include main-margin;
 
     @include small-desktop {
         @include small-desktop-margin;
     }
 
+    @include tablet-landscape {
+        margin-bottom: 2%;
+    }
+
+    @include tablet-portrait {
+        width: 100%;
+        margin: 0;
+    }
+
+    @include small-mobile {
+        height: 100vh;
+    }
+
     .empty {
         width: 40%;
+
+        @include small-desktop {
+            width: 10%;
+        }
+
+        @include tablet-landscape {
+            display: none;
+        }
        
     }
 
     .left{
-        // width: 40%;
+        height: 66vh;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         position: absolute;
         z-index: 1;
         margin: 1em 0 0 18em;
+
+        @include small-desktop {
+            margin: 0;
+        }
+
+        @include tablet-portrait {
+            position: static;
+
+        }
+
+        @include mobile {
+            width: 100%;
+        }
         
 
         .title {
@@ -30,10 +63,19 @@
             margin-top: 3em;
             // height: 51%;
 
+            @include tablet-portrait {
+                width: 100%;
+                align-self: center;
+            }
+
+            @include small-mobile {
+                text-align: center;
+            }
+
             h1{
                 font-family: $large-font;
                 font-weight: 900;
-                font-size: 7rem;
+                font-size: 10rem;
                 color: $new-dream-color;
                 line-height: .5;
                
@@ -41,6 +83,14 @@
 
                 @include small-desktop {
                     font-size: 10rem;
+                }
+
+                @include tablet-landscape {
+                    font-size: 8rem;
+                }
+
+                @include mobile {
+                    font-size: 5rem;
                 }
 
             } // end of h1
@@ -52,19 +102,45 @@
             padding-top: 0;
             padding: 20px;
 
+            @include mobile {
+                padding: 0;
+                width: 100%;
+                align-self: center;
+            }
+
+            @include small-mobile {
+                text-align: center;
+            }
+
             p{
-                width: 22%;
+                width: 25%;
                 font-family: $body-font;
                 color: $body-font-color;
-                font-size: 1rem;
+                font-size: 1.7rem;
                 font-weight: bold;
-                line-height: 1.3rem;
+                line-height: 1.5rem;
 
                 @include small-desktop {
                     font-size: 2rem; 
                     margin-top: 1%;
                     width: 40%;
                     line-height: 2.5rem;
+                }
+
+                @include tablet-landscape {
+                    font-size: 1.7rem;
+                }
+
+                @include tablet-portrait {
+                    width: 100%;
+                    padding: 3%;
+                }
+
+                @include mobile {
+                    width: 100%;
+                    line-height: inherit;
+                    margin: 0;
+                    font-size: 1.3rem;
                 }
 
             } // end of p
@@ -77,8 +153,27 @@
                 margin: 5em 0 0 0;
                 width: 40%;
 
+                @include small-desktop {
+                    margin: 0;
+                }
+
+                @include tablet-portrait {
+                    width: 100%;
+                    padding: 2%;
+                }
+
+                @include small-mobile {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
                 button {
                     height: 2em;
+
+                    @include small-desktop {
+                        height: inherit;
+                    }
+
                 }
 
                
@@ -97,13 +192,32 @@
     } // end of left
 
     .right{
-        width: 100%;
+        width: 60%;
         height: 65vh;
         margin: 3em 0 0 43em;
+
+        @include tablet-landscape {
+           margin: 0;
+           position: relative;
+           right: 10%;
+        }
+
+        @include tablet-portrait {
+            display: none;
+        }
 
         img {
             width: 80%;
             height: 73%;
+
+            @include small-desktop {
+                width: 100%;
+                height: 100%;
+            }
+            @include tablet-landscape {
+                width: 90%;
+                height: 90%;
+            }
 
         } // end of img
 
