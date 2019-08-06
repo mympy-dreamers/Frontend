@@ -1,5 +1,18 @@
 @import './variables'; // not sure if this is needed to bring in variables in this file, or if they are brought in where they are initiated
 
+// -----------------------------------------------------
+
+// inside of file, use mixin media query as such
+
+// .className {
+//      font-size: 2rem;
+// 
+//      @include mobile {
+//          font-size: 1rem;
+//      }
+// }
+
+// -----------------------------------------------------
 
 // Mixins
 
@@ -84,31 +97,33 @@
 }
 
 @mixin tablet-landscape {
-    @media (max-width: 900px) { @content; }
+    @media (max-width: 930px) { @content; }
 }
 
 @mixin tablet-portrait {
     @media (max-width: 600px) { @content; }
 }
 
-@mixin nav-break {
-    @media (max-width: 1100px) { @content; }
-}
-
 @mixin small-desktop {
     @media (max-width: 1450px) { @content; }
 }
 
+// Nav Specific queries  -----------------------------
+
+    // used in navbar.scss line 13 | changes width from called margin (1200px)
+    // to 100% of viewport
+@mixin nav-break {
+    @media (max-width: 1100px) { @content; }
+}
+
+    // used in navbar.scss line 23 | changes navbar flex-direction to column 
+@mixin column-break {
+    @media (max-width: 800px) { @content; }
+}
+
+    // used in navbar.scss line 76 | changes navbar font at breakpoint
+@mixin font-break {
+    @media (max-width: 550px) { @content; }
+}
 
 
-
-
-// inside of file, use mixin media query as such
-
-// .className {
-//      font-size: 2rem;
-// 
-//      @include mobile {
-//          font-size: 1rem;
-//      }
-// }
