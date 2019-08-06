@@ -16,8 +16,6 @@ class UserBar extends React.Component {
     constructor() {
         super();
         this.state = {
-            username: '',
-            id: 25,
         }
 
     }
@@ -29,14 +27,13 @@ class UserBar extends React.Component {
 
     isReady = () => {
         const { loading, user } = useAuth0();
-        const name = user && !loading ? user.name : localStorage.getItem('username');
-        if (name === null) {
+        if (user.name === null) {
             return (
                 <Spinner size="sm" color="secondary" />
             )
         } else {
             return (
-                <h3>Hello {name.toUpperCase()}!</h3>
+                <h3>Hello {this.props.currentUser.username.toUpperCase()}!</h3>
             )
         }
     }
@@ -47,10 +44,10 @@ class UserBar extends React.Component {
 
     // method for decoding a token
 
-    decodeToken = token => {
-        const decodedToken = JSON.parse(atob(token.split('.')[1]));
-        return decodedToken;
-    }
+    // decodeToken = token => {
+    //     const decodedToken = JSON.parse(atob(token.split('.')[1]));
+    //     return decodedToken;
+    // }
 
     render() {
         return (
@@ -83,14 +80,14 @@ class UserBar extends React.Component {
                         <div className="user-tab develop">
                             <img src={messageLogo} alt='message logo' />
                             <p>Messages</p>
-                            <h6>(Under Develpoment)</h6>
+                            <h6>(Under Development)</h6>
                         </div>
                         {/* </Link> */}
                         {/* <Link to="#"> */}
                         <div className="user-tab develop">
                             <img src={userLogo} alt='person with a pencil' />
                             <p>Edit Bio</p>
-                            <h6>(Under Develpoment)</h6>
+                            <h6>(Under Development)</h6>
                         </div>
                         {/* </Link> */}
                     </div>
@@ -100,4 +97,8 @@ class UserBar extends React.Component {
     }
 }
 
-export default connect(null, { fetchAllDreams, fetchUserById })(UserBar);
+const mapStateToProps = state => {
+    return state.auth
+}
+
+export default connect(mapStateToProps, { fetchAllDreams, fetchUserById })(UserBar);
