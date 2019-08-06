@@ -1,6 +1,13 @@
 import React from "react";
 import { VictoryPie, VictoryLabel, VictoryAnimation } from "victory";
 
+import styled from 'styled-components';
+
+const PCdiv = styled.div`
+  background-color: white;
+  border-radius: 50%;
+`
+
 export default class ProgressCircle extends React.Component {
   constructor(props) {
     super(props);
@@ -34,7 +41,7 @@ export default class ProgressCircle extends React.Component {
 
   render() {
     return (
-      <div>
+      <PCdiv>
         <svg viewBox="0 0 400 400" width="100%" height="100%">
           <VictoryPie
             standalone={false}
@@ -42,14 +49,14 @@ export default class ProgressCircle extends React.Component {
             width={400} height={400}
             padding={0}
             data={this.state.data}
-            innerRadius={172}
+            innerRadius={164}
             cornerRadius={25}
             labels={() => null}
             style={{
               data: { fill: (d) => {
                 /*Sets color of path based on percentage it's current at*/
-                const color = d.y > 30 ? "#92CC62" : "red";
-                return d.x === 1 ? color : "lightgrey";
+                const color = d.y > 30 ? "#FFD164" : "red";
+                return d.x === 1 ? color : "white";
               }}
             }}
           />
@@ -61,13 +68,13 @@ export default class ProgressCircle extends React.Component {
                   textAnchor="middle" verticalAnchor="middle"
                   x={200} y={200}
                   text={`${Math.round(newProps.percent)}%`}
-                  style={{ fontSize: 82 }}
+                  style={{ fontSize: 100 }}
                 />
               );
             }}
           </VictoryAnimation>
         </svg>
-      </div>
+      </PCdiv>
     );
   }
 }
