@@ -8,17 +8,26 @@
         @include small-desktop-margin;
     }
 
-    .rocket {
-        align-self: flex-end;
+    @include btn-break {
+        width: 100%;
     }
 
     .top {
         display: flex;
         flex-direction: column;
 
+        @include tablet-landscape {
+            width: 100%;
+            padding: 5%;
+        }
+
         div {
             width: 900px;
             align-self: center;
+
+            @include tablet-landscape {
+                width: 100%;
+            }
 
             h1 {
                 align-self: flex-start;
@@ -28,6 +37,11 @@
                 font-size: 6rem;
                 font-weight: 900;
                 color: $new-dream-color;
+
+                @include mobile {
+                    width: 100%;
+                    font-size: 3rem;
+                }
             }
         }
 
@@ -40,6 +54,14 @@
             color: $new-dream-color;
             font-size: 1.6rem;
             line-height: 3.3rem;
+
+            @include tablet-landscape {
+                width: 100%;
+            }
+
+            @include mobile {
+                font-size: 1.6rem;
+            }
         }
     } // end of top
 
@@ -54,6 +76,10 @@
             z-index: 2;
             width: 500px;
             height: 60%;
+
+            @include mobile {
+                padding: 3%;
+            }
 
         }
     }
