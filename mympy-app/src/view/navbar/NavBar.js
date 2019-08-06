@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { useAuth0 } from "../../auth/react-auth0-wrapper.js";
+import { useAuth0 } from "../../react-auth0-wrapper.js";
 import logo from '../../img/logo.png';
 
 
 const NavBar = () => {
-    const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+    const { isAuthenticated, loginWithRedirect, logout, loading } = useAuth0();
+    console.log("isAuth", isAuthenticated)
     return (
         <div className="main">
             <div className="left">
@@ -29,6 +30,7 @@ const NavBar = () => {
                         <Link to="/login">Sign In</Link>
                     </li> */}
                     <li className="item">
+                        {loading && <p>loading</p>}
                         {!isAuthenticated && (
                             <button
                                 onClick={(e) => {
