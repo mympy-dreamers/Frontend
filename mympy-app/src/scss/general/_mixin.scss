@@ -29,13 +29,35 @@
     color: $nav-font-color;
     padding: 15px;
     border-radius: 25px;
-    #{$margin}: 5%;
+    #{$margin}: 3%;
     margin-top: 4%;
     width: 13em;
 
     @include small-desktop {
         font-size: 1.3rem;
         margin-top: 2%;
+    }
+
+    @include btn-break {
+        #{$margin}: 5%;
+    }
+
+    @include btn-font {
+        font-size: 1rem;
+    }
+
+    @include tablet-portrait {
+        font-size: 1rem;
+    }
+
+    @include mobile {
+        font-size: 1rem;
+        margin-top: 1%;
+    }
+
+    @include small-mobile {
+        #{$margin}: 0;
+        margin-top: 10%;
     }
     
 }
@@ -92,8 +114,13 @@
 
 // Media Queries
 
-@mixin mobile {
+    // iPhone 5/SE screen is 320px which was unresponsive to previous queries
+@mixin small-mobile {
     @media (max-width: 400px) { @content; }
+}
+
+@mixin mobile {
+    @media (max-width: 500px) { @content; }
 }
 
 @mixin tablet-landscape {
@@ -105,7 +132,7 @@
 }
 
 @mixin small-desktop {
-    @media (max-width: 1450px) { @content; }
+    @media (max-width: 1550px) { @content; }
 }
 
 // Nav Specific queries  -----------------------------
@@ -126,4 +153,13 @@
     @media (max-width: 550px) { @content; }
 }
 
+// Carousel Specific queries -----------------------------
 
+// need for bottom padding ~1100px
+@mixin btn-break {
+    @media (max-width: 1100px) { @content; }
+}
+
+@mixin btn-font {
+    @media (max-width: 750px) { @content; }
+}
