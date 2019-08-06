@@ -75,8 +75,10 @@ class DreamPage extends React.Component {
   }
 }
 
-const mapStateToProps = ({ dreams }) => ({
-	dreams
-});
+const mapStateToProps = (state) => {
+    return {
+        dreams: state.dreams.dummyDreams
+    }
+}
 
 export default connect(mapStateToProps)(DreamPage);
