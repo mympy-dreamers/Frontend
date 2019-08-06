@@ -7,15 +7,11 @@ import thunk from 'redux-thunk';
 import Logger from 'redux-logger'; // REMOVE FOR PRODUCTION -----------------------------------------------------------^^^^^^^^^^^^^^^^^^^^^\\\\\\\\\\\\\\\\\\\\
 import { BrowserRouter as Router, withRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import dotenv from 'dotenv'
-
+import config from "./auth/auth_config.json"
 import './index.scss';
 import rootReducer from './reducers';
 import App from './App';
-
-import { Auth0Provider } from "./auth/react-auth0-wrapper";
-dotenv.config()
-
+import { Auth0Provider } from "./react-auth0-wrapper";
 // composeEnhancer allows for redux store dev view in chrome
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk, Logger))
@@ -31,12 +27,12 @@ const onRedirectCallback = appState => {
             : window.location.pathname
     );
 };
-console.log(process.env.DOMAIN, process.env.CLIENT_ID)
 const AppwithRouter = withRouter(App);
+
 ReactDOM.render(
     <Auth0Provider
-        domain={process.env.DOMAIN}
-        client_id={process.env.CLIENT_ID}
+        domain={config.domain}
+        client_id={config.clientId}
         redirect_uri={window.location.origin}
         onRedirectCallback={onRedirectCallback}
     >
