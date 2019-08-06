@@ -163,3 +163,10 @@
 @mixin btn-font {
     @media (max-width: 750px) { @content; }
 }
+
+
+// Middle Section `midSec` specific queries
+
+@mixin mid-break {
+    @media (max-width: 950px) { @content; }
+}
