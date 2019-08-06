@@ -13,10 +13,11 @@ const NavBar = (props) => {
                     <img src={logo} alt="Company Logo" />
                 </Link>
             </div>
-
-            <div className="right">
+            <div>
+                { props.show && <Searchbar/> }    
+                </div> 
+            <div className="right"> 
                 <ul className="list">
-                    { props.show && <Searchbar/> }   
                     <li className="item">
                         <Link to="/">Home</Link>
                     </li>

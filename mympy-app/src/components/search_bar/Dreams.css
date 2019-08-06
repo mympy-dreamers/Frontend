@@ -1,46 +1,10 @@
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
 
-/* .searchContainer {
-    display: inline-flex;
-    flex: 1 1 300px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-    margin-right:10px;
-    margin-bottom: 30px;
-    margin-top:40px;
-  }
-  
-  .searchIcon {
-    padding: 0.5rem;
-   
-    
-  }
-  
-  .searchBox {
-    border: 0;
-    padding: 0.5rem 0.5rem 0.5rem 0;
-    flex: 5;
-    font-size: 15px;
-  vertical-align: middle;
-  white-space: nowrap;
-  position: relative;
-  outline: none;
-  border-color:black
-    
-   
-  }
-
- .fa {
-    font-size: 1.5em !important;
-    color:grey;
-  
- } */
 
  .search-bar{
   position: relative;
-  top: 30%;
-  right:60px;
+  top: 50%;
+  margin-left:158px;
   transform: translate(-50%,-50%);
   transition: all 1s;
   width: 50px;
