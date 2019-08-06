@@ -74,6 +74,15 @@
     #{$margin}: 5%;
     margin-top: 3%;
     width: 20rem;
+
+    @include sevenPxBreak {
+        font-size: 1.7rem;
+        width: 17rem;
+    }
+
+    @include mobile {
+        #{$margin}: 0;
+    }
 }
 
 // gives each page the correct margin to be centered
@@ -165,8 +174,18 @@
 }
 
 
-// Middle Section `midSec` specific queries
+// Us somponent specific queries
 
 @mixin mid-break {
     @media (max-width: 950px) { @content; }
+}
+
+// Middle Section `midSec` specific queries
+
+@mixin div-width {
+    @media (max-width: 1010px) { @content; }
+}
+
+@mixin sevenPxBreak {
+    @media (max-width: 710px) { @content; }
 }
