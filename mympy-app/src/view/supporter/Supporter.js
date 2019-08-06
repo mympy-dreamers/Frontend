@@ -1,12 +1,14 @@
 import React from 'react';
 
-import rocket from '../../img/rocket.svg';
+import cx from '../../img/janetwide.png';
 
 const Supporter = () => {
     return (
         <div className="support-main">
             <div className="top">
-                <h1>Be a Supporter</h1>
+                <div>
+                    <h1>Be a Supporter</h1>
+                </div>
                 <p>Poster can be one of the effective marketing and advertising materials. 
                     It is also a great tool to use when you want to present your services to a 
                     new league or as a point of sale display on picture day. The poster must show 
@@ -18,7 +20,7 @@ const Supporter = () => {
             <div className="yellow-div">
                 <div className="white-div">
                     <div className="img">
-                        {/* div contains img */}
+                        <img src={cx} alt="Janet Wide" />
                     </div>
                     <div className="info">
                         <h1>Full Name</h1>
