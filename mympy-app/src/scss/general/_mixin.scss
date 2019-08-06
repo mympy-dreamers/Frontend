@@ -125,7 +125,7 @@
 
     // iPhone 5/SE screen is 320px which was unresponsive to previous queries
 @mixin small-mobile {
-    @media (max-width: 400px) { @content; }
+    @media (max-width: 500px) { @content; }
 }
 
 @mixin mobile {
