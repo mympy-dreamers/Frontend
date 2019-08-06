@@ -13,8 +13,9 @@ const CardDiv = styled.div`
 	}
 
 	.card-body {
-		padding: 8%;
+		padding: 08%;
 		color: black;
+		background-color: #012345;
 
 		.user-name {
 			font-size: 2.2vw;
@@ -86,7 +87,7 @@ const Card = ({ dream }) => {
 					<div className="title-city-wrapper">
 						<div className="dream-title">{dream.title}</div>
 						<div className="dream-city">{dream.user.city}</div>
-					</div>	
+					</div>
 					<div className="description">{dream.shortDescription}</div>
 					<ProgressBar now={60} />
 					<div className="goal-remaining">{"$" + (dream.donationGoal - dream.donationsReceived) + " "} to go!</div>
@@ -96,7 +97,7 @@ const Card = ({ dream }) => {
 				</div>
 			</Link>
 		</CardDiv>
-  );
+	);
 }
 
 export default Card;
