@@ -9,9 +9,6 @@ import DreamPage from './components/dreamPage/DreamPage.js';
 import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/login/PrivateRoute';
 
-import dotenv from 'dotenv'
-dotenv.config();
-
 class App extends React.Component {
   state = {
 
