@@ -2,22 +2,26 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import TopSection	from './TopSection.js';
-import RecentDonations from './RecentDonations.js';
-import Tabs from './Tabs.js';
 import Carousel	from './Carousel.js';
+import Sidebar from './Sidebar.js';
+import DreamPageBody from './DreamPageBody.js';
+
+import * as vars from '../../scss/general/_variables.scss';
 
 const DreamPageDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-	margin: 0 auto;
-	width: 1200px;
-`;
+  background: linear-gradient(0deg, #7647b6 0%, #194980 100%);
+  font-family: Open Sans, sans-serif;
+  .dream-page {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1124px;
+    padding-bottom: 100px;
 
-const MidSection = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-bottom: 8rem;
+    .sidebar-body {
+      display:flex;
+    }
+  }
 `;
 
 class DreamPage extends React.Component {
@@ -49,7 +53,6 @@ class DreamPage extends React.Component {
   	const thisDream = this.props.dreams.find( dream => 
   		(parseInt(dream.id) === parseInt(this.props.match.params.id)) 
   	);
-		console.log(thisDream);
   	this.setState({
   		dream: thisDream,
   		user: thisDream.user,
@@ -60,14 +63,13 @@ class DreamPage extends React.Component {
   render() {
     return (
       <DreamPageDiv>
-      	<TopSection dream={this.state.dream} />
-
-				<MidSection>
-					<RecentDonations donations={this.state.dream.recentDonations} user={this.state.user} />
-					<Tabs dream={this.state.dream} user={this.state.user} allUserDreams={this.state.allUserDreams}/>
-				</MidSection>
-
-				<Carousel />
+        <div className="dream-page">
+  				<Carousel />
+          <div className="sidebar-body">
+            <Sidebar dream={this.state.dream} user={this.state.user}/>
+            <DreamPageBody dream={this.state.dream}/>
+          </div>
+        </div>
       </DreamPageDiv>
     );
   }
