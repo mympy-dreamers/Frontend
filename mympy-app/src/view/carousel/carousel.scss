@@ -3,6 +3,7 @@
     padding: 1%;
     display: flex;
     justify-content: space-between;
+    height: 94vh;
     @include main-margin;
 
     @include small-desktop {
@@ -18,6 +19,10 @@
         margin: 0;
     }
 
+    @include mobile {
+        height: 70vh;
+    }
+
     @include small-mobile {
         height: 100vh;
     }
@@ -30,6 +35,10 @@
         }
 
         @include tablet-landscape {
+            width: 10%;
+        }
+
+        @include tablet-portrait {
             display: none;
         }
        
@@ -46,6 +55,10 @@
 
         @include small-desktop {
             margin: 0;
+        }
+
+        @include btn-break {
+            align-items: center;
         }
 
         @include tablet-portrait {
@@ -68,9 +81,14 @@
                 align-self: center;
             }
 
-            @include small-mobile {
+            @include btn-break {
                 text-align: center;
+                margin-top: 10%;
             }
+
+            // @include small-mobile {
+            //     text-align: center;
+            // }
 
             h1{
                 font-family: $large-font;
@@ -102,29 +120,42 @@
             padding-top: 0;
             padding: 20px;
 
+            @include btn-break {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                margin-top: 10%;
+            }
+
+            @include tablet-portrait {
+                width: 100%;
+
+            }
+
             @include mobile {
                 padding: 0;
                 width: 100%;
-                align-self: center;
-            }
-
-            @include small-mobile {
-                text-align: center;
             }
 
             p{
                 width: 25%;
                 font-family: $body-font;
                 color: $body-font-color;
-                font-size: 1.7rem;
+                font-size: 2.4rem;
                 font-weight: bold;
-                line-height: 1.5rem;
+                line-height: 2.3rem;
 
                 @include small-desktop {
                     font-size: 2rem; 
                     margin-top: 1%;
                     width: 40%;
                     line-height: 2.5rem;
+                }
+
+                @include btn-break {
+                    margin-top: 0;
+                    width: 60%;
                 }
 
                 @include tablet-landscape {
@@ -140,7 +171,7 @@
                     width: 100%;
                     line-height: inherit;
                     margin: 0;
-                    font-size: 1.3rem;
+                    font-size: 1.6rem;
                 }
 
             } // end of p
@@ -151,10 +182,15 @@
                 justify-content: center;
                 align-content: center;
                 margin: 5em 0 0 0;
-                width: 40%;
+                width: 35%;
 
                 @include small-desktop {
                     margin: 0;
+                }
+
+                @include btn-break {
+                    margin-top: 5%;
+                    width: 100%;
                 }
 
                 @include tablet-portrait {
@@ -193,8 +229,8 @@
 
     .right{
         width: 60%;
-        height: 65vh;
-        margin: 3em 0 0 43em;
+        height: 100%;
+        // margin: 3em 0 0 43em;
 
         @include tablet-landscape {
            margin: 0;
@@ -202,13 +238,13 @@
            right: 10%;
         }
 
-        @include tablet-portrait {
+        @include btn-break {
             display: none;
         }
 
         img {
-            width: 80%;
-            height: 73%;
+            width: 100%;
+            height: 100%;
 
             @include small-desktop {
                 width: 100%;
