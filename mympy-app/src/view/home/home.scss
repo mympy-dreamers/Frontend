@@ -1,8 +1,10 @@
 .home-main {
 
     .break {
+        height: 300px;
+
         @include small-desktop {
-            height: 300px;    
+            height: 100px;    
         }
     }
 
