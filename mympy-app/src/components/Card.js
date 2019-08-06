@@ -6,6 +6,7 @@ import styled from 'styled-components';
 const CardDiv = styled.div`
 	border: 1px solid grey;
 	border-radius: 22px;
+	
 
 	.card-img {
 		max-width: 100%;
@@ -20,6 +21,7 @@ const CardDiv = styled.div`
 		.user-name {
 			font-size: 2.2vw;
 			margin-bottom: 0.4em;
+			color: white;
 		}
 
 		.title-city-wrapper {
@@ -27,6 +29,7 @@ const CardDiv = styled.div`
 			justify-content: space-between;
 			margin-bottom: 0.2em;
 			font-size: 1.8vw;
+			color: white;
 			.dream-title {
 				margin-bottom: 26px
 			}
@@ -38,6 +41,7 @@ const CardDiv = styled.div`
 		.description {
 			font-size: 1.5vw;
 			margin-bottom: 1.8em;
+			color: white;
 		}
 
 		.progress {
@@ -46,7 +50,7 @@ const CardDiv = styled.div`
 			margin: 0 auto;
 			margin-bottom: 20px;
 			.progress-bar {
-			  background-color: #92CC62;
+			  background-color: #FFD164;
 			}
 		}
 
@@ -54,6 +58,7 @@ const CardDiv = styled.div`
 			font-size: 1.2vw;
 			text-align: center;
 			margin-bottom: 2.2em;
+			color: white;
 		}
 
 		.button-wrapper {

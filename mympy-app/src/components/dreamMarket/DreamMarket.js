@@ -9,9 +9,13 @@ const DreamMarketDiv = styled.div`
 		display: flex;
 		flex-wrap: wrap;
     padding: 0 1%;
+    padding: 0 20em;
+    background-color:#194A80;
 
 		.card-wrapper {
-			width: 33.33%;
+      width: 25%;
+      margin: 0 3em;
+      
 
       .card{
         margin: 1% 2%;
@@ -22,23 +26,23 @@ const DreamMarketDiv = styled.div`
 
 class DreamMarket extends React.Component {
   constructor() {
-  	super();
+    super();
 
-  	this.state = {
+    this.state = {
 
-  	}
+    }
   }
 
   render() {
     return (
       <DreamMarketDiv>
         <div className="cards-container">
-        	{this.props.dreams.map( dream => {
-        		//card
-        		return <div className="card-wrapper" key={dream.id}>
-        			<Card dream={dream} />
-        		</div>
-        	})}
+          {this.props.dreams.map(dream => {
+            //card
+            return <div className="card-wrapper" key={dream.id}>
+              <Card dream={dream} />
+            </div>
+          })}
         </div>
       </DreamMarketDiv>
     );
@@ -46,9 +50,9 @@ class DreamMarket extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return {
-        dreams: state.dreams.dummyDreams
-    }
+  return {
+    dreams: state.dreams.dummyDreams
+  }
 }
 
 export default connect(mapStateToProps)(DreamMarket);
