@@ -5,7 +5,7 @@ import Searchbar from '../../components/search_bar/DreamSearchbar'
 import logo from '../../img/logo.png';
 
 
-const NavBar = () => {
+const NavBar = (props) => {
     return (
         <div className="main">
             <div className="left">
@@ -16,7 +16,7 @@ const NavBar = () => {
 
             <div className="right">
                 <ul className="list">
-                    <Searchbar/>    
+                    { props.show && <Searchbar/> }   
                     <li className="item">
                         <Link to="/">Home</Link>
                     </li>
