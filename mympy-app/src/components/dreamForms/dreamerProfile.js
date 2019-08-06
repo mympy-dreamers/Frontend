@@ -1,5 +1,7 @@
 import React from 'react';
 import './dreamCard.css';
+import { Link } from "react-router-dom";
+
 
 
 class DreamInfo extends React.Component {
@@ -60,11 +62,14 @@ class DreamInfo extends React.Component {
                                     <div><i class="far fa-circle"></i></div>                  
                                 </div>
 
+
                                 <div>
-                                    <button type='submit' className='submit-button'>Back</button>
-                                    <button type='submit' className='submit-button'>Next</button>
+                                    <button className='submit-button'>Back</button>
+                                    <Link to={'/dreamer'}>
+                                    <button className='submit-button'>Next</button>
+                                    </Link>  
                                 </div>
-                                
+                              
                                 
                                 
                             </div> {/* circle-Button end */}
