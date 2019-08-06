@@ -12,47 +12,63 @@
     }
 
     .top {
+        display: flex;
+        flex-direction: column;
 
+        div {
+            width: 900px;
+            align-self: center;
 
-        h1 {
-            padding: 2%;
-            width: 40%;
-            font-family: $large-font;
-            font-size: 11.6rem;
-            font-weight: 900;
-            color: $new-dream-color;
+            h1 {
+                align-self: flex-start;
+                padding: 2%;
+                width: 40%;
+                font-family: $large-font;
+                font-size: 6rem;
+                font-weight: 900;
+                color: $new-dream-color;
+            }
         }
 
         p {
+            align-self: center;
+            // text-align: center;
+            width: 900px;
             padding: 2%;
             font-family: $body-font;
             color: $new-dream-color;
-            font-size: 2.4rem;
+            font-size: 1.6rem;
             line-height: 3.3rem;
         }
     } // end of top
 
     .yellow-div {
-        width: 100%;
+        align-self: center;
+        width: 65%;
         background-color: $support-btn-color;
         display: flex;
         justify-content: center;
         align-content: center;
         padding: 2%;
-        margin: 1%;
+        margin: 3%;
 
         @include small-desktop {
             margin: 2%;
+            margin-bottom: 5%;
+            width: 85%;
         }
 
         .white-div {
-            width: 90%;
+            width: 97%;
             background-color: white;
             display: flex;
             @include box-shadow;
 
             .img {
                 width: 49.5%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
 
             .info {
@@ -60,7 +76,7 @@
 
                 h1 {
                     font-family: $body-font;
-                    font-size: 4rem;
+                    font-size: 2.4rem;
                     font-weight: 700;
                     align-self: flex-end;
                     color: $new-dream-color;
@@ -69,7 +85,7 @@
 
                 p {
                     font-family: $body-font;
-                    font-size: 2.4rem;
+                    font-size: 1.7rem;
                     line-height: 3.3rem;
                     color: $new-dream-color; 
                     padding: 2%;
