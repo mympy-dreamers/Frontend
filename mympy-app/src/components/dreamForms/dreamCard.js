@@ -67,7 +67,10 @@ class DreamCard extends React.Component {
                                     <div><i class="far fa-circle"></i></div>                  
                                 </div>
                                 
-                                <button type='submit' className='submit-button'>Next</button>
+                                <div>
+                                    <button type='submit' className='submit-button'>Back</button>
+                                    <button type='submit' className='submit-button'>Next</button>
+                                </div>
                                 
                             </div> {/* circle-Button end */}
 

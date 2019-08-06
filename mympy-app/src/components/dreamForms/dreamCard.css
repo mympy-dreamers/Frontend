@@ -92,16 +92,17 @@ li {
 }
 
 .input-info {
-    height: 40px;
-    width: 150px;
+    height: 60px;
+    width: 180px;
     margin-bottom: 20px;
+    font-size: 25px;
 }
 
 .page-circles1 {
     display: flex;
     justify-content: space-between;
     width: 200px;
-    margin-left: 210px;
+    margin-left: 524px;
     margin-top: 50px;
 }
 
@@ -109,7 +110,7 @@ li {
     display: flex;
     justify-content: space-between;
     width: 200px;
-    margin-left: 300px;
+    margin-left: 530px;
 }
 
 
