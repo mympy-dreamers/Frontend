@@ -189,3 +189,15 @@
 @mixin sevenPxBreak {
     @media (max-width: 710px) { @content; }
 }
+
+@mixin largeBreak {
+    @media (max-width: 1850px) { @content; }
+}
+
+@mixin mediumBreak {
+    @media (max-width: 1750px) { @content; }
+}
+
+@mixin lastBreak {
+    @media (max-width: 1650px) { @content; }
+}
