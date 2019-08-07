@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 import Card from '../Card.js';
 import styled from 'styled-components';
 
@@ -9,11 +10,11 @@ const DreamMarketDiv = styled.div`
 		display: flex;
 		flex-wrap: wrap;
     padding: 0 1%;
-    padding: 0 20em;
+    padding: 10em 20em 10em 40em;
     background-color:#194A80;
 
 		.card-wrapper {
-      width: 25%;
+      width: 27.5%;
       margin: 0 3em;
       
 
@@ -28,10 +29,9 @@ class DreamMarket extends React.Component {
   constructor() {
     super();
 
-    this.state = {
-
-    }
   }
+
+
 
   render() {
     return (
