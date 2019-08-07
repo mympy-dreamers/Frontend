@@ -5,7 +5,8 @@ import {
     LOGOUT_USER,
     REGISTER_START,
     REGISTER_SUCCESS,
-    REGISTER_FAILURE
+    REGISTER_FAILURE,
+    SET_AUTH
 } from '../actions';
 
 import jwtDecode from 'jwt-decode';
@@ -15,11 +16,12 @@ const INITIAL_STATE = (token => ({
     loggedIn: false,
     currentUser: token ? jwtDecode(token) : null,
     registerSuccess: false,
+    auth: {},
     errors: []
-}))( localStorage.getItem('jwt'))
+}))(localStorage.getItem('jwt'))
 
-export default function authReducer(state=INITIAL_STATE, action) {
-    switch(action.type) {
+export default function authReducer(state = INITIAL_STATE, action) {
+    switch (action.type) {
         case LOGOUT_USER:
             localStorage.removeItem('jwt');
             return {
@@ -46,7 +48,7 @@ export default function authReducer(state=INITIAL_STATE, action) {
             }
         case REGISTER_START:
             return {
-                 ...state,
+                ...state,
             }
         case REGISTER_SUCCESS:
             return {
@@ -59,7 +61,12 @@ export default function authReducer(state=INITIAL_STATE, action) {
                 ...state,
                 errors: action.payload
             }
+        case SET_AUTH:
+            return {
+                ...state,
+                auth: action.payload
+            }
         default:
             return state;
-  }
+    }
 }
