@@ -1,0 +1,129 @@
+.dream-Home-Page {
+    background-color: #0C5B9F;
+    text-align: center;
+}
+
+.dreamer-card-app {
+    text-align: center;
+    background-color: rgba(255,255,255,0); /* #FFD166; */
+    margin-top: 60px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 125px;
+}
+
+.input-style {   /* input box styling */
+    width: 550px;
+    height: 150px;
+    text-align: center;
+    font-size: 25px;
+    padding-left: 15px;
+    border: 1px solid black;
+    margin-bottom: 100px;
+    /* border-bottom: 1px solid black; */
+}  
+
+.form-title {
+    font-size: 30px;
+    text-align: center;
+    padding-top: 10px;
+    font-weight: bolder;
+    color: white;
+    text-shadow: 1px 1px grey;
+    font-weight: bolder;
+    margin-bottom: 50px;
+}
+
+.form-title h1 {
+    font-size: 80px;
+}
+
+.submit-button {
+    height: 35px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin: 50px 260px;
+    background-color: yellow;
+    font-weight: bold;
+    color: black;
+}
+
+.dream-Home-Img {
+    height: 600px;
+    width: 600px;
+}
+
+.dream-Home-Page {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 30px;
+}
+
+.card-display {
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+}
+
+.inputFont {
+    font-size: 20px;
+}
+
+.inputs p {
+    color: white;
+}
+
+.company-img {
+    width: 390px;
+    height: 450px;
+    margin-left: 20px;
+}
+
+.card-section {
+    display: flex;
+}
+
+.card-section p {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+li {
+    font-size: 20px;
+}
+
+.input-info {
+    height: 40px;
+    width: 370px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    border-radius: 10px;
+}
+
+.page-circles1 {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-left: 524px;
+    margin-top: 50px;
+}
+
+.page-circles2 {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-left: 530px;
+}
+
+#cancel {
+    background-color: #0C5B9F;
+    color: white;
+    border: 2px solid yellow;
+}
+
+
+

@@ -9,6 +9,10 @@ import DreamPage from './components/dreamPage/DreamPage.js';
 import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/login/PrivateRoute';
 
+import DreamCard from './components/dreamForms/dreamCard';
+import DreamerProfile from './components/dreamForms/dreamerProfile';
+import Dreamer from './components/dreamForms/dreamers';
+
 class App extends React.Component {
   state = {
     
@@ -18,6 +22,11 @@ class App extends React.Component {
     return (
         <div className="App">
           <NavBar />
+
+          <Route exact path="/dreamer" component={DreamerProfile}/>
+          <Route exact path="/dreamerProfile" component={DreamCard}/>
+          <Route exact path="/profileDreamer" component={Dreamer}/>
+
           <Route exact path="/" component={Home} />
           <Route path="/login" render={(props) => (
             <Login
