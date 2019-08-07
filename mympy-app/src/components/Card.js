@@ -20,29 +20,35 @@ class Card extends React.Component {
 	render() {
 		console.log(this.props)
 		return (
-			<div className="marketDiv">
-				<h1>Make Dreams into VRearlity</h1>
-				{this.props.dreams && this.props.dreams.map(dream => (
-					<div className="card">
-						<Link to={`/market/${dream.id}`} style={{ textDecoration: 'none' }}>
+			<div className="marketWrapper">
+				<div className="headingDiv">
+					<h1>Make Dreams into VRearlity</h1>
+				</div>
+				<div className="marketDiv">
 
-							<img className="card-img" src={dream.img_url} alt="" />
+					{this.props.dreams && this.props.dreams.map(dream => (
+						<div className="card">
+							<Link to={`/market/${dream.id}`} style={{ textDecoration: 'none' }}>
+								<div className="imgDiv" style={{ backgroundImage: `url(${dream.img_url})` }}>
 
-							<div className="card-body">
-								<div className="user-name">{dream.username}</div>
-								<div className="title-city-wrapper">
-									<div className="dream-title">{dream.dream_name}</div>
 								</div>
-								<div className="description">{dream.dream_short_description}</div>
-								<ProgressBar now={60} />
-								<div className="goal-remaining">{"$" + (dream.donation_goal - dream.donations_received) + " "} to go!</div>
-								<div className="button-wrapper">
-									<button className="donate-button">Learn More</button>
+
+								<div className="card-body">
+									<div className="user-name">{dream.username}</div>
+									<div className="title-city-wrapper">
+										<div className="dream-title">{dream.dream_name}</div>
+									</div>
+									<div className="description">{dream.dream_short_description}</div>
+									<ProgressBar now={60} />
+									<div className="goal-remaining">{"$" + (dream.donation_goal - dream.donations_received) + " "} to go!</div>
+									<div className="button-wrapper">
+										<button className="donate-button">Learn More</button>
+									</div>
 								</div>
-							</div>
-						</Link>
-					</div>
-				))}
+							</Link>
+						</div>
+					))}
+				</div>
 			</div>
 		);
 	}

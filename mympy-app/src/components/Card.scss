@@ -1,10 +1,56 @@
-.card-img {
-    max-width: 100%;
-    border-radius: 20px 20px 0 0;
-}
+
+.marketWrapper {
+    background-color:#194A80;
+    display: flex;
+    flex-direction: column;
+
+.headingDiv {
+    
+    h1 {
+        font-size: 4em;
+        color: white;
+        margin: 1.5em 6em 0 1.5em;
+        padding-bottom: 1em;
+        border-bottom: solid #FFD164;
+        
+        
+    }
+} 
+
+.marketDiv{
+
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 1%;
+    
+    background-color:#194A80;
+    width: 100%;
+
+    
+
+    
+.card{
+    width: 25%; 
+
+    border-radius: 20px 20px 20px 20px;
+    margin: 5em;
+
+    .imgDiv {
+        border-radius: 20px 20px 0 0;
+        padding-top: 75%;
+     
+        background-position: center; 
+        background-size: cover;
+
+       
+       
+
+    }
+    
+
 
 .card-body {
-    padding: 08%;
+   
     color: black;
     background-color: #012345;
     border-radius: 0 0 20px 20px;
@@ -66,4 +112,8 @@
             margin-bottom: 0.6em;
         }
     }
+}
+}
+
+}
 }
