@@ -115,17 +115,26 @@
         height: 15%;
         width: 100%;
 
+        @include small-desktop {
+            display: none;
+        }
+
         img {
             position: relative;
-            bottom: 21.4rem;
+            bottom: 23.8rem;
             left: 36%;
             width: 28%;
 
-            @include small-desktop {
-                // bottom: 24.7rem;
-                // left: 33%;
-                // width: 35%;
-                display: none;
+            @include largeBreak {
+                bottom: 22.5rem;
+            }
+
+            @include mediumBreak {
+                bottom: 20.7rem;
+            }
+
+            @include lastBreak {
+                bottom: 18.9rem;
             }
         }
     }
