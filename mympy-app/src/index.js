@@ -10,8 +10,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import config from "./auth/auth_config.json"
 import './index.scss';
 import rootReducer from './reducers';
-import App from './App';
+import App from './auth/AppSetter';
 import { Auth0Provider } from "./react-auth0-wrapper";
+require("dotenv").config();
 // composeEnhancer allows for redux store dev view in chrome
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk, Logger))
@@ -33,7 +34,7 @@ ReactDOM.render(
     <Auth0Provider
         domain={config.domain}
         client_id={config.clientId}
-        redirect_uri={`${window.location.origin}`}
+        redirect_uri={window.location.origin}
         onRedirectCallback={onRedirectCallback}
     >
         <Provider store={store}>
