@@ -6,7 +6,7 @@ import female from '../../img/female.svg';
 import midSecImg from '../../img/midSecImg.jpg';
 
 const midMain = {
-    height: "100vh",
+    height: "900px",
     backgroundImage: `url(${midSecImg})`,
     backgroundAttachment: "fixed",
     backgroundPosition: "center",
