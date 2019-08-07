@@ -11,8 +11,8 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 
 export const LOGOUT_USER = 'LOGOUT_USER'
 
-
-const BASE_URL = process.env.BASE_URL || 'https://mympy-dreamers-staging.herokuapp.com';
+//https://mympy-dreamers-staging.herokuapp.com
+const BASE_URL = process.env.BASE_URL || 'http://localhost:5000';
 
 export const register = (user) => dispatch => {
     dispatch({ type: REGISTER_START });
@@ -57,4 +57,13 @@ export const logout = () => {
     return {
         type: LOGOUT_USER
     }
+}
+
+export const SET_AUTH = 'SET_AUTH'
+
+export const setAuth = (auth) => (dispatch) => {
+    dispatch({
+        type: SET_AUTH,
+        payload: auth
+    })
 }
