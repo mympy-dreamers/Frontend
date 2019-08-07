@@ -1,0 +1,47 @@
+.maindiv {
+    background-image: url("/src/img/aboutusbg.svg");
+ 
+}
+
+.first{
+    display: flex;
+    flex-direction: row ;
+    
+   
+}
+
+h1 {
+    font-family:large-font;
+    font-weight: 900;
+    font-size: 6rem;
+    color: large-font-color;
+    text-align:center;
+}
+
+p {
+    font-family: body-font;
+    color: desc-body-color;
+    font-size: 1.2rem;
+    text-align: center;
+
+}
+
+span{
+    margin-right: 200px;
+}
+
+.leftside {
+        width: 30%;
+        display: inline-block;
+        height: 100%;
+        margin-top:50px;
+        margin-left:70px;
+    }
+
+.rightside {
+        width: 50%;
+        display: inline-block;
+        height: 100%;
+        margin-top:40px;
+        margin-left: 30%
+    }
