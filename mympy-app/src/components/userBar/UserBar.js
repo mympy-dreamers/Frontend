@@ -10,37 +10,26 @@ import cloudPlus from '../../img/userbar-img/cloudPlus.png';
 import journal from '../../img/userbar-img/journal.png';
 import messageLogo from '../../img/userbar-img/messageLogo.png';
 import userLogo from '../../img/userbar-img/userLogo.png';
-import { useAuth0 } from "../../react-auth0-wrapper";
+
 
 class UserBar extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-        }
 
-    }
 
-    componentDidMount() {
-        this.props.fetchAllDreams();
-        // this.fetchUserInfo();
-    }
+    // isReady = () => {
+    //     if (this.props.user.name === null) {
+    //         return (
+    //             <Spinner size="sm" color="secondary" />
+    //         )
+    //     } else {
+    //         return (
+    //             <h3>Hello {this.props.user.name.toUpperCase()}!</h3>
+    //         )
+    //     }
+    // }
 
-    isReady = () => {
-        const { loading, user } = useAuth0();
-        if (user.name === null) {
-            return (
-                <Spinner size="sm" color="secondary" />
-            )
-        } else {
-            return (
-                <h3>Hello {this.props.currentUser.username.toUpperCase()}!</h3>
-            )
-        }
-    }
-
-    fetchUserInfo = id => {
-        this.props.fetchUserById(id);
-    }
+    // fetchUserInfo = id => {
+    //     this.props.fetchUserById(id);
+    // }
 
     // method for decoding a token
 
@@ -54,7 +43,7 @@ class UserBar extends React.Component {
             <div className="user-main">
                 <div className="wrapper">
                     <div className="user-left">
-                        {this.isReady()}
+                        {<h3>Hello {this.props.user.given_name.toUpperCase()}!</h3>}
                         <img src={demo} alt='user' />
                     </div>
                     <div className="flexing">
@@ -70,12 +59,13 @@ class UserBar extends React.Component {
                                 <p>Edit Dreams</p>
                             </div>
                         </Link>
-                        <Link to="#">
-                            <div className="user-tab">
-                                <img src={journal} alt='pencil scribbling' />
-                                <p>Journal</p>
-                            </div>
-                        </Link>
+
+                        <div className="user-tab develop">
+                            <img src={journal} alt='pencil scribbling' />
+                            <p>Journal</p>
+                            <h6>(Under Development)</h6>
+                        </div>
+
                         {/* <Link to="#"> */}
                         <div className="user-tab develop">
                             <img src={messageLogo} alt='message logo' />
@@ -97,8 +87,10 @@ class UserBar extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
-    return state.auth
+const mapStateToProps = ({ auth, users }) => {
+    return {
+        user: users.user
+    }
 }
 
 export default connect(mapStateToProps, { fetchAllDreams, fetchUserById })(UserBar);

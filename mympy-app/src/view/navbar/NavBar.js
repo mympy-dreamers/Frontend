@@ -1,13 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-import { useAuth0 } from "../../react-auth0-wrapper.js";
+import { connect } from "react-redux";
 import logo from '../../img/logo.png';
 
 
-const NavBar = () => {
-    const { isAuthenticated, loginWithRedirect, logout, loading } = useAuth0();
-    console.log("isAuth", isAuthenticated)
+const NavBar = (props) => {
+    const { isAuthenticated, loginWithRedirect, logout, loading } = props.auth;
     return (
         <div className="main">
             <div className="left">
@@ -23,18 +21,14 @@ const NavBar = () => {
                     <li className="item">
                         <Link to="/market">Search For Dreams</Link>
                     </li>
-                    {/* <li className="item">
-                        <Link to="/register">Sign Up</Link>
-                    </li>
-                    <li className="item">
-                        <Link to="/login">Sign In</Link>
-                    </li> */}
+
                     <li className="item">
                         {loading && <p>loading</p>}
                         {!isAuthenticated && (
                             <button
                                 onClick={(e) => {
                                     e.preventDefault();
+                                    localStorage.setItem('isLog', true);
                                     loginWithRedirect({})
                                 }}
                             >
@@ -52,5 +46,10 @@ const NavBar = () => {
         </div>
     )
 }
+const mapStateToProps = ({ auth }) => {
+    return {
+        auth: auth.auth
+    }
+}
 
-export default NavBar;
+export default connect(mapStateToProps, {})(NavBar);
