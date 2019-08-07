@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
+import Searchbar from '../../components/search_bar/DreamSearchbar'
+
 import logo from '../../img/logo.png';
 
 
@@ -13,6 +15,9 @@ const NavBar = (props) => {
                     <img src={logo} alt="Company Logo" />
                 </Link>
             </div>
+            <div>
+                {props.show && <Searchbar />}
+            </div>
             <div className="right">
                 <ul className="list">
                     <li className="item">
@@ -21,7 +26,6 @@ const NavBar = (props) => {
                     <li className="item">
                         <Link to="/market">Search For Dreams</Link>
                     </li>
-
                     <li className="item">
                         {loading && <p>loading</p>}
                         {!isAuthenticated && (

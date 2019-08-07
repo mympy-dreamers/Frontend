@@ -5,10 +5,11 @@ import styled from 'styled-components';
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
+import arrowRight from '../../img/carousel-arrow-right.png';
+import arrowLeft from '../../img/carousel-arrow-left.png';
+
 const Wrapper = styled.div`
-	margin-top: 6px;
-	margin-bottom: 60px;
-	// margin: 0 auto;
+	margin-bottom: 33px;
 	max-width: 100%
 
 	.slick-slider {
@@ -20,50 +21,46 @@ const Wrapper = styled.div`
 			width: 100%;
 
 			.slick-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 456px;
+
 		  	img {
 		  		max-width: 100%;
+
 		  	}
 			}
 		}
 
 		.slick-dots {
-			img {
-	  		max-width: 100%;
-	  	}
+      text-align: right;
 		}
 
 	  .slick-prev, .slick-next {
-	    // filter: invert(100%);
-	    position: absolute;
-      background-color: white;
-      width: 4rem;
-      height: 4rem;
-	    z-index: 2;
+	    filter: opacity(70%) invert(100%);
+      width: 3rem;
+      height: 3rem;
+	    z-index: 1;
 	  }
 	 	.slick-next { 
-      clip-path: polygon(0% 0%, 90% 50%, 0% 100%, 20% 50%); 
+      background-image: url(${arrowRight});
+      background-size: contain;
 		  right: 1%;
+      &:before { display: none; }
 	  }
 	 	.slick-prev {
-      clip-path: polygon(100% 0%, 10% 50%, 99% 100%, 80% 50%);
+      background-image: url(${arrowLeft});
+      background-size: contain;
 	    left: 1%;
+      &:before { display: none; }
 	  }
 `;
 
 export default class Carousel extends Component {
   render() {
     const settings = {
-      customPaging: function(i) {
-        return (
-          <a>
-            <img src="https://images.unsplash.com/photo-1478416272538-5f7e51dc5400?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1944&q=80" alt="" />
-          	{/*thumbnail code for multiple thubnails imgs*/}
-            {/*<img src={`../../img/carousel/img${i + 1}.jpg`} />*/}
-          </a>
-        );
-      },
       dots: true, 
-      dotsClass: "slick-dots slick-thumb", 
       arrows: true,
       infinite: true, // infinite scroll
       speed: 500, // delay per slide

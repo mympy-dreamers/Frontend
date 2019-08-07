@@ -15,7 +15,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <NavBar />
+        <NavBar show={this.props.location.pathname.includes('market')} />
         <Route exact path="/" render={(props) => <Home {...props} />} />
         <Route path="/login" render={(props) => (
           <Login
