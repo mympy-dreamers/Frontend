@@ -11,24 +11,16 @@
     .rocket-contain {
         display: flex;
         flex-direction: column;
-        // @include main-margin;
 
 
         a {
             align-self: flex-end;
             position: sticky;
-            top: 87%;
+            top: 83%;
             right: 4%;
 
             @include small-desktop {
                 right: 3%;
-            }
-            
-            .rocket {
-                // align-self: flex-end;
-                // position: sticky;
-                // top: 2%;
-                // right: 7.7%;
             }
         }
     }
