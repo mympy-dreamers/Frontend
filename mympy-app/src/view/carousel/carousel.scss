@@ -3,7 +3,7 @@
     padding: 1%;
     display: flex;
     justify-content: space-between;
-    height: 94vh;
+    height: 850px;
     @include main-margin;
 
     @include small-desktop {
@@ -119,6 +119,7 @@
             text-align: left;
             padding-top: 0;
             padding: 20px;
+            height: 200px;
 
             @include btn-break {
                 display: flex;
@@ -136,6 +137,7 @@
             @include mobile {
                 padding: 0;
                 width: 100%;
+                height: auto;
             }
 
             p{
@@ -231,6 +233,10 @@
         width: 60%;
         height: 100%;
         // margin: 3em 0 0 43em;
+
+        @include small-desktop {
+            height: 64vh
+        }
 
         @include tablet-landscape {
            margin: 0;
