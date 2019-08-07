@@ -1,5 +1,5 @@
 .dream-Home-Page {
-    background-color: #0C5B9F;
+    background-color: #1B5485;
     text-align: center;
 }
 
@@ -23,7 +23,7 @@
     padding-left: 15px;
     border: 1px solid black;
     margin-bottom: 100px;
-    /* border-bottom: 1px solid black; */
+    border-radius: 10px;
 }  
 
 .form-title {
@@ -41,13 +41,13 @@
     font-size: 80px;
 }
 
-.submit-button {
-    height: 35px;
-    width: 100px;
+.submit-button {  /* button styling */
+    height: 50px;
+    width: 120px;
     border-radius: 10px;
-    font-size: 20px;
-    margin: 50px 260px;
-    background-color: yellow;
+    font-size: 30px;
+    margin: 50px 280px;
+    background-color: #B6BD23;
     font-weight: bold;
     color: black;
 }
@@ -110,6 +110,13 @@ li {
     width: 200px;
     margin-left: 524px;
     margin-top: 50px;
+    font-size: 18px;
+}
+
+.page-circles1 .far {
+    color: white;
+    background-color: white;
+    border-radius: 50%;
 }
 
 .page-circles2 {
@@ -120,10 +127,19 @@ li {
 }
 
 #cancel {
-    background-color: #0C5B9F;
+    background-color: #1B5485;
     color: white;
-    border: 2px solid yellow;
+    border: 2px solid #B6BD23;
 }
+
+.dreamer-card p {
+    font-size: 35px;
+}
+
+button {
+    margin: 0 400px;
+}
+
 
 
 

@@ -61,8 +61,8 @@ class DreamInfo extends React.Component {
                             <div className='circle-Button'>
                                 <div className='page-circles1'> 
                                     <div><i class="fas fa-circle"></i></div>  
-                                    <div><i class="far fa-circle"></i></div>   
-                                    <div><i class="far fa-circle"></i></div>                  
+                                    <div><i className="far fa-circle"></i></div>   
+                                    <div><i className="far fa-circle"></i></div>                  
                                 </div>
 
 

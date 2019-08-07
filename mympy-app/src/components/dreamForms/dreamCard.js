@@ -76,7 +76,7 @@ class DreamCard extends React.Component {
                                 
                                
                                     <div>
-                                        <Link to={'/dreamerProfile'}>
+                                        <Link to={'/dreamer'}>
                                             <button className='submit-button'>Back</button>
                                         </Link>  
                                         <Link to={'/profileDreamer'}>

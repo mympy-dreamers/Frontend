@@ -69,7 +69,7 @@ class Dreamer extends React.Component {
                                 </div>
                                 
                                     <div>
-                                        <Link to={'/dreamer'}>
+                                        <Link to={'/dreamerProfile'}>
                                             <button className='submit-button'>Back</button>
                                         </Link>  
                                         <Link to={'/'}>
