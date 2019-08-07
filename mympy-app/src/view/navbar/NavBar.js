@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Searchbar from '../../components/search_bar/DreamSearchbar'
 
 import logo from '../../img/logo.png';
 
 
-const NavBar = () => {
+const NavBar = (props) => {
     return (
         <div className="main">
             <div className="left">
@@ -12,7 +13,10 @@ const NavBar = () => {
                     <img src={logo} alt="Company Logo" />
                 </Link>
             </div>
-            <div className="right">
+            <div>
+                { props.show && <Searchbar/> }    
+                </div> 
+            <div className="right"> 
                 <ul className="list">
                     <li className="item">
                         <Link to="/">Home</Link>
@@ -20,6 +24,7 @@ const NavBar = () => {
                     <li className="item">
                         <Link to="/market">Search For Dreams</Link>
                     </li>
+                   
                     <li className="item">
                         <Link to="/register">Sign Up</Link>
                     </li>
