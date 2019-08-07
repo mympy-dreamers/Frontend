@@ -16,8 +16,8 @@
 }
 
 .input-style {   /* input box styling */
-    width: 550px;
-    height: 150px;
+    width: 630px;
+    height: 170px;
     text-align: center;
     font-size: 25px;
     padding-left: 15px;
@@ -108,7 +108,7 @@ li {
     display: flex;
     justify-content: space-between;
     width: 200px;
-    margin-left: 524px;
+    margin-left: 585px;
     margin-top: 50px;
     font-size: 18px;
 }
@@ -119,14 +119,33 @@ li {
     border-radius: 50%;
 }
 
+.page-circles2 .far {
+    color: white;
+    background-color: white;
+    border-radius: 50%;
+}
+
 .page-circles2 {
     display: flex;
     justify-content: space-between;
     width: 200px;
-    margin-left: 530px;
+    margin-left: 585px;
+    font-size: 18px;
 }
 
 #cancel {
+    background-color: #1B5485;
+    color: white;
+    border: 2px solid #B6BD23;
+}
+
+#back1 {
+    background-color: #1B5485;
+    color: white;
+    border: 2px solid #B6BD23;
+}
+
+#back2 {
     background-color: #1B5485;
     color: white;
     border: 2px solid #B6BD23;

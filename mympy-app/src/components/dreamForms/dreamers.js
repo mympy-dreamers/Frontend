@@ -45,35 +45,35 @@ class Dreamer extends React.Component {
                             <div className='inputs'>
                                 <div>
                                     <p>Tell me about where are you from?</p>
-                                    <input className='input-style' placeholder='+' name='location' value={this.state.location} onChange={this.handleChanges}></input>
+                                    <input className='input-style' placeholder='' name='location' value={this.state.location} onChange={this.handleChanges}></input>
                                 </div>
                                 <div>
                                     <p>What do you want people to know about you?</p>
-                                    <input className='input-style' placeholder='+' name='aboutYou' value={this.state.aboutYou} onChange={this.handleChanges}></input>
+                                    <input className='input-style' placeholder='' name='aboutYou' value={this.state.aboutYou} onChange={this.handleChanges}></input>
                                 </div>
                                 <div>
                                     <p>What are your goals now?</p>
-                                    <input id='dream-box' className='input-style' placeholder='+' name='goals' value={this.state.goals} onChange={this.handleChanges}></input>
+                                    <input id='dream-box' className='input-style' placeholder='' name='goals' value={this.state.goals} onChange={this.handleChanges}></input>
                                 </div>
                                 <div>
                                     <p>What other things you want people to now about you?</p>
-                                    <input className='input-style' placeholder='+' name='extraInfo' value={this.state.extraInfo} onChange={this.handleChanges}></input>
+                                    <input className='input-style' placeholder='' name='extraInfo' value={this.state.extraInfo} onChange={this.handleChanges}></input>
                                 </div>
                             </div> {/* inputs end */}
 
                             <div className='circle-Button'>
-                                <div className='page-circles2'>  
-                                    <div><i class="far fa-circle"></i></div>   
-                                    <div><i class="far fa-circle"></i></div>
-                                    <div><i class="fas fa-circle"></i></div>                   
+                                <div className='page-circles2'>   
+                                    <div><i className="far fa-circle"></i></div>   
+                                    <div><i class="fas fa-circle"></i></div> 
+                                    <div><i className="far fa-circle"></i></div>                    
                                 </div>
                                 
                                     <div>
                                         <Link to={'/dreamerProfile'}>
-                                            <button className='submit-button'>Back</button>
+                                            <button id='back1' className='submit-button'>Back</button>
                                         </Link>  
                                         <Link to={'/'}>
-                                            <button type='submit' className='submit-button'>Enter</button>
+                                            <button type='submit' className='submit-button'>Next</button>
                                         </Link>  
                                     </div>
                                 

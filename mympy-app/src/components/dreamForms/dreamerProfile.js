@@ -74,13 +74,8 @@ class DreamInfo extends React.Component {
                                     <button type='submit' className='submit-button'>Next</button>
                                     </Link>  
                                 </div>
-                              
-                                
-                                
                             </div> {/* circle-Button end */}
                             
-                            
-
                         </form> {/* dreamer-card end  */}
                     </div> {/* card-section end */}
                 </div>  {/* dreamer-card-app end  */}
