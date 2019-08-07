@@ -23,8 +23,8 @@ export const DELETE_DREAM_FAILURE = 'DELETE_DREAM_FAILURE';
 const token = {
     headers: { authorization: localStorage.getItem('jwt') }
 }
-
-const BASE_URL = process.env.BASE_URL || 'https://mympy-dreamers-staging.herokuapp.com';
+console.log('BASE_URL', process.env.BASE_URL)
+const BASE_URL = process.env.BASE_URL || 'http://localhost:5000';
 
 export const fetchDreamById = (id) => (dispatch) => {
     dispatch({ type: FETCH_DREAM_START });

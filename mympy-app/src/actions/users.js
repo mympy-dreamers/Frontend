@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+export const SET_USER = 'SET_USER';
+
 export const FETCH_USERS_START = 'FETCH_USERS_START';
 export const FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS';
 export const FETCH_USERS_FAILURE = 'FETCH_USERS_FAILURE';
@@ -21,10 +23,17 @@ export const DELETE_USER_SUCCESS = 'DELETE_USER_SUCCESS';
 export const DELETE_USER_FAILURE = 'DELETE_USER_FAILURE';
 
 
-const BASE_URL = process.env.BASE_URL || 'https://mympy-dreamers-staging.herokuapp.com';
+const BASE_URL = process.env.BASE_URL || 'http://localhost:5000';
 
 const token = {
     headers: { authorization: localStorage.getItem('jwt') }
+}
+
+export const setUser = (user) => (dispatch) => {
+    dispatch({
+        type: SET_USER,
+        payload: user
+    })
 }
 
 export const fetchUsers = () => (dispatch) => {
@@ -120,4 +129,10 @@ export const deleteUser = (id) => dispatch => {
                 payload: err
             })
         })
+}
+
+export const SET_LOG = 'SET_LOG';
+
+export const setLog = () => (dispatch) => {
+    dispatch({ type: SET_LOG })
 }
