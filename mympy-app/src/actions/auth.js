@@ -12,7 +12,7 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 export const LOGOUT_USER = 'LOGOUT_USER'
 
 
-const BASE_URL = 'https://mympy-dreamers.herokuapp.com';
+const BASE_URL = 'https://mympy-dreamers-staging.herokuapp.com';
 
 export const register = (user) => dispatch => {
     dispatch({ type: REGISTER_START });
