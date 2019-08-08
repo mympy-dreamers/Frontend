@@ -157,7 +157,6 @@ span{
     width: 220px;
     border: 1px solid #979797;
     border-radius: 12px;
-    margin-top: 15%;
     margin-left: 30px;
     
 }
@@ -174,14 +173,27 @@ span{
 }
 
 .table{
-    font-size:2rem;
+    font-size:1.5rem;
     margin-left:50px;
-    margin-top: 140px;
+    margin-top: 100px;
 }
 
 li{
     display:block;
+    margin-top:5px;
   
+}
+
+.maindiv2{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15%;
+  
+}
+
+.team-img2{
+   margin-left: 700px;
+   
 }
 
 

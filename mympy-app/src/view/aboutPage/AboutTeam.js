@@ -22,30 +22,30 @@ return(
             PageMaker including versions of Lorem Ipsum.
           </p>
 
-          <div>
+          <div className="maindiv2">
           <div className="imagetext">
               <div className="teamimg">
               <img  className="team-img1"src={group}/>
               </div>
               <ul className="table">
-                  <li>Name</li>
+                  <li>Nick Stricker</li>
                   <li>Team Lead</li>
-                  <li>Github</li>
+                  <li><a target="_blank" href="https://github.com/NickStrick">https://github.com/NickStrick</a></li>
                   <li>LinkIn</li>
                   <li>Social Media</li>
               </ul>
           </div>
 
           <div className="imagetext">
-              <div className="teamimg">
+              <div className="teamimg team-img2">
               <img className="team-img1"src={group}/>
               </div>
               <ul className="table">
-                  <li>Name</li>
-                  <li>UX</li>
+                  <li>Alex Vargas</li>
+                  <li>UX Designer</li>
                   <li>Github</li>
-                  <li>LinkIn</li>
-                  <li>Social Media</li>
+                  <li><a href="https://www.linkedin.com/in/uxalexvargas">linkedin.com/in/uxalexvargas</a>/</li>
+                  <li><a href="twitter:@Yor_AlexVargas">twitter:@Yor_AlexVargas</a></li>
               </ul>
               </div>
 
@@ -54,10 +54,23 @@ return(
               <img className="team-img1"src={group}/>
               </div>
               <ul className="table">
-                  <li>Name</li>
-                  <li>UX</li>
+                  <li>Jared Parrish</li>
+                  <li>Full-Stack Developer</li>
                   <li>Github</li>
-                  <li>LinkIn</li>
+                  <li><a href="https://www.linkedin.com/in/jared-parrish/">https://www.linkedin.com/in/jared-parrish/</a></li>
+                  <li>Social Media</li>
+              </ul>
+              </div>
+
+              <div className="imagetext">
+              <div className="teamimg team-img2">
+              <img className="team-img1"src={group}/>
+              </div>
+              <ul className="table">
+                  <li>Dakotah Hitze</li>
+                  <li>Full Stack Developer</li>
+                  <li><a href="https://github.com/HitzeD">https://github.com/HitzeD</a></li>
+                  <li><a href="https://www.linkedin.com/in/dakotah-hitze-2a9042100/">https://www.linkedin.com/in/dakotah-hitze-2a9042100/</a></li>
                   <li>Social Media</li>
               </ul>
               </div>
@@ -67,10 +80,23 @@ return(
               <img className="team-img1"src={group}/>
               </div>
               <ul className="table">
-                  <li>Name</li>
+                  <li>Tashi Woeser</li>
+                  <li>Full Stack Developer</li>
+                  <li><a href="https://github.com/Tai510">https://github.com/Tai510</a></li>
+                  <li>LinkIn</li>
+                  <li>Social Media</li>
+              </ul>
+              </div>
+
+              <div className="imagetext">
+              <div className="teamimg team-img2">
+              <img className="team-img1"src={group}/>
+              </div>
+              <ul className="table">
+                  <li>Mylynh Nguyen</li>
                   <li>Full Stack Developer</li>
                   <li>Github</li>
-                  <li>LinkIn</li>
+                  <li><a href="https://www.linkedin.com/in/mylynh-nguyen-1b8055126">https://www.linkedin.com/in/mylynh-nguyen-1b8055126</a></li>
                   <li>Social Media</li>
               </ul>
               </div>
@@ -80,42 +106,16 @@ return(
               <img className="team-img1"src={group}/>
               </div>
               <ul className="table">
-                  <li>Name</li>
+                  <li>Manju KC</li>
                   <li>Full Stack Developer</li>
-                  <li>Github</li>
+                  <li><a href="https://github.com/Manjukcthapa?tab=repositories">https://github.com/Manjukcthapa?tab=repositories</a></li>
                   <li>LinkIn</li>
                   <li>Social Media</li>
               </ul>
               </div>
 
               <div className="imagetext">
-              <div className="teamimg">
-              <img className="team-img1"src={group}/>
-              </div>
-              <ul className="table">
-                  <li>Name</li>
-                  <li>Full Stack Developer</li>
-                  <li>Github</li>
-                  <li>LinkIn</li>
-                  <li>Social Media</li>
-              </ul>
-              </div>
-
-              <div className="imagetext">
-              <div className="teamimg">
-              <img className="team-img1"src={group}/>
-              </div>
-              <ul className="table">
-                  <li>Name</li>
-                  <li>Full Stack Developer</li>
-                  <li>Github</li>
-                  <li>LinkIn</li>
-                  <li>Social Media</li>
-              </ul>
-              </div>
-
-              <div className="imagetext">
-              <div className="teamimg">
+              <div className="teamimg team-img2">
               <img className="team-img1"src={group}/>
               </div>
               <ul className="table">
