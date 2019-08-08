@@ -1,6 +1,8 @@
 import React from 'react';
 import './dreamCard.css';
 import { Link } from "react-router-dom";
+import {connect} from "react-redux";
+import {setDreamCards} from '../../actions';
 
 
 class DreamCard extends React.Component {
@@ -45,19 +47,19 @@ class DreamCard extends React.Component {
                             <div className='inputs'>
                                 <div>
                                     <p>Where you first had your Dream?</p>
-                                    <input className='input-style' placeholder='' name='firstDream' value={this.state.firstDream} onChange={this.handleChanges}></input>
+                                    <input className='input-style'id='dream_long_description' name='dream_name' value={this.state.firstDream} onChange={this.handleChanges}></input>
                                 </div>
                                 <div>
                                     <p>What inspire you about your Dream?</p>
-                                    <input className='input-style' placeholder='' name='inspiration' value={this.state.inspiration} onChange={this.handleChanges}></input>
+                                    <input className='input-style'id='dream_long_description' name='inspiration' value={this.state.inspiration} onChange={this.handleChanges}></input>
                                 </div>
                                 <div>
                                     <p>What you want to share to people about your Dream?</p>
-                                    <input id='dream-box' className='input-style' placeholder='' name='aboutDream' value={this.state.aboutDream} onChange={this.handleChanges}></input>
+                                    <input id='dream-box' className='input-style'id='dream_long_description' name='aboutDream' value={this.state.aboutDream} onChange={this.handleChanges}></input>
                                 </div>
                                 <div>
                                     <p>How can your Dream impact people?</p>
-                                    <input className='input-style' placeholder='' name='dreamImpact' value={this.state.dreamImpact} onChange={this.handleChanges}></input>
+                                    <input className='input-style'id='dream_long_description' name='dreamImpact' value={this.state.dreamImpact} onChange={this.handleChanges}></input>
                                 </div>
                             </div> {/* inputs end */}
 
@@ -98,5 +100,10 @@ class DreamCard extends React.Component {
     }
 }
 
-{/* <div></div> */ }
-export default DreamCard
+const mapStateToProps = ({dreams}) =>{
+    return {
+        //dreamCards: dreams.dreamCards
+    }
+}
+
+export default connect(mapStateToProps, { setDreamCards })(DreamCard);

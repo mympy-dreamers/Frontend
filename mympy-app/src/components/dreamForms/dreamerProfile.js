@@ -1,7 +1,8 @@
 import React from 'react';
 import './dreamCard.css';
 import { Link } from "react-router-dom";
-
+import {connect} from "react-redux";
+import {setDreamCards} from '../../actions';
 
 
 class DreamInfo extends React.Component {
@@ -28,11 +29,13 @@ class DreamInfo extends React.Component {
         // console.log(this.state.dreamCards)
         const data = this.state
         console.log('this is your:', data)
-        e.preventDefault()
-        this.setState({
-            dreamCards: [...this.state.dreamCards, this.state.dreamCard]
-        })
+        e.preventDefault();
+        this.props.setDreamCards(this.state.dreamCard);
+
+        
     }
+
+    
 
     render() {
         return (
@@ -49,11 +52,11 @@ class DreamInfo extends React.Component {
                             <div className='inputs'>
                                 <div>
                                     <p>Name of your Dream?</p>
-                                    <input className='input-info' placeholder='' name='dreamName' value={this.state.dreamName} onChange={this.handleChanges}></input>
+                                    <input className='input-info' name='dream_name' value={this.state.dreamName} onChange={this.handleChanges}></input>
                                 </div>
                                 <div>
                                     <p>Enter your goal here</p>
-                                    <input className='input-info' placeholder='$' name='amount' value={this.state.amount} onChange={this.handleChanges}></input>
+                                    <input className='input-info' placeholder='$' name='donation_goal' value={this.state.amount} onChange={this.handleChanges}></input>
                                 </div>
 
                             </div> {/* inputs end */}
@@ -85,4 +88,10 @@ class DreamInfo extends React.Component {
     }
 }
 
-export default DreamInfo
+const mapStateToProps = ({dreams}) =>{
+    return {
+        //dreamCards: dreams.dreamCards
+    }
+}
+
+export default connect(mapStateToProps, { setDreamCards })(DreamInfo);

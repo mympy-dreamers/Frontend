@@ -120,3 +120,10 @@ export const deleteDream = (id) => dispatch => {
         })
     })
 }
+
+//save Dream state section
+export const SET_DREAMCARDS = 'SET_DREAMCARDS';
+
+export const setDreamCards = (dreamCard) => (dispatch) => {
+    dispatch({ type:SET_DREAMCARDS, payload: dreamCard});
+}

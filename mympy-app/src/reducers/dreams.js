@@ -7,14 +7,16 @@ import {
     UPDATE_DREAM_FAILURE, 
     DELETE_DREAM_START, 
     DELETE_DREAM_SUCCESS, 
-    DELETE_DREAM_FAILURE
+	DELETE_DREAM_FAILURE,
+	SET_DREAMCARDS
 } from '../actions'
 
 const INITIAL_STATE = {
     fetching: false,
     errors: [],
     deletingDream: false,
-    dreams: [],
+	dreams: [],
+	dreamCards:{},
     featured: [
 		{
 			id: 1,
@@ -2473,7 +2475,12 @@ export default function dreamsReducer(state = INITIAL_STATE, action) {
             ...state,
             deletingDream: false,
             errors: action.payload
-        }
+		}
+	case SET_DREAMCARDS:
+		return {
+			...state,
+			dreamCards: {...state.dreamCards, ...action.payload}
+		}
     default:
         return state;
     }
