@@ -62,7 +62,7 @@ class UserBar extends React.Component {
                                 <p>Create Dream</p>
                             </div>
                         </Link>
-                        <Link to="#">
+                        <Link to="/user-dreams">
                             <div className="user-tab">
                                 <img src={cloudPencil} alt='cloud with pencil inside' />
                                 <p>Edit Dreams</p>
