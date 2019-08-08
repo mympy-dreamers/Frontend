@@ -2,38 +2,42 @@ import React from 'react';
 import './dreamCard.css';
 import { Link } from "react-router-dom";
 import {connect} from "react-redux";
-import {setDreamCards} from '../../actions';
+import {addDream} from '../../actions';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+
 
 
 class DreamInfo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            dreamCards: [],
-            dreamCard: {}
+            dreamCard: {
+                dream_name: '',
+                dream_short_description: '',
+                dream_long_description: '',
+                donations_received: 0,
+                donation_goal: 0,
+                user_id: 1,
+            }
         };
-        this.handleChanges = this.handleChanges.bind(this);
-        this.saveInfo = this.saveInfo.bind(this)
+        
     }
 
     handleChanges = e => {
-        e.preventDefault()
         console.log(this.state.dreamCard)
-        const { name, value } = e.target
-        const updatedCard = {...this.state.dreamCard}
-        updatedCard[name] = value
-        this.setState({ dreamCard: updatedCard })
+        e.preventDefault()
+        this.setState ({
+            ...this.state,
+            dreamCard: {...this.state.dreamCard, [e.target.name]: e.target.value}
+            
+        })
     }
 
-    saveInfo = e => {
-        // console.log(this.state.dreamCards)
-        const data = this.state
-        console.log('this is your:', data)
-        e.preventDefault();
-        this.props.setDreamCards(this.state.dreamCard);
-
-        
+    handleSubmit = e => {
+        e.preventDefault()
+        this.props.addDream(this.state)
     }
+
 
     
 
@@ -46,41 +50,25 @@ class DreamInfo extends React.Component {
                         <h1>Make your dream in reality!</h1>
                     </div>
 
-                    <div className='card-section'>
-                        <form onSubmit={this.saveInfo} className='dreamer-card'>
-
-                            <div className='inputs'>
-                                <div>
-                                    <p>Name of your Dream?</p>
-                                    <input className='input-info' name='dream_name' value={this.state.dreamName} onChange={this.handleChanges}></input>
-                                </div>
-                                <div>
-                                    <p>Enter your goal here</p>
-                                    <input className='input-info' placeholder='$' name='donation_goal' value={this.state.amount} onChange={this.handleChanges}></input>
-                                </div>
-
-                            </div> {/* inputs end */}
-
-                            <div className='circle-Button'>
-                                <div className='page-circles1'> 
-                                    <div><i class="fas fa-circle"></i></div>  
-                                    <div><i className="far fa-circle"></i></div>   
-                                    <div><i className="far fa-circle"></i></div>                  
-                                </div>
-
-
-                                <div>
-                                    <Link to={'/dashboard'}>
-                                    <button id='cancel' className='submit-button'>Cancel</button>
-                                    </Link>
-                                    <Link to={'/dreamerProfile'}>
-                                    <button type='submit' className='submit-button'>Next</button>
-                                    </Link>  
-                                </div>
-                            </div> {/* circle-Button end */}
-                            
-                        </form> {/* dreamer-card end  */}
-                    </div> {/* card-section end */}
+                    <div>
+                    <FormGroup>
+                        <Label for="exampleEmail">Dream Name</Label>
+                        <Input onChange={this.handleChanges} name="dream_name" id="dream_name" placeholder="Enter your dream here" />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="examplePassword">Donation Goals</Label>
+                        <Input onChange={this.handleChanges}  name="donation_goal" id="donation_goal" placeholder="Enter Donation goal here" />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="exampleText">Give us a short descrption</Label>
+                        <Input onChange={this.handleChanges} type="textarea" name="dream_short_description" id="dream_short_description" />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="exampleText">Give us a long descrption</Label>
+                        <Input onChange={this.handleChanges} type="textarea" name="dream_long_description" id="dream_long_description" />
+                    </FormGroup>
+                    <Button onClick={this.handleSubmit}>Submit</Button>
+                    </div> 
                 </div>  {/* dreamer-card-app end  */}
             </div> /* dream-Home-Page end */
 
@@ -94,4 +82,4 @@ const mapStateToProps = ({dreams}) =>{
     }
 }
 
-export default connect(mapStateToProps, { setDreamCards })(DreamInfo);
+export default connect(mapStateToProps, { addDream })(DreamInfo);

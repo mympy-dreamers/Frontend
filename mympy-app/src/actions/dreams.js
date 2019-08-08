@@ -24,7 +24,7 @@ const token = {
     headers: { authorization: localStorage.getItem('jwt') }
 }
 
-const BASE_URL = 'https://mympy-dreamers.herokuapp.com';
+const BASE_URL = 'https://mympy-dreamers-staging.herokuapp.com';
 
 export const fetchDreamById = (id) => (dispatch) => {
     dispatch({type: FETCH_DREAM_START });
@@ -68,7 +68,7 @@ export const addDream = (sentDream) => dispatch => {
     dispatch({ type: ADD_DREAM_START });
 
     axios
-    .post(`${BASE_URL}/api/dreams`, sentDream, token)
+    .post('https://localhost:5000/api/dreams', sentDream /* token */)
     .then(res => {
         dispatch({
             type: ADD_DREAM_SUCCESS,
