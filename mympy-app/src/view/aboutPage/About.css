@@ -113,3 +113,41 @@ span{
     margin-top: 90px;
     
 }
+
+.team1{
+    height: 3273px;	
+    width: auto;
+    background-color: #FFD164;
+    padding-top:60px;
+}
+
+.team2{
+    height: 3055px;
+    width: auto;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+}
+
+.teamparagraph{
+    height: 53px;
+    width: auto;
+    color: #363636;	
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 33px;
+    padding-top: 30px;
+}
+
+.teamheader{
+    height: 53px;
+    width: 573px;
+    color: #363636;
+    font-family: "Open Sans";
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 55px;
+    padding-top: 20px;
+    margin-left: 400px;
+}
