@@ -1,7 +1,4 @@
-.maindiv {
-    background-image: url("/src/img/aboutusbg.svg");
- 
-}
+
 
 .first{
     display: flex;
@@ -16,18 +13,33 @@ h1 {
     font-size: 6rem;
     color: large-font-color;
     text-align:center;
+    
+}
+
+.header0ne{
+    height: 214px;
+    width: 547px;
+    color: #363636;
+    font-family: Roboto;
+    font-size: 116px;
+    font-weight: 900;
+    line-height: 100px;
+    
 }
 
 p {
-    font-family: body-font;
-    color: desc-body-color;
-    font-size: 1.2rem;
-    text-align: center;
+    height: 174px;
+    width: 396px;
+    color: #363636;
+    font-family: "Open Sans";	
+    font-size: 17px;
+    line-height: 23px;
+    margin-left: 70px;
 
 }
 
 span{
-    margin-right: 200px;
+    margin-right: 265px;
 }
 
 .leftside {
@@ -35,7 +47,7 @@ span{
         display: inline-block;
         height: 100%;
         margin-top:50px;
-        margin-left:70px;
+        margin-left:50px;
     }
 
 .rightside {
@@ -45,3 +57,51 @@ span{
         margin-top:40px;
         margin-left: 30%
     }
+
+  
+
+ .about2{
+    height: 500px;
+    width: 1024px;
+    border-radius: 12px;
+    margin: auto;
+    background-color: #FFD164;
+    border-radius: 12px;
+    padding-top: 70px;
+ 
+    
+ }
+
+.about3{
+    background: linear-gradient(0deg, #7647B6 0%, #194980 100%);
+    height:800px;
+    width:100%;
+    margin-top: 60px;
+    padding-top:60px;
+}
+
+.about1{
+    height: 361px;	
+    width: 928px;	
+    border-radius: 12px;	
+    background-color: #FFFFFF;	
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+    margin-left: 50px;
+}
+
+.mission{
+    height: 168px;
+     width: 80%;
+    color: #363636;
+    font-family: "Open Sans";
+    font-size: 24px;
+    line-height: 33px;
+    padding:20px;
+    margin-left: 80px;
+}
+
+.header{
+    font-size: 2rem;
+    padding-top: 80px;
+   
+}
