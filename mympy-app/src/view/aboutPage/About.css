@@ -157,8 +157,31 @@ span{
     width: 220px;
     border: 1px solid #979797;
     border-radius: 12px;
-    background-color: #D8D8D8;
     margin-top: 15%;
     margin-left: 30px;
     
 }
+
+.team-img1{
+    height: 255px;
+    width: 220px;
+}
+
+.imagetext{
+    display:flex;
+    align-items:center;
+    flex-direction: row;
+}
+
+.table{
+    font-size:2rem;
+    margin-left:50px;
+    margin-top: 140px;
+}
+
+li{
+    display:block;
+  
+}
+
+

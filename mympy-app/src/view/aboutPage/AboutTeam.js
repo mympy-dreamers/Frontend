@@ -1,11 +1,12 @@
 import React from "react";
+import group from "../../img/woman.svg";
 import "./About.css";
 
 const AboutTeam = () => {
 
 
 return(
-    <div>
+    <div className="team">
         <div className="team1">
         <div className="team2">
           <h1 className="teamheader">The Mympy Team</h1>
@@ -22,120 +23,120 @@ return(
           </p>
 
           <div>
-          <div>
+          <div className="imagetext">
               <div className="teamimg">
-              <img/>
+              <img  className="team-img1"src={group}/>
               </div>
-              <ul>
-                  <ii>Name</ii>
-                  <ii>Team Lead</ii>
-                  <ii>Github</ii>
-                  <ii>LinkIn</ii>
-                  <ii>Social Media</ii>
+              <ul className="table">
+                  <li>Name</li>
+                  <li>Team Lead</li>
+                  <li>Github</li>
+                  <li>LinkIn</li>
+                  <li>Social Media</li>
               </ul>
           </div>
 
-          <div>
+          <div className="imagetext">
               <div className="teamimg">
-              <img/>
+              <img className="team-img1"src={group}/>
               </div>
-              <ul>
-                  <ii>Name</ii>
-                  <ii>Team Lead</ii>
-                  <ii>Github</ii>
-                  <ii>LinkIn</ii>
-                  <ii>Social Media</ii>
+              <ul className="table">
+                  <li>Name</li>
+                  <li>UX</li>
+                  <li>Github</li>
+                  <li>LinkIn</li>
+                  <li>Social Media</li>
               </ul>
               </div>
 
-              <div>
+              <div className="imagetext" >
               <div className="teamimg">
-              <img/>
+              <img className="team-img1"src={group}/>
               </div>
-              <ul>
-                  <ii>Name</ii>
-                  <ii>Team Lead</ii>
-                  <ii>Github</ii>
-                  <ii>LinkIn</ii>
-                  <ii>Social Media</ii>
+              <ul className="table">
+                  <li>Name</li>
+                  <li>UX</li>
+                  <li>Github</li>
+                  <li>LinkIn</li>
+                  <li>Social Media</li>
               </ul>
               </div>
 
-              <div>
+              <div className="imagetext">
               <div className="teamimg">
-              <img/>
+              <img className="team-img1"src={group}/>
               </div>
-              <ul>
-                  <ii>Name</ii>
-                  <ii>Team Lead</ii>
-                  <ii>Github</ii>
-                  <ii>LinkIn</ii>
-                  <ii>Social Media</ii>
+              <ul className="table">
+                  <li>Name</li>
+                  <li>Full Stack Developer</li>
+                  <li>Github</li>
+                  <li>LinkIn</li>
+                  <li>Social Media</li>
               </ul>
               </div>
 
-              <div>
+              <div className="imagetext">
               <div className="teamimg">
-              <img/>
+              <img className="team-img1"src={group}/>
               </div>
-              <ul>
-                  <ii>Name</ii>
-                  <ii>Team Lead</ii>
-                  <ii>Github</ii>
-                  <ii>LinkIn</ii>
-                  <ii>Social Media</ii>
+              <ul className="table">
+                  <li>Name</li>
+                  <li>Full Stack Developer</li>
+                  <li>Github</li>
+                  <li>LinkIn</li>
+                  <li>Social Media</li>
               </ul>
               </div>
 
-              <div>
+              <div className="imagetext">
               <div className="teamimg">
-              <img/>
+              <img className="team-img1"src={group}/>
               </div>
-              <ul>
-                  <ii>Name</ii>
-                  <ii>Team Lead</ii>
-                  <ii>Github</ii>
-                  <ii>LinkIn</ii>
-                  <ii>Social Media</ii>
+              <ul className="table">
+                  <li>Name</li>
+                  <li>Full Stack Developer</li>
+                  <li>Github</li>
+                  <li>LinkIn</li>
+                  <li>Social Media</li>
               </ul>
               </div>
 
-              <div>
+              <div className="imagetext">
               <div className="teamimg">
-              <img/>
+              <img className="team-img1"src={group}/>
               </div>
-              <ul>
-                  <ii>Name</ii>
-                  <ii>Team Lead</ii>
-                  <ii>Github</ii>
-                  <ii>LinkIn</ii>
-                  <ii>Social Media</ii>
+              <ul className="table">
+                  <li>Name</li>
+                  <li>Full Stack Developer</li>
+                  <li>Github</li>
+                  <li>LinkIn</li>
+                  <li>Social Media</li>
               </ul>
               </div>
 
-              <div>
+              <div className="imagetext">
               <div className="teamimg">
-              <img/>
+              <img className="team-img1"src={group}/>
               </div>
-              <ul>
-                  <ii>Name</ii>
-                  <ii>Team Lead</ii>
-                  <ii>Github</ii>
-                  <ii>LinkIn</ii>
-                  <ii>Social Media</ii>
+              <ul className="table">
+                  <li>Name</li>
+                  <li>Full Stack Developer</li>
+                  <li>Github</li>
+                  <li>LinkIn</li>
+                  <li>Social Media</li>
               </ul>
               </div>
 
-              <div>
+              <div className="imagetext">
               <div className="teamimg">
-              <img/>
+              <img className="team-img1"src={group}/>
               </div>
-              <ul>
-                  <ii>Name</ii>
-                  <ii>Team Lead</ii>
-                  <ii>Github</ii>
-                  <ii>LinkIn</ii>
-                  <ii>Social Media</ii>
+              <ul className="table">
+                  <li>Name</li>
+                  <li>Full Stack Developer</li>
+                  <li>Github</li>
+                  <li>LinkIn</li>
+                  <li>Social Media</li>
               </ul>
               </div>
           </div>
