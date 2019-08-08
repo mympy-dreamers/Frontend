@@ -18,24 +18,26 @@ class App extends React.Component {
   render() {
     return (
         <div className="App">
-          <NavBar />
-          <Route exact path="/" component={Home} />
-          <Route path="/login" render={(props) => (
-            <Login
-            {...props}
-            type="login"
-            />
-          )} />
-          <Route path="/register" render={(props) => (
-            <Login
-            {...props}
-            type="register"
-            />
-          )} />
-          <Route exact path="/market" component={DreamMarket} />
-          <Route path="/market/:id" component={DreamPage} />
-          <Route path="/user-dreams" component={UserDreamsList} />
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <div className="app-wrap">
+            <NavBar show={this.props.location.pathname.includes('market')}/>
+            <Route exact path="/" component={Home} />
+            <Route path="/login" render={(props) => (
+              <Login
+              {...props}
+              type="login"
+              />
+            )} />
+            <Route path="/register" render={(props) => (
+              <Login
+              {...props}
+              type="register"
+              />
+            )} />
+            <Route exact path="/market" component={DreamMarket} />
+            <Route path="/market/:id" component={DreamPage} />
+            <Route path="/user-dreams" component={UserDreamsList} />
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          </div>
         </div>
     );
   }

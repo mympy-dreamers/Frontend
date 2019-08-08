@@ -1,0 +1,27 @@
+.home-main {
+
+    .break {
+        height: 300px;
+
+        @include small-desktop {
+            height: 100px;    
+        }
+    }
+
+    .rocket-contain {
+        display: flex;
+        flex-direction: column;
+
+
+        a {
+            align-self: flex-end;
+            position: sticky;
+            top: 83%;
+            right: 4%;
+
+            @include small-desktop {
+                right: 3%;
+            }
+        }
+    }
+}

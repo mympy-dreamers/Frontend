@@ -10,12 +10,12 @@ const RecentDonations = (props) => {
 			<h2 className="header">Recent Donations</h2>
   		
   		<div className="donations-container">
-				{props.donations.map( donation => {
+				{props.donations.slice(0,5).map( donation => {
 					return <div className="donation" key={donation.donation}>
 						<img className="user-img" src={demo} alt="" />
 						<div className="donations-name-wrapper">
 							<h2 className="amount">{"$" + donation.donation}</h2>
-							<p className="name">{donation.user.firstname + " " + donation.user.lastname}</p>
+							<p className="name">{"by " + donation.user.firstname}</p>
 						</div>
 					</div>
 				})}

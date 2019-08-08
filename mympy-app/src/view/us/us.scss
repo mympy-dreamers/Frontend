@@ -1,61 +1,116 @@
 .us-main {
+    @include main-margin;
     display: flex;
-    background-color: $desc-page-color;
-    
+    flex-direction: column;
+    align-items: center;
 
-    h1 {
-        font-family: $large-font;
-        font-weight: 900;
-        font-size: 6rem;
-        color: $large-font-color;
-        text-align: center;
+    @include small-desktop {
+        @include small-desktop-margin;
+    }
 
-        @include small-desktop {
-            font-size: 4rem;
-        }
-
-    } // end of h1
-
-    p {
-        font-family: $body-font;
-        color: $desc-body-color;
-        font-size: 1.2rem;
-        text-align: center;
-
-    } // end of p
+    @include mid-break {
+        width: 100%;
+    }
 
     .left {
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        align-content: center;
+        margin-bottom: 5%;
 
         .inner-left {
-            width: 75%;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-content: center;
+            width: 100%;
+            text-align: center;
 
-            img {
-                margin: 5%;
-            } // end of img
+            @include mid-break {
+                align-items: center;
+                width: 100%;
+            }
 
-        } // end of inner-left
+            h1 {
+                align-self: flex-start;
+                font-size: 2.4rem;
+                font-family: $large-font;
+                color: $large-font-color;
+                margin-left: 2%;
 
-    } // end of left
+                @include mid-break {
+                    align-self: center;
+                }
+            }
+
+            p {
+                align-self: center;
+                text-align: left;
+                padding: 1%;
+                font-size: 1.6rem;
+                width: 100%;
+                font-family: $body-font;
+                color: $new-dream-color;
+                
+                @include mid-break {
+                    width: 60%;
+                }
+            }
+        }
+    }
 
     .right {
-        width: 50%;
         display: flex;
-        justify-content: center;
-        align-content: center;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-bottom: 5%;
+
+        .imgDiv {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include mid-break {
+                display: none;
+            }
+
+            img {
+                padding: 2%;
+                width: 400px;
+                height: 400px;
+            }
+        }
 
         .inner-right {
-            width: 75%;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
-        } // end of inner-right
+            @include mid-break {
+                width: 100%;
+                align-self: center;
+            }
 
-    } // end of right
+        }
 
-} // end of us-main
+        h1 {
+            font-size: 2.4rem;
+            font-family: $large-font;
+            color: $large-font-color
+
+        }
+
+        p {
+            text-align: center;
+            padding: 1%;
+            font-size: 1.6rem;
+            width: 100%;
+            font-family: $body-font;
+            color: $new-dream-color;
+
+            @include mid-break {
+                width: 60%;
+            }
+        }
+    }
+
+}
