@@ -2,6 +2,9 @@ import {
     FETCH_DREAMS_START, 
     FETCH_DREAMS_SUCCESS, 
     FETCH_DREAMS_FAILURE,
+    FETCH_USER_DREAMS_START,
+    FETCH_USER_DREAMS_SUCCESS,
+    FETCH_USER_DREAMS_FAILURE,
     UPDATE_DREAM_START,
     UPDATE_DREAM_SUCCESS,
     UPDATE_DREAM_FAILURE, 
@@ -14,7 +17,9 @@ const INITIAL_STATE = {
     fetching: false,
     errors: [],
     deletingDream: false,
+    userDreams: [],
     dreams: [],
+    isUpdating: false,
     featured: [
 		{
 			id: 1,
@@ -2453,20 +2458,54 @@ export default function dreamsReducer(state = INITIAL_STATE, action) {
             fetching: false,
             errors: action.payload
         }
+    case FETCH_USER_DREAMS_START:
+        return {
+            ...state,
+        }
+    case FETCH_USER_DREAMS_SUCCESS:
+        return {
+            ...state, 
+            userDreams: action.payload
+        }
+    case FETCH_USER_DREAMS_FAILURE:
+        return {
+            ...state,
+            errors: action.payload
+        }
+    case UPDATE_DREAM_START:
+        return {
+            ...state,
+            isUpdating: true
+        }
+    case UPDATE_DREAM_SUCCESS:
+        const filtered = state.userDreams.filter(dream => {
+            return dream.id !== action.payload.id;
+        });
+        return {
+            ...state,
+            isUpdating: false,
+            userDreams: [...filtered, action.payload]
+        }
+    case UPDATE_DREAM_FAILURE:
+        return {
+            ...state,
+            isUpdating: false,
+            errors: action.payload
+        }
     case DELETE_DREAM_START:
         return {
             ...state,
             deletingDream: true
         }
     case DELETE_DREAM_SUCCESS:
-        const { dreams } = state;
-        const filteredDreams = dreams.filter(dream => {
+        const { userDreams } = state;
+        const filteredDreams = userDreams.filter(dream => {
             return dream.id !== action.payload;
         });
         return {
             ...state,
             deletingDream: false,
-            dreams: [ ...filteredDreams ]
+            userDreams: [ ...filteredDreams ]
         }
     case DELETE_DREAM_FAILURE:
         return {
