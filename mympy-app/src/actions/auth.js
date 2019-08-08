@@ -1,5 +1,6 @@
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
+import { Mixpanel } from '../mixpanel/mixPanel';
 
 export const REGISTER_START = 'REGISTER_START';
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
@@ -39,6 +40,11 @@ export const login = (creds) => dispatch => {
     axios
     .post(`${BASE_URL}/auth/login`, creds)
     .then(res => {
+        Mixpanel.identify(creds.username);
+        Mixpanel.track('Successful login');
+        Mixpanel.people.set({
+        $username: creds.username,
+      });
         localStorage.setItem('jwt', res.data.token);
         dispatch({
             type: LOGIN_SUCCESS,
@@ -46,6 +52,7 @@ export const login = (creds) => dispatch => {
         })
     })
     .catch(err => { 
+        Mixpanel.track('Unsuccesful Login');
         dispatch({
             type: LOGIN_FAILURE,
             payload: err
