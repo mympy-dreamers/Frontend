@@ -1,5 +1,6 @@
 import React from "react";
 import group from "../../img/woman.svg";
+import rainbowball from "../../img/rainbowball.svg"
 
 import "./About.css";
 
@@ -35,10 +36,12 @@ const AboutUs = () => {
               Mymphy Dreams community.profile and post their project and needs
               and find funding from the Mymphy Dreams community.
             </p>
-          </div>
+          </div> 
         </div>
+        <div>
+        <img  className="img2" src={rainbowball}/>
       </div>
-
+      </div>
       <div>
       </div>
     </div>
