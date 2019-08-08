@@ -151,3 +151,14 @@ span{
     padding-top: 20px;
     margin-left: 400px;
 }
+
+.teamimg{
+    height: 255px;
+    width: 220px;
+    border: 1px solid #979797;
+    border-radius: 12px;
+    background-color: #D8D8D8;
+    margin-top: 15%;
+    margin-left: 30px;
+    
+}
