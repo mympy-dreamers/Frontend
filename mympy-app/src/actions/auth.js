@@ -25,17 +25,18 @@ export const register = (user) => dispatch => {
     axios
         .post(`${BASE_URL}/auth/register`, user)
         .then(res => {
-            Mixpanel.identify(user.username)
+            Mixpanel.identify(user.username);
             Mixpanel.track("Signup", {
             "username": user.username,
             "email": user.email,
-        })
+        });
             dispatch({
                 type: REGISTER_SUCCESS,
                 payload: res.data
             })
         })
         .catch(err => {
+            Mixpanel.track('Unsuccesful Login');
             dispatch({
                 type: REGISTER_FAILURE,
                 payload: err
