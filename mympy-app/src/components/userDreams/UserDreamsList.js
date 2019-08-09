@@ -14,7 +14,6 @@ class UserDreamsList extends Component {
   render() {
     return (
       <div className="dream-container">
-        <h1>{ this.props.currentUser.username }'s Current Dreams</h1>
         <div className="dream-list">
         {this.props.dreams.map(dream => 
           <UserDream 
