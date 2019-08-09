@@ -21,7 +21,7 @@ class UserDreamsList extends Component {
               key={dream.id}
               deleteDream={this.props.deleteDream}
               updateDream={this.props.updateDream}
-              currentUser={this.props.currentUser} />)}
+              currentUser={this.props.user} />)}
         </div>
       </div>
     );
