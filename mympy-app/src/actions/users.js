@@ -21,7 +21,7 @@ export const DELETE_USER_SUCCESS = 'DELETE_USER_SUCCESS';
 export const DELETE_USER_FAILURE = 'DELETE_USER_FAILURE';
 
 
-const BASE_URL = 'https://mympy-dreamers-staging.herokuapp.com';
+const BASE_URL = 'https://mympy-dreamers.herokuapp.com';
 
 const token = {
     headers: { authorization: localStorage.getItem('jwt') }
