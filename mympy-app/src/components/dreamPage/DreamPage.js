@@ -2,9 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import Carousel	from './Carousel.js';
+import Carousel from './Carousel.js';
 import Sidebar from './Sidebar.js';
 import DreamPageBody from './DreamPageBody.js';
+import { fetchDreamById } from '../../actions';
 
 import * as vars from '../../scss/general/_variables.scss';
 
@@ -26,48 +27,58 @@ const DreamPageDiv = styled.div`
 
 class DreamPage extends React.Component {
   constructor() {
-  	super();
+    super();
 
-  	this.state = {
-  		dream: {
-			id: null,
-			cardImg: '',
-			shortDescription: "",
-			longDescription: "",
-			donationsReceived: 0,
-			donationGoal: 0,
-  			recentDonations: [],
-  		},
-  		user: {
-  			username: "",
-			firstname: "",
-			lastname: "",
-			city: "",
-  		},
-  		allUserDreams: []
-  	};
+    this.state = {
+      dream: {
+        id: null,
+        cardImg: '',
+        shortDescription: "",
+        longDescription: "",
+        donationsReceived: 0,
+        donationGoal: 0,
+        recentDonations: [],
+      },
+      user: {
+        username: "",
+        firstname: "",
+        lastname: "",
+        city: "",
+      },
+      // allUserDreams: []
+    };
   }
 
   componentDidMount() {
-  	//Finds dream and sets to state
-  	const thisDream = this.props.dreams.find( dream => 
-  		(parseInt(dream.id) === parseInt(this.props.match.params.id)) 
-  	);
-  	this.setState({
-  		dream: thisDream,
-  		user: thisDream.user,
-  		allUserDreams: thisDream.user.dreams
-  	});
+    this.props.fetchDreamById(this.props.match.params.id);
+    //Finds dream and sets to state
+    // const thisDream = this.props.dreams.find(dream =>
+    //   (parseInt(dream.id) === parseInt(this.props.match.params.id))
+    // );
+
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.currDream !== prevProps.currDream) {
+      const thisDream = this.props.currDream;
+      console.log(thisDream)
+      console.log(this.props.dreams)
+      this.setState({
+        dream: thisDream,
+        user: { username: thisDream.username }
+        // allUserDreams: thisDream.user.dreams
+      });
+    }
   }
 
   render() {
     return (
       <DreamPageDiv>
         <div className="dream-page">
-  				<Carousel />
+          <Carousel />
           <div className="sidebar-body">
-            <Sidebar dream={this.state.dream} user={this.state.user}/>
-            <DreamPageBody dream={this.state.dream}/>
+            <Sidebar dream={this.state.dream} user={this.state.user} />
+            <DreamPageBody dream={this.state.dream} />
           </div>
         </div>
       </DreamPageDiv>
@@ -76,9 +87,11 @@ class DreamPage extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return {
-        dreams: state.dreams.dummyDreams
-    }
+  return {
+    currDream: state.dreams.currDream,
+    // user: state.auth.user,
+
+  }
 }
 
-export default connect(mapStateToProps)(DreamPage);
+export default connect(mapStateToProps, { fetchDreamById })(DreamPage);
