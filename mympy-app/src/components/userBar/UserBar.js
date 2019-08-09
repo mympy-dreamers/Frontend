@@ -14,36 +14,12 @@ import userLogo from '../../img/userbar-img/userLogo.png';
 
 class UserBar extends React.Component {
 
-
-    // isReady = () => {
-    //     if (this.props.user.name === null) {
-    //         return (
-    //             <Spinner size="sm" color="secondary" />
-    //         )
-    //     } else {
-    //         return (
-    //             <h3>Hello {this.props.user.name.toUpperCase()}!</h3>
-    //         )
-    //     }
-    // }
-
-    // fetchUserInfo = id => {
-    //     this.props.fetchUserById(id);
-    // }
-
-    // method for decoding a token
-
-    // decodeToken = token => {
-    //     const decodedToken = JSON.parse(atob(token.split('.')[1]));
-    //     return decodedToken;
-    // }
-
     render() {
         return (
             <div className="user-main">
                 <div className="wrapper">
                     <div className="user-left">
-                        {<h3>Hello {this.props.user.given_name.toUpperCase()}!</h3>}
+                        {<h3>Hello {this.props.authZeroUser.given_name.toUpperCase()}!</h3>}
                         <img src={demo} alt='user' />
                     </div>
                     <div className="flexing">
@@ -89,7 +65,8 @@ class UserBar extends React.Component {
 
 const mapStateToProps = ({ auth, users }) => {
     return {
-        user: users.user
+        authZeroUser: users.authZeroUser,
+        users: users
     }
 }
 
