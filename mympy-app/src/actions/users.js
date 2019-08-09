@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+export const SET_USER = 'SET_USER';
+
 export const FETCH_USERS_START = 'FETCH_USERS_START';
 export const FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS';
 export const FETCH_USERS_FAILURE = 'FETCH_USERS_FAILURE';
@@ -21,103 +23,116 @@ export const DELETE_USER_SUCCESS = 'DELETE_USER_SUCCESS';
 export const DELETE_USER_FAILURE = 'DELETE_USER_FAILURE';
 
 
-const BASE_URL = 'https://mympy-dreamers.herokuapp.com';
+const BASE_URL = process.env.BASE_URL || 'http://localhost:5000';
 
 const token = {
     headers: { authorization: localStorage.getItem('jwt') }
+}
+
+export const setUser = (user) => (dispatch) => {
+    dispatch({
+        type: SET_USER,
+        payload: user
+    })
 }
 
 export const fetchUsers = () => (dispatch) => {
     dispatch({ type: FETCH_USERS_START });
 
     axios
-    .get(`${BASE_URL}/api/users`, token)
-    .then(res => {
-        dispatch({
-            type: FETCH_USERS_SUCCESS,
-            payload: res.data
+        .get(`${BASE_URL}/api/users`, token)
+        .then(res => {
+            dispatch({
+                type: FETCH_USERS_SUCCESS,
+                payload: res.data
+            })
         })
-    })
-    .catch(err => {
-        dispatch({
-            type: FETCH_USERS_FAILURE,
-            payload: err  
+        .catch(err => {
+            dispatch({
+                type: FETCH_USERS_FAILURE,
+                payload: err
+            })
         })
-    })
 }
 
 export const fetchUserById = (id) => (dispatch) => {
     dispatch({ type: FETCH_USER_START })
 
     axios
-    .get(`${BASE_URL}/api/users/${id}`, token)
-    .then(res => {
-        dispatch({
-            type: FETCH_USER_SUCCESS,
-            payload: res.data
+        .get(`${BASE_URL}/api/users/${id}`, token)
+        .then(res => {
+            dispatch({
+                type: FETCH_USER_SUCCESS,
+                payload: res.data
+            })
         })
-    })
-    .catch(err => {
-        dispatch({
-            type: FETCH_USER_FAILURE,
-            payload: err
+        .catch(err => {
+            dispatch({
+                type: FETCH_USER_FAILURE,
+                payload: err
+            })
         })
-    })
 }
 
 export const fetchUserDreams = (id) => (dispatch) => {
     dispatch({ type: FETCH_USER_DREAMS_START })
 
     axios
-    .get(`${BASE_URL}/api/users/${id}/dreams`, token)
-    .then(res => {
-        dispatch({
-            type: FETCH_USER_DREAMS_SUCCESS,
-            payload: res.data
+        .get(`${BASE_URL}/api/users/${id}/dreams`, token)
+        .then(res => {
+            dispatch({
+                type: FETCH_USER_DREAMS_SUCCESS,
+                payload: res.data
+            })
         })
-    })
-    .catch(err => {
-        dispatch({
-            type: FETCH_USER_DREAMS_FAILURE,
-            payload: err
+        .catch(err => {
+            dispatch({
+                type: FETCH_USER_DREAMS_FAILURE,
+                payload: err
+            })
         })
-    })
 }
 
 export const updateUser = (id, changes) => dispatch => {
-    dispatch({ type: UPDATE_USER_START});
+    dispatch({ type: UPDATE_USER_START });
 
     axios
-    .put(`${BASE_URL}/api/users/${id}`, changes, token)
-    .then(res => {
-        dispatch({
-            type: UPDATE_USER_SUCCESS,
-            payload: res.data
+        .put(`${BASE_URL}/api/users/${id}`, changes, token)
+        .then(res => {
+            dispatch({
+                type: UPDATE_USER_SUCCESS,
+                payload: res.data
+            })
         })
-    })
-    .catch(err => {
-        dispatch({
-            type: UPDATE_USER_FAILURE,
-            payload: err
+        .catch(err => {
+            dispatch({
+                type: UPDATE_USER_FAILURE,
+                payload: err
+            })
         })
-    })
 }
 
 export const deleteUser = (id) => dispatch => {
     dispatch({ type: DELETE_USER_START });
 
     axios
-    .delete(`${BASE_URL}/api/users/${id}`, token)
-    .then(res => {
-        dispatch({
-            type: DELETE_USER_SUCCESS,
-            payload: id
+        .delete(`${BASE_URL}/api/users/${id}`, token)
+        .then(res => {
+            dispatch({
+                type: DELETE_USER_SUCCESS,
+                payload: id
+            })
         })
-    })
-    .catch(err => {
-        dispatch({
-            type: DELETE_USER_FAILURE,
-            payload: err
+        .catch(err => {
+            dispatch({
+                type: DELETE_USER_FAILURE,
+                payload: err
+            })
         })
-    })
+}
+
+export const SET_LOG = 'SET_LOG';
+
+export const setLog = () => (dispatch) => {
+    dispatch({ type: SET_LOG })
 }
