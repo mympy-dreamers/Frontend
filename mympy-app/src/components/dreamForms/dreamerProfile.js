@@ -20,7 +20,6 @@ class DreamInfo extends React.Component {
                 user_id: 1,
             }
         };
-        
     }
 
     handleChanges = e => {
@@ -28,28 +27,26 @@ class DreamInfo extends React.Component {
         e.preventDefault()
         this.setState ({
             ...this.state,
-            dreamCard: {...this.state.dreamCard, [e.target.name]: e.target.value}
-            
+            dreamCard: {
+                ...this.state.dreamCard, 
+                [e.target.name]: e.target.value
+            }
         })
     }
 
     handleSubmit = e => {
         e.preventDefault()
-        this.props.addDream(this.state)
+        this.props.addDream(this.state.dreamCard)
+            .then(() => this.props.history.push('/addDream/image'));
     }
-
-
-    
 
     render() {
         return (
             <div className='dream-Home-Page'>
                 <div className='dreamer-card-app'>
-
                     <div className='form-title'>
                         <h1>Make your dream in reality!</h1>
                     </div>
-
                     <div>
                     <FormGroup>
                         <Label for="exampleEmail">Dream Name</Label>
@@ -71,15 +68,8 @@ class DreamInfo extends React.Component {
                     </div> 
                 </div>  {/* dreamer-card-app end  */}
             </div> /* dream-Home-Page end */
-
         )
     }
 }
 
-const mapStateToProps = ({dreams}) =>{
-    return {
-        //dreamCards: dreams.dreamCards
-    }
-}
-
-export default connect(mapStateToProps, { addDream })(DreamInfo);
+export default connect(null, { addDream })(DreamInfo);
