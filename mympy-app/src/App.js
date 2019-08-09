@@ -25,23 +25,25 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <NavBar show={this.props.location.pathname.includes('market')} />
-        <Route exact path="/" render={(props) => <Home {...props} />} />
-        <Route path="/login" render={(props) => (
-          <Login
-            {...props}
-            type="login"
-          />
-        )} />
-        <Route path="/register" render={(props) => (
-          <Login
-            {...props}
-            type="register"
-          />
-        )} />
-        <Route exact path="/market" component={DreamMarket} />
-        <Route path="/market/:id" component={DreamPage} />
-        <PrivateRoute exact path="/dashboard" component={Dashboard} />
+        <div className="app-wrap">
+          <NavBar show={this.props.location.pathname.includes('market')} />
+          <Route exact path="/" render={(props) => <Home {...props} />} />
+          <Route path="/login" render={(props) => (
+            <Login
+              {...props}
+              type="login"
+            />
+          )} />
+          <Route path="/register" render={(props) => (
+            <Login
+              {...props}
+              type="register"
+            />
+          )} />
+          <Route exact path="/market" component={DreamMarket} />
+          <Route path="/market/:id" component={DreamPage} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+        </div>
       </div>
     );
   }

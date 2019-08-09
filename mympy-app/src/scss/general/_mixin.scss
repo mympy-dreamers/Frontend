@@ -1,5 +1,18 @@
 @import './variables'; // not sure if this is needed to bring in variables in this file, or if they are brought in where they are initiated
 
+// -----------------------------------------------------
+
+// inside of file, use mixin media query as such
+
+// .className {
+//      font-size: 2rem;
+// 
+//      @include mobile {
+//          font-size: 1rem;
+//      }
+// }
+
+// -----------------------------------------------------
 
 // Mixins
 
@@ -7,16 +20,81 @@
     border: 1px solid red;
 }
 
-@mixin front-btn ($bg-color, $self-align, $margin) {
-    align-self: $self-align;
+@mixin front-btn ($bg-color, $margin) {
+    // align-self: $self-align;
+    border: none;
     font-family: $large-font;
     font-size: 1.5rem;
     background-color: $bg-color;
-    color: white;
+    color: $nav-font-color;
+    padding: 15px;
+    border-radius: 25px;
+    #{$margin}: 3%;
+    margin-top: 4%;
+    width: 13em;
+
+    @include small-desktop {
+        font-size: 1.3rem;
+        margin-top: 2%;
+    }
+
+    @include btn-break {
+        #{$margin}: 5%;
+    }
+
+    @include btn-font {
+        font-size: 1rem;
+    }
+
+    @include tablet-portrait {
+        font-size: 1rem;
+    }
+
+    @include mobile {
+        font-size: 1rem;
+        margin-top: 1%;
+    }
+
+    @include small-mobile {
+        #{$margin}: 0;
+        margin-top: 10%;
+    }
+    
+}
+
+@mixin mid-btn ($bg-color, $margin) {
+    border: none;
+    font-family: $body-font;
+    font-weight: 900;
+    font-size: 3.2rem;
+    background-color: $bg-color;
+    color: $nav-font-color;
     padding: 15px;
     border-radius: 25px;
     #{$margin}: 5%;
-    width: 25%;
+    margin-top: 3%;
+    width: 20rem;
+
+    @include sevenPxBreak {
+        font-size: 1.7rem;
+        width: 17rem;
+    }
+
+    @include mobile {
+        #{$margin}: 0;
+    }
+}
+
+// gives each page the correct margin to be centered
+
+@mixin main-margin {
+    width: 1440px;
+    margin: 0 auto;
+}
+
+@mixin small-desktop-margin {
+    width: 1100px;
+    margin: 0 auto;
 }
 
 @mixin bottom-half {
@@ -45,12 +123,17 @@
 
 // Media Queries
 
+    // iPhone 5/SE screen is 320px which was unresponsive to previous queries
+@mixin small-mobile {
+    @media (max-width: 500px) { @content; }
+}
+
 @mixin mobile {
-    @media (max-width: 400px) { @content; }
+    @media (max-width: 500px) { @content; }
 }
 
 @mixin tablet-landscape {
-    @media (max-width: 900px) { @content; }
+    @media (max-width: 930px) { @content; }
 }
 
 @mixin tablet-portrait {
@@ -58,19 +141,63 @@
 }
 
 @mixin small-desktop {
-    @media (max-width: 1450px) { @content; }
+    @media (max-width: 1550px) { @content; }
+}
+
+// Nav Specific queries  -----------------------------
+
+    // used in navbar.scss line 13 | changes width from called margin (1200px)
+    // to 100% of viewport
+@mixin nav-break {
+    @media (max-width: 1100px) { @content; }
+}
+
+    // used in navbar.scss line 23 | changes navbar flex-direction to column 
+@mixin column-break {
+    @media (max-width: 800px) { @content; }
+}
+
+    // used in navbar.scss line 76 | changes navbar font at breakpoint
+@mixin font-break {
+    @media (max-width: 550px) { @content; }
+}
+
+// Carousel Specific queries -----------------------------
+
+// need for bottom padding ~1100px
+@mixin btn-break {
+    @media (max-width: 1100px) { @content; }
+}
+
+@mixin btn-font {
+    @media (max-width: 750px) { @content; }
 }
 
 
+// Us somponent specific queries
 
+@mixin mid-break {
+    @media (max-width: 950px) { @content; }
+}
 
+// Middle Section `midSec` specific queries
 
-// inside of file, use mixin media query as such
+@mixin div-width {
+    @media (max-width: 1010px) { @content; }
+}
 
-// .className {
-//      font-size: 2rem;
-// 
-//      @include mobile {
-//          font-size: 1rem;
-//      }
-// }
+@mixin sevenPxBreak {
+    @media (max-width: 710px) { @content; }
+}
+
+@mixin largeBreak {
+    @media (max-width: 1850px) { @content; }
+}
+
+@mixin mediumBreak {
+    @media (max-width: 1750px) { @content; }
+}
+
+@mixin lastBreak {
+    @media (max-width: 1650px) { @content; }
+}
