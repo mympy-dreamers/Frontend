@@ -8,20 +8,20 @@ class UserDreamsList extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchUserDreams(this.props.currentUser.subject);
+    this.props.fetchUserDreams(this.props.user.id);
   }
 
   render() {
     return (
       <div className="dream-container">
         <div className="dream-list">
-        {this.props.dreams.map(dream => 
-          <UserDream 
-          dream={ dream } 
-          key={ dream.id }
-          deleteDream={ this.props.deleteDream } 
-          updateDream={ this.props.updateDream }
-          currentUser={ this.props.currentUser } />)}
+          {this.props.dreams.map(dream =>
+            <UserDream
+              dream={dream}
+              key={dream.id}
+              deleteDream={this.props.deleteDream}
+              updateDream={this.props.updateDream}
+              currentUser={this.props.currentUser} />)}
         </div>
       </div>
     );
@@ -32,7 +32,7 @@ function mapStateToProps(state) {
   return {
     dreams: state.dreams.userDreams,
     isupdating: state.dreams.isupdating,
-    currentUser: state.auth.currentUser
+    user: state.auth.user
   }
 }
 

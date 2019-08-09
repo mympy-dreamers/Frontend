@@ -14,7 +14,7 @@ import UserDreamsList from './components/userDreams/UserDreamsList'
 class App extends React.Component {
 
   componentDidUpdate(prevProps) {
-    if (this.props.users && this.props.users !== prevProps.users) {
+    if (this.props.authZeroUser && this.props.users && this.props.users !== prevProps.users) {
       const isUser = this.props.users.reduce((acc, curr) =>
         (curr.auth_id === this.props.authZeroUser.sub) ? true : acc, false)
       this.props.zeroLogin(this.props.authZeroUser, isUser)
@@ -39,14 +39,14 @@ class App extends React.Component {
             <Login
               {...props}
               type="register"
-              />
-            )} />
-            <Route exact path="/market" component={DreamMarket} />
-            <Route path="/market/:id" component={DreamPage} />
-            <Route path="/user-dreams" component={UserDreamsList} />
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          </div>
+            />
+          )} />
+          <Route exact path="/market" component={DreamMarket} />
+          <Route path="/market/:id" component={DreamPage} />
+          <Route path="/user-dreams" component={UserDreamsList} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
         </div>
+      </div>
     );
   }
 }
