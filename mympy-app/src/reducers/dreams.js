@@ -2,6 +2,12 @@ import {
     FETCH_DREAMS_START, 
     FETCH_DREAMS_SUCCESS, 
     FETCH_DREAMS_FAILURE,
+    ADD_DREAM_START,
+		ADD_DREAM_SUCCESS,
+		ADD_DREAM_FAILURE,
+		ADD_IMAGE_START,
+		ADD_IMAGE_SUCCESS,
+		ADD_IMAGE_FAILURE,
     UPDATE_DREAM_START,
     UPDATE_DREAM_SUCCESS,
     UPDATE_DREAM_FAILURE, 
@@ -15,6 +21,10 @@ const INITIAL_STATE = {
     fetching: false,
     errors: [],
     deletingDream: false,
+  fetching: false,
+  posting: false,
+  postingImage: false,
+  dreamId: null,
 	dreams: [],
 	dreamCards:{},
     featured: [
@@ -2437,51 +2447,85 @@ const INITIAL_STATE = {
 };
 
 export default function dreamsReducer(state = INITIAL_STATE, action) {
-    switch(action.type) {
-    case FETCH_DREAMS_START:
-            return {
-            ...state,
-            fetching: true
-        }
-    case FETCH_DREAMS_SUCCESS:
-        return {
-            ...state, 
-            fetching: false,
-            dreams: action.payload
-        }
-    case FETCH_DREAMS_FAILURE:
-        return {
-            ...state,
-            fetching: false,
-            errors: action.payload
-        }
-    case DELETE_DREAM_START:
-        return {
-            ...state,
-            deletingDream: true
-        }
-    case DELETE_DREAM_SUCCESS:
-        const { dreams } = state;
-        const filteredDreams = dreams.filter(dream => {
-            return dream.id !== action.payload;
-        });
-        return {
-            ...state,
-            deletingDream: false,
-            dreams: [ ...filteredDreams ]
-        }
-    case DELETE_DREAM_FAILURE:
-        return {
-            ...state,
-            deletingDream: false,
-            errors: action.payload
+  switch(action.type) {
+	  case FETCH_DREAMS_START:
+	    return {
+	      ...state,
+	      fetching: true
+	    }
+	  case FETCH_DREAMS_SUCCESS:
+	    return {
+	      ...state, 
+	      fetching: false,
+	      dreams: action.payload
+	    }
+	  case FETCH_DREAMS_FAILURE:
+	    return {
+	      ...state,
+	      fetching: false,
+	      errors: action.payload
+	    }
+	  case ADD_DREAM_START:
+		  return {
+			  ...state,
+			  posting: true,
+			  dreamId: null
+		  }
+	  case ADD_DREAM_SUCCESS:
+	    return {
+	      ...state, 
+	      posting: false,
+	      dreamId: action.payload
+	    }
+	  case ADD_DREAM_FAILURE:
+	    return {
+	      ...state,
+	      posting: false,
+	      errors: action.payload
+	    }
+	  case ADD_IMAGE_START:
+	    return {
+	      ...state,
+	      postingImage: true,
+	    }
+	  case ADD_IMAGE_SUCCESS:
+	    return {
+	      ...state, 
+	      postingImage: false,
+	    }
+	  case ADD_IMAGE_FAILURE:
+	    return {
+	      ...state,
+	      postingImage: false,
+	      errors: action.payload
+	    }
+	  case DELETE_DREAM_START:
+	    return {
+	      ...state,
+	      deletingDream: true
+	    }
+	  case DELETE_DREAM_SUCCESS:
+	    const { dreams } = state;
+	    const filteredDreams = dreams.filter(dream => {
+	      return dream.id !== action.payload;
+	    });
+	    return {
+	      ...state,
+	      deletingDream: false,
+	      dreams: [ ...filteredDreams ]
+	    }
+	  case DELETE_DREAM_FAILURE:
+	    return {
+	      ...state,
+	      deletingDream: false,
+	      errors: action.payload
 		}
-	case SET_DREAMCARDS:
-		return {
-			...state,
-			dreamCards: {...state.dreamCards, ...action.payload}
-		}
-    default:
-        return state;
-    }
+		case SET_DREAMCARDS:
+			return {
+				...state,
+				dreamCards: {...state.dreamCards, ...action.payload}
+			}
+	    default:
+	      return state;
+	    }
 }
