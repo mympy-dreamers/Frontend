@@ -21,6 +21,11 @@ export const register = (user) => dispatch => {
     axios
     .post(`${BASE_URL}/auth/register`, user)
     .then(res => {
+        Mixpanel.identify(user.username)
+        Mixpanel.track("Signup", {
+            "username": user.username,
+            "email": user.email,
+        })
         dispatch({
             type: REGISTER_SUCCESS,
             payload: res.data
@@ -40,11 +45,12 @@ export const login = (creds) => dispatch => {
     axios
     .post(`${BASE_URL}/auth/login`, creds)
     .then(res => {
-        Mixpanel.identify(creds.username);
+        Mixpanel.identify(creds.username); // only used if wanting to replace mixpanel given id; usually good when having mobile app, and webpage
         Mixpanel.track('Successful login');
-        Mixpanel.people.set({
-        $username: creds.username,
-      });
+        // Mixpanel.people.set({
+        //    $first_name: user.first_name,
+        //    $last_name: user.last_name,
+        // })  https://developer.mixpanel.com/docs/javascript#section-setting-profile-properties
         localStorage.setItem('jwt', res.data.token);
         dispatch({
             type: LOGIN_SUCCESS,
@@ -61,6 +67,7 @@ export const login = (creds) => dispatch => {
 }
 
 export const logout = () => {
+    Mixpanel.track('Logging Out');
     return {
         type: LOGOUT_USER
     }
