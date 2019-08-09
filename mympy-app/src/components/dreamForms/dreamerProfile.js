@@ -13,7 +13,7 @@ class DreamInfo extends React.Component {
                 dream_name: '',
                 dream_short_description: '',
                 dream_long_description: '',
-                donations_received: 0,
+                donations_received: 1,
                 donation_goal: 0,
                 user_id: 1,
             }
@@ -21,7 +21,6 @@ class DreamInfo extends React.Component {
     }
 
     handleChanges = e => {
-        console.log(this.state.dreamCard)
         e.preventDefault()
         this.setState ({
             ...this.state,
@@ -33,8 +32,10 @@ class DreamInfo extends React.Component {
     }
 
     handleSubmit = e => {
+        const newDream = {...this.state.dreamCard, donation_goal: parseInt(this.state.dreamCard.donation_goal, 10)}
         e.preventDefault()
-        this.props.addDream(this.state.dreamCard)
+        console.log(newDream);
+        this.props.addDream(newDream)
             .then(() => this.props.history.push('/addDream/image'));
     }
 
