@@ -24,14 +24,14 @@ const ProjectStoryDiv = styled.div`
 `
 
 const ProjectStory = ({ dream, user }) => {
-  return (
-    <ProjectStoryDiv>
-    	<h2 className="PS-title">Project Story</h2>
-    	<div className="PS-body">
-    		<p className="PS-story">{dream.longDescription}</p>
-    	</div>
-    </ProjectStoryDiv>
-  );
+	return (
+		<ProjectStoryDiv>
+			<h2 className="PS-title">Project Story</h2>
+			<div className="PS-body">
+				<p className="PS-story">{dream.dream_long_description}</p>
+			</div>
+		</ProjectStoryDiv>
+	);
 }
 
 export default ProjectStory;
