@@ -1,7 +1,7 @@
 import {
     FETCH_USERS_START, FETCH_USERS_SUCCESS, FETCH_USERS_FAILURE,
     DELETE_USER_START, DELETE_USER_SUCCESS, DELETE_USER_FAILURE,
-    SET_USER, SET_LOG
+    SET_USER, SET_LOG,
 } from '../actions'
 
 
@@ -10,7 +10,7 @@ const INITIAL_STATE = {
     deletingUser: false,
     errors: [],
     users: [],
-    user: {},
+    authZeroUser: {},
     firstLogin: false
 }
 
@@ -58,7 +58,7 @@ export default function usersReducer(state = INITIAL_STATE, action) {
         case SET_USER:
             return {
                 ...state,
-                user: action.payload,
+                authZeroUser: action.payload,
                 firstLogin: true
             }
         case SET_LOG:
@@ -66,6 +66,7 @@ export default function usersReducer(state = INITIAL_STATE, action) {
                 ...state,
                 firstLogin: false
             }
+
         default:
             return state
     }
