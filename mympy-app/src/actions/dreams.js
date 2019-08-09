@@ -78,11 +78,11 @@ export const addDream = (sentDream) => dispatch => {
             type: ADD_DREAM_SUCCESS,
             payload: res.data
         })
-        .catch(err => {
-            dispatch({
-                type: ADD_DREAM_FAILURE,
-                payload: err
-            })
+    })
+    .catch(err => {
+        dispatch({
+            type: ADD_DREAM_FAILURE,
+            payload: err
         })
     })
 }
