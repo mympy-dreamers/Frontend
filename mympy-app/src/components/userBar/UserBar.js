@@ -23,7 +23,7 @@ class UserBar extends React.Component {
                         <img src={demo} alt='user' />
                     </div>
                     <div className="flexing">
-                        <Link to="/dreamer">
+                        <Link to="/addDream">
                             <div className="user-tab">
                                 <img src={cloudPlus} alt='cloud with a plus sign' />
                                 <p>Create Dream</p>
