@@ -9,7 +9,7 @@ import DreamMarket from './components/dreamMarket/DreamMarket';
 import DreamPage from './components/dreamPage/DreamPage.js';
 import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/login/PrivateRoute';
-import UserDreamsList from './components/userDreams/UserDreamsList'
+// import UserDreamsList from './components/userDreams/UserDreamsList'
 
 class App extends React.Component {
 
@@ -43,7 +43,7 @@ class App extends React.Component {
             )} />
             <Route exact path="/market" component={DreamMarket} />
             <Route path="/market/:id" component={DreamPage} />
-            <Route path="/user-dreams" component={UserDreamsList} />
+            {/* <Route path="/user-dreams" component={UserDreamsList} /> */}
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
           </div>
         </div>
