@@ -28,8 +28,7 @@ const token = {
     headers: { authorization: localStorage.getItem('jwt') }
 }
 
-console.log('BASE_URL', process.env.BASE_URL)
-const BASE_URL = process.env.BASE_URL || 'http://localhost:5000';
+const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
 
 export const fetchDreamById = (id) => (dispatch) => {
     dispatch({ type: FETCH_DREAM_START });
