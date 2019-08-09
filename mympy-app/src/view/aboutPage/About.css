@@ -24,6 +24,7 @@ h1 {
     font-size: 116px;
     font-weight: 900;
     line-height: 100px;
+    margin-top: 30px;
     
 }
 
@@ -108,7 +109,7 @@ span{
 
 .team{
     background: linear-gradient(0deg, #7647B6 0%, #194980 100%);
-    height:4220px;
+    height:4020px;
     width:100%;
     
 }
@@ -116,8 +117,8 @@ span{
 .img2{
     display: block;
     margin-left: auto;
-    margin-right: auto;
-    margin-top: 90px;
+    margin-right: auto; 
+    margin-top: 70px;    
     
 }
 
@@ -154,7 +155,7 @@ span{
     font-size: 40px;
     font-weight: bold;
     line-height: 55px;
-    padding-top: 50px;
+    padding-top: 70px;
     margin-left: 250px;
 }
 
@@ -174,11 +175,12 @@ span{
     display:flex;
     align-items:center;
     flex-direction: row;
+  
 }
 
 .table{
     margin-left:5px;
-    margin-top: 190px;
+    margin-top:190px;
     
 }
 
@@ -202,7 +204,6 @@ li{
     display:block;
     margin-top:5px;
   
-  
 }
 
 .maindiv2{
@@ -215,6 +216,7 @@ li{
 
 .team-img2{
    margin-left: 600px;
+  
 }
 
 .divider{
@@ -231,6 +233,46 @@ section{
     width:100%;
     height:60px
 }
+
+header {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    
+  }
+
+ .background{
+     height: 2200px;
+     width:100%;
+     background-repeat: no-repeat;
+  background-size: cover;
+
+ }
+
+
+  
+ .wave{
+  background:url("https://image.freepik.com/free-vector/abstract-background_52683-3700.jpg");
+  background-size:cover;
+  background-repeat:no-repeat;
+  position:relative;
+  width:100%;
+  height:10%;
+  
+ }
+
+ .galaxy{
+     background: url('https://static.vecteezy.com/system/resources/previews/000/187/302/large_2x/vector-ultraviolet-galactic-background.jpg');
+     background-size:cover;
+     background-repeat:no-repeat;
+     position:relative;
+     width:100%;
+     height:15%;
+    }
+
+  
+
+ 
 
 
  

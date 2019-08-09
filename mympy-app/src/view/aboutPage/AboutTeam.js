@@ -1,6 +1,13 @@
 import React from "react";
 import teampic from "../../img/team.jpg";
 import "./About.css";
+import teamlead from "../../img/teampic/teamlead.jpg";
+import Alexpic from "../../img/teampic/Alex.png";
+import Dakotapic from "../../img/teampic/Dakota.jpg";
+import Jaredpic from "../../img/teampic/Jared.png";
+import Luispic from "../../img/teampic/Luis.jpg";
+import Mylynhpic from "../../img/teampic/Mylynh.jpg";
+import Tashipic from "../../img/teampic/tashi.png";
 
 const AboutTeam = () => {
   return (
@@ -26,7 +33,7 @@ const AboutTeam = () => {
           <div className="maindiv2">
             <div className="imagetext">
               <div className="teamimg">
-                <img className="team-img1" src={teampic} />
+                <img className="team-img1" src={teamlead} />
               </div>
               <ul className="table">
                 <li>Nick Stricker</li>
@@ -53,7 +60,7 @@ const AboutTeam = () => {
 
             <div className="imagetext">
               <div className="teamimg team-img2">
-                <img className="team-img1" src={teampic} />
+                <img className="team-img1" src={Alexpic} />
               </div>
               <ul className="table">
                 <li>Alex Vargas</li>
@@ -70,7 +77,7 @@ const AboutTeam = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="">
+                    <a href="https://twitter.com/Yor_AlexVargas">
                       <i class="fab fa-twitter-square fa-2x" />
                     </a>
                   </li>
@@ -80,7 +87,7 @@ const AboutTeam = () => {
 
             <div className="imagetext">
               <div className="teamimg">
-                <img className="team-img1" src={teampic} />
+                <img className="team-img1" src={Jaredpic} />
               </div>
               <ul className="table">
                 <li>Jared Parrish</li>
@@ -108,7 +115,7 @@ const AboutTeam = () => {
 
             <div className="imagetext">
               <div className="teamimg team-img2">
-                <img className="team-img1" src={teampic} />
+                <img className="team-img1" src={Dakotapic} />
               </div>
               <ul className="table">
                 <li>Dakotah Hitze</li>
@@ -135,7 +142,7 @@ const AboutTeam = () => {
 
             <div className="imagetext">
               <div className="teamimg">
-                <img className="team-img1" src={teampic} />
+                <img className="team-img1" src={Tashipic} />
               </div>
               <ul className="table">
                 <li>Tashi Woeser</li>
@@ -162,7 +169,7 @@ const AboutTeam = () => {
 
             <div className="imagetext">
               <div className="teamimg team-img2">
-                <img className="team-img1" src={teampic} />
+                <img className="team-img1" src={Mylynhpic} />
               </div>
               <ul className="table">
                 <li>Mylynh Nguyen</li>
@@ -244,7 +251,7 @@ const AboutTeam = () => {
 
             <div className="imagetext">
               <div className="teamimg">
-                <img className="team-img1" src={teampic} />
+                <img className="team-img1" src={Luispic} />
               </div>
               <ul className="table">
                 <li>Luis Villafranca</li>
@@ -256,7 +263,7 @@ const AboutTeam = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="">
+                    <a href="https://www.linkedin.com/in/luisdoesux/">
                       <i class="fab fa-linkedin fa-2x" />
                     </a>
                   </li>
@@ -271,6 +278,8 @@ const AboutTeam = () => {
           </div>
         </div>
       </div>
+     <div className="wave"></div>
+       <div className="galaxy"></div>   
     </div>
   );
 };

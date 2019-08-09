@@ -16,8 +16,7 @@ return(
             <p>
               Mympy Dreams is a marketplace where individuals can create a
               profile and post their project and needs and find funding from the
-              Mymphy Dreams community.profile and post their project and needs
-              and find funding from the Mymphy Dreams community.
+              Mymphy Dreams community.
             </p>
           </div>
           <div className="rightside">

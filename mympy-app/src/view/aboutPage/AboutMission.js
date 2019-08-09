@@ -10,10 +10,11 @@ const AboutMission = () => {
           <div className="about1">
             <h1 className="header">Our Mission</h1>
             <p className="mission">
-              Mympy Dreams is a marketplace where individuals can create a
-              profile and post their project and needs and find funding from the
-              Mymphy Dreams community.profile and post their project and needs
-              and find funding from the Mymphy Dreams community.
+              Mympy is on a mission to close the poverty gap in VR technology by
+              creating a low barrier entry into the field of VR development for
+              low-income individuals. Mympy dream is a marketplace where
+              individuals can create a profile and post their project and needs
+              and find funding from the Mympy Dreams community.
             </p>
           </div>
         </div>
