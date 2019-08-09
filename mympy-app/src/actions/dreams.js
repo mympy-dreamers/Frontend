@@ -24,7 +24,7 @@ const token = {
     headers: { authorization: localStorage.getItem('jwt') }
 }
 
-const BASE_URL = 'http://localhost:5000' /* process.env.BASE_URL || 'https://mympy-dreamers-staging.herokuapp.com' */;
+const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
 
 export const fetchDreamById = (id) => (dispatch) => {
     dispatch({ type: FETCH_DREAM_START });
@@ -49,7 +49,7 @@ export const fetchAllDreams = () => (dispatch) => {
     dispatch({ type: FETCH_DREAMS_START });
 
     axios
-        .get('http://localhost:5000/api/dreams')
+        .get(`${BASE_URL}/api/dreams`, token)
         .then(res => {
             dispatch({
                 type: FETCH_DREAMS_SUCCESS,
@@ -119,4 +119,11 @@ export const deleteDream = (id) => dispatch => {
                 payload: err
             })
         })
+}
+
+// UPDATING SEARCH TERM
+export const UPDATE_SEARCH = "UPDATE_SEARCH"
+
+export const updateSearch = searchTerm => dispatch => {
+    dispatch({ type: UPDATE_SEARCH, payload: searchTerm })
 }

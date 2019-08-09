@@ -1,33 +1,114 @@
 .caro-main{
     display: flex;
+    padding: 1%;
+    display: flex;
+    justify-content: space-between;
+    height: 850px;
+    @include main-margin;
+
+    @include small-desktop {
+        @include small-desktop-margin;
+    }
+
+    @include tablet-landscape {
+        margin-bottom: 2%;
+    }
+
+    @include tablet-portrait {
+        width: 100%;
+        margin: 0;
+    }
+
+    @include mobile {
+        height: 70vh;
+    }
+
+    @include small-mobile {
+        height: 100vh;
+    }
 
     .empty {
         width: 40%;
-        height: 93vh;
+
+        @include small-desktop {
+            width: 10%;
+        }
+
+        @include tablet-landscape {
+            width: 10%;
+        }
+
+        @include tablet-portrait {
+            display: none;
+        }
+       
     }
 
     .left{
-        // width: 40%;
+        height: 66vh;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         position: absolute;
         z-index: 1;
+        margin: 1em 0 0 18em;
+
+        @include small-desktop {
+            margin: 0;
+        }
+
+        @include btn-break {
+            align-items: center;
+        }
+
+        @include tablet-portrait {
+            position: static;
+
+        }
+
+        @include mobile {
+            width: 100%;
+        }
+        
 
         .title {
             text-align: left;
+            margin-top: 3em;
             // height: 51%;
+
+            @include tablet-portrait {
+                width: 100%;
+                align-self: center;
+            }
+
+            @include btn-break {
+                text-align: center;
+                margin-top: 10%;
+            }
+
+            // @include small-mobile {
+            //     text-align: center;
+            // }
 
             h1{
                 font-family: $large-font;
                 font-weight: 900;
-                font-size: 16.1rem;
-                color: $dream-font-color;
-                line-height: .70;
+                font-size: 10rem;
+                color: $new-dream-color;
+                line-height: .5;
+               
                 padding: 20px;
 
                 @include small-desktop {
-                    font-size: 14.1rem;
+                    font-size: 10rem;
+                }
+
+                @include tablet-landscape {
+                    font-size: 8rem;
+                }
+
+                @include mobile {
+                    font-size: 5rem;
                 }
 
             } // end of h1
@@ -38,19 +119,111 @@
             text-align: left;
             padding-top: 0;
             padding: 20px;
+            height: 200px;
+
+            @include btn-break {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                margin-top: 10%;
+            }
+
+            @include tablet-portrait {
+                width: 100%;
+
+            }
+
+            @include mobile {
+                padding: 0;
+                width: 100%;
+                height: auto;
+            }
 
             p{
-                width: 35%;
+                width: 25%;
                 font-family: $body-font;
                 color: $body-font-color;
-                font-size: 2.6rem;
-                padding: 10px;
+                font-size: 2.4rem;
+                font-weight: bold;
+                line-height: 2.3rem;
 
                 @include small-desktop {
                     font-size: 2rem; 
+                    margin-top: 1%;
+                    width: 40%;
+                    line-height: 2.5rem;
+                }
+
+                @include btn-break {
+                    margin-top: 0;
+                    width: 60%;
+                }
+
+                @include tablet-landscape {
+                    font-size: 1.7rem;
+                }
+
+                @include tablet-portrait {
+                    width: 100%;
+                    padding: 3%;
+                }
+
+                @include mobile {
+                    width: 100%;
+                    line-height: inherit;
+                    margin: 0;
+                    font-size: 1.6rem;
                 }
 
             } // end of p
+
+            .btn-div {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-content: center;
+                margin: 5em 0 0 0;
+                width: 35%;
+
+                @include small-desktop {
+                    margin: 0;
+                }
+
+                @include btn-break {
+                    margin-top: 5%;
+                    width: 100%;
+                }
+
+                @include tablet-portrait {
+                    width: 100%;
+                    padding: 2%;
+                }
+
+                @include small-mobile {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                button {
+                    height: 2em;
+
+                    @include small-desktop {
+                        height: inherit;
+                    }
+
+                }
+
+               
+
+                .dreamer {
+                    @include front-btn($dreamer-btn-color, margin-right);
+                }
+
+                .supporter {
+                    @include front-btn($support-btn-color, margin-left);
+                }
+            }
 
         } // end of para-wrap
 
@@ -58,11 +231,35 @@
 
     .right{
         width: 60%;
-        height: 93vh;
+        height: 100%;
+        // margin: 3em 0 0 43em;
+
+        @include small-desktop {
+            height: 64vh
+        }
+
+        @include tablet-landscape {
+           margin: 0;
+           position: relative;
+           right: 10%;
+        }
+
+        @include btn-break {
+            display: none;
+        }
 
         img {
             width: 100%;
             height: 100%;
+
+            @include small-desktop {
+                width: 100%;
+                height: 100%;
+            }
+            @include tablet-landscape {
+                width: 90%;
+                height: 90%;
+            }
 
         } // end of img
 
