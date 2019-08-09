@@ -57,12 +57,13 @@
 
             .item{
 
-                a, button{
+                a{
                     text-decoration: none;
                     color: $nav-font-color;
                     font-size: 1.6rem;
                     font-family: $large-font;
                     font-weight: 900;
+
                     @include small-desktop {
                         font-size: 1.8rem;
                     }
@@ -78,13 +79,6 @@
                     @include mobile {
                         font-size: 1rem;
                     }
-                }
-                button{
-                    background: none;
-                    border: none;
-                }
-                a:hover, button:hover{
-                    color: $cornflowerBlue;
                 }
             }
         }

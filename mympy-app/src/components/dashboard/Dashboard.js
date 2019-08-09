@@ -5,23 +5,30 @@ import Stats from '../stats/Stats';
 import News from '../news/News';
 import Featured from '../featured/Featured';
 
-const Dashboard = () => {
+class Dashboard extends React.Component {
+    constructor() {
+        super();
+        this.state = {
 
-    return (
-        <div className="dash-main">
-            <div className="top-bar">
-                <UserBar />
-            </div>
-            <div className="mid-sec">
-                <Stats />
-                <News />
-            </div>
-            <div className="feature">
-                <Featured />
-            </div>
-        </div>
-    )
+        }
+    }
 
+    render() {
+        return(
+            <div className="dash-main">
+                <div className="top-bar">
+                    <UserBar />
+                </div>
+                <div className="mid-sec">
+                    <Stats />
+                    <News />
+                </div>
+                <div className="feature">
+                    <Featured />
+                </div>
+            </div>
+        )
+    }
 }
 
 export default Dashboard;
