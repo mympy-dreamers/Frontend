@@ -1,8 +1,8 @@
 import mixpanel from 'mixpanel-browser';
 
 const productionHost = 'https://mympydreamers.netlify.com'; 
-const devToken = 'b8fe5e87fd8564fb1a9a6aadd77695b4'; 
-const prodToken = '3f03b1c63fad94a710853f44d3e1b5fa';
+const devToken = process.env.DEV_TOKEN; 
+const prodToken = process.env.PROD_TOKEN;
 
 if (window.location.hostname.toLowerCase().search(productionHost) < 0) { mixpanel.init(devToken);
 } else { mixpanel.init(prodToken); }
