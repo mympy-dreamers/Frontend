@@ -9,9 +9,8 @@ import DreamPage from './components/dreamPage/DreamPage.js';
 import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/login/PrivateRoute';
 
-import DreamCard from './components/dreamForms/dreamCard';
 import DreamerProfile from './components/dreamForms/dreamerProfile';
-import Dreamer from './components/dreamForms/dreamers';
+import ImageForm from './components/dreamForms/imageForm';
 
 class App extends React.Component {
   state = {
@@ -20,30 +19,29 @@ class App extends React.Component {
 
   render() {
     return (
-        <div className="App">
-          <NavBar />
+      <div className="App">
+        <NavBar />
 
-          <Route exact path="/dreamer" component={DreamerProfile}/>
-          <Route exact path="/dreamerProfile" component={DreamCard}/>
-          <Route exact path="/profileDreamer" component={Dreamer}/>
+        <Route exact path="/addDream" component={DreamerProfile} />
+        <Route exact path="/addDream/image" component={ImageForm} />
 
-          <Route exact path="/" component={Home} />
-          <Route path="/login" render={(props) => (
-            <Login
+        <Route exact path="/" component={Home} />
+        <Route path="/login" render={(props) => (
+          <Login
             {...props}
             type="login"
-            />
-          )} />
-          <Route path="/register" render={(props) => (
-            <Login
+          />
+        )} />
+        <Route path="/register" render={(props) => (
+          <Login
             {...props}
             type="register"
-            />
-          )} />
-          <Route exact path="/market" component={DreamMarket} />
-          <Route path="/market/:id" component={DreamPage} />
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
-        </div>
+          />
+        )} />
+        <Route exact path="/market" component={DreamMarket} />
+        <Route path="/market/:id" component={DreamPage} />
+        <PrivateRoute exact path="/dashboard" component={Dashboard} />
+      </div>
     );
   }
 }
