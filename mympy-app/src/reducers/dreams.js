@@ -1,32 +1,33 @@
 import {
-    FETCH_DREAMS_START, 
-    FETCH_DREAMS_SUCCESS, 
-    FETCH_DREAMS_FAILURE,
-    ADD_DREAM_START,
-		ADD_DREAM_SUCCESS,
-		ADD_DREAM_FAILURE,
-		ADD_IMAGE_START,
-		ADD_IMAGE_SUCCESS,
-		ADD_IMAGE_FAILURE,
-    UPDATE_DREAM_START,
-    UPDATE_DREAM_SUCCESS,
-    UPDATE_DREAM_FAILURE, 
-    DELETE_DREAM_START, 
-    DELETE_DREAM_SUCCESS, 
+  FETCH_DREAMS_START, 
+  FETCH_DREAMS_SUCCESS, 
+  FETCH_DREAMS_FAILURE,
+  ADD_DREAM_START,
+	ADD_DREAM_SUCCESS,
+	ADD_DREAM_FAILURE,
+	ADD_IMAGE_START,
+	ADD_IMAGE_SUCCESS,
+	ADD_IMAGE_FAILURE,
+  UPDATE_DREAM_START,
+  UPDATE_DREAM_SUCCESS,
+  UPDATE_DREAM_FAILURE, 
+  DELETE_DREAM_START, 
+  DELETE_DREAM_SUCCESS, 
 	DELETE_DREAM_FAILURE,
 	SET_DREAMCARDS
+	UPDATE_SEARCH
 } from '../actions'
 
 const INITIAL_STATE = {
     fetching: false,
     errors: [],
     deletingDream: false,
-  fetching: false,
-  posting: false,
-  postingImage: false,
-  dreamId: null,
-	dreams: [],
-	dreamCards:{},
+	  posting: false,
+	  postingImage: false,
+	  dreamId: null,
+		dreams: [],
+		dreamCards:{},
+		searchDreams:"",
     featured: [
 		{
 			id: 1,
@@ -2525,7 +2526,12 @@ export default function dreamsReducer(state = INITIAL_STATE, action) {
 				...state,
 				dreamCards: {...state.dreamCards, ...action.payload}
 			}
-	    default:
-	      return state;
-	    }
+		case UPDATE_SEARCH:
+			return{
+				...state,
+				searchDreams: action.payload
+	      	} 
+    default:
+        return state;
+    }
 }

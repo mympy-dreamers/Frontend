@@ -17,6 +17,10 @@ const Carousel = () => {
                         can create a profile and post their project and needs 
                         and find funding from the Mymphy Dreams community.
                     </p>
+                    <div className="btn-div">
+                        <button className="dreamer">Start Dreaming</button>
+                        <button className="supporter">Start Supporting</button>
+                    </div>
                 </div>
             </div>
             <div className="right">
