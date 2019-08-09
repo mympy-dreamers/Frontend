@@ -1,21 +1,24 @@
 import React from 'react';
 import EditForm from './EditForm';
-import { Link } from 'react-router-dom';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import styled from 'styled-components';
+import './userDream.css';
 
 const CardDiv = styled.div`
-	border: 1px solid grey;
-	border-radius: 22px;
-
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 20px 20px 0 0;
+}
 	.card-img {
-		max-width: 100%;
-		border-radius: 20px 20px 0 0;
+        max-width: 25rem; 
+        height: auto; 
+        object-fit: contain; 
+        border-radius: 20px 20px 0 0;
 	}
 
 	.card-body {
-		padding: 8%;
-		color: black;
+        color: white;
 
 		.user-name {
 			font-size: 2.2vw;
@@ -28,7 +31,7 @@ const CardDiv = styled.div`
 			margin-bottom: 0.2em;
 			font-size: 1.8vw;
 			.dream-title {
-				margin-bottom: 26px
+				margin-bottom: 1.5rem
 			}
 
 			.dream-city {
@@ -41,33 +44,35 @@ const CardDiv = styled.div`
 		}
 
 		.progress {
-			height: 40px;
+			height: 2rem;
 			width: 95%;
-			margin: 0 auto;
-			margin-bottom: 20px;
+			margin: 0;
+            padding: 0;
+			margin-bottom: 1rem;
 			.progress-bar {
-			  background-color: #92CC62;
+			  background-color: #ffd164;
 			}
 		}
 
 		.goal-remaining{
+            display: flex;
 			font-size: 1.2vw;
-			text-align: center;
-			margin-bottom: 2.2em;
+			justify-content: center;
+            padding: 0;
 		}
 
 		.button-wrapper {
 			display: flex;
 			justify-content: center;
+            padding-top: 0.8rem;
 			.donate-button {
-				height: 2.2em;				
+				height: 2.5rem;				
 				width: 46%;
-				border: none;
-				border-radius: 16px;
-				background-color: #0B2343;
-				color: white;
-				font-size: 1.4vw;
-				font-weight: bold;
+				border: 1px solid grey;
+                background-color: #ffd164;
+				border-radius: 2rem;
+				color: black;
+				font-size: 1rem;
 				margin-bottom: 0.6em;
 			}
 		}
@@ -84,9 +89,8 @@ class UserDream extends React.Component {
 
     render() {
         return(
-            <div className="dream-card">
+            <div>
                 {this.state.isUpdating ? 
-
                     <EditForm  
                     dream={ this.props.dream } 
                     updateDream={ this.props.updateDream }
@@ -95,11 +99,10 @@ class UserDream extends React.Component {
                     currentUser={ this.props.currentUser } />
 
                 :
-                <CardDiv className="card">
-                    <Link to={`/market/${dream.id}`} style={{ textDecoration: 'none' }}>
-
+                <div className="dream-card">
+                <CardDiv className="card containerDream">
                         <img className="card-img" src={this.props.dream.dreampic} alt="" />
-
+                    
                         <div className="card-body">
                             <div className="user-name">{this.props.currentUser.username}</div>
                             <div className="title-city-wrapper">
@@ -108,22 +111,13 @@ class UserDream extends React.Component {
                             </div>	
                             <div className="description">{this.props.dream.dream_short_description}</div>
                             <ProgressBar now={60} />
-                            <div className="goal-remaining">{"$" + (this.props.dream.donation_goal - this.props.dream.donations_received) + " "} to go!</div>
+                            <div className="goal-remaining">Only {"$" + (this.props.dream.donation_goal - this.props.dream.donations_received) + " "} to go towards ${this.props.dream.donation_goal}!</div>
                             <div className="button-wrapper">
                             <button className="donate-button" onClick={ this.toggleUpdate }>Update or Delete</button>
                             </div>
                         </div>
-                    </Link>
 		        </CardDiv>
-                    {/* <div>
-                    <img width="140px" height="200px" src={ this.props.dream.dreampic } alt="" />
-                    <h3>{ this.props.dream.dream_name }</h3>
-                    <p>{ this.props.dream.dream_short_description }</p>
-                    <p>{ this.props.dream.dream_long_description }</p>
-                    <p>Donations Received: { this.props.dream.donations_received }</p>
-                    <p>Donation Goal: { this.props.dream.donation_goal }</p>
-                    <button className='open-update' onClick={ this.toggleUpdate }>Update or Delete</button>
-                    </div> */}
+                </div>
                 }
             </div>
         )
