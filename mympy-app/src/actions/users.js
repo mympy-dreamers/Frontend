@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Mixpanel } from '../mixpanel/mixpanel';
 
 export const SET_USER = 'SET_USER';
 

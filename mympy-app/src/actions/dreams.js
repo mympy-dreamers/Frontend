@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Mixpanel } from '../mixpanel/mixpanel';
 
 export const FETCH_DREAM_START = 'FETCH_DREAM_START';
 export const FETCH_DREAM_SUCCESS = 'FETCH_DREAM_SUCCESS';
