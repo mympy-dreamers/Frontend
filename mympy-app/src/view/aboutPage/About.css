@@ -31,9 +31,10 @@ p {
     height: 174px;
     width: 396px;
     color: #363636;
-    font-family: "Open Sans";	
-    font-size: 17px;
-    line-height: 23px;
+    font-family: "Open Sans";
+    font-weight: bold;	
+    font-size: 20px;
+    line-height: 33px;
     margin-left: 70px;
 
 }
@@ -80,6 +81,8 @@ span{
     padding-top:60px;
 }
 
+
+
 .about1{
     height: 361px;	
     width: 928px;	
@@ -90,12 +93,9 @@ span{
 }
 
 .mission{
-    height: 168px;
-     width: 80%;
-    color: #363636;
-    font-family: "Open Sans";
+    height: 53px;
+    width: 90%;
     font-size: 24px;
-    line-height: 33px;
     padding:20px;
     margin-left: 80px;
 }
@@ -104,6 +104,13 @@ span{
     font-size: 2rem;
     padding-top: 80px;
    
+}
+
+.team{
+    background: linear-gradient(0deg, #7647B6 0%, #194980 100%);
+    height:4220px;
+    width:100%;
+    
 }
 
 .img2{
@@ -115,29 +122,28 @@ span{
 }
 
 .team1{
-    height: 3273px;	
-    width: auto;
+    height: 3643px;	
+    width: 90%;
     background-color: #FFD164;
     padding-top:60px;
+    margin-left: 70px;
 }
 
 .team2{
-    height: 3055px;
-    width: auto;
+    height: 3455px;
+    width: 90%;
     border-radius: 12px;
     background-color: #FFFFFF;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+    margin-left: 60px;
 }
 
 .teamparagraph{
     height: 53px;
-    width: auto;
-    color: #363636;	
-    font-family: "Open Sans";
+    width: 90%;
     font-size: 20px;
-    font-weight: bold;
-    line-height: 33px;
-    padding-top: 30px;
+    padding-top: 70px;
+    
 }
 
 .teamheader{
@@ -148,21 +154,19 @@ span{
     font-size: 40px;
     font-weight: bold;
     line-height: 55px;
-    padding-top: 20px;
-    margin-left: 400px;
+    padding-top: 50px;
+    margin-left: 250px;
 }
 
 .teamimg{
-    height: 255px;
-    width: 220px;
     border: 1px solid #979797;
-    border-radius: 12px;
-    margin-left: 30px;
+    margin-left: 20px;
+    margin-top: 130px;
     
 }
 
 .team-img1{
-    height: 255px;
+    height: 200px;
     width: 220px;
 }
 
@@ -173,27 +177,60 @@ span{
 }
 
 .table{
-    font-size:1.5rem;
-    margin-left:50px;
-    margin-top: 100px;
+    margin-left:5px;
+    margin-top: 190px;
+    
 }
 
+
+
+.icons{
+display:flex;
+margin-top: 5px;
+
+}
+
+.fab{
+    color: black;
+    margin-left: 10px;
+}
+
+
+
 li{
+    font-size:1.3rem;
     display:block;
     margin-top:5px;
+  
   
 }
 
 .maindiv2{
     display: flex;
     flex-direction: column;
-    margin-top: 15%;
+    margin-top: 20%;
+   
   
 }
 
 .team-img2{
-   margin-left: 700px;
-   
+   margin-left: 600px;
+}
+
+.divider{
+    width: 100%;
+    height:300px;
+}
+
+section{
+    width:100%;
+    min-height: 1000px;
+}
+
+.fab{
+    width:100%;
+    height:60px
 }
 
 
+ 

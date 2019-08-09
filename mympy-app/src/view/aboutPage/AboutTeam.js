@@ -1,5 +1,5 @@
 import React from "react";
-import group from "../../img/woman.svg";
+import teampic from "../../img/team.jpg";
 import "./About.css";
 
 const AboutTeam = () => {
@@ -11,173 +11,245 @@ const AboutTeam = () => {
           <p className="teamparagraph">
             Mymphy Project have nine members in a team.Each and every member
             have their own roles and responsibility like Team lead, UX Designers
-            Frontend and Backend. Responsibility of team lead is to
-            solve the problem of team, responsible keeping the team on track and
-            staying available to help a team member with anything they may
-            need. As well as UX Designer responsibility is to researching the product, 
-            creating Personas and Scenarios,Creating Wireframes, Designing, prototyping, 
-            product testing and so on. A front-end web developer is responsible for implementing
-            visual elements that users see and interact with in a web
-            application. Backend Coordinates with both our front end architect and
-            our Team lead to make sure that our infrastructure is properly
-            delivering upon user queries.
+            Frontend and Backend. Responsibility of team lead is to solve the
+            problem of team, responsible keeping the team on track and staying
+            available to help a team member with anything they may need. As well
+            as UX Designer responsibility is to researching the product,
+            creating Personas and Scenarios,Creating Wireframes, Designing,
+            prototyping, product testing and so on. A front-end web developer is
+            responsible for implementing visual elements that users see and
+            interact with in a web application. Backend Coordinates with both
+            our front end architect and our Team lead to make sure that our
+            infrastructure is properly delivering upon user queries.
           </p>
 
           <div className="maindiv2">
             <div className="imagetext">
               <div className="teamimg">
-                <img className="team-img1" src={group} />
+                <img className="team-img1" src={teampic} />
               </div>
               <ul className="table">
                 <li>Nick Stricker</li>
                 <li>Team Lead</li>
+                <div className="icons">
                 <li>
                   <a target="_blank" href="https://github.com/NickStrick">
-                    https://github.com/NickStrick
+                  <i class="fab fa-github fa-2x"></i>
                   </a>
                 </li>
-                <li>LinkIn</li>
-                <li>Social Media</li>
+                <li>
+                <a href="">
+                  <i class="fab fa-linkedin fa-2x"></i>
+                  </a>
+                  </li>
+                  <li>
+                  <a href=""><i class="fab fa-twitter-square fa-2x"></i></a>
+                </li>
+                </div>
               </ul>
             </div>
 
             <div className="imagetext">
               <div className="teamimg team-img2">
-                <img className="team-img1" src={group} />
+                <img className="team-img1" src={teampic} />
               </div>
               <ul className="table">
                 <li>Alex Vargas</li>
                 <li>UX Designer</li>
-                <li>Github</li>
+                <div className="icons">
+                <li>
+                  <a target="_blank" href="">
+                  <i class="fab fa-github fa-2x"></i>
+                  </a>
+                </li>
                 <li>
                   <a href="https://www.linkedin.com/in/uxalexvargas">
-                    linkedin.com/in/uxalexvargas
+                  <i class="fab fa-linkedin fa-2x"></i>
                   </a>
-                  /
                 </li>
                 <li>
-                  <a href="twitter:@Yor_AlexVargas">twitter:@Yor_AlexVargas</a>
+                  <a href=""><i class="fab fa-twitter-square fa-2x"></i></a>
                 </li>
+                </div>
               </ul>
             </div>
 
             <div className="imagetext">
               <div className="teamimg">
-                <img className="team-img1" src={group} />
+                <img className="team-img1" src={teampic} />
               </div>
               <ul className="table">
                 <li>Jared Parrish</li>
                 <li>Full-Stack Developer</li>
-                <li>Github</li>
+                <div className="icons">
+                <li><a href=""><i class="fab fa-github fa-2x"></i></a>
+                </li>
                 <li>
                   <a href="https://www.linkedin.com/in/jared-parrish/">
-                    https://www.linkedin.com/in/jared-parrish/
+                  <i class="fab fa-linkedin fa-2x"></i>
                   </a>
                 </li>
-                <li>Social Media</li>
+
+                <li>
+                  <a href=""><i class="fab fa-twitter-square fa-2x"></i></a>
+                </li>
+                </div>
               </ul>
             </div>
 
             <div className="imagetext">
               <div className="teamimg team-img2">
-                <img className="team-img1" src={group} />
+                <img className="team-img1" src={teampic} />
               </div>
               <ul className="table">
                 <li>Dakotah Hitze</li>
                 <li>Full Stack Developer</li>
-                <li>
-                  <a href="https://github.com/HitzeD">
-                    https://github.com/HitzeD
-                  </a>
+                <div className="icons">
+                <li><a href="https://github.com/HitzeD "><i class="fab fa-github fa-2x"></i></a>
                 </li>
                 <li>
                   <a href="https://www.linkedin.com/in/dakotah-hitze-2a9042100/">
-                    https://www.linkedin.com/in/dakotah-hitze-2a9042100/
+                  <i class="fab fa-linkedin fa-2x"></i>
                   </a>
                 </li>
-                <li>Social Media</li>
+                <li>
+                  <a href=""><i class="fab fa-twitter-square fa-2x"></i></a>
+                </li>
+                </div>
               </ul>
             </div>
 
             <div className="imagetext">
               <div className="teamimg">
-                <img className="team-img1" src={group} />
+                <img className="team-img1" src={teampic} />
               </div>
               <ul className="table">
                 <li>Tashi Woeser</li>
                 <li>Full Stack Developer</li>
+                <div className="icons">
                 <li>
                   <a href="https://github.com/Tai510">
-                    https://github.com/Tai510
+                  <i class="fab fa-github fa-2x"></i>
                   </a>
                 </li>
-                <li>LinkIn</li>
-                <li>Social Media</li>
+                <li>
+                  <a href="">
+                  <i class="fab fa-linkedin fa-2x"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href=""><i class="fab fa-twitter-square fa-2x"></i></a>
+                </li>
+                </div>
               </ul>
             </div>
 
             <div className="imagetext">
               <div className="teamimg team-img2">
-                <img className="team-img1" src={group} />
+                <img className="team-img1" src={teampic} />
               </div>
               <ul className="table">
                 <li>Mylynh Nguyen</li>
                 <li>Full Stack Developer</li>
-                <li>Github</li>
+
+                <div className="icons">
                 <li>
-                  <a href="https://www.linkedin.com/in/mylynh-nguyen-1b8055126">
-                    https://www.linkedin.com/in/mylynh-nguyen-1b8055126
+                  <a href="">
+                  <i class="fab fa-github fa-2x"></i>
                   </a>
                 </li>
-                <li>Social Media</li>
+                <li>
+                  <a href="https://www.linkedin.com/in/mylynh-nguyen-1b8055126">
+                  <i class="fab fa-linkedin fa-2x"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href=""><i class="fab fa-twitter-square fa-2x"></i></a>
+                </li>
+                </div>
               </ul>
             </div>
 
             <div className="imagetext">
               <div className="teamimg">
-                <img className="team-img1" src={group} />
+                <img className="team-img1" src={teampic} />
               </div>
               <ul className="table">
                 <li>Manju KC</li>
                 <li>Full Stack Developer</li>
+                <div className="icons">
                 <li>
                   <a href="https://github.com/Manjukcthapa?tab=repositories">
-                    https://github.com/Manjukcthapa?tab=repositories
+                  <i class="fab fa-github fa-2x"></i>
                   </a>
                 </li>
-                <li>LinkIn</li>
-                <li>Social Media</li>
+                <li>
+                  <a href="">
+                  <i class="fab fa-linkedin fa-2x"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href=""><i class="fab fa-twitter-square fa-2x"></i></a>
+                </li>
+                </div>
               </ul>
             </div>
 
             <div className="imagetext">
               <div className="teamimg team-img2">
-                <img className="team-img1" src={group} />
+                <img className="team-img1" src={teampic} />
               </div>
               <ul className="table">
-                <li>Name</li>
+                <li>Krisli Dimo</li>
                 <li>Full Stack Developer</li>
-                <li>Github</li>
-                <li>LinkIn</li>
-                <li>Social Media</li>
+                <div className="icons">
+                <li>
+                  <a href="">
+                  <i class="fab fa-github fa-2x"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/krislidimo/">
+                  <i class="fab fa-linkedin fa-2x"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href=""><i class="fab fa-twitter-square fa-2x"></i></a>
+                </li>
+                </div>
               </ul>
             </div>
 
             <div className="imagetext">
               <div className="teamimg">
-                <img className="team-img1" src={group} />
+                <img className="team-img1" src={teampic} />
               </div>
               <ul className="table">
-                <li>Name</li>
-                <li>Full Stack Developer</li>
-                <li>Github</li>
-                <li>LinkIn</li>
-                <li>Social Media</li>
+                <li>Luis Villafranca</li>
+                <li>UX Designer</li>
+                <div className="icons">
+                <li>
+                  <a href="">
+                  <i class="fab fa-github fa-2x"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                  <i class="fab fa-linkedin fa-2x"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href=""><i class="fab fa-twitter-square fa-2x"></i></a>
+                </li>
+                </div>
               </ul>
-            </div>
+            </div>   
+
+            
           </div>
         </div>
       </div>
+          
     </div>
   );
 };
