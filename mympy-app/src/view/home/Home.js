@@ -24,7 +24,7 @@ class Home extends React.Component {
 const mapStateToProps = ({ auth, users }) => {
     return {
         isAuthenticated: auth.auth.isAuthenticated,
-        firstLogin: users.firstLogin
+        firstLogin: users.firstLogin,
     }
 }
 
