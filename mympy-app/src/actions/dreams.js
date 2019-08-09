@@ -84,6 +84,7 @@ export const addDream = (sentDream) => dispatch => {
                 payload: err
             })
         })
+    })
 }
 
 export const addImage = ( image ) => dispatch => {
@@ -148,7 +149,6 @@ export const deleteDream = (id) => dispatch => {
                 payload: err
             })
         })
-    })
 }
 
 //save Dream state section
@@ -159,7 +159,7 @@ export const setDreamCards = (dreamCard) => (dispatch) => {
 }
 
 // UPDATING SEARCH TERM
-export const UPDATE_SEARCH = "UPDATE_SEARCH"
+export const UPDATE_SEARCH = "UPDATE_SEARCH";
 
 export const updateSearch = searchTerm => dispatch => {
     dispatch({ type: UPDATE_SEARCH, payload: searchTerm })

@@ -5,8 +5,6 @@ import {connect} from "react-redux";
 import {addDream} from '../../actions';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
-
-
 class DreamInfo extends React.Component {
     constructor(props) {
         super(props);
