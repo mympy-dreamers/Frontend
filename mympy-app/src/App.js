@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route } from "react-router-dom";
+import { connect } from "react-redux";
 
 import Login from './components/login/Login';
 import NavBar from './view/navbar/NavBar';
@@ -11,7 +12,16 @@ import PrivateRoute from './components/login/PrivateRoute';
 
 class App extends React.Component {
 
+  componentDidUpdate(prevProps) {
+    if (this.props.users && this.props.users !== prevProps.users) {
+      const isUser = this.props.users.reduce((acc, curr) =>
+        (curr.auth_id === this.props.authZeroUser.sub) ? true : acc, false)
+      this.props.zeroLogin(this.props.authZeroUser, isUser)
+    }
+  }
+
   render() {
+
 
     return (
       <div className="App">
@@ -36,5 +46,11 @@ class App extends React.Component {
     );
   }
 }
+const mapStateToProps = ({ users }) => {
+  return {
+    users: users.users,
+    authZeroUser: users.authZeroUser,
+  }
+}
 
-export default App;
+export default connect(mapStateToProps, {})(App);
