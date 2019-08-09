@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import Login from './components/login/Login';
 import NavBar from './view/navbar/NavBar';
 import Home from './view/home/Home';
-import DreamMarket from './components/dreamMarket/DreamMarket';
+import Card from './components/Card'
 import DreamPage from './components/dreamPage/DreamPage.js';
 import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/login/PrivateRoute';
@@ -29,7 +29,10 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="app-wrap">
-          <NavBar show={this.props.location.pathname.includes('market')} />
+          <NavBar
+            show={this.props.location.pathname.includes('market')}
+            onAccountPage={this.props.location.pathname.includes('dashboard')}
+          />
           <Route exact path="/" render={(props) => <Home {...props} />} />
           <Route path="/login" render={(props) => (
             <Login
@@ -43,14 +46,14 @@ class App extends React.Component {
               type="register"
             />
           )} />
-          <Route exact path="/market" component={DreamMarket} />
+          <Route exact path="/market" component={Card} />
           <Route path="/market/:id" component={DreamPage} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
 
           <Route exact path="/addDream" component={DreamerProfile} />
           <Route exact path="/addDream/image" component={ImageForm} />
         </div>
-      </div>
+      </div >
     );
   }
 }
