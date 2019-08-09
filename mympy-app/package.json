@@ -3,11 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-=======
     "@auth0/auth0-spa-js": "^1.1.1",
     "@types/auth0-js": "^9.10.6",
->>>>>>> parent of 92c63c4... revert
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "node-sass": "^4.12.0",
