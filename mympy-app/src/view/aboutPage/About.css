@@ -80,7 +80,7 @@ span{
     height:1000px;
     width:100%;
     margin-top: 60px;
-    padding-top:60px;
+    padding-top:90px;
 }
 
 
@@ -155,7 +155,7 @@ span{
 .teamparagraph{
     height: 53px;
     width: 90%;
-    font-size: 20px;
+    font-size: 19px;
     padding-top: 70px;
     
 }
@@ -207,7 +207,7 @@ span{
 
 .team-img1{
     height: 200px;
-    width: 220px;
+    width: 200px;
   
 } 
 
@@ -217,9 +217,6 @@ span{
     margin-top:20px;
     
 }
-
-
-
 
 
 .icons{
@@ -269,22 +266,8 @@ header {
     .wave {
         background: #7647B6;
         
-        position: relative;
-        z-index: 1;
       }
-      .wave:after {
-        background: inherit;
-        bottom: 0;
-        content: '';
-        display: block;
-        height: 50%;
-        left: 0;
-        position: absolute;
-        right: 0;
-        transform: skewY(-5.5deg);
-        transform-origin: 100%;
-        z-index: -1;
-      }
+    
 
 
     
