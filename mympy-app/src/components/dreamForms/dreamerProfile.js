@@ -46,24 +46,26 @@ class DreamInfo extends React.Component {
                     <div className='form-title'>
                         <h1>Make your dream in reality!</h1>
                     </div>
-                    <div>
+                    <div className='inputs' >
                     <FormGroup>
                         <Label  className="dreamlable" for="exampleEmail">Dream Name</Label>
-                        <Input className="dreamform" onChange={this.handleChanges} name="dream_name" id="dream_name" placeholder="Enter your dream here" />
+                        <Input className='input-style' onChange={this.handleChanges} name="dream_name" id="dream_name" placeholder="Enter your dream here" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="examplePassword">Donation Goals</Label>
-                        <Input onChange={this.handleChanges}  name="donation_goal" id="donation_goal" placeholder="Enter Donation goal here" />
+                        <Label  className="dreamlable" for="examplePassword">Donation Goals</Label>
+                        <Input className='input-style' onChange={this.handleChanges}  name="donation_goal" id="donation_goal" placeholder="Enter Donation goal here" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="exampleText">Give us a short descrption</Label>
-                        <Input onChange={this.handleChanges} type="textarea" name="dream_short_description" id="dream_short_description" />
-                    </FormGroup>
+                        <Label  className="textlable" for="exampleText">Give us a short descrption</Label>
+                        <Input className='input-style' onChange={this.handleChanges} type="textarea" name="dream_short_description" id="dream_short_description" />
+                    </FormGroup> 
                     <FormGroup>
-                        <Label for="exampleText">Give us a long descrption</Label>
-                        <Input onChange={this.handleChanges} type="textarea" name="dream_long_description" id="dream_long_description" />
+                        <Label  className="textlable" for="exampleText">Give us a long descrption</Label>
+                        <Input  className='input-style' onChange={this.handleChanges} type="textarea" name="dream_long_description" id="dream_long_description" />
                     </FormGroup>
-                    <Button onClick={this.handleSubmit}>Submit</Button>
+                    <div>
+                    <Button className="dreambutton" onClick={this.handleSubmit}>Submit</Button>
+                    </div>
                     </div> 
                 </div>  {/* dreamer-card-app end  */}
             </div> /* dream-Home-Page end */
