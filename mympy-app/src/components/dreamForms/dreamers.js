@@ -47,7 +47,7 @@ class Dreamer extends React.Component {
                             <div className='inputs'>
                                 <div>
                                     <p>Tell me about where are you from?</p>
-                                    <input className='input-style'id='dream_long_description' name='location' value={this.state.location} onChange={this.handleChanges}></input>
+                                    <input className='dreamform'id='dream_long_description' name='location' value={this.state.location} onChange={this.handleChanges}></input>
                                 </div>
                                 <div>
                                     <p>What do you want people to know about you?</p>
