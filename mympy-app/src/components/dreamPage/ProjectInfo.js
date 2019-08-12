@@ -67,26 +67,26 @@ const ProjectInfoDiv = styled.div`
 `
 
 const ProjectInfo = ({ dream, user }) => {
-  return (
-    <ProjectInfoDiv>
-    	<h2 className="title">PROJECT NOMAD</h2>
-    	<h3 className="user-name">{"BY " + user.firstname + " " + user.lastname}</h3>
-    	<div className="data-viz">
-				<ProgressCircle 
-					donationGoal={dream.donationGoal} 
+	return (
+		<ProjectInfoDiv>
+			<h2 className="title">PROJECT NOMAD</h2>
+			<h3 className="user-name">{user.username}{/*"BY " + user.firstname + " " + user.lastname*/}</h3>
+			<div className="data-viz">
+				<ProgressCircle
+					donationGoal={dream.donationGoal}
 					donationsReceived={dream.donationsReceived}
 				/>
 			</div>
 			<h3 className="days-left">7 Days Left</h3>
 			<button className="donate-btn">Donate</button>
-				<h4 className="share-title">SHARE PROJECT</h4>
-				<div className="share-buttons">
-					<i className="fab fa-facebook fa-5x"></i>
-					<i class="fab fa-twitter fa-5x"></i>
-					<i className="fab fa-instagram fa-5x"></i>
-				</div>
-    </ProjectInfoDiv>
-  );
+			<h4 className="share-title">SHARE PROJECT</h4>
+			<div className="share-buttons">
+				<i className="fab fa-facebook fa-5x"></i>
+				<i class="fab fa-twitter fa-5x"></i>
+				<i className="fab fa-instagram fa-5x"></i>
+			</div>
+		</ProjectInfoDiv>
+	);
 }
 
 export default ProjectInfo;
