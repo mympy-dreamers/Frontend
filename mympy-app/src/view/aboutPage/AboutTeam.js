@@ -306,11 +306,11 @@ const AboutTeam = () => {
           {/* table main div */}
         </div>
       </div>
+     
       <div className='div'> 
       <div className="wave"> <img className="img2" src={rainbowball} /></div>
       </div>
-       {/* <div className="galaxy"></div> */}
-      {/* second main div */}
+      
     </div> /* main div */
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import group from "../../img/woman.svg";
+import group from "../../img/women.svg";
 import "./About.css";
 
 const AboutProject = () => {
