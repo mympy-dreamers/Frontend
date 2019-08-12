@@ -24,6 +24,18 @@
 <br>
 <br>
 
+
+
+|                                       [Student 1](https://github.com/HitzeD)                                        |                                       [Student 2](https://github.com/krislidimo)                                        |                                       [Student 3](https://github.com/Manjukcthapa)                                        |                                       [Student 4](https://github.com/nmylynh)                                        |                                       [Student 5](https://github.com/ParrishJ)                                        |
+| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
+|                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/HitzeD)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/krislidimo)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/Manjukcthapa)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/nmylynh)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/ParrishJ)                       |
+|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/HitzeD)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/krislidimo)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Manjukcthapa)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/nmylynh)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/ParrishJ)             |
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/dakotah-hitze-2a9042100/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/krislidimo/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/manju-kc-440a40ba/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/mylynh-nguyen-1b8055126/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/jared-parrish/) |
+
+<br>
+<br>
+
+
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 ![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1dd77115-62b5-421c-af16-aab2a0ed6de9/deploy-status)](https://app.netlify.com/sites/mympydreamers/deploys)
