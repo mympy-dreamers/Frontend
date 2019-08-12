@@ -91,7 +91,7 @@ export const addImage = ( image ) => dispatch => {
     dispatch({ type: ADD_IMAGE_START });
 
     return axios
-    .post('https://mympy-dreamers-staging.herokuapp.com/api/images', image, {
+    .post(`${BASE_URL}/api/images`, image, {
       onUploadProgress: progressEvent => {
         console.log(
           "Upload Progress: ",

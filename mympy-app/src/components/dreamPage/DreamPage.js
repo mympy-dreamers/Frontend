@@ -7,8 +7,6 @@ import Sidebar from './Sidebar.js';
 import DreamPageBody from './DreamPageBody.js';
 import { fetchDreamById } from '../../actions';
 
-import * as vars from '../../scss/general/_variables.scss';
-
 const DreamPageDiv = styled.div`
   background: linear-gradient(0deg, #7647b6 0%, #194980 100%);
   font-family: Open Sans, sans-serif;

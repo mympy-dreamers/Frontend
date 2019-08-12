@@ -1,9 +1,9 @@
 import React from 'react';
-import './dreamCard.css';
 import { Link } from "react-router-dom";
 import {connect} from "react-redux";
 import {setDreamCards} from '../../actions';
 
+import './dreamCard.css';
 
 class DreamCard extends React.Component {
     constructor(props) {
