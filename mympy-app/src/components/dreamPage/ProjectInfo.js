@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Button } from 'reactstrap';
 
 import ProgressCircle from './ProgressCircle.js'
 
@@ -61,12 +62,24 @@ const ProjectInfoDiv = styled.div`
 		display: flex;
 		justify-content: space-between;
 		width: 164px;
-		margin-bottom: 16px;
+		margin-bottom: 30px;
 		color: white;
+	}
+
+	.contact-button {
+		width: 100%;
+		margin: 0;
 	}
 `
 
+
+
 const ProjectInfo = ({ dream, user }) => {
+
+	handleSubmit() {
+
+	}
+	
 	return (
 		<ProjectInfoDiv>
 			<h2 className="title">PROJECT NOMAD</h2>
@@ -85,8 +98,17 @@ const ProjectInfo = ({ dream, user }) => {
 				<i class="fab fa-twitter fa-5x"></i>
 				<i className="fab fa-instagram fa-5x"></i>
 			</div>
+			<div>
+				<Button className="contact-button" outline color="info">Contact Dreamer</Button>{' '}
+			</div>
 		</ProjectInfoDiv>
 	);
 }
 
-export default ProjectInfo;
+const mapStateToProps = (state) => {
+  return {
+    loggedUser: state.auth.user,
+  }
+}
+
+export default connect(mapStateToProps)(ProjectInfo);
