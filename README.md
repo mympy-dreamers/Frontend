@@ -15,7 +15,19 @@
 <br>
 <br>
 
-|                                       [Student 1](https://github.com/Tai510)                                        |                                       [Student 2](https://github.com/NickStrick)                                        
+|                                       [Student 6](https://github.com/Tai510)                                        |                                       [Student 7](https://github.com/NickStrick)                                        |                                       [Student 8](https://github.com/YorAlexVargas)                                        |                                       [Student 9]()                                        |
+| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
+|                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/Tai510)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/NickStrick)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/YorAlexVargas)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />]()                       |
+|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Tai510)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NickStrick)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/YorAlexVargas)            |          [<img src="https://github.com/favicon.ico" width="15"> ]()           |
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/dakotah-hitze-2a9042100/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ]() | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ]() | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ]() |
+
+<br>
+<br>
+
+
+
+|                                       [Student 1](https://github.com/Tai510)                                        
+|                                       [Student 2](https://github.com/NickStrick)                                        
 |                                       [Student 3](https://github.com/YorAlexVargas)                                        
 |                                       [Student 4](https://github.com/nmylynh)                                        
 |                                       [Student 5](https://github.com/ParrishJ)                                        |
