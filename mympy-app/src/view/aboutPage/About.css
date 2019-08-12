@@ -41,7 +41,15 @@ p {
 }
 
 span{
-    margin-right: 265px;
+    margin-left: 50px;
+}
+
+#abouttext span {
+    margin-left: 10px;
+}
+
+#ustext span {
+    margin-right: 190px;
 }
 
 .leftside {
@@ -267,6 +275,16 @@ header {
         background: #7647B6;
         
       }
+
+     #h1text1{
+     font-size:90px;
+
+
+     }
+
+     #h1text2{
+      font-size:90px; 
+    }
     
 
 
