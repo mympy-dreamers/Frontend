@@ -72,7 +72,7 @@ Other Libraries
 
 -   Formidable's Victory is open source and aesthetically pleasing. 
 
-##### Front end deployed to `Netlify` | [![Netlify Status](https://api.netlify.com/api/v1/badges/1dd77115-62b5-421c-af16-aab2a0ed6de9/deploy-status)](https://app.netlify.com/sites/mympydreamers/deploys)
+##### Front end deployed to [![Netlify Status](https://api.netlify.com/api/v1/badges/1dd77115-62b5-421c-af16-aab2a0ed6de9/deploy-status)](https://app.netlify.com/sites/mympydreamers/deploys)
 
 ### [Back end](https://mympy-dreamers.herokuapp.com/) built using:
 
