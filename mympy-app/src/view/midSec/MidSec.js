@@ -1,6 +1,5 @@
 import React from 'react';
 
-import midSwirl from '../../img/midSwirl.png';
 import meteor from '../../img/meteor.png';
 import female from '../../img/female.svg';
 import midSecImg from '../../img/midSecImg.jpg';

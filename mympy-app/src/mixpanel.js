@@ -10,20 +10,15 @@ if (window.location.hostname.toLowerCase().search(productionHost) < 0) { mixpane
 // let env_check = process.env.NODE_ENV === 'production';
 
 let actions = {
-  identify: (id) => {
-    mixpanel.identify(id);
-  },
-  alias: (id) => {
-    mixpanel.alias(id);
-  },
-  track: (name, props) => {
-    mixpanel.track(name, props);
-  },
-  people: {
-    set: (props) => {
-      mixpanel.people.set(props);
-    },
-  },
+
+  identify: id => mixpanel.identify(id),
+
+  alias: id => mixpanel.alias(id),
+
+  track: (name, props) => mixpanel.track(name, props),
+  
+  people: { set: props => mixpanel.people.set(props) },
+  
 };
 
 export let Mixpanel = actions;

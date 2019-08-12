@@ -7,7 +7,7 @@ import thunk from 'redux-thunk';
 import Logger from 'redux-logger'; // REMOVE FOR PRODUCTION -----------------------------------------------------------^^^^^^^^^^^^^^^^^^^^^\\\\\\\\\\\\\\\\\\\\
 import { BrowserRouter as Router, withRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import config from "./auth/auth_config.json"
+import config from "./auth/auth_config.json";
 import './index.scss';
 import rootReducer from './reducers';
 import App from './auth/AppSetter';

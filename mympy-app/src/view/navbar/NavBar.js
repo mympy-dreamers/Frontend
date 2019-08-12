@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
-import Searchbar from '../../components/search_bar/DreamSearchbar'
+import Searchbar from '../../components/search_bar/DreamSearchbar';
+import { Mixpanel } from '../../mixpanel';
 
 import logo from '../../img/MIMPYlogo.svg';
 
@@ -44,6 +45,7 @@ const NavBar = (props) => {
 
                             {isAuthenticated && <button onClick={(e) => {
                                 e.preventDefault();
+                                Mixpanel.track('LogOut', )
                                 logout()
                             }}>Log out</button>}
                         </li>

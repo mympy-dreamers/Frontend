@@ -1,6 +1,6 @@
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
-import { Mixpanel } from '../mixpanel/mixpanel';
+import { Mixpanel } from '../mixpanel';
 
 const token = {
     headers: { authorization: localStorage.getItem('jwt') }
@@ -25,18 +25,22 @@ export const register = (user) => dispatch => {
     axios
         .post(`${BASE_URL}/auth/register`, user)
         .then(res => {
+
+            // Mixpanel tracking
             Mixpanel.identify(user.username);
-            Mixpanel.track("Signup", {
+            Mixpanel.track("Signup no Auth0", {
             "username": user.username,
             "email": user.email,
-        });
+            });
+            // End of Mixpanel
+
             dispatch({
                 type: REGISTER_SUCCESS,
                 payload: res.data
             })
         })
         .catch(err => {
-            Mixpanel.track('Unsuccesful Login');
+            Mixpanel.track('Unsuccesful Login no Auth0');
             dispatch({
                 type: REGISTER_FAILURE,
                 payload: err
@@ -50,6 +54,7 @@ export const login = (creds) => dispatch => {
     axios
         .post(`${BASE_URL}/auth/login`, creds)
         .then(res => {
+            Mixpanel.track('Succesful Login noAuth0');
             localStorage.setItem('jwt', res.data.token);
             dispatch({
                 type: LOGIN_SUCCESS,
@@ -57,6 +62,7 @@ export const login = (creds) => dispatch => {
             })
         })
         .catch(err => {
+            Mixpanel.track('Unsuccesful Login no Auth0');
             dispatch({
                 type: LOGIN_FAILURE,
                 payload: err
@@ -65,6 +71,7 @@ export const login = (creds) => dispatch => {
 }
 
 export const logout = () => {
+    Mixpanel.track('Signout')
     return {
         type: LOGOUT_USER
     }
@@ -99,13 +106,43 @@ export const zeroLogin = (user, isRegistered) => dispatch => {
         .post(zeroUrl, signUser)
         .then(res => {
             // localStorage.setItem('jwt', res.data.token);
-            console.log('zeroLog', res)
+            console.log('zeroLog', res);
+
+            // Mixpanel tracking
+
+            if(zeroUrl.includes('register')) {
+
+                Mixpanel.identify(signUser.auth_id); // identify the user casding the event
+                Mixpanel.register_once({
+                    'First Login Date': new Date().toISOString()
+                }); //  on first login, saves the date and time
+                Mixpanel.register({
+                    "id": "signUser.auth_id",
+                    "username": "signUser.username",
+                    "email": "signUser.email",
+                }) // upon registering, Mixpanel will save the username, email, and id of the user
+                Mixpanel.track('Register'); // this is the actual tracking event
+
+            } else {
+                Mixpanel.identify(signUser.username);
+                Mixpanel.track('Zero Login Successful');
+            }
+
+            // End of Mixpanel
+
             dispatch({
                 type: ZERO_LOGIN_SUCCESS,
                 payload: res.data
             })
         })
         .catch(err => {
+
+            if (zeroUrl.includes('register')){
+                Mixpanel.track('Register Unsuccessful');
+            } else {
+                Mixpanel.track('Zero Login Unsuccessful');
+            }
+            
             dispatch({
                 type: ZERO_LOGIN_FAILURE,
                 payload: err
