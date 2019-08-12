@@ -7,9 +7,6 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import styled from 'styled-components';
 import './Card.scss';
 
-// import SearchBar from '../search_bar/DreamSearchbar';
-
-
 class Card extends React.Component {
 
 	componentDidMount() {
