@@ -149,7 +149,7 @@ In order for the app to function correctly, the user must set up their own envir
 
 # 4️⃣ Installation Instructions
 
-🚫explain how to install the required dependencies to get this project up and running with yarn and NPM
+Start at the root folder `Mympy-Dreamers/FrontEnd` in the `CLI`. `cd` inside `mympy-app`, once inside run `npm install`. After that is finished, run `npm start`.
 
 ## Other Scripts
 
