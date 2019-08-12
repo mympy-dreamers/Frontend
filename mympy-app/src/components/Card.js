@@ -7,18 +7,17 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import styled from 'styled-components';
 import './Card.scss';
 
-
 class Card extends React.Component {
 
 	componentDidMount() {
 		this.props.fetchAllDreams();
 	}
 
-
-
-
 	render() {
-		console.log(this.props)
+		console.log(this.props.searchDreams);
+		let filteredDreams = this.props.dreams.filter(dream => dream.dream_name.toLowerCase().includes(this.props.searchDreams))
+		console.log(filteredDreams);
+    let dreams = this.props.searchDreams ? filteredDreams : this.props.dreams
 		return (
 			<div className="marketWrapper">
 				<div className="headingDiv">
@@ -26,7 +25,7 @@ class Card extends React.Component {
 				</div>
 				<div className="marketDiv">
 
-					{this.props.dreams && this.props.dreams.map(dream => (
+					{this.props.dreams && dreams.map(dream => (
 						<div className="card">
 							<Link to={`/market/${dream.id}`} style={{ textDecoration: 'none' }}>
 								<div className="imgDiv" style={{ backgroundImage: `url(${dream.img_url})` }}>
@@ -52,11 +51,11 @@ class Card extends React.Component {
 			</div>
 		);
 	}
-
 }
 
 const mapStateToProps = ({ dreams }) => ({
 	dreams: dreams.dreams,
+	searchDreams: dreams.searchDreams,
 });
 
 

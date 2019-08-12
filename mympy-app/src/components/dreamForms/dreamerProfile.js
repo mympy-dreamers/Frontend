@@ -47,9 +47,9 @@ class DreamInfo extends React.Component {
                         <h1>Make your dream in reality!</h1>
                     </div>
                     <div>
-                    <FormGroup className="dreamform">
-                        <Label for="exampleEmail">Dream Name</Label>
-                        <Input onChange={this.handleChanges} name="dream_name" id="dream_name" placeholder="Enter your dream here" />
+                    <FormGroup>
+                        <Label  className="dreamlable" for="exampleEmail">Dream Name</Label>
+                        <Input className="dreamform" onChange={this.handleChanges} name="dream_name" id="dream_name" placeholder="Enter your dream here" />
                     </FormGroup>
                     <FormGroup>
                         <Label for="examplePassword">Donation Goals</Label>

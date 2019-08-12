@@ -1,12 +1,17 @@
- /* .dream-Home-Page {
+ .dream-Home-Page {
     background-color: #1B5485;
     text-align: center;
+    height: 2051px;	
+    width: 100%;
+    margin-left:0px;
 }
 
 .dreamer-card-app {
     text-align: center;
     background-color: rgba(255,255,255,0); 
     margin-top: 60px;
+    margin-left: 120px;
+  
 }
 
 .inputs {
@@ -157,34 +162,7 @@ li {
 
 button {
     margin: 0 400px;
-} */
+}
 
  
-
-.dream-Home-Page {
-    height: 2051px;	
-    width: 1920px;
-    background-color: #012345;
-}
-
-
-
-h1{
-    height: 98px;
-    width: 999px;
-    color: #FFFFFF;
-    font-family: "Open Sans";
-    font-size: 72px;
-    font-weight: bold;
-    line-height: 98px;
-    padding-top: 80px;
-    margin-left: 250px;
-      
-}  
-
-.dreamform{
-    margin-top: 80px;
-}
-
-
 
