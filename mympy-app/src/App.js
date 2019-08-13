@@ -9,6 +9,7 @@ import Card from './components/Card'
 import DreamPage from './components/dreamPage/DreamPage.js';
 import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/login/PrivateRoute';
+import About from './view/aboutPage/AboutUs';
 import UserDreamsList from './components/userDreams/UserDreamsList'
 
 import DreamerProfile from './components/dreamForms/dreamerProfile';
@@ -47,6 +48,7 @@ class App extends React.Component {
               type="register"
             />
           )} />
+          <Route exact path="/about" component={About} />
           <Route exact path="/market" component={Card} />
           <Route path="/market/:id" component={DreamPage} />
           <Route path="/user-dreams" component={UserDreamsList} />
