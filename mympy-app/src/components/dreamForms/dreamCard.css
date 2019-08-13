@@ -29,7 +29,8 @@
     border: 1px solid black;
     margin-bottom: 100px;
     border-radius: 10px;
-    margin-left: 200px;
+    margin-left: 363px;
+    margin-top: 5px;
 }
  
 
@@ -68,6 +69,10 @@
     
 }
 
+button {
+    border-radius: 10%;
+}
+
 .dreambutton{
     background-color:#FFD164;
     width: 155px;
@@ -79,9 +84,17 @@
     
 }
 
-Button:hover {
+button:hover {
     background-color: #012345;
     color: #FFD164;
+    text-shadow: 1px 1px white;
+}
+
+Link:hover 
+{
+    background-color: #012345;
+    color: #FFD164;
+    text-shadow: 1px 1px white;
 }
 
 .dreambutton1{
@@ -104,8 +117,8 @@ Button:hover {
 .images{
     display: flex;
     margin-left: 530px;
-    font-size: 14px;
     margin: 45px 467px;
+    font-size: 14px;
    
     
 }

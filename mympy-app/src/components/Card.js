@@ -26,7 +26,7 @@ class Card extends React.Component {
 				<div className="marketDiv">
 
 					{this.props.dreams && dreams.map(dream => (
-						<div className="card">
+						<div className="card" key={dream.id}>
 							<Link to={`/market/${dream.id}`} style={{ textDecoration: 'none' }}>
 								<div className="imgDiv" style={{ backgroundImage: `url(${dream.img_url})` }}>
 

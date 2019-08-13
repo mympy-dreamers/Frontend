@@ -1,0 +1,87 @@
+
+.dream-container {
+    background-color : #194980;
+    width:100%;
+    height: 100%;
+    font-family: 'Roboto';
+    color: white;
+}
+.dream-card {
+    max-width: 20rem;
+    height: 100%;
+}
+
+.dream-list {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    width:100%;
+    height:100%;
+}
+
+.containerDream {
+    background-color: #012345!important;
+}
+
+.card.containerDream {
+    padding: 0;
+    border-radius: 20px;
+    border: 1px solid grey;
+}
+
+.popup {
+    position: fixed;
+    width: 100%!important;
+    height: 100%!important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color:#194980;
+    z-index: 1;
+    border-radius: 20px;
+    
+}
+.popup_inner {
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 25%;
+    bottom: 25%;
+    margin: auto;
+    background-color:#194980;
+    font-family: 'roboto';
+    font-size: 1.8rem;
+    justify-content: center;
+}
+
+input.textarea {
+    width: 100%;
+    height: 3rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    border: 1px solid grey;
+    border-radius: 20px;
+    background-color: #f8f8f8;
+    resize: none;
+    font-family: 'roboto';
+  }
+
+.edit-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 0.8rem;
+}
+
+.edit-button {
+        height: 2.5rem;				
+        width: 46%;
+        border: 1px solid grey;
+        background-color: #ffd164;
+        border-radius: 2rem;
+        color: black;
+        font-size: 1rem;
+        margin-bottom: 0.6em;
+}
