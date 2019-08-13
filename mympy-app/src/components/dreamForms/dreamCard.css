@@ -1,7 +1,7 @@
  .dream-Home-Page {
     background-color: #012345;
     text-align: center;
-    height: 2051px;	
+    height: 1500px;	
     width: 100%;
     margin:0px;
 }
@@ -77,12 +77,13 @@
 }
 
 .dreambutton1{
-    background-color:#FFD164;
-    width: 120px;
+    background-color: #FFD164;
+    width: 130px;
+    height: 39px;
+    font-size: 26px;
+    padding-top: 0px;
+    margin: 10px 65px;
     height: 45px;
-    font-size: 30px;
-    margin: 0 360px;
-    padding-top: 0;
 }
 
 .input1 {
@@ -91,10 +92,11 @@
 }
  
 .images{
+    display: flex;
     margin-left: 530px;
-    height:50px;
-   width:200px;
-   font-size: 14px;
+    font-size: 14px;
+    margin: 45px 467px;
+   
     
 }
 
@@ -107,22 +109,37 @@
 }
 
 #image-button{
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 550px;
     background: lightgray;;
     margin-bottom: 20px;
-    border-radius: 50%;
     border:5px solid  gray;
+    margin: 0 390px;
 }
 
 .fileInput{
+    width: 200px;
+    height: 50px;
     border-bottom: 4px solid lightgray;
     border-right: 4px solid gray;
     border-top: 1px solid black;
     border-left: 1px solid black;
-    padding: 10px;
-    margin: 15px;
+    padding: 13px;
+    margin: 6px;
     cursor: pointer;
     background: white;
+    text-align: center;
     }
+
+.fas{
+    margin: 110px 0;
+    font-size:40px;
+}
+
+.image-icons {
+    display: flex;
+    flex-direction: column;
+}
+
+
 
