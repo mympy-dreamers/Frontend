@@ -34,7 +34,6 @@ const NavBar = (props) => {
                                 <button
                                     onClick={(e) => {
                                         e.preventDefault();
-                                        localStorage.setItem('isLog', true);
                                         loginWithRedirect({})
                                     }}
                                 >
