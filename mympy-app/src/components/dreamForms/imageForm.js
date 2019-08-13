@@ -3,7 +3,7 @@ import './dreamCard.css';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { addImage } from '../../actions';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 
 

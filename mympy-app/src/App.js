@@ -27,15 +27,15 @@ class App extends React.Component {
   }
 
   render() {
-
-
     return (
       <div className="App">
         <div className="app-wrap">
-          <NavBar
+
+          <Route path="/" render={(props) => <NavBar
+            {...props}
             show={this.props.location.pathname.includes('market')}
             onAccountPage={this.props.location.pathname.includes('dashboard')}
-          />
+          />} />
           <Route exact path="/" render={(props) => <Home {...props} />} />
           <Route path="/login" render={(props) => (
             <Login
@@ -55,8 +55,8 @@ class App extends React.Component {
           <Route path="/user-dreams" component={UserDreamsList} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
 
-          <Route exact path="/addDream" component={DreamerProfile} />
-          <Route exact path="/addDream/image" component={ImageForm} />
+          <PrivateRoute exact path="/addDream" component={DreamerProfile} />
+          <PrivateRoute exact path="/addDream/image" component={ImageForm} />
           <Footer />
         </div>
       </div >

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useAuth0 } from "../react-auth0-wrapper.js";
 import { connect } from "react-redux";
 import App from '../App';

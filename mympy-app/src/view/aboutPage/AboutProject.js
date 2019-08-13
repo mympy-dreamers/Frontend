@@ -31,7 +31,7 @@ const AboutProject = () => {
 
 
           <div className="rightside">
-            <img src={group} />
+            <img src={group} alt='Group Imgage' />
           </div>
         </div>
       </div>

@@ -5,14 +5,22 @@ import AboutTeam from "./AboutTeam.js"
 
 import "./About.scss"
 
-const AboutUs = () => {
-  return (
-    <div id='about-us-page'>
-      <AboutProject />
-      <AboutMission />
-      <AboutTeam />
-    </div>
-  );
+class AboutUs extends React.Component {
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  render() {
+    return (
+      <div id='about-us-page'>
+        <AboutProject />
+        <AboutMission />
+        <AboutTeam />
+      </div>
+    );
+  }
+
 };
 
 export default AboutUs;
