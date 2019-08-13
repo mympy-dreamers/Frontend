@@ -76,9 +76,33 @@
     margin: 0 360px;
 }
 
+.dreambutton1{
+    background-color:#FFD164;
+    width: 120px;
+    height: 45px;
+    font-size: 30px;
+    margin: 0 360px;
+    padding-top: 0;
+}
+
 .input1 {
     width: 500px;
 
 }
  
+.images{
+    margin-left: 600px;
+    height:70px;
+    
+}
 
+.image-text p{
+    font-size: 20px;
+    color:white;
+    margin-bottom: 10px;
+}
+
+#image-button{
+    height: 40px;
+    width: 80px;
+}
