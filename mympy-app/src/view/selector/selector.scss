@@ -13,7 +13,7 @@
 
         button {
             // button is in _mixin.scss file, takes background-color, align-self value, and property value for margin
-            @include front-btn($dreamer-btn-color, flex-end, margin-right);
+            // @include front-btn($dreamer-btn-color, flex-end, margin-right);
         
         } // end of left button
 
@@ -52,7 +52,7 @@
         margin-left: 5%;
 
         button {
-            @include front-btn($support-btn-color, flex-start, margin-left);
+            // @include front-btn($support-btn-color, flex-start, margin-left);
             
         } // end of right button
 
