@@ -14,6 +14,9 @@ import userLogo from '../../img/userbar-img/userLogo.png';
 
 class UserBar extends React.Component {
 
+    componentDidMount(){
+        console.log(this.props.authZeroUser);
+    }
     render() {
         return (
             <div className="user-main">

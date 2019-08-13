@@ -87,10 +87,19 @@ class ProjectInfo extends React.Component{
 		}
 	}
 
+	componentDidUpdate(){
+		console.log(this.props.user);
+		console.log(this.props.dream);
+	}
+
 	handleMail = e => {
 		e.preventDefault();
-		console.log(this.user);
-		console.log(this.dream);
+		this.setState({
+			mailings: {
+				// userid: this.props.user.id,
+				dreamId: this.props.dream.user_id
+			}
+		})
 		this.props.sendMail(this.state.mailings);
 	}
 	
@@ -98,11 +107,11 @@ class ProjectInfo extends React.Component{
 		return (
 			<ProjectInfoDiv>
 				<h2 className="title">PROJECT NOMAD</h2>
-				<h3 className="user-name">{this.user.username}{/*"BY " + user.firstname + " " + user.lastname*/}</h3>
+				<h3 className="user-name">{this.props.user.username}{/*"BY " + user.firstname + " " + user.lastname*/}</h3>
 				<div className="data-viz">
 					<ProgressCircle
-						donationGoal={this.dream.donationGoal}
-						donationsReceived={this.dream.donationsReceived}
+						donationGoal={this.props.dream.donationGoal}
+						donationsReceived={this.props.dream.donationsReceived}
 					/>
 				</div>
 				<h3 className="days-left">7 Days Left</h3>
@@ -114,7 +123,7 @@ class ProjectInfo extends React.Component{
 					<i className="fab fa-instagram fa-5x"></i>
 				</div>
 				<div>
-					<Button className="contact-button" outline color="info">Contact Dreamer</Button>{' '}
+					<Button onClick={this.handleMail} className="contact-button" outline color="info">Contact Dreamer</Button>{' '}
 				</div>
 			</ProjectInfoDiv>
 		);

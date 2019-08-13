@@ -28,7 +28,8 @@ const token = {
     headers: { authorization: localStorage.getItem('jwt') }
 }
 
-const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
+// const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
+const BASE_URL = 'https://mympy-dreamers-staging.herokuapp.com';
 
 export const fetchDreamById = (id) => (dispatch) => {
     dispatch({ type: FETCH_DREAM_START });
