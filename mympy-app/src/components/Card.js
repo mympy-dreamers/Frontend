@@ -14,10 +14,10 @@ class Card extends React.Component {
 	}
 
 	render() {
-		console.log(this.props.searchDreams);
+		// console.log(this.props.searchDreams);
 		let filteredDreams = this.props.dreams.filter(dream => dream.dream_name.toLowerCase().includes(this.props.searchDreams))
-		console.log(filteredDreams);
-    let dreams = this.props.searchDreams ? filteredDreams : this.props.dreams
+		// console.log(filteredDreams);
+		let dreams = this.props.searchDreams ? filteredDreams : this.props.dreams
 		return (
 			<div className="marketWrapper">
 				<div className="headingDiv">
