@@ -1,0 +1,131 @@
+.menu-footer {
+    background-color: #F5F0ED;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.menu-icons {
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    margin-bottom: 10px;
+
+}
+
+#fb-icon i {
+    border: 1px solid white;
+    margin-right: 10px;
+    padding: 10px 14px;
+    border-radius: 50%;
+    background-color: #3b5998;
+    color: white;
+    font-size: 18px;
+}
+
+#ig-icon i {
+    border: 1px solid white;
+    margin-right: 10px;
+    padding: 10px 12px;
+    border-radius: 50%;
+    background-color: #c32aa3;
+    color: white;
+    font-size: 18px;
+}
+
+#yelp-icon i {
+    border: 1px solid white;
+    color: white;
+    margin-right: 10px;
+    padding: 10px 13px;
+    border-radius: 50%;
+    background-color: #c41200;
+    font-size: 18px;
+}
+
+.footer-add h3 {
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 20px;
+}
+
+.footer-home-link a {
+    font-family: 'Acme', sans-serif;
+    text-decoration: none;
+    font-weight: bolder;
+    color: white;
+    font-size: 18px;
+}
+
+.footer-home-link h4 {
+    font-family: 'Ubuntu Condensed', sans-serif;
+    padding-bottom: 10px;
+}
+
+.footer-home-link span {
+    margin-left: 10px;
+    display: inline;
+}
+
+.footer-add {
+    color: gray;
+    text-shadow: 1px 1px white;
+}
+
+.event-footer-home-link {
+    color: gray;
+    text-shadow: 1px 1px white;
+}
+
+.footer-home-link a {
+    color: gray;
+    text-decoration: none;
+    font-family: 'Acme', sans-serif;
+    font-size: 20px;
+    text-shadow: 1px 1px white;
+}
+
+.footer-home-link h4 {
+    font-family: 'Ubuntu Condensed', sans-serif;
+    padding-bottom: 10px;
+    color: gray;
+    text-shadow: 1px 1px white;
+}
+
+.footer-home-link span {
+    margin-left: 10px;
+    color: gray;
+    display: inline;
+    text-shadow: 1px 1px white;
+    font-size: 18px;
+}
+
+@media(max-width:400px) {
+.menu-icons {
+margin-top: 15px;
+}
+}
+
+.copyright {
+    border: 1px solid black;
+    background-color: #305E86;
+    color: white;
+    font-size: 18px;
+}
+
+#home {
+    margin: 0 5px;    
+}
+
+#about {
+    margin: 0 5px;
+}
+
+.links a {
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+}
+
+.links {
+    margin-bottom: 10px;
+}
