@@ -12,6 +12,10 @@ export const ADD_DREAM_START = 'ADD_DREAM_START';
 export const ADD_DREAM_SUCCESS = 'ADD_DREAM_SUCCESS';
 export const ADD_DREAM_FAILURE = 'ADD_DREAM_FAILURE';
 
+export const ADD_IMAGE_START = 'ADD_IMAGE_START';
+export const ADD_IMAGE_SUCCESS = 'ADD_IMAGE_SUCCESS';
+export const ADD_IMAGE_FAILURE = 'ADD_IMAGE_FAILURE';
+
 export const UPDATE_DREAM_START = 'UPDATE_DREAM_START';
 export const UPDATE_DREAM_SUCCESS = 'UPDATE_DREAM_SUCCESS';
 export const UPDATE_DREAM_FAILURE = 'UPDATE_DREAM_FAILURE';
@@ -67,8 +71,8 @@ export const fetchAllDreams = () => (dispatch) => {
 export const addDream = (sentDream) => dispatch => {
     dispatch({ type: ADD_DREAM_START });
 
-    axios
-    .post(`${BASE_URL}/api/dreams`, sentDream, token)
+    return axios
+    .post(`${BASE_URL}/api/dreams`, sentDream /* token */)
     .then(res => {
         dispatch({
             type: ADD_DREAM_SUCCESS,
@@ -78,6 +82,32 @@ export const addDream = (sentDream) => dispatch => {
     .catch(err => {
         dispatch({
             type: ADD_DREAM_FAILURE,
+            payload: err
+        })
+    })
+}
+
+export const addImage = ( image ) => dispatch => {
+    dispatch({ type: ADD_IMAGE_START });
+
+    return axios
+    .post(`${BASE_URL}/api/images`, image, {
+      onUploadProgress: progressEvent => {
+        console.log(
+          "Upload Progress: ",
+          Math.round((progressEvent.loaded / progressEvent.total) * 100),
+          "%"
+        );}
+      } /* token */)
+    .then(res => {
+        dispatch({
+            type: ADD_IMAGE_SUCCESS,
+            payload: res.data
+        })
+    })
+    .catch(err => {
+        dispatch({
+            type: ADD_IMAGE_FAILURE,
             payload: err
         })
     })
@@ -121,8 +151,15 @@ export const deleteDream = (id) => dispatch => {
     })
 }
 
+//save Dream state section
+export const SET_DREAMCARDS = 'SET_DREAMCARDS';
+
+export const setDreamCards = (dreamCard) => (dispatch) => {
+    dispatch({ type:SET_DREAMCARDS, payload: dreamCard});
+}
+
 // UPDATING SEARCH TERM
-export const UPDATE_SEARCH="UPDATE_SEARCH"
+export const UPDATE_SEARCH = "UPDATE_SEARCH";
 
 export const updateSearch = searchTerm => dispatch => {
 	dispatch({type: UPDATE_SEARCH, payload: searchTerm})
