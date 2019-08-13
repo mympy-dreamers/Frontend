@@ -1,10 +1,6 @@
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 
-const token = {
-    headers: { authorization: localStorage.getItem('jwt') }
-}
-
 export const REGISTER_START = 'REGISTER_START';
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 export const REGISTER_FAILURE = 'REGISTER_FAILURE';

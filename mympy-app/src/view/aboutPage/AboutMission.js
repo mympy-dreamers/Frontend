@@ -18,7 +18,7 @@ const AboutMission = () => {
           </div>
         </div>
         <div>
-          <img className="img2" src={rainbowball} />
+          <img className="img2" src={rainbowball} alt='rain ball' />
         </div>
       </div>
       <div />

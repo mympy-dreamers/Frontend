@@ -7,7 +7,7 @@ import logo from '../../img/MIMPYlogo.svg';
 
 
 const NavBar = (props) => {
-    const { isAuthenticated, loginWithRedirect, logout, loading } = props.auth;
+    const { isAuthenticated, loginWithRedirect, loading } = props.auth;
     return (
         <div className="main">
             <div className="nav-wrap">

@@ -1,5 +1,5 @@
 import React from "react";
-import teampic from "../../img/team.jpg";
+// import teampic from "../../img/team.jpg";
 import teamlead from "../../img/teampic/teamlead.jpg";
 import Alexpic from "../../img/teampic/Alex.png";
 import Dakotapic from "../../img/teampic/Dakota.jpg";
@@ -35,7 +35,7 @@ const AboutTeam = () => {
           <div className="teams">
             <div className="about-team">
               <div className="team-img">
-                <img className="team-img1" src={teamlead} />
+                <img className="team-img1" alt='profile' src={teamlead} />
               </div>
               <div className="team-roles">
                 <ul className="table">
@@ -43,18 +43,18 @@ const AboutTeam = () => {
                   <li>Team Lead</li>
                   <div className="icons">
                     <li>
-                      <a target="_blank" href="https://github.com/NickStrick">
-                        <i class="fab fa-github fa-2x" />
+                      <a target="_blank" rel="noopener noreferrer" href="https://github.com/NickStrick">
+                        <i className="fab fa-github fa-2x" />
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="">
-                        <i class="fab fa-linkedin fa-2x" />
+                      <a target="_blank" href="#">
+                        <i className="fab fa-linkedin fa-2x" />
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="">
-                        <i class="fab fa-twitter-square fa-2x" />
+                      <a target="_blank" href="#">
+                        <i className="fab fa-twitter-square fa-2x" />
                       </a>
                     </li>
                   </div>
@@ -64,7 +64,7 @@ const AboutTeam = () => {
 
             <div className="about-team1">
               <div className="team-img">
-                <img className="team-img1" src={Alexpic} />
+                <img className="team-img1" alt='profile' src={Alexpic} />
               </div>
               <div className="team-roles1">
                 <ul className="table">
@@ -76,17 +76,17 @@ const AboutTeam = () => {
                         target="_blank"
                         href="https://github.com/YorAlexVargas"
                       >
-                        <i class="fab fa-github fa-2x" />
+                        <i className="fab fa-github fa-2x" />
                       </a>
                     </li>
                     <li>
                       <a target="_blank" href="https://www.linkedin.com/in/uxalexvargas">
-                        <i class="fab fa-linkedin fa-2x" />
+                        <i className="fab fa-linkedin fa-2x" />
                       </a>
                     </li>
                     <li>
                       <a target="_blank" href="https://twitter.com/Yor_AlexVargas">
-                        <i class="fab fa-twitter-square fa-2x" />
+                        <i className="fab fa-twitter-square fa-2x" />
                       </a>
                     </li>
                   </div>
@@ -96,7 +96,7 @@ const AboutTeam = () => {
 
             <div className="about-team">
               <div className="team-img">
-                <img className="team-img1" src={Jaredpic} />
+                <img className="team-img1" alt='profile' src={Jaredpic} />
               </div>
               <div className="team-roles">
                 <ul className="table">
@@ -105,17 +105,17 @@ const AboutTeam = () => {
                   <div className="icons">
                     <li>
                       <a target="_blank" href="https://github.com/ParrishJ">
-                        <i class="fab fa-github fa-2x" />
+                        <i className="fab fa-github fa-2x" />
                       </a>
                     </li>
                     <li>
                       <a target="_blank" href="https://www.linkedin.com/in/jared-parrish/">
-                        <i class="fab fa-linkedin fa-2x" />
+                        <i className="fab fa-linkedin fa-2x" />
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="">
-                        <i class="fab fa-twitter-square fa-2x" />
+                      <a target="_blank" href="#">
+                        <i className="fab fa-twitter-square fa-2x" />
                       </a>
                     </li>
                   </div>
@@ -125,7 +125,7 @@ const AboutTeam = () => {
 
             <div className="about-team1">
               <div className="team-img">
-                <img className="team-img1" src={Dakotapic} />
+                <img className="team-img1" alt='profile' src={Dakotapic} />
               </div>
               <div className="team-roles1">
                 <ul className="table">
@@ -134,17 +134,17 @@ const AboutTeam = () => {
                   <div className="icons">
                     <li>
                       <a target="_blank" href="https://github.com/HitzeD ">
-                        <i class="fab fa-github fa-2x" />
+                        <i className="fab fa-github fa-2x" />
                       </a>
                     </li>
                     <li>
                       <a target="_blank" href="https://www.linkedin.com/in/dakotah-hitze-2a9042100/">
-                        <i class="fab fa-linkedin fa-2x" />
+                        <i className="fab fa-linkedin fa-2x" />
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="">
-                        <i class="fab fa-twitter-square fa-2x" />
+                      <a target="_blank" href="#">
+                        <i className="fab fa-twitter-square fa-2x" />
                       </a>
                     </li>
                   </div>
@@ -154,7 +154,7 @@ const AboutTeam = () => {
 
             <div className="about-team">
               <div className="team-img">
-                <img className="team-img1" src={Tashipic} />
+                <img className="team-img1" alt='profile' src={Tashipic} />
               </div>
               <div className="team-roles">
                 <ul className="table">
@@ -163,17 +163,17 @@ const AboutTeam = () => {
                   <div className="icons">
                     <li>
                       <a target="_blank" href="https://github.com/Tai510">
-                        <i class="fab fa-github fa-2x" />
+                        <i className="fab fa-github fa-2x" />
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="">
-                        <i class="fab fa-linkedin fa-2x" />
+                      <a target="_blank" href="#">
+                        <i className="fab fa-linkedin fa-2x" />
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="">
-                        <i class="fab fa-twitter-square fa-2x" />
+                      <a target="_blank" href="#">
+                        <i className="fab fa-twitter-square fa-2x" />
                       </a>
                     </li>
                   </div>
@@ -183,7 +183,7 @@ const AboutTeam = () => {
 
             <div className="about-team1">
               <div className="team-img">
-                <img className="team-img1" src={Mylynhpic} />
+                <img className="team-img1" alt='profile' src={Mylynhpic} />
               </div>
               <div className="team-roles1">
                 <ul className="table">
@@ -192,17 +192,17 @@ const AboutTeam = () => {
                   <div className="icons">
                     <li>
                       <a target="_blank" href="https://github.com/nmylynh">
-                        <i class="fab fa-github fa-2x" />
+                        <i className="fab fa-github fa-2x" />
                       </a>
                     </li>
                     <li>
                       <a target="_blank" href="https://www.linkedin.com/in/mylynh-nguyen-1b8055126">
-                        <i class="fab fa-linkedin fa-2x" />
+                        <i className="fab fa-linkedin fa-2x" />
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="">
-                        <i class="fab fa-twitter-square fa-2x" />
+                      <a target="_blank" href="#">
+                        <i className="fab fa-twitter-square fa-2x" />
                       </a>
                     </li>
                   </div>
@@ -212,7 +212,7 @@ const AboutTeam = () => {
 
             <div className="about-team">
               <div className="team-img">
-                <img className="team-img1" src={Manjupic} />
+                <img className="team-img1" alt='profile' src={Manjupic} />
               </div>
               <div className="team-roles">
                 <ul className="table">
@@ -224,17 +224,17 @@ const AboutTeam = () => {
                         target="_blank"
                         href="https://github.com/Manjukcthapa?tab=repositories"
                       >
-                        <i class="fab fa-github fa-2x" />
+                        <i className="fab fa-github fa-2x" />
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="">
-                        <i class="fab fa-linkedin fa-2x" />
+                      <a target="_blank" href="#">
+                        <i className="fab fa-linkedin fa-2x" />
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="">
-                        <i class="fab fa-twitter-square fa-2x" />
+                      <a target="_blank" href="#">
+                        <i className="fab fa-twitter-square fa-2x" />
                       </a>
                     </li>
                   </div>
@@ -244,7 +244,7 @@ const AboutTeam = () => {
 
             <div className="about-team1">
               <div className="team-img">
-                <img className="team-img1" src={Krislipic} />
+                <img className="team-img1" alt='profile' src={Krislipic} />
               </div>
               <div className="team-roles1">
                 <ul className="table">
@@ -253,17 +253,17 @@ const AboutTeam = () => {
                   <div className="icons">
                     <li>
                       <a target="_blank" href="https://github.com/krislidimo">
-                        <i class="fab fa-github fa-2x" />
+                        <i className="fab fa-github fa-2x" />
                       </a>
                     </li>
                     <li>
                       <a target="_blank" href="https://www.linkedin.com/in/krislidimo/">
-                        <i class="fab fa-linkedin fa-2x" />
+                        <i className="fab fa-linkedin fa-2x" />
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="">
-                        <i class="fab fa-twitter-square fa-2x" />
+                      <a target="_blank" href="#">
+                        <i className="fab fa-twitter-square fa-2x" />
                       </a>
                     </li>
                   </div>
@@ -273,7 +273,7 @@ const AboutTeam = () => {
 
             <div className="about-team">
               <div className="team-img">
-                <img className="team-img1" src={Luispic} />
+                <img className="team-img1" alt='profile' src={Luispic} />
               </div>
               <div className="team-roles">
                 <ul className="table">
@@ -284,17 +284,17 @@ const AboutTeam = () => {
                       <a
                         target="_blank"
                         href="https://www.instagram.com/mr.luisv/" >
-                        <i class="fab fa-instagram fa-2x"></i>
+                        <i className="fab fa-instagram fa-2x"></i>
                       </a>
                     </li>
                     <li>
                       <a target="_blank" href="https://www.linkedin.com/in/luisdoesux/">
-                        <i class="fab fa-linkedin fa-2x" />
+                        <i className="fab fa-linkedin fa-2x" />
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="">
-                        <i class="fab fa-twitter-square fa-2x" />
+                      <a target="_blank" href="#">
+                        <i className="fab fa-twitter-square fa-2x" />
                       </a>
                     </li>
                   </div>

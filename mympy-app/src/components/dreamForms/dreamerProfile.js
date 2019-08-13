@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { addDream } from '../../actions';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, FormGroup, Label, Input } from 'reactstrap';
 
 import './dreamCard.css';
 

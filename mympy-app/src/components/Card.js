@@ -1,10 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 import { fetchAllDreams } from '../actions/index';
 import { connect } from "react-redux";
 import ProgressBar from 'react-bootstrap/ProgressBar';
-import styled from 'styled-components';
 import './Card.scss';
 
 class Card extends React.Component {
