@@ -87,17 +87,28 @@ class ProjectInfo extends React.Component{
 		}
 	}
 
-	componentDidUpdate(){
-		console.log(this.props.user);
-		console.log(this.props.dream);
+	componentDidMount(){
+		console.log('mounting' + this.props.currUser);
+		if (this.props.currUser) {
+            this.setState({
+				mailings: {
+					...this.state.mailings,
+					userId: this.props.currUser.id,
+				}
+            })
+        } else {
+            console.log('cannot find user id for forms page')
+        }
 	}
 
 	handleMail = e => {
 		e.preventDefault();
+		console.log('handleMail' + this.props.currUser);
+		console.log(this.props.dream);
 		this.setState({
 			mailings: {
-				// userid: this.props.user.id,
-				dreamId: this.props.dream.user_id
+				...this.state.mailings,
+				dreamId: this.props.dream.user_id,
 			}
 		})
 		this.props.sendMail(this.state.mailings);
@@ -130,10 +141,16 @@ class ProjectInfo extends React.Component{
 	}
 }
 
-const mapStateToProps = (state) => {
-  return {
-    loggedUser: state.auth.user,
-  }
+const mapStateToProps = ({ auth }) => {
+	return {
+		currUser: auth.user,
+	}
 }
+
+// const mapStateToProps = (state) => {
+//   return {
+//     loggedUser: state.auth.user,
+//   }
+// }
 
 export default connect(mapStateToProps, { sendMail })(ProjectInfo);
