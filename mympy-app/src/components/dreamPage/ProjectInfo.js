@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Button } from 'reactstrap';
+import { sendMail } from '../../actions';
+import { connect } from 'react-redux';
 
 import ProgressCircle from './ProgressCircle.js'
 
@@ -74,35 +76,49 @@ const ProjectInfoDiv = styled.div`
 
 
 
-const ProjectInfo = ({ dream, user }) => {
+class ProjectInfo extends React.Component{
+	constructor({ dream, user }){
+		super({ dream, user });
+		this.state = {
+			mailings: {
+				userId: '',
+				dreamId: '',
+			}
+		}
+	}
 
-	handleSubmit() {
-
+	handleMail = e => {
+		e.preventDefault();
+		console.log(this.user);
+		console.log(this.dream);
+		this.props.sendMail(this.state.mailings);
 	}
 	
-	return (
-		<ProjectInfoDiv>
-			<h2 className="title">PROJECT NOMAD</h2>
-			<h3 className="user-name">{user.username}{/*"BY " + user.firstname + " " + user.lastname*/}</h3>
-			<div className="data-viz">
-				<ProgressCircle
-					donationGoal={dream.donationGoal}
-					donationsReceived={dream.donationsReceived}
-				/>
-			</div>
-			<h3 className="days-left">7 Days Left</h3>
-			<button className="donate-btn">Donate</button>
-			<h4 className="share-title">SHARE PROJECT</h4>
-			<div className="share-buttons">
-				<i className="fab fa-facebook fa-5x"></i>
-				<i class="fab fa-twitter fa-5x"></i>
-				<i className="fab fa-instagram fa-5x"></i>
-			</div>
-			<div>
-				<Button className="contact-button" outline color="info">Contact Dreamer</Button>{' '}
-			</div>
-		</ProjectInfoDiv>
-	);
+	render(){
+		return (
+			<ProjectInfoDiv>
+				<h2 className="title">PROJECT NOMAD</h2>
+				<h3 className="user-name">{this.user.username}{/*"BY " + user.firstname + " " + user.lastname*/}</h3>
+				<div className="data-viz">
+					<ProgressCircle
+						donationGoal={this.dream.donationGoal}
+						donationsReceived={this.dream.donationsReceived}
+					/>
+				</div>
+				<h3 className="days-left">7 Days Left</h3>
+				<button className="donate-btn">Donate</button>
+				<h4 className="share-title">SHARE PROJECT</h4>
+				<div className="share-buttons">
+					<i className="fab fa-facebook fa-5x"></i>
+					<i class="fab fa-twitter fa-5x"></i>
+					<i className="fab fa-instagram fa-5x"></i>
+				</div>
+				<div>
+					<Button className="contact-button" outline color="info">Contact Dreamer</Button>{' '}
+				</div>
+			</ProjectInfoDiv>
+		);
+	}
 }
 
 const mapStateToProps = (state) => {
@@ -111,4 +127,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(ProjectInfo);
+export default connect(mapStateToProps, { sendMail })(ProjectInfo);
