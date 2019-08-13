@@ -14,6 +14,7 @@ import UserDreamsList from './components/userDreams/UserDreamsList'
 
 import DreamerProfile from './components/dreamForms/dreamerProfile';
 import ImageForm from './components/dreamForms/imageForm';
+import Footer from './view/footer/footer';
 
 class App extends React.Component {
 
@@ -56,6 +57,7 @@ class App extends React.Component {
 
           <Route exact path="/addDream" component={DreamerProfile} />
           <Route exact path="/addDream/image" component={ImageForm} />
+          <Footer />
         </div>
       </div >
     );
