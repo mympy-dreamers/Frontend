@@ -3,14 +3,14 @@ import AboutMission from "./AboutMission";
 import AboutProject from "./AboutProject.js";
 import AboutTeam from "./AboutTeam.js"
 
-import "./About.css";
+import "./About.scss"
 
 const AboutUs = () => {
   return (
-    <div>
-      <AboutProject/>
-      <AboutMission/>
-      <AboutTeam/> 
+    <div id='about-us-page'>
+      <AboutProject />
+      <AboutMission />
+      <AboutTeam />
     </div>
   );
 };

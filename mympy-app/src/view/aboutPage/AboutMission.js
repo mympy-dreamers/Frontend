@@ -1,6 +1,5 @@
 import React from "react";
 import rainbowball from "../../img/rainbowball.svg";
-import "./About.css";
 
 const AboutMission = () => {
   return (
