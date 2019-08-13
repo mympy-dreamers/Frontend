@@ -9,6 +9,7 @@ import Card from './components/Card'
 import DreamPage from './components/dreamPage/DreamPage.js';
 import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/login/PrivateRoute';
+import UserDreamsList from './components/userDreams/UserDreamsList'
 
 import DreamerProfile from './components/dreamForms/dreamerProfile';
 import ImageForm from './components/dreamForms/imageForm';
@@ -16,7 +17,7 @@ import ImageForm from './components/dreamForms/imageForm';
 class App extends React.Component {
 
   componentDidUpdate(prevProps) {
-    if (this.props.users && this.props.users !== prevProps.users) {
+    if (this.props.authZeroUser && this.props.users && this.props.users !== prevProps.users) {
       const isUser = this.props.users.reduce((acc, curr) =>
         (curr.auth_id === this.props.authZeroUser.sub) ? true : acc, false)
       this.props.zeroLogin(this.props.authZeroUser, isUser)
@@ -48,6 +49,7 @@ class App extends React.Component {
           )} />
           <Route exact path="/market" component={Card} />
           <Route path="/market/:id" component={DreamPage} />
+          <Route path="/user-dreams" component={UserDreamsList} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
 
           <PrivateRoute exact path="/addDream" component={DreamerProfile} />
