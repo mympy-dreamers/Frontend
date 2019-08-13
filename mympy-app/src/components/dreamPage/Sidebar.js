@@ -16,12 +16,12 @@ const SidebarDiv = styled.div`
 `
 
 const Sidebar = ({ dream, user }) => {
-  return (
-    <SidebarDiv>
-    	<ProjectInfo dream={dream} user={user}/>
-    	<RecentDonations donations={dream.recentDonations} />
-    </SidebarDiv>
-  );
+	return (
+		<SidebarDiv>
+			<ProjectInfo dream={dream} user={user} />
+			{/* <RecentDonations donations={dream.recentDonations} /> */}
+		</SidebarDiv>
+	);
 }
 
 export default Sidebar;

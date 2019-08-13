@@ -9,21 +9,21 @@ class SearchBar extends React.Component{
         search: ''
     }
 
-     changeSearch = (e) => {
+    changeSearch = (e) => {
         let value = e.target.value
         this.setState(state => {
             return {search: value}
         }, () => {
-            this.props.updateSearch(this.state.search)
+            this.props.updateSearch(this.state.search.toLowerCase())
         })
-        
     }
+
     render(){
         return(
         <form  className="search-bar">
             <div>
               <input className="searchBox" type="text" value={this.state.search} placeholder="search" onChange={this.changeSearch}/>
-              <i id="searchicon" class="fa fa-search"></i> 
+              <i id="searchicon" className="fa fa-search"></i> 
             </div>
         </form>
         )
