@@ -74,6 +74,14 @@
     height: 60px;
     font-size: 30px;
     margin: 0 360px;
+    text-shadow: 1px 1px black;
+    border: 3px solid white;
+    
+}
+
+Button:hover {
+    background-color: #012345;
+    color: #FFD164;
 }
 
 .dreambutton1{
@@ -84,6 +92,8 @@
     padding-top: 0px;
     margin: 10px 65px;
     height: 45px;
+    text-shadow: 1px 1px black;
+    border: 3px solid white;
 }
 
 .input1 {

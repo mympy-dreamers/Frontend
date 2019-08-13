@@ -42,7 +42,8 @@ class imageForm extends React.Component {
                         </div>
                         <div className="images">
                         <Input className="imagehandle fileInput" type="file" onChange={this.uploadFile} name="file" id="exampleFile"/>
-                        <Button className="dreambutton1">Submit</Button>
+                        {/* <Button className="dreambutton1">Submit</Button> */}
+                        <button className='dreambutton1'>Submit</button>
                         </div>
                         {/* <FormText className="image-text" color="muted">
                             <p>This is some placeholder block-level help text for the above input.

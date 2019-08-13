@@ -64,7 +64,7 @@ class DreamInfo extends React.Component {
                         <Input  className='input-style' onChange={this.handleChanges} type="textarea" name="dream_long_description" id="dream_long_description" />
                     </FormGroup>
                     <div>
-                    <Button className="dreambutton" onClick={this.handleSubmit}>Submit</Button>
+                    <button className="dreambutton" onClick={this.handleSubmit}>Submit</button>
                     </div>
                     </div> 
                 </div>  {/* dreamer-card-app end  */}
