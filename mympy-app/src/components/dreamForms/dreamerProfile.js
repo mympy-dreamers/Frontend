@@ -13,7 +13,7 @@ class DreamInfo extends React.Component {
                 dream_name: '',
                 dream_short_description: '',
                 dream_long_description: '',
-                donations_received: 1,
+                donations_received: 0,
                 donation_goal: 0,
                 user_id: null,
             }
