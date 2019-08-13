@@ -34,7 +34,6 @@ const NavBar = (props) => {
                                 <button
                                     onClick={(e) => {
                                         e.preventDefault();
-                                        localStorage.setItem('isLog', true);
                                         loginWithRedirect({})
                                     }}
                                 >
@@ -42,10 +41,11 @@ const NavBar = (props) => {
                             </button>
                             )}
 
-                            {isAuthenticated && <button onClick={(e) => {
+                            {isAuthenticated && (props.onAccountPage ? (<button onClick={(e) => {
                                 e.preventDefault();
                                 logout()
-                            }}>Log out</button>}
+                            }}>Log out</button>)
+                                : <Link to="/dashboard">Account</Link>)}
                         </li>
                     </ul>
                 </div>
