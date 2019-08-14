@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { addDream } from '../../actions';
-import { Button, FormGroup, Label, Input, Alert } from 'reactstrap';
+import { Button, FormGroup, Label, Input , Alert  } from 'reactstrap';
 
 import './dreamCard.css';
 
@@ -9,23 +9,33 @@ class DreamInfo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            visible: false,
             dreamCard: {
                 dream_name: '',
                 dream_short_description: '',
                 dream_long_description: '',
                 donations_received: 0,
-                donation_goal: 0,
+                donation_goal: '',
                 user_id: null,
-                visible: true,
             }
         };
     }
 
-    toggle() {
+     toggle() {
          this.setState({
-             visible: ! this.state.visible
+             visible: !this.state.visible
          })   
-    } 
+    }  
+
+    isFormValid = () => {
+        const state = this.state.dreamCard;
+      
+        if(state.dream_name !== "" && Number.isInteger(Number(state.donation_goal)) && state.dream_long_description !== "" && state.dream_short_description !== "") {
+            return this.handleSubmit()
+        }  else {
+             return this.toggle()
+        }
+      }
 
     componentDidMount() {
         if (this.props.user) {
@@ -50,7 +60,7 @@ class DreamInfo extends React.Component {
 
     handleSubmit = e => {
         const newDream = { ...this.state.dreamCard, donation_goal: parseInt(this.state.dreamCard.donation_goal, 10) }
-        e.preventDefault()
+        // e.preventDefault()
         console.log('submittedDream: ', newDream);
         this.props.addDream(newDream)
             .then(() => this.props.history.push('/addDream/image'));
@@ -81,11 +91,11 @@ class DreamInfo extends React.Component {
                             <Label for="exampleText">Give us a long descrption</Label>
                             <Input onChange={this.handleChanges} type="textarea" name="dream_long_description" id="dream_long_description" />
                         </FormGroup>
-                        <Button onClick={this.handleSubmit}>Submit</Button>
+                        <Button onClick={this.isFormValid} >Submit</Button>
                     </div>
 
-                            <Alert color='danger' isOpen={this.state.visible} toggle={this.toggle.bind(this)}>
-                            {/* <Alert.Heading>Uh Oh!</Alert.Heading> */}
+                            <Alert className='alert' color='danger' role='alert' isOpen={this.state.visible} toggle={this.toggle.bind(this)}>
+                            <h1>Uh Oh!</h1>
                             <p>All field needs to be filled!</p>
                             </Alert>
 

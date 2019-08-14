@@ -3,7 +3,7 @@ import './dreamCard.css';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { addImage } from '../../actions';
-import { Button, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, FormGroup, Label, Input, FormText , Alert } from 'reactstrap';
 
 
 
@@ -11,6 +11,7 @@ class imageForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            visible: false,
             img: {
                 image: null
             }
@@ -27,6 +28,12 @@ class imageForm extends React.Component {
         console.log(this.props.dreamId);
         this.props.addImage(data);
     };
+
+    toggle() {
+        this.setState({
+            visible: !this.state.visible
+        })   
+   }  
 
     render() {
         return (
@@ -46,6 +53,12 @@ class imageForm extends React.Component {
                         </FormGroup>
                         <Button><Link to='/market'>Submit</Link></Button>
                     </div>
+
+                            <Alert className='alert' color='danger' role='alert' isOpen={this.state.visible} toggle={this.toggle.bind(this)}>
+                            <h1>Uh Oh!</h1>
+                            <p>All field needs to be filled!</p>
+                            </Alert>
+
                 </div>  {/* dreamer-card-app end  */}
             </div> /* dream-Home-Page end */
         )
