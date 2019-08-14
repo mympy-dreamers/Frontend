@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Spinner } from 'reactstrap';
+// import { Spinner } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 import { fetchAllDreams, fetchUserById } from '../../actions';
@@ -23,13 +23,13 @@ class UserBar extends React.Component {
                         <img src={demo} alt='user' />
                     </div>
                     <div className="flexing">
-                        <Link to="#">
+                        <Link to="/addDream">
                             <div className="user-tab">
                                 <img src={cloudPlus} alt='cloud with a plus sign' />
                                 <p>Create Dream</p>
                             </div>
                         </Link>
-                        <Link to="#">
+                        <Link to="/user-dreams">
                             <div className="user-tab">
                                 <img src={cloudPencil} alt='cloud with pencil inside' />
                                 <p>Edit Dreams</p>

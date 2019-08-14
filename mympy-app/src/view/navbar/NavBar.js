@@ -7,7 +7,7 @@ import logo from '../../img/MIMPYlogo.svg';
 
 
 const NavBar = (props) => {
-    const { isAuthenticated, loginWithRedirect, logout, loading } = props.auth;
+    const { isAuthenticated, loginWithRedirect, loading } = props.auth;
     return (
         <div className="main">
             <div className="nav-wrap">
@@ -34,7 +34,6 @@ const NavBar = (props) => {
                                 <button
                                     onClick={(e) => {
                                         e.preventDefault();
-                                        localStorage.setItem('isLog', true);
                                         loginWithRedirect({})
                                     }}
                                 >
@@ -42,10 +41,18 @@ const NavBar = (props) => {
                             </button>
                             )}
 
-                            {isAuthenticated && <button onClick={(e) => {
+                            {isAuthenticated && (props.onAccountPage ? (<button onClick={(e) => {
                                 e.preventDefault();
-                                logout()
-                            }}>Log out</button>}
+                                const envUrl = process.env.REACT_APP_FE_URL;
+                                const logoutUrl = envUrl.split('').map(char => {
+                                    if (char === '/') return '%2F';
+                                    if (char === ':') return '%3A';
+                                    return char
+                                }).join('')
+                                console.log(logoutUrl);
+                                props.history.go(`https://mympy-dreamer.auth0.com/v2/logout?returnTo=${logoutUrl}`)
+                            }}>Log out</button>)
+                                : <Link to="/dashboard">Account</Link>)}
                         </li>
                     </ul>
                 </div>

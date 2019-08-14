@@ -1,0 +1,168 @@
+ .dream-Home-Page {
+    background-color: #1B5485;
+    text-align: center;
+    height: 2051px;	
+    width: 100%;
+    margin-left:0px;
+}
+
+.dreamer-card-app {
+    text-align: center;
+    background-color: rgba(255,255,255,0); 
+    margin-top: 60px;
+    margin-left: 120px;
+  
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 125px;
+}
+
+.input-style {   
+    width: 630px;
+    height: 170px;
+    text-align: center;
+    font-size: 25px;
+    padding-left: 15px;
+    border: 1px solid black;
+    margin-bottom: 100px;
+    border-radius: 10px;
+}  
+
+.form-title {
+    font-size: 30px;
+    text-align: center;
+    padding-top: 10px;
+    font-weight: bolder;
+    color: white;
+    text-shadow: 1px 1px grey;
+    font-weight: bolder;
+    margin-bottom: 50px;
+}
+
+.form-title h1 {
+    font-size: 80px;
+}
+
+.submit-button {   
+    height: 50px;
+    width: 120px;
+    border-radius: 10px;
+    font-size: 30px;
+    margin: 50px 280px;
+    background-color: #B6BD23;
+    font-weight: bold;
+    color: black;
+}
+
+.dream-Home-Img {
+    height: 600px;
+    width: 600px;
+}
+
+.dream-Home-Page {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 30px;
+}
+
+.card-display {
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+}
+
+.inputFont {
+    font-size: 20px;
+}
+
+.inputs p {
+    color: white;
+}
+
+.company-img {
+    width: 390px;
+    height: 450px;
+    margin-left: 20px;
+}
+
+.card-section {
+    display: flex;
+}
+
+.card-section p {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+li {
+    font-size: 20px;
+}
+
+.input-info {
+    height: 40px;
+    width: 370px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    border-radius: 10px;
+}
+
+.page-circles1 {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-left: 585px;
+    margin-top: 50px;
+    font-size: 18px;
+}
+
+.page-circles1 .far {
+    color: white;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.page-circles2 .far {
+    color: white;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.page-circles2 {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-left: 585px;
+    font-size: 18px;
+}
+
+#cancel {
+    background-color: #1B5485;
+    color: white;
+    border: 2px solid #B6BD23;
+}
+
+#back1 {
+    background-color: #1B5485;
+    color: white;
+    border: 2px solid #B6BD23;
+}
+
+#back2 {
+    background-color: #1B5485;
+    color: white;
+    border: 2px solid #B6BD23;
+}
+
+.dreamer-card p {
+    font-size: 35px;
+}
+
+button {
+    margin: 0 400px;
+}
+
+ 
+

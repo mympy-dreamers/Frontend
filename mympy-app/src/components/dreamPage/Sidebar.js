@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import RecentDonations from './RecentDonations.js';
+// import RecentDonations from './RecentDonations.js';
 import ProjectInfo from './ProjectInfo.js';
 
 const SidebarDiv = styled.div`
@@ -16,12 +16,12 @@ const SidebarDiv = styled.div`
 `
 
 const Sidebar = ({ dream, user }) => {
-  return (
-    <SidebarDiv>
-    	<ProjectInfo dream={dream} user={user}/>
-    	<RecentDonations donations={dream.recentDonations} />
-    </SidebarDiv>
-  );
+	return (
+		<SidebarDiv>
+			<ProjectInfo dream={dream} user={user} />
+			{/* <RecentDonations donations={dream.recentDonations} /> */}
+		</SidebarDiv>
+	);
 }
 
 export default Sidebar;

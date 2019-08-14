@@ -1,6 +1,6 @@
 import React from 'react';
 
-import midSwirl from '../../img/midSwirl.png';
+// import midSwirl from '../../img/midSwirl.png';
 import meteor from '../../img/meteor.png';
 import female from '../../img/female.svg';
 import midSecImg from '../../img/midSecImg.jpg';
@@ -21,7 +21,7 @@ const midMain = {
 
 const MidSec = () => {
     return (
-        <div className="mid-main" style={ midMain }>
+        <div className="mid-main" style={midMain}>
             <div className="top-mid">
                 <div className="div-wrap">
                     <div className="top-div">
@@ -37,7 +37,7 @@ const MidSec = () => {
                 </div>
             </div>
             <div className="empty">
-            <img src={female} alt="female" />
+                <img src={female} alt="female" />
             </div>
         </div>
     )
