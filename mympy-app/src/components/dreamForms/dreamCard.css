@@ -21,7 +21,7 @@
 }
 
 .input-style {   
-    width: 550px;
+    width: 50%;
     height: 50px;
     text-align: center;
     font-size: 25px;
@@ -29,10 +29,16 @@
     border: 1px solid black;
     margin-bottom: 100px;
     border-radius: 10px;
-    margin-left: 363px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 5px;
+
 }
- 
+    @media (max-width: 1250px){
+        .input-style{
+            width: 80%;
+        }
+    } 
 
 .dreamlable {
     font-size: 30px;
@@ -78,7 +84,7 @@ button {
     width: 155px;
     height: 60px;
     font-size: 30px;
-    margin: 0 360px;
+    margin: 0 auto;
     text-shadow: 1px 1px black;
     border: 3px solid white;
     
