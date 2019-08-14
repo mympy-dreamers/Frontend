@@ -33,6 +33,7 @@ const StyledDreamMarket = styled.div`
 
     .cardWidth {
     	width: 33.33%;
+      padding: 1% 3%;
     }
   }
 `
