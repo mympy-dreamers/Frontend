@@ -4,17 +4,14 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { addImage } from '../../actions';
 import { Button, FormGroup, Label, Input, FormText } from 'reactstrap';
-
-
-
 class imageForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             img: {
                 image: null,
-                isOpen: false
-            }
+            },
+            
         };
     }
 
@@ -31,7 +28,9 @@ class imageForm extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        this.setState({ isOpen: true })
+        this.setState({
+            
+        })
     }
 
     render() {
@@ -52,15 +51,7 @@ class imageForm extends React.Component {
                         </FormGroup>
                         <Button onClick={this.handleSubmit}>Submit</Button>
                     </div>
-                    {
-                    this.state.isOpen &&(
-                        <div className="popup">
-                            <p>Dream was created successfully </p>
-                        </div>
-                    )
-                       
-                    
-                }
+                   
                 </div>  {/* dreamer-card-app end  */}
             </div> /* dream-Home-Page end */
         )
