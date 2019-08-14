@@ -37,18 +37,18 @@ class imageForm extends React.Component {
                     </div>
                     <div>
                         <FormGroup className='image-icons'>
-                            <Label  id="image-button" for="exampleFile"><i class="fas fa-folder-plus"><h2> Image File </h2></i></Label>
+                            <Label id="image-button" for="exampleFile"><i class="fas fa-folder-plus"><h2> Image File </h2></i></Label>
                             <div className='images'>
-                                <Input  className="fileInput" type="file" onChange={this.uploadFile} name="file" id="exampleFile" />
-                                <button className='dreambutton1'>{/* <Link to='/market'> */}Submit{/* </Link> */}</button>
+                                <Input className="fileInput" type="file" onChange={this.uploadFile} name="file" id="exampleFile" />
+                                <button className='dreambutton1'> <Link to='/market'> Submit </Link></button>
                             </div>
-                            
+
                             {/* <FormText color="muted">
                                 This is some placeholder block-level help text for the above input.
                                 It's a bit lighter and easily wraps to a new line.
                         </FormText> */}
                         </FormGroup>
-                        
+
                     </div>
                 </div>  {/* dreamer-card-app end  */}
             </div> /* dream-Home-Page end */
