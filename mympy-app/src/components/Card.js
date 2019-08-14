@@ -1,66 +1,106 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
-import { BrowserRouter as Link } from "react-router-dom";
-import { fetchAllDreams } from '../actions/index';
-import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import ProgressBar from 'react-bootstrap/ProgressBar';
-import './Card.scss';
+import { connect } from "react-redux";
+import styled from 'styled-components';
 
-class Card extends React.Component {
+const StyledCard = styled.div`
+  border-radius: 20px;
+  margin: 4.4% 8%;
 
-	componentDidMount() {
-		this.props.fetchAllDreams();
+  .imgDiv {
+    border-radius: 20px 20px 0 0;
+    padding-top: 75%;
+    background-position: center; 
+    background-size: cover;
+  }
+
+	.card-body {
+    color: black;
+    background-color: #012345;
+    border-radius: 0 0 20px 20px;
+    .user-name {
+      font-size: 2.2vw;
+      margin-bottom: 0.4em;
+      color: white;
+    }
+    .title-city-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.2em;
+      font-size: 1.8vw;
+      color: white;
+      .dream-title {
+        margin-bottom: 26px
+      }
+    }
+
+    .description {
+      font-size: 1.5vw;
+      margin-bottom: 1.8em;
+      color: white;
+    }
+
+    .progress {
+      height: 2.4em;
+      width: 95%;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      .progress-bar {
+        background-color: #FFD164;
+      }
+    }
+
+    .goal-remaining{
+      font-size: 1.2vw;
+      text-align: center;
+      margin-bottom: 2.2em;
+      color: white;
+    }
+
+    .button-wrapper {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      .learn-more-button {
+        height: 2.2em;				
+        margin: 0;
+        border: none;
+        background-color: #FFD164;
+        color: black;
+        font-size: 1.4vw;
+        font-weight: bold;
+        margin-bottom: 0.6em;
+      }
+    }
 	}
+`
 
-	render() {
-		// console.log(this.props.searchDreams);
-		let filteredDreams = this.props.dreams.filter(dream => dream.dream_name.toLowerCase().includes(this.props.searchDreams))
-		// console.log(filteredDreams);
-		let dreams = this.props.searchDreams ? filteredDreams : this.props.dreams
-		return (
-			<div className="marketWrapper">
-				<div className="headingDiv">
-					<h1>Make Dreams into VRearlity</h1>
-				</div>
-				<div className="marketDiv">
-
-					{this.props.dreams && dreams.map(dream => (
-						<div className="card" key={dream.id}>
-							<Link to={`/market/${dream.id}`} style={{ textDecoration: 'none' }}>
-								<div className="imgDiv" style={{ backgroundImage: `url(${dream.img_url})` }}>
-
-								</div>
-
-								<div className="card-body">
-									<div className="user-name">{dream.username}</div>
-									<div className="title-city-wrapper">
-										<div className="dream-title">{dream.dream_name}</div>
-									</div>
-									<div className="description">{dream.dream_short_description}</div>
-									<ProgressBar now={(parseInt(dream.donations_received) / parseInt(dream.donation_goal)) * 100} />
-									<div className="goal-remaining">{"$" + (dream.donation_goal - dream.donations_received) + " "} to go!</div>
-									<div className="button-wrapper">
-										<button className="donate-button">Learn More</button>
-									</div>
-								</div>
-							</Link>
-						</div>
-					))}
-				</div>
-			</div>
-		);
-	}
+const Card = ({ dream }) => {
+  console.log(dream)
+  return (
+    <StyledCard>
+      <Link to={`/market/${dream.id}`} style={{ textDecoration: 'none' }}>
+        <div className="imgDiv" style={{ backgroundImage: `url(${dream.img_url})` }} />
+        <div className="card-body">
+          <div className="user-name">{dream.username}</div>
+          <div className="title-city-wrapper">
+            <div className="dream-title">{dream.dream_name}</div>
+          </div>
+          <div className="description">{dream.dream_short_description}</div>
+          <ProgressBar now={dream.donations_received / dream.donation_goal * 100} />
+          <div className="goal-remaining">{"$" + (dream.donation_goal - dream.donations_received) + " "} to go!</div>
+          <div className="button-wrapper">
+            <button className="learn-more-button">Learn More</button>
+          </div>
+        </div>
+      </Link>
+    </StyledCard>
+  );
 }
 
-const mapStateToProps = ({ dreams }) => ({
-	dreams: dreams.dreams,
-	searchDreams: dreams.searchDreams,
+const mapStateToProps = ({ }) => ({
+
 });
 
-
-export default withRouter(
-	connect(
-		mapStateToProps,
-		{ fetchAllDreams }
-	)(Card)
-);
+export default connect(mapStateToProps)(Card)

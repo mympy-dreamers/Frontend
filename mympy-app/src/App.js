@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import Login from './components/login/Login';
 import NavBar from './view/navbar/NavBar';
 import Home from './view/home/Home';
-import Card from './components/Card'
+import DreamMarket from './components/DreamMarket.js'
 import DreamPage from './components/dreamPage/DreamPage.js';
 import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/login/PrivateRoute';
@@ -50,7 +50,7 @@ class App extends React.Component {
             />
           )} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/market" component={Card} />
+          <Route exact path="/market" component={DreamMarket} />
           <Route path="/market/:id" component={DreamPage} />
           <Route path="/user-dreams" component={UserDreamsList} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
