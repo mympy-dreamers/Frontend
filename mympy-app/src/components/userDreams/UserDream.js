@@ -113,7 +113,7 @@ class UserDream extends React.Component {
                                 <ProgressBar now={(parseInt(this.props.dream.donations_received) / parseInt(this.props.dream.donation_goal)) * 100} />
                                 <div className="goal-remaining">Only {"$" + (this.props.dream.donation_goal - this.props.dream.donations_received) + " "} to go towards ${this.props.dream.donation_goal}!</div>
                                 <div className="button-wrapper">
-                                    <button className="donate-button" onClick={this.toggleUpdate}>Update or Delete</button>
+                                    <button className="donate-button" onClick={this.toggleUpdate}>Change</button>
                                 </div>
                             </div>
                         </CardDiv>

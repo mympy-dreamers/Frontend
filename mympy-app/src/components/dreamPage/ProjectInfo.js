@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Button } from 'reactstrap';
-import { sendMail } from '../../actions';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
+// import { Button } from 'reactstrap';
+import { sendMail } from '../../actions';
 
 import ProgressCircle from './ProgressCircle.js';
 import EmailModal from '../emailModal/EmailModal';
@@ -77,16 +77,16 @@ const ProjectInfoDiv = styled.div`
 
 
 
-class ProjectInfo extends React.Component{
-	constructor({ dream, user, currUser }){
+class ProjectInfo extends React.Component {
+	constructor({ dream, user, currUser }) {
 		super({ dream, user, currUser });
 		this.state = {
 			dreamId: '',
 			userId: '',
 		}
 	}
-	
-	render(){
+
+	render() {
 		return (
 			<ProjectInfoDiv>
 				<h2 className="title">PROJECT NOMAD</h2>
@@ -107,7 +107,7 @@ class ProjectInfo extends React.Component{
 				</div>
 				<div>
 					{/* <Button onClick={this.handleMail} className="contact-button" outline color="info">Contact Dreamer</Button>{' '} */}
-					<EmailModal  />
+					<EmailModal />
 				</div>
 			</ProjectInfoDiv>
 		);
@@ -121,9 +121,9 @@ class ProjectInfo extends React.Component{
 // }
 
 const mapStateToProps = (state) => {
-  return {
-    loggedUser: state.auth.user,
-  }
+	return {
+		loggedUser: state.auth.user,
+	}
 }
 
 export default connect(mapStateToProps, { sendMail })(ProjectInfo);

@@ -5,33 +5,31 @@
     align-content: center;
 
     .wrapper {
-        width: 90%;
+        width: 100%;
         background-color: white;
-        border-radius: 20px;
+        border-radius: 0 0 20px 20px;
         display: flex;
+        padding-bottom: 8px;
 
         .user-left {
             display: flex;
             flex-direction: column;
-            width: 25%;
-            margin: .5%;
+            margin: 0 5% 2%;
 
             h3 {
                 align-self: flex-start;
-                margin: 1%;
-                font-size: 2rem;
+                font-size: 1.7rem;
+                font-weight: bold;
                 margin: 2% auto;
                 color: $body-font-color;
-
             } // end of h3
 
             img {
-                width: 150px;
-                height: 150px;
+                width: 120px;
+                height: 120px;
                 margin: 2% auto;
-                border-radius: 20px;
+                border-radius: 14px;
                 @include box-shadow;
-
             } // end of img
 
         } // end of user-left
@@ -44,6 +42,7 @@
             align-items: center;
 
             .develop {
+                margin-top: 20px;
 
                 p {
                     opacity: 0.5;
@@ -63,10 +62,10 @@
             .user-tab {
                 display: flex;
                 flex-direction: column;
-
+    
                 img {
-                    width: 100px;
-                    height: 100px;
+                    width: 80px;
+                    height: 62px;
                     padding: 2%;
                     margin: 2% auto;
 
