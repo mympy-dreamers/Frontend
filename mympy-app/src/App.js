@@ -5,14 +5,16 @@ import { connect } from "react-redux";
 import Login from './components/login/Login';
 import NavBar from './view/navbar/NavBar';
 import Home from './view/home/Home';
-import Card from './components/Card'
+import DreamMarket from './components/DreamMarket.js'
 import DreamPage from './components/dreamPage/DreamPage.js';
 import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/login/PrivateRoute';
+import About from './view/aboutPage/AboutUs';
 import UserDreamsList from './components/userDreams/UserDreamsList'
 
 import DreamerProfile from './components/dreamForms/dreamerProfile';
 import ImageForm from './components/dreamForms/imageForm';
+import Footer from './view/footer/footer';
 
 class App extends React.Component {
 
@@ -25,15 +27,15 @@ class App extends React.Component {
   }
 
   render() {
-
-
     return (
       <div className="App">
         <div className="app-wrap">
-          <NavBar
+
+          <Route path="/" render={(props) => <NavBar
+            {...props}
             show={this.props.location.pathname.includes('market')}
             onAccountPage={this.props.location.pathname.includes('dashboard')}
-          />
+          />} />
           <Route exact path="/" render={(props) => <Home {...props} />} />
           <Route path="/login" render={(props) => (
             <Login
@@ -47,13 +49,15 @@ class App extends React.Component {
               type="register"
             />
           )} />
-          <Route exact path="/market" component={Card} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/market" component={DreamMarket} />
           <Route path="/market/:id" component={DreamPage} />
           <Route path="/user-dreams" component={UserDreamsList} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
 
-          <Route exact path="/addDream" component={DreamerProfile} />
-          <Route exact path="/addDream/image" component={ImageForm} />
+          <PrivateRoute exact path="/addDream" component={DreamerProfile} />
+          <PrivateRoute exact path="/addDream/image" component={ImageForm} />
+          <Footer />
         </div>
       </div >
     );

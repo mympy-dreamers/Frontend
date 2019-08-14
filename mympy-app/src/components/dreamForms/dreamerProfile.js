@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { addDream } from '../../actions';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, FormGroup, Label, Input } from 'reactstrap';
 
 import './dreamCard.css';
 
@@ -13,7 +13,7 @@ class DreamInfo extends React.Component {
                 dream_name: '',
                 dream_short_description: '',
                 dream_long_description: '',
-                donations_received: 1,
+                donations_received: 0,
                 donation_goal: 0,
                 user_id: null,
             }

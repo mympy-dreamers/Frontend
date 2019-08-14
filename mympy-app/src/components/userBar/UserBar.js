@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Spinner } from 'reactstrap';
+// import { Spinner } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 import { fetchAllDreams, fetchUserById } from '../../actions';
@@ -19,7 +19,7 @@ class UserBar extends React.Component {
             <div className="user-main">
                 <div className="wrapper">
                     <div className="user-left">
-                        {<h3>Hello {this.props.authZeroUser.given_name.toUpperCase()}!</h3>}
+                        <h3>Hello {this.props.authZeroUser.given_name.toUpperCase() + " " + this.props.authZeroUser.family_name.toUpperCase()}!</h3>
                         <img src={demo} alt='user' />
                     </div>
                     <div className="flexing">
