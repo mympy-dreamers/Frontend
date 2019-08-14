@@ -24,6 +24,7 @@ export const DELETE_USER_FAILURE = 'DELETE_USER_FAILURE';
 
 
 const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
+// const BASE_URL = 'https://mympy-dreamers-staging.herokuapp.com';
 
 const token = {
     headers: { authorization: localStorage.getItem('jwt') }
