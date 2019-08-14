@@ -3,6 +3,16 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { connect } from 'react-redux';
 import { sendMail } from '../../actions';
 
+
+const bodyStyle = {
+  fontSize: "1.3rem",
+}
+
+const headStyle = {
+  fontSize: "2.3rem",
+  color: 'red',
+}
+
 class EmailModal extends React.Component {
   constructor() {
     super();
@@ -44,14 +54,13 @@ class EmailModal extends React.Component {
     return (
       <div>
         <Button onClick={this.toggle} className="contact-button" outline color="info">Contact Dreamer</Button>{' '}
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-          <ModalHeader toggle={this.toggle}>WARNING</ModalHeader>
-          <ModalBody>
-            Are you sure youd like to send a message?
+        <Modal isOpen={this.state.modal} toggle={this.toggle}>
+          <ModalHeader style={ headStyle } toggle={this.toggle}>WARNING</ModalHeader>
+          <ModalBody style={ bodyStyle }>
+            Are you sure you would like to share your e-mail address with this Dreamer?
           </ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={this.handleMail}>Submit</Button>
-            <Button color="danger" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>
       </div>
