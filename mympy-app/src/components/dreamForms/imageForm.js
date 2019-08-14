@@ -12,6 +12,7 @@ class imageForm extends React.Component {
             img: {
                 image: null,
             },
+            showModel:false
             
         };
     }
