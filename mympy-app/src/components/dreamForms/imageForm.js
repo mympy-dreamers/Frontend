@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { addImage } from '../../actions';
 import { Button, FormGroup, Label, Input, FormText } from 'reactstrap';
-import SubmitModel from '../formModel'
+import SubmitModel from "./formModel";
 class imageForm extends React.Component {
     constructor(props) {
         super(props);
@@ -31,6 +31,7 @@ class imageForm extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         this.setState({
+            showModel:true
             
         })
     }
@@ -53,7 +54,7 @@ class imageForm extends React.Component {
                         </FormGroup>
                         <Button onClick={this.handleSubmit}>Submit</Button>
                     </div>
-                   
+                   {this.state.showModel && <SubmitModel/>}
                 </div>  {/* dreamer-card-app end  */}
             </div> /* dream-Home-Page end */
         )
