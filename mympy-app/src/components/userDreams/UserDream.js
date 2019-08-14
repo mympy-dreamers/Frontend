@@ -88,36 +88,36 @@ class UserDream extends React.Component {
     }
 
     render() {
-        return(
+        return (
             <div>
-                {this.state.isUpdating ? 
-                    <EditForm  
-                    dream={ this.props.dream } 
-                    updateDream={ this.props.updateDream }
-                    deleteDream={ this.props.deleteDream }
-                    toggleUpdate={ this.toggleUpdate }
-                    currentUser={ this.props.currentUser } />
+                {this.state.isUpdating ?
+                    <EditForm
+                        dream={this.props.dream}
+                        updateDream={this.props.updateDream}
+                        deleteDream={this.props.deleteDream}
+                        toggleUpdate={this.toggleUpdate}
+                        currentUser={this.props.currentUser} />
 
-                :
-                <div className="dream-card">
-                <CardDiv className="card containerDream">
-                        <img className="card-img" src={this.props.dream.dreampic} alt="" />
-                    
-                        <div className="card-body">
-                            <div className="user-name">{this.props.currentUser.username}</div>
-                            <div className="title-city-wrapper">
-                                <div className="dream-title">{this.props.dream.dream_name}</div>
-                                <div className="dream-city">City</div>
-                            </div>	
-                            <div className="description">{this.props.dream.dream_short_description}</div>
-                            <ProgressBar now={60} />
-                            <div className="goal-remaining">Only {"$" + (this.props.dream.donation_goal - this.props.dream.donations_received) + " "} to go towards ${this.props.dream.donation_goal}!</div>
-                            <div className="button-wrapper">
-                            <button className="donate-button" onClick={ this.toggleUpdate }>Change</button>
+                    :
+                    <div className="dream-card">
+                        <CardDiv className="card containerDream">
+                            <img className="card-img" src={this.props.dream.dreampic} alt="" />
+
+                            <div className="card-body">
+                                <div className="user-name">{this.props.currentUser.username}</div>
+                                <div className="title-city-wrapper">
+                                    <div className="dream-title">{this.props.dream.dream_name}</div>
+                                    <div className="dream-city">City</div>
+                                </div>
+                                <div className="description">{this.props.dream.dream_short_description}</div>
+                                <ProgressBar now={(parseInt(this.props.dream.donations_received) / parseInt(this.props.dream.donation_goal)) * 100} />
+                                <div className="goal-remaining">Only {"$" + (this.props.dream.donation_goal - this.props.dream.donations_received) + " "} to go towards ${this.props.dream.donation_goal}!</div>
+                                <div className="button-wrapper">
+                                    <button className="donate-button" onClick={this.toggleUpdate}>Change</button>
+                                </div>
                             </div>
-                        </div>
-		        </CardDiv>
-                </div>
+                        </CardDiv>
+                    </div>
                 }
             </div>
         )

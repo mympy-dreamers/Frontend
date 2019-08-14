@@ -47,19 +47,19 @@ const JournalEntryDiv = styled.div`
 `
 
 const JournalEntry = ({ dream, user }) => {
-  return (
-    <JournalEntryDiv>
-    	<h2 className="JE-title">Journal Entry</h2>
-    	<div className="JE-body">
-    		{/*<h2 className="JE-entry-title">The Beging of Nomad</h2>
+	return (
+		<JournalEntryDiv>
+			<h2 className="JE-title">Journal Entry</h2>
+			<div className="JE-body">
+				{/*<h2 className="JE-entry-title">The Beging of Nomad</h2>
     		<p className="JE-entry">{dream.longDescription.slice(0, 500) + "..."}</p>
     		<div className="read-more">Read More</div>*/}
-    		<div className="coming-soon">
-    			<img src={comingSoon}/>
-    		</div>
-    	</div>
-    </JournalEntryDiv>
-  );
+				<div className="coming-soon">
+					<img src={comingSoon} alt='Coming Soon' />
+				</div>
+			</div>
+		</JournalEntryDiv>
+	);
 }
 
 export default JournalEntry;
