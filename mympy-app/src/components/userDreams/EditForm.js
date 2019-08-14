@@ -74,13 +74,13 @@ class EditForm extends React.Component {
                         placeholder={this.props.dream.donation_goal}
                         onChange={this.handleChange}
                         value={this.state.donation_goal} />
-                    <h1>Image Upload Link:</h1>
+                    {/* <h1>Image Upload Link:</h1>
                     <input
                         className="textarea"
                         name='dreampic'
                         placeholder={this.props.dream.dreampic}
                         onChange={this.handleChange}
-                        value={this.state.dreampic} />
+                        value={this.state.dreampic} /> */}
 
                     <div className='edit-buttons'>
                         <button className='edit-button' onClick={this.update}>Update</button>
