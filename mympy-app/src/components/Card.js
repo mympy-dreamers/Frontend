@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 const StyledCard = styled.div`
   border-radius: 20px;
-  margin: 4.4% 8%;
+  // margin: 4.4% 8%;
 
   .imgDiv {
     border-radius: 20px 20px 0 0;
@@ -77,7 +77,6 @@ const StyledCard = styled.div`
 `
 
 const Card = ({ dream }) => {
-  console.log(dream)
   return (
     <StyledCard>
       <Link to={`/market/${dream.id}`} style={{ textDecoration: 'none' }}>

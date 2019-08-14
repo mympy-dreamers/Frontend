@@ -73,10 +73,7 @@ const ProjectInfoDiv = styled.div`
 	}
 `
 
-
-
 const ProjectInfo = ({ dream, user }) => {
-	
 	return (
 		<ProjectInfoDiv>
 			<h2 className="title">PROJECT NOMAD</h2>
