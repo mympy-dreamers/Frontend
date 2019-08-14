@@ -75,10 +75,6 @@ const ProjectInfoDiv = styled.div`
 
 
 const ProjectInfo = ({ dream, user }) => {
-
-	handleSubmit() {
-
-	}
 	
 	return (
 		<ProjectInfoDiv>
