@@ -16,6 +16,7 @@ class DreamInfo extends React.Component {
                 donations_received: 0,
                 donation_goal: 0,
                 user_id: null,
+                
             }
         };
     }
@@ -47,6 +48,8 @@ class DreamInfo extends React.Component {
         console.log('submittedDream: ', newDream);
         this.props.addDream(newDream)
             .then(() => this.props.history.push('/addDream/image'));
+           
+           
     }
 
     render() {
@@ -74,9 +77,12 @@ class DreamInfo extends React.Component {
                             <Label for="exampleText">Give us a long descrption</Label>
                             <Input onChange={this.handleChanges} type="textarea" name="dream_long_description" id="dream_long_description" />
                         </FormGroup>
-                        <Button onClick={this.handleSubmit}>Submit</Button>
+                        <Button   onClick={this.handleSubmit}>Submit</Button>
+
                     </div>
+                    
                 </div>  {/* dreamer-card-app end  */}
+               
             </div> /* dream-Home-Page end */
         )
     }

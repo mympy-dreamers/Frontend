@@ -12,7 +12,8 @@ class imageForm extends React.Component {
         super(props);
         this.state = {
             img: {
-                image: null
+                image: null,
+                isOpen: false
             }
         };
     }
@@ -27,6 +28,11 @@ class imageForm extends React.Component {
         console.log(this.props.dreamId);
         this.props.addImage(data);
     };
+
+    handleSubmit = e => {
+        e.preventDefault();
+        this.setState({ isOpen: true })
+    }
 
     render() {
         return (
@@ -44,8 +50,17 @@ class imageForm extends React.Component {
                                 It's a bit lighter and easily wraps to a new line.
                         </FormText>
                         </FormGroup>
-                        <Button><Link to='/market'>Submit</Link></Button>
+                        <Button onClick={this.handleSubmit}>Submit</Button>
                     </div>
+                    {
+                    this.state.isOpen &&(
+                        <div className="popup">
+                            <p>Dream was created successfully </p>
+                        </div>
+                    )
+                       
+                    
+                }
                 </div>  {/* dreamer-card-app end  */}
             </div> /* dream-Home-Page end */
         )
