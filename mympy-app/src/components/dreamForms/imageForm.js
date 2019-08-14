@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { addImage } from '../../actions';
 import { Button, FormGroup, Label, Input, FormText } from 'reactstrap';
+import SubmitModel from '../formModel'
 class imageForm extends React.Component {
     constructor(props) {
         super(props);
