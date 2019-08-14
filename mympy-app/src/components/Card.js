@@ -1,10 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Link } from "react-router-dom";
 import { fetchAllDreams } from '../actions/index';
 import { connect } from "react-redux";
 import ProgressBar from 'react-bootstrap/ProgressBar';
-import styled from 'styled-components';
 import './Card.scss';
 
 class Card extends React.Component {
@@ -14,10 +13,10 @@ class Card extends React.Component {
 	}
 
 	render() {
-		console.log(this.props.searchDreams);
+		// console.log(this.props.searchDreams);
 		let filteredDreams = this.props.dreams.filter(dream => dream.dream_name.toLowerCase().includes(this.props.searchDreams))
-		console.log(filteredDreams);
-    let dreams = this.props.searchDreams ? filteredDreams : this.props.dreams
+		// console.log(filteredDreams);
+		let dreams = this.props.searchDreams ? filteredDreams : this.props.dreams
 		return (
 			<div className="marketWrapper">
 				<div className="headingDiv">
@@ -38,7 +37,7 @@ class Card extends React.Component {
 										<div className="dream-title">{dream.dream_name}</div>
 									</div>
 									<div className="description">{dream.dream_short_description}</div>
-									<ProgressBar now={60} />
+									<ProgressBar now={(parseInt(dream.donations_received) / parseInt(dream.donation_goal)) * 100} />
 									<div className="goal-remaining">{"$" + (dream.donation_goal - dream.donations_received) + " "} to go!</div>
 									<div className="button-wrapper">
 										<button className="donate-button">Learn More</button>
