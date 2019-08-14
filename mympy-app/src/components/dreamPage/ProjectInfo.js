@@ -4,7 +4,8 @@ import { Button } from 'reactstrap';
 import { sendMail } from '../../actions';
 import { connect } from 'react-redux';
 
-import ProgressCircle from './ProgressCircle.js'
+import ProgressCircle from './ProgressCircle.js';
+import EmailModal from '../emailModal/EmailModal';
 
 const ProjectInfoDiv = styled.div`
 	display: flex;
@@ -77,41 +78,12 @@ const ProjectInfoDiv = styled.div`
 
 
 class ProjectInfo extends React.Component{
-	constructor({ dream, user }){
-		super({ dream, user });
+	constructor({ dream, user, currUser }){
+		super({ dream, user, currUser });
 		this.state = {
-			mailings: {
-				userId: '',
-				dreamId: '',
-			}
+			dreamId: '',
+			userId: '',
 		}
-	}
-
-	componentDidMount(){
-		console.log('mounting' + this.props.currUser);
-		if (this.props.currUser) {
-            this.setState({
-				mailings: {
-					...this.state.mailings,
-					userId: this.props.currUser.id,
-				}
-            })
-        } else {
-            console.log('cannot find user id for forms page')
-        }
-	}
-
-	handleMail = e => {
-		e.preventDefault();
-		console.log('handleMail' + this.props.currUser);
-		console.log(this.props.dream);
-		this.setState({
-			mailings: {
-				...this.state.mailings,
-				dreamId: this.props.dream.user_id,
-			}
-		})
-		this.props.sendMail(this.state.mailings);
 	}
 	
 	render(){
@@ -130,27 +102,28 @@ class ProjectInfo extends React.Component{
 				<h4 className="share-title">SHARE PROJECT</h4>
 				<div className="share-buttons">
 					<i className="fab fa-facebook fa-5x"></i>
-					<i class="fab fa-twitter fa-5x"></i>
+					<i className="fab fa-twitter fa-5x"></i>
 					<i className="fab fa-instagram fa-5x"></i>
 				</div>
 				<div>
-					<Button onClick={this.handleMail} className="contact-button" outline color="info">Contact Dreamer</Button>{' '}
+					{/* <Button onClick={this.handleMail} className="contact-button" outline color="info">Contact Dreamer</Button>{' '} */}
+					<EmailModal  />
 				</div>
 			</ProjectInfoDiv>
 		);
 	}
 }
 
-const mapStateToProps = ({ auth }) => {
-	return {
-		currUser: auth.user,
-	}
-}
-
-// const mapStateToProps = (state) => {
-//   return {
-//     loggedUser: state.auth.user,
-//   }
+// const mapStateToProps = ({ auth }) => {
+// 	return {
+// 		currUser: auth.user,
+// 	}
 // }
+
+const mapStateToProps = (state) => {
+  return {
+    loggedUser: state.auth.user,
+  }
+}
 
 export default connect(mapStateToProps, { sendMail })(ProjectInfo);
