@@ -61,9 +61,10 @@ const StyledCard = styled.div`
     .button-wrapper {
       display: flex;
       justify-content: center;
-      .donate-button {
+      width: 100%;
+      .learn-more-button {
         height: 2.2em;				
-        width: 56%;
+        margin: 0;
         border: none;
         background-color: #FFD164;
         color: black;
@@ -90,7 +91,7 @@ const Card = ({ dream }) => {
 					<ProgressBar now={60} />
 					<div className="goal-remaining">{"$" + (dream.donation_goal - dream.donations_received) + " "} to go!</div>
 					<div className="button-wrapper">
-						<button className="donate-button">Learn More</button>
+						<button className="learn-more-button">Learn More</button>
 					</div>
 				</div>
 			</Link>
