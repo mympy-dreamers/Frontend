@@ -77,29 +77,29 @@ const StyledCard = styled.div`
 `
 
 const Card = ({ dream }) => {
-	console.log(dream)
-	return (
-		<StyledCard>
-			<Link to={`/market/${dream.id}`} style={{ textDecoration: 'none' }}>
-				<div className="imgDiv" style={{ backgroundImage: `url(${dream.img_url})` }} />
-				<div className="card-body">
-					<div className="user-name">{dream.username}</div>
-					<div className="title-city-wrapper">
-						<div className="dream-title">{dream.dream_name}</div>
-					</div>
-					<div className="description">{dream.dream_short_description}</div>
-					<ProgressBar now={60} />
-					<div className="goal-remaining">{"$" + (dream.donation_goal - dream.donations_received) + " "} to go!</div>
-					<div className="button-wrapper">
-						<button className="learn-more-button">Learn More</button>
-					</div>
-				</div>
-			</Link>
-		</StyledCard>
-	);
+  console.log(dream)
+  return (
+    <StyledCard>
+      <Link to={`/market/${dream.id}`} style={{ textDecoration: 'none' }}>
+        <div className="imgDiv" style={{ backgroundImage: `url(${dream.img_url})` }} />
+        <div className="card-body">
+          <div className="user-name">{dream.username}</div>
+          <div className="title-city-wrapper">
+            <div className="dream-title">{dream.dream_name}</div>
+          </div>
+          <div className="description">{dream.dream_short_description}</div>
+          <ProgressBar now={dream.donations_received / dream.donation_goal * 100} />
+          <div className="goal-remaining">{"$" + (dream.donation_goal - dream.donations_received) + " "} to go!</div>
+          <div className="button-wrapper">
+            <button className="learn-more-button">Learn More</button>
+          </div>
+        </div>
+      </Link>
+    </StyledCard>
+  );
 }
 
-const mapStateToProps = ({  }) => ({
+const mapStateToProps = ({ }) => ({
 
 });
 
