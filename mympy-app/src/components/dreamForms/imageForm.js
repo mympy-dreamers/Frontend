@@ -86,8 +86,8 @@ getImageSizeInBytes = (imgURL) => {
 
                             <Alert className='alert' color='danger' role='alert' isOpen={this.state.visible} toggle={this.toggle.bind(this)}>
                             <h1>Uh Oh!</h1>
-                            <p>`Images need to be less then 10mb!`</p>
-                            <p>'Your image is' + `${this.state.imageSize}`</p>
+                            <p>Images need to be less then 10mb!</p>
+                            <p>Your image is {this.state.imageSize}</p>
                             </Alert>
 
                 </div>  {/* dreamer-card-app end  */}
