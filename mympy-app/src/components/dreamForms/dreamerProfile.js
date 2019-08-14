@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { addDream } from '../../actions';
-import { Button, FormGroup, Label, Input } from 'reactstrap';
+import { Button, FormGroup, Label, Input, Alert } from 'reactstrap';
 
 import './dreamCard.css';
 
@@ -16,9 +16,16 @@ class DreamInfo extends React.Component {
                 donations_received: 0,
                 donation_goal: 0,
                 user_id: null,
+                visible: true,
             }
         };
     }
+
+    toggle() {
+         this.setState({
+             visible: ! this.state.visible
+         })   
+    } 
 
     componentDidMount() {
         if (this.props.user) {
@@ -76,6 +83,12 @@ class DreamInfo extends React.Component {
                         </FormGroup>
                         <Button onClick={this.handleSubmit}>Submit</Button>
                     </div>
+
+                            <Alert color='danger' isOpen={this.state.visible} toggle={this.toggle.bind(this)}>
+                            {/* <Alert.Heading>Uh Oh!</Alert.Heading> */}
+                            <p>All field needs to be filled!</p>
+                            </Alert>
+
                 </div>  {/* dreamer-card-app end  */}
             </div> /* dream-Home-Page end */
         )
