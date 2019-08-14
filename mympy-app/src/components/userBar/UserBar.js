@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Spinner } from 'reactstrap';
+// import { Spinner } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 import { fetchAllDreams, fetchUserById } from '../../actions';
