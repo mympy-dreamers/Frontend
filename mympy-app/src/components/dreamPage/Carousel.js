@@ -58,6 +58,10 @@ const Wrapper = styled.div`
 `;
 
 export default class Carousel extends Component {
+  constructor({ props }) {
+    super(props);
+  }
+
   render() {
     const settings = {
       dots: true, 
@@ -67,11 +71,12 @@ export default class Carousel extends Component {
       slidesToShow: 1, // slides per view
       slidesToScroll: 1, // scroll 1 view at a time 
     };
+    console.log(this.props.dream_pics);
     return (
       <Wrapper>
         <Slider {...settings}>
           <div>
-            <img src="https://images.unsplash.com/photo-1478416272538-5f7e51dc5400?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1944&q=80" alt="" />
+            <img src={this.props.dream_pic.dream_pic[0].img_url} alt="" />
           </div>
           <div>
             <img src="https://images.unsplash.com/photo-1478416272538-5f7e51dc5400?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1944&q=80" alt="" />
