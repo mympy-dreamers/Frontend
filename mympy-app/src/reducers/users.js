@@ -1,7 +1,15 @@
 import {
-    FETCH_USERS_START, FETCH_USERS_SUCCESS, FETCH_USERS_FAILURE,
-    DELETE_USER_START, DELETE_USER_SUCCESS, DELETE_USER_FAILURE,
+    FETCH_USERS_START,
+    FETCH_USERS_SUCCESS,
+    FETCH_USERS_FAILURE,
+    FETCH_USER_START,
+    FETCH_USER_SUCCESS,
+    FETCH_USER_FAILURE,
+    DELETE_USER_START,
+    DELETE_USER_SUCCESS,
+    DELETE_USER_FAILURE,
     SET_USER, SET_LOG,
+    UPDATE_DREAM_USER,
 } from '../actions'
 
 
@@ -10,6 +18,8 @@ const INITIAL_STATE = {
     deletingUser: false,
     errors: [],
     users: [],
+    refreshUser: false,
+    user: {},
     authZeroUser: {
         given_name: "",
         family_name: ""
@@ -32,6 +42,29 @@ export default function usersReducer(state = INITIAL_STATE, action) {
                 users: action.payload
             }
         case FETCH_USERS_FAILURE:
+            return {
+                ...state,
+                fetching: false,
+                errors: action.payload
+            }
+        case UPDATE_DREAM_USER:
+            return {
+                ...state,
+                refreshUser: true
+            }
+        case FETCH_USER_START:
+            return {
+                ...state,
+                fetching: true,
+                refreshUser: false
+            }
+        case FETCH_USER_SUCCESS:
+            return {
+                ...state,
+                fetching: false,
+                user: action.payload,
+            }
+        case FETCH_USER_FAILURE:
             return {
                 ...state,
                 fetching: false,
