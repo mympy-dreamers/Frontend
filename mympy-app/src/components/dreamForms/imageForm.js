@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { addImage } from '../../actions';
 import { Button, FormGroup, Label, Input, FormText } from 'reactstrap';
-import SubmitModal from "./formModel";
+import FormModal from "./FormModal";
 class imageForm extends React.Component {
     constructor(props) {
         super(props);
@@ -56,7 +56,7 @@ class imageForm extends React.Component {
                         </FormGroup>
                         {/* <Button onClick={this.handleSubmit}>Submit</Button> */}
                     </div>
-                   {this.state.showModal && <SubmitModal/>}
+                   {this.state.showModal && <FormModal/>}
                 </div>  {/* dreamer-card-app end  */}
             </div> /* dream-Home-Page end */
         )
