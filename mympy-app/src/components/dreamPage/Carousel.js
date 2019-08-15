@@ -69,23 +69,18 @@ class Carousel extends Component {
       slidesToShow: 1, // slides per view
       slidesToScroll: 1, // scroll 1 view at a time 
     };
-    console.log(this.props.dream_pics);
+    console.log(this.props);
     return (
+
+
       <Wrapper>
 
         <Slider {...settings}>
-          <div>
-            {/* <img src={this.props.currDream.dream_pic[0].img_url} alt="" /> */}
-          </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1478416272538-5f7e51dc5400?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1944&q=80" alt="" />
-          </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1478416272538-5f7e51dc5400?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1944&q=80" alt="" />
-          </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1478416272538-5f7e51dc5400?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1944&q=80" alt="" />
-          </div>
+          {this.props.dreamImg.map((pic) => {
+            return <div>
+              <img src={pic && pic.img_url} />
+            </div>
+          })}
         </Slider>
       </Wrapper>
     );
@@ -95,6 +90,7 @@ class Carousel extends Component {
 const mapStateToProps = ({ dreams }) => {
   return {
     currDream: dreams.currDream,
+    dreamImg: dreams.imageById
   }
 }
 
