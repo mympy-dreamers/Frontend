@@ -39,11 +39,6 @@ class EditForm extends React.Component {
         this.props.toggleUpdate();
     }
 
-    delete = () => {
-        this.props.deleteDream(this.props.dream.id)
-        this.props.toggleUpdate();
-    }
-
     render() {
         return (
             <div id="popup">
@@ -93,7 +88,6 @@ class EditForm extends React.Component {
 
                     <div className='edit-buttons'>
                         <button className='edit-button' onClick={this.update}>Update</button>
-                        <button className='edit-button' onClick={this.delete}>Delete</button>
                     </div>
                 </form>
             </div>
