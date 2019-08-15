@@ -84,7 +84,7 @@ class DreamInfo extends React.Component {
                             <Label  className="dreamlable" for="exampleText">Give us a long descrption</Label>
                             <Input  className="input-style" onChange={this.handleChanges} type="textarea" name="dream_long_description" id="dream_long_description" />
                         </FormGroup>
-                        <Button   onClick={this.handleSubmit}>Submit</Button>
+                        <button className="dreambutton" onClick={this.handleSubmit}>Submit</button>
 
                     </div>
                     {<InputModal showModal={this.state.showModal} closeModal={this.closeModal}/>}

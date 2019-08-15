@@ -50,9 +50,11 @@ class imageForm extends React.Component {
                             <Label id="image-button" for="exampleFile"><i class="fas fa-folder-plus"><h2> Image File </h2></i></Label>
                             <div className='images'>
                                 <Input className="fileInput" type="file" onChange={this.uploadFile} name="file" id="exampleFile" />
+                                <button className='dreambutton1' onClick={this.handleSubmit}> Submit</button>
                             </div>
+                          
                         </FormGroup>
-                        <Button onClick={this.handleSubmit}>Submit</Button>
+                        {/* <Button onClick={this.handleSubmit}>Submit</Button> */}
                     </div>
                    {this.state.showModal && <SubmitModal/>}
                 </div>  {/* dreamer-card-app end  */}
