@@ -10,7 +10,7 @@ const bodyStyle = {
 }
 
 const headStyle = {
-  fontSize: "25px",
+  fontSize: "22px",
   color: '#1B5485',
  
 }
