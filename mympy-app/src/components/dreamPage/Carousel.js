@@ -1,4 +1,5 @@
-import React, { Component  } from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Slider from "react-slick";
 import styled from 'styled-components';
 
@@ -57,14 +58,11 @@ const Wrapper = styled.div`
 	  }
 `;
 
-export default class Carousel extends Component {
-  constructor({ props }) {
-    super(props);
-  }
+class Carousel extends Component {
 
   render() {
     const settings = {
-      dots: true, 
+      dots: true,
       arrows: true,
       infinite: true, // infinite scroll
       speed: 500, // delay per slide
@@ -74,9 +72,10 @@ export default class Carousel extends Component {
     console.log(this.props.dream_pics);
     return (
       <Wrapper>
+
         <Slider {...settings}>
           <div>
-            <img src={this.props.dream_pic.dream_pic[0].img_url} alt="" />
+            {/* <img src={this.props.currDream.dream_pic[0].img_url} alt="" /> */}
           </div>
           <div>
             <img src="https://images.unsplash.com/photo-1478416272538-5f7e51dc5400?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1944&q=80" alt="" />
@@ -92,3 +91,12 @@ export default class Carousel extends Component {
     );
   }
 }
+
+const mapStateToProps = ({ dreams }) => {
+  return {
+    currDream: dreams.currDream,
+  }
+}
+
+export default connect(mapStateToProps)(Carousel);
+

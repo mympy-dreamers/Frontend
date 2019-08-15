@@ -24,12 +24,6 @@ const DreamPageDiv = styled.div`
 `;
 
 class DreamPage extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-    };
-  }
 
   componentDidMount() {
     this.props.fetchDreamById(this.props.match.params.id);
@@ -48,15 +42,16 @@ class DreamPage extends React.Component {
     }
   }
 
+
   render() {
     console.log(this.props.currDream)
     return (
       <DreamPageDiv>
         <div className="dream-page">
-          <Carousel dream_pic={this.props.currDream} />
+          <Carousel />
           <div className="sidebar-body">
-            <Sidebar dream={this.props.currDream} user={this.state.user} />
-            <DreamPageBody dream={this.state.dream} />
+            <Sidebar />
+            <DreamPageBody />
           </div>
         </div>
       </DreamPageDiv>
@@ -67,8 +62,6 @@ class DreamPage extends React.Component {
 const mapStateToProps = ({ dreams }) => {
   return {
     currDream: dreams.currDream,
-    // user: state.auth.user,
-
   }
 }
 

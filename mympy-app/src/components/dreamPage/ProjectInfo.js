@@ -78,26 +78,19 @@ const ProjectInfoDiv = styled.div`
 
 
 class ProjectInfo extends React.Component {
-	constructor({ dream, user, currUser }) {
-		super({ dream, user, currUser });
-		this.state = {
-			dreamId: '',
-			userId: '',
-		}
-	}
 
 	render() {
 		return (
 			<ProjectInfoDiv>
-				<h2 className="title">PROJECT NOMAD</h2>
-				<h3 className="user-name">{this.props.user.username}{/*"BY " + user.firstname + " " + user.lastname*/}</h3>
+				<h2 className="title">{this.props.currDream.dream_name}</h2>
+				<h3 className="user-name">{this.props.loggedUser.username}{/*"BY " + user.firstname + " " + user.lastname*/}</h3>
 				<div className="data-viz">
 					<ProgressCircle
-						donationGoal={this.props.dream.donationGoal}
-						donationsReceived={this.props.dream.donationsReceived}
+						donationGoal={this.props.currDream.donations_goal}
+						donationsReceived={this.props.currDream.donations_received}
 					/>
 				</div>
-				<h3 className="days-left">7 Days Left</h3>
+				{/* <h3 className="days-left">7 Days Left</h3> */}
 				<button className="donate-btn">Donate</button>
 				<h4 className="share-title">SHARE PROJECT</h4>
 				<div className="share-buttons">
@@ -114,15 +107,10 @@ class ProjectInfo extends React.Component {
 	}
 }
 
-// const mapStateToProps = ({ auth }) => {
-// 	return {
-// 		currUser: auth.user,
-// 	}
-// }
-
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ auth, dreams }) => {
 	return {
-		loggedUser: state.auth.user,
+		loggedUser: auth.user,
+		currDream: dreams.currDream
 	}
 }
 
