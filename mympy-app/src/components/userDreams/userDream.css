@@ -1,6 +1,6 @@
-
+/* dream container */
 #root > div > div > div.dream-container {
-    background-color : #194980;
+    background-image: linear-gradient(#194980, #3e1980);
     width:100%;
     height: 100%;
     font-family: 'Roboto';
@@ -16,7 +16,7 @@
     justify-content: center;
 }
 
-/* edit-container */
+/* container for edit card */
 #root > div > div > div.dream-container > div > div.edit-container {
     margin: 1rem;
     max-width: 20rem;
@@ -45,13 +45,7 @@
     margin: 0.5rem;
 }
 
-/* @media only screen and (max-width: 600px) {
-    #root > div > div > div.dream-container > div > div.edit-container > div > div > div > div.button-wrapper > button.donate-button{
-        width: 60%;
-        margin: 0.5rem;
-    }
-  } */
-
+/* modal */
 #popup {
     position: fixed;
     display: flex;
@@ -68,6 +62,7 @@
     
 }
 
+/* modal form */
 #popup > form {
     margin-top: 3rem;
     position: fixed;
@@ -79,7 +74,7 @@
     flex-flow: column;
 }
 
-
+/* text input */
 #popup > form > input{
     height: 4rem;
     padding: 1rem;
@@ -91,12 +86,14 @@
     font-family: 'roboto';
   }
 
+/* button wrapper */
 #popup > form > div {
     display: flex;
     justify-content: center;
     padding: 0.8rem 4rem 0 4rem;
 }
 
+/* button */
 #popup > form > div > button {
     height: 2.5rem;				
     max-width: 80px;
@@ -108,6 +105,7 @@
     margin-bottom: 0.6em;
 }
 
+/* responsive styling */
 @media only screen and (max-width: 600px) {
     #root > div > div > div.dream-container {
         padding: 0;
