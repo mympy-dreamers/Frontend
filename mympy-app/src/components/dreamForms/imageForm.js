@@ -3,7 +3,7 @@ import './dreamCard.css';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { addImage } from '../../actions';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 
 
@@ -36,15 +36,19 @@ class imageForm extends React.Component {
                         <h1>Make your dream in reality!</h1>
                     </div>
                     <div>
-                        <FormGroup>
-                            <Label for="exampleFile">File</Label>
-                            <Input type="file" onChange={this.uploadFile} name="file" id="exampleFile" />
-                            <FormText color="muted">
+                        <FormGroup className='image-icons'>
+                            <Label id="image-button" for="exampleFile"><i class="fas fa-folder-plus"><h2> Image File </h2></i></Label>
+                            <div className='images'>
+                                <Input className="fileInput" type="file" onChange={this.uploadFile} name="file" id="exampleFile" />
+                                <button className='dreambutton1'> <Link to='/market'> Submit </Link></button>
+                            </div>
+
+                            {/* <FormText color="muted">
                                 This is some placeholder block-level help text for the above input.
                                 It's a bit lighter and easily wraps to a new line.
-                        </FormText>
+                        </FormText> */}
                         </FormGroup>
-                        <Button><Link to='/market'>Submit</Link></Button>
+
                     </div>
                 </div>  {/* dreamer-card-app end  */}
             </div> /* dream-Home-Page end */

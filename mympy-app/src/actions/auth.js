@@ -1,10 +1,6 @@
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 
-const token = {
-    headers: { authorization: localStorage.getItem('jwt') }
-}
-
 export const REGISTER_START = 'REGISTER_START';
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 export const REGISTER_FAILURE = 'REGISTER_FAILURE';
@@ -17,6 +13,7 @@ export const LOGOUT_USER = 'LOGOUT_USER'
 
 //https://mympy-dreamers-staging.herokuapp.com
 const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
+// const BASE_URL = 'https://mympy-dreamers-staging.herokuapp.com';
 
 export const register = (user) => dispatch => {
     dispatch({ type: REGISTER_START });

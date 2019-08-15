@@ -4,11 +4,35 @@ import UserBar from '../userBar/UserBar';
 import Stats from '../stats/Stats';
 import News from '../news/News';
 import Featured from '../featured/Featured';
+import styled from 'styled-components';
+
+const StyledDashboard = styled.div`
+    display: flex;
+    flex-direction: column;
+    background: rgb(118,71,182);
+    background: linear-gradient(0deg, rgba(118,71,182,1) 0%, rgba(25,73,128,1) 100%);
+    padding: 0 10%;
+    font-family: Open Sans, sans-serif;
+    padding-bottom: 2%;
+
+    .top-bar {
+        text-align: center;
+        margin-bottom: 3.4%;
+    }
+
+    .mid-sec {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: center;
+        margin-bottom: 3.4%;
+    }
+`
 
 const Dashboard = () => {
 
     return (
-        <div className="dash-main">
+        <StyledDashboard>
             <div className="top-bar">
                 <UserBar />
             </div>
@@ -19,9 +43,9 @@ const Dashboard = () => {
             <div className="feature">
                 <Featured />
             </div>
-        </div>
+        </StyledDashboard>
     )
 
 }
-
-export default Dashboard;
+    
+export default Dashboard;  

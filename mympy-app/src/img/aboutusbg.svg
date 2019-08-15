@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920px" height="4822px" viewBox="0 0 1920 4822" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 53.2 (72643) - https://sketchapp.com -->
+    <title>AD046F83-1D5F-49BB-B3EA-DA5A755E370F</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="49.9999998%" y1="100%" x2="49.9999998%" y2="41.3563365%" id="linearGradient-1">
+            <stop stop-color="#7647B6" offset="0%"></stop>
+            <stop stop-color="#194980" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Combine-artboards" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="About-US" transform="translate(0.000000, -591.000000)" fill="url(#linearGradient-1)">
+            <rect id="Bg" x="0" y="591" width="1920" height="4822"></rect>
+        </g>
+    </g>
+</svg>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Spinner } from 'reactstrap';
+// import { Spinner } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 import { fetchAllDreams, fetchUserById } from '../../actions';
@@ -14,12 +14,15 @@ import userLogo from '../../img/userbar-img/userLogo.png';
 
 class UserBar extends React.Component {
 
+    componentDidMount(){
+        console.log(this.props.authZeroUser);
+    }
     render() {
         return (
             <div className="user-main">
                 <div className="wrapper">
                     <div className="user-left">
-                        {<h3>Hello {this.props.authZeroUser.given_name.toUpperCase()}!</h3>}
+                        <h3>Hello {this.props.authZeroUser.given_name.toUpperCase() + " " + this.props.authZeroUser.family_name.toUpperCase()}!</h3>
                         <img src={demo} alt='user' />
                     </div>
                     <div className="flexing">
@@ -29,7 +32,7 @@ class UserBar extends React.Component {
                                 <p>Create Dream</p>
                             </div>
                         </Link>
-                        <Link to="#">
+                        <Link to="/user-dreams">
                             <div className="user-tab">
                                 <img src={cloudPencil} alt='cloud with pencil inside' />
                                 <p>Edit Dreams</p>

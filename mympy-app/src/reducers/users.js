@@ -10,7 +10,10 @@ const INITIAL_STATE = {
     deletingUser: false,
     errors: [],
     users: [],
-    authZeroUser: {},
+    authZeroUser: {
+        given_name: "",
+        family_name: ""
+    },
     firstLogin: false
 }
 

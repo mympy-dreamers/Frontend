@@ -4,13 +4,14 @@ import { useAuth0 } from "../../react-auth0-wrapper.js";
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const { isAuthenticated } = useAuth0();
+  console.log()
   return (
 
     <Route
       {...rest}
-      render={() => {
+      render={(props) => {
         if (isAuthenticated) {
-          return <Component />;
+          return <Component {...props} />;
         } else {
           return <Redirect to="/" />;
         }

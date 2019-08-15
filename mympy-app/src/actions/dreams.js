@@ -52,7 +52,7 @@ export const fetchDreamById = (id) => (dispatch) => {
 export const fetchAllDreams = () => (dispatch) => {
     dispatch({ type: FETCH_DREAMS_START });
 
-    axios
+    return axios
         .get(`${BASE_URL}/api/dreams`, token)
         .then(res => {
             dispatch({
@@ -72,53 +72,54 @@ export const addDream = (sentDream) => dispatch => {
     dispatch({ type: ADD_DREAM_START });
 
     return axios
-    .post(`${BASE_URL}/api/dreams`, sentDream /* token */)
-    .then(res => {
-        dispatch({
-            type: ADD_DREAM_SUCCESS,
-            payload: res.data
+        .post(`${BASE_URL}/api/dreams`, sentDream /* token */)
+        .then(res => {
+            dispatch({
+                type: ADD_DREAM_SUCCESS,
+                payload: res.data
+            })
         })
-    })
-    .catch(err => {
-        dispatch({
-            type: ADD_DREAM_FAILURE,
-            payload: err
+        .catch(err => {
+            dispatch({
+                type: ADD_DREAM_FAILURE,
+                payload: err
+            })
         })
-    })
 }
 
-export const addImage = ( image ) => dispatch => {
+export const addImage = (image) => dispatch => {
     dispatch({ type: ADD_IMAGE_START });
 
     return axios
-    .post(`${BASE_URL}/api/images`, image, {
-      onUploadProgress: progressEvent => {
-        console.log(
-          "Upload Progress: ",
-          Math.round((progressEvent.loaded / progressEvent.total) * 100),
-          "%"
-        );}
-      } /* token */)
-    .then(res => {
-        dispatch({
-            type: ADD_IMAGE_SUCCESS,
-            payload: res.data
+        .post(`${BASE_URL}/api/images`, image, {
+            onUploadProgress: progressEvent => {
+                console.log(
+                    "Upload Progress: ",
+                    Math.round((progressEvent.loaded / progressEvent.total) * 100),
+                    "%"
+                );
+            }
+        } /* token */)
+        .then(res => {
+            dispatch({
+                type: ADD_IMAGE_SUCCESS,
+                payload: res.data
+            })
         })
-    })
-    .catch(err => {
-        dispatch({
-            type: ADD_IMAGE_FAILURE,
-            payload: err
+        .catch(err => {
+            dispatch({
+                type: ADD_IMAGE_FAILURE,
+                payload: err
+            })
         })
-    })
 }
 
-export const updateDream = (id, changes) => dispatch => {
+export const updateDream = (dream) => dispatch => {
     dispatch({ type: UPDATE_DREAM_START });
-
     axios
-        .put(`${BASE_URL}/api/dreams/${id}`, changes, token)
+        .put(`${BASE_URL}/api/dreams/${dream.id}`, dream, token)
         .then(res => {
+            console.log(res.data)
             dispatch({
                 type: UPDATE_DREAM_SUCCESS,
                 payload: res.data
@@ -155,7 +156,7 @@ export const deleteDream = (id) => dispatch => {
 export const SET_DREAMCARDS = 'SET_DREAMCARDS';
 
 export const setDreamCards = (dreamCard) => (dispatch) => {
-    dispatch({ type:SET_DREAMCARDS, payload: dreamCard});
+    dispatch({ type: SET_DREAMCARDS, payload: dreamCard });
 }
 
 // UPDATING SEARCH TERM
