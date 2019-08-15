@@ -28,32 +28,11 @@ class DreamPage extends React.Component {
     super();
 
     this.state = {
-      dream: {
-        id: null,
-        cardImg: '',
-        shortDescription: "",
-        longDescription: "",
-        donationsReceived: 0,
-        donationGoal: 0,
-        recentDonations: [],
-      },
-      user: {
-        username: "",
-        firstname: "",
-        lastname: "",
-        city: "",
-      },
-      // allUserDreams: []
     };
   }
 
   componentDidMount() {
     this.props.fetchDreamById(this.props.match.params.id);
-    //Finds dream and sets to state
-    // const thisDream = this.props.dreams.find(dream =>
-    //   (parseInt(dream.id) === parseInt(this.props.match.params.id))
-    // );
-
   }
 
   componentDidUpdate(prevProps) {
@@ -70,10 +49,11 @@ class DreamPage extends React.Component {
   }
 
   render() {
+    console.log(this.props.currDream)
     return (
       <DreamPageDiv>
         <div className="dream-page">
-          <Carousel />
+          <Carousel dream_pic={this.props.currDream} />
           <div className="sidebar-body">
             <Sidebar dream={this.props.currDream} user={this.state.user} />
             <DreamPageBody dream={this.state.dream} />
@@ -84,9 +64,9 @@ class DreamPage extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ dreams }) => {
   return {
-    currDream: state.dreams.currDream,
+    currDream: dreams.currDream,
     // user: state.auth.user,
 
   }
