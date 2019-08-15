@@ -47,8 +47,8 @@
 
 /* modal */
 #popup {
-    position: fixed;
     display: flex;
+    position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
@@ -56,7 +56,7 @@
     right: 0;
     bottom: 0;
     margin: auto;
-    background-color:#194980;
+    background-image: linear-gradient(#194980, #3e1980);
     z-index: 1;
     justify-content: center;
     
@@ -64,20 +64,28 @@
 
 /* modal form */
 #popup > form {
-    margin-top: 3rem;
+    margin: 1rem;
     position: fixed;
-    width: 70%;
-    background-color:#194980;
+    width: 80%;
+    background-color: rgba(0,0,0,.5);
     font-family: 'roboto';
     font-size: 1.8rem;
     display: flex;
     flex-flow: column;
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+#popup > form > h1 {
+    display: flex;
+    justify-content: center;
 }
 
 /* text input */
 #popup > form > input{
     height: 4rem;
     padding: 1rem;
+    margin: 1rem;
     box-sizing: border-box;
     border: 1px solid grey;
     border-radius: 20px;
@@ -96,12 +104,12 @@
 /* button */
 #popup > form > div > button {
     height: 2.5rem;				
-    max-width: 80px;
+    width: 30%;
     border: 1px solid grey;
     background-color: #ffd164;
     border-radius: 2rem;
     color: black;
-    font-size: 1rem;
+    font-size: 2rem;
     margin-bottom: 0.6em;
 }
 
@@ -110,8 +118,13 @@
     #root > div > div > div.dream-container {
         padding: 0;
     }
+
+    #popup > form {
+        margin: 0.3rem;
+        padding: 0.3rem;
+    }
     #popup > form > div > button {			
-        max-width: 50%;
+        width: 50%;
     }
     #root > div > div > div.dream-container > div > div.edit-container > div > div > div > div.user-name {
         font-size: 2rem;
