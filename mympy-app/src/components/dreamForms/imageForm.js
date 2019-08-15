@@ -30,11 +30,8 @@ class imageForm extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        this.setState({
-            showModel:true 
-        })
         setTimeout(()=> {
-            this.props.history.push(`/market`)
+            this.props.history.push(``)
         }, 2000)
     }
 
@@ -50,13 +47,7 @@ class imageForm extends React.Component {
                             <Label id="image-button" for="exampleFile"><i class="fas fa-folder-plus"><h2> Image File </h2></i></Label>
                             <div className='images'>
                                 <Input className="fileInput" type="file" onChange={this.uploadFile} name="file" id="exampleFile" />
-                                <button className='dreambutton1'> <Link to='/market'> Submit </Link></button>
                             </div>
-
-                            {/* <FormText color="muted">
-                                This is some placeholder block-level help text for the above input.
-                                It's a bit lighter and easily wraps to a new line.
-                        </FormText> */}
                         </FormGroup>
                         <Button onClick={this.handleSubmit}>Submit</Button>
                     </div>
