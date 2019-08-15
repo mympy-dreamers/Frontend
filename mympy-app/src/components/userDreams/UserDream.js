@@ -3,6 +3,8 @@ import EditForm from './EditForm';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import styled from 'styled-components';
 import './userDream.css';
+import { fetchUserDreams } from '../../actions';
+import { connect } from 'react-redux';
 
 const CardDiv = styled.div`
 .card {
@@ -74,6 +76,7 @@ const CardDiv = styled.div`
 				color: black;
 				font-size: 1rem;
 				margin-bottom: 0.6em;
+                flex-direction: row;
 			}
 		}
 	}
@@ -87,9 +90,13 @@ class UserDream extends React.Component {
         this.setState({ isUpdating: !this.state.isUpdating })
     }
 
+    delete = () => {
+        this.props.deleteDream(this.props.dream.id)
+    }
+
     render() {
         return (
-            <div>
+            <div className="edit-container">
                 {this.state.isUpdating ?
                     <EditForm
                         dream={this.props.dream}
@@ -100,20 +107,25 @@ class UserDream extends React.Component {
 
                     :
                     <div className="dream-card">
-                        <CardDiv className="card containerDream">
+                        <CardDiv className="card">
                             <img className="card-img" src={this.props.dream.dreampic} alt="" />
 
                             <div className="card-body">
                                 <div className="user-name">{this.props.currentUser.username}</div>
                                 <div className="title-city-wrapper">
                                     <div className="dream-title">{this.props.dream.dream_name}</div>
-                                    <div className="dream-city">City</div>
                                 </div>
                                 <div className="description">{this.props.dream.dream_short_description}</div>
                                 <ProgressBar now={(parseInt(this.props.dream.donations_received) / parseInt(this.props.dream.donation_goal)) * 100} />
                                 <div className="goal-remaining">Only {"$" + (this.props.dream.donation_goal - this.props.dream.donations_received) + " "} to go towards ${this.props.dream.donation_goal}!</div>
                                 <div className="button-wrapper">
-                                    <button className="donate-button" onClick={this.toggleUpdate}>Change</button>
+                                    <button className="donate-button" onClick={this.toggleUpdate}>Update</button>
+                                    <button className="donate-button"
+                                        onClick={()=>
+                                            window.confirm("Are you sure you wish to delete this item?") &&
+                                            this.delete()
+                                        }
+                                    >Delete</button>
                                 </div>
                             </div>
                         </CardDiv>
@@ -124,4 +136,15 @@ class UserDream extends React.Component {
     }
 }
 
-export default UserDream;
+function mapStateToProps(state) {
+    return {
+      dreams: state.dreams.userDreams,
+      user: state.auth.user
+    }
+  }
+  
+  
+  export default connect(
+    mapStateToProps, { fetchUserDreams }
+  )(UserDream);
+  

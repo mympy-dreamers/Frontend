@@ -220,14 +220,14 @@ export default function dreamsReducer(state = INITIAL_STATE, action) {
 				deletingDream: true
 			}
 		case DELETE_DREAM_SUCCESS:
-			const { dreams } = state;
-			const filteredDreams = dreams.filter(dream => {
+			const { userDreams } = state;
+			const filteredDreams = userDreams.filter(dream => {
 				return dream.id !== action.payload;
 			});
 			return {
 				...state,
 				deletingDream: false,
-				dreams: [...filteredDreams]
+				userDreams: [...filteredDreams]
 			}
 		case DELETE_DREAM_FAILURE:
 			return {
