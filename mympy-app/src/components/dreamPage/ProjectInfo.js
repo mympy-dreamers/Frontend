@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 // import { Button } from 'reactstrap';
-import { sendMail } from '../../actions';
+import { sendMail, fetchUserById } from '../../actions';
 
 import ProgressCircle from './ProgressCircle.js';
 import EmailModal from '../emailModal/EmailModal';
@@ -93,11 +93,21 @@ const ProjectInfoDiv = styled.div`
 
 class ProjectInfo extends React.Component {
 
+	componentDidUpdate(prevProps) {
+		/* console.log(this.props.refreshVar)
+		console.log(prevProps) */
+
+		if (this.props.refreshVar !== prevProps.refreshVar) {
+			this.props.fetchUserById(this.props.currDream.user_id)
+		}
+
+	}
+
 	render() {
 		return (
 			<ProjectInfoDiv>
 				<h2 className="title">{this.props.currDream.dream_name}</h2>
-				<h3 className="user-name">{this.props.loggedUser.username}{/*"BY " + user.firstname + " " + user.lastname*/}</h3>
+				<h3 className="user-name">{this.props.dreamUser.username}{/*"BY " + user.firstname + " " + user.lastname*/}</h3>
 				<div className="data-viz">
 					<ProgressCircle
 						donationGoal={this.props.currDream.donations_goal}
@@ -126,11 +136,13 @@ class ProjectInfo extends React.Component {
 	}
 }
 
-const mapStateToProps = ({ auth, dreams }) => {
+const mapStateToProps = ({ auth, dreams, users }) => {
 	return {
 		loggedUser: auth.user,
-		currDream: dreams.currDream
+		currDream: dreams.currDream,
+		dreamUser: users.user,
+		refreshVar: users.refreshUser
 	}
 }
 
-export default connect(mapStateToProps, { sendMail })(ProjectInfo);
+export default connect(mapStateToProps, { sendMail, fetchUserById })(ProjectInfo);
