@@ -75,7 +75,7 @@ class DreamPage extends React.Component {
         <div className="dream-page">
           <Carousel />
           <div className="sidebar-body">
-            <Sidebar dream={this.state.dream} user={this.state.user} />
+            <Sidebar dream={this.props.currDream} user={this.state.user} />
             <DreamPageBody dream={this.state.dream} />
           </div>
         </div>

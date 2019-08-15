@@ -99,7 +99,7 @@
 
 #popup > form > div > button {
     height: 2.5rem;				
-    max-width: 20%;
+    max-width: 80px;
     border: 1px solid grey;
     background-color: #ffd164;
     border-radius: 2rem;

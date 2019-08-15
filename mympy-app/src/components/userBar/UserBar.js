@@ -14,12 +14,15 @@ import userLogo from '../../img/userbar-img/userLogo.png';
 
 class UserBar extends React.Component {
 
+    componentDidMount(){
+        console.log(this.props.authZeroUser);
+    }
     render() {
         return (
             <div className="user-main">
                 <div className="wrapper">
                     <div className="user-left">
-                        {<h3>Hello {this.props.authZeroUser.given_name.toUpperCase()}!</h3>}
+                        <h3>Hello {this.props.authZeroUser.given_name.toUpperCase() + " " + this.props.authZeroUser.family_name.toUpperCase()}!</h3>
                         <img src={demo} alt='user' />
                     </div>
                     <div className="flexing">
