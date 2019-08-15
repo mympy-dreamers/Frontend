@@ -1,35 +1,60 @@
  .dream-Home-Page {
-    background-color: #1B5485;
+    background-color: #012345;
     text-align: center;
-    height: 2051px;	
+    height: 1500px;	
     width: 100%;
-    margin-left:0px;
+    margin:0px;
 }
 
 .dreamer-card-app {
     text-align: center;
     background-color: rgba(255,255,255,0); 
-    margin-top: 60px;
-    margin-left: 120px;
+    /* margin-top: 60px;
+    margin-left: 120px; */
   
 }
 
 .inputs {
     display: flex;
     flex-direction: column;
-    margin: 0px 125px;
+    margin: 0px 164px
 }
 
 .input-style {   
-    width: 630px;
-    height: 170px;
+    width: 50%;
+    height: 50px;
     text-align: center;
     font-size: 25px;
     padding-left: 15px;
     border: 1px solid black;
     margin-bottom: 100px;
     border-radius: 10px;
-}  
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+
+}
+    @media (max-width: 1250px){
+        .input-style{
+            width: 80%;
+        }
+    } 
+
+.dreamlable {
+    font-size: 30px;
+    color:white;
+    margin-bottom: 10px;
+}
+
+.textlable {
+    font-size: 30px;
+    color:white;
+    margin-bottom: 10px;
+}
+
+.dreamlable input {
+    margin-left: 100px;
+}
 
 .form-title {
     font-size: 30px;
@@ -44,126 +69,107 @@
 
 .form-title h1 {
     font-size: 80px;
-}
-
-.submit-button {   
-    height: 50px;
-    width: 120px;
-    border-radius: 10px;
-    font-size: 30px;
-    margin: 50px 280px;
-    background-color: #B6BD23;
-    font-weight: bold;
-    color: black;
-}
-
-.dream-Home-Img {
-    height: 600px;
-    width: 600px;
-}
-
-.dream-Home-Page {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 30px;
-}
-
-.card-display {
-    border: 1px solid black;
-    width: 150px;
-    height: 150px;
-}
-
-.inputFont {
-    font-size: 20px;
-}
-
-.inputs p {
-    color: white;
-}
-
-.company-img {
-    width: 390px;
-    height: 450px;
-    margin-left: 20px;
-}
-
-.card-section {
-    display: flex;
-}
-
-.card-section p {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-li {
-    font-size: 20px;
-}
-
-.input-info {
-    height: 40px;
-    width: 370px;
-    margin-bottom: 20px;
-    font-size: 25px;
-    border-radius: 10px;
-}
-
-.page-circles1 {
-    display: flex;
-    justify-content: space-between;
-    width: 200px;
-    margin-left: 585px;
-    margin-top: 50px;
-    font-size: 18px;
-}
-
-.page-circles1 .far {
-    color: white;
-    background-color: white;
-    border-radius: 50%;
-}
-
-.page-circles2 .far {
-    color: white;
-    background-color: white;
-    border-radius: 50%;
-}
-
-.page-circles2 {
-    display: flex;
-    justify-content: space-between;
-    width: 200px;
-    margin-left: 585px;
-    font-size: 18px;
-}
-
-#cancel {
-    background-color: #1B5485;
-    color: white;
-    border: 2px solid #B6BD23;
-}
-
-#back1 {
-    background-color: #1B5485;
-    color: white;
-    border: 2px solid #B6BD23;
-}
-
-#back2 {
-    background-color: #1B5485;
-    color: white;
-    border: 2px solid #B6BD23;
-}
-
-.dreamer-card p {
-    font-size: 35px;
+    text-align: center;
+    margin-top: 235px;
+    margin-bottom: 100px;
+    
 }
 
 button {
-    margin: 0 400px;
+    border-radius: 10%;
 }
 
+.dreambutton{
+    background-color:#FFD164;
+    width: 155px;
+    height: 60px;
+    font-size: 30px;
+    margin: 0 auto;
+    text-shadow: 1px 1px black;
+    border: 3px solid white;
+    
+}
+
+button:hover {
+    background-color: #012345;
+    color: #FFD164;
+    text-shadow: 1px 1px white;
+}
+
+Link:hover 
+{
+    background-color: #012345;
+    color: #FFD164;
+    text-shadow: 1px 1px white;
+}
+
+.dreambutton1{
+    background-color: #FFD164;
+    width: 130px;
+    height: 39px;
+    font-size: 26px;
+    padding-top: 0px;
+    margin: 10px 65px;
+    height: 45px;
+    text-shadow: 1px 1px black;
+    border: 3px solid white;
+}
+
+.input1 {
+    width: 500px;
+
+}
+ 
+.images{
+    display: flex;
+    margin: 45px auto;
+    font-size: 14px;
+   
+    
+}
+
+.image-text p{
+    font-size: 20px;
+    color:white;
+    margin-bottom: 10px;
+   
+
+}
+
+#image-button{
+    height: 300px;
+    width: 550px;
+    background: lightgray;;
+    margin-bottom: 20px;
+    border:5px solid  gray;
+    margin: 0 auto;
+}
+
+.fileInput{
+    width: 200px;
+    height: 50px;
+    border-bottom: 4px solid lightgray;
+    border-right: 4px solid gray;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    padding: 13px;
+    margin: 6px;
+    cursor: pointer;
+    background: white;
+    text-align: center;
+    }
+
+.fas{
+    margin: 110px 0;
+    font-size:40px;
+}
+
+.image-icons {
+    display: flex;
+    flex-direction: column;
+}
+
+/*   */
 
 
 .alert {
@@ -171,7 +177,7 @@ button {
     margin-top: 30px;
     width: 450px;
     height: 100px;
-    margin-left: 300px;
+    margin-left: 510px;
     padding-left: 40px;
 }
 
@@ -183,6 +189,18 @@ button {
     margin-top: 30px;
     font-size: 18px;
 }
+
+.alert2 {
+    text-align: center;
+    margin-top: 30px;
+    width: 450px;
+    height: 160px;
+    margin-left: 506px;
+    padding-left: 40px;
+}
+
+
+
 
 
 

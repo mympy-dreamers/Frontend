@@ -1,66 +1,91 @@
-
-.dream-container {
-    background-color : #194980;
+/* dream container */
+#root > div > div > div.dream-container {
+    background-image: linear-gradient(#194980, #3e1980);
     width:100%;
     height: 100%;
     font-family: 'Roboto';
     color: white;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
-.dream-card {
+
+/* dream list */
+#root > div > div > div.dream-container > div.dream-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* container for edit card */
+#root > div > div > div.dream-container > div > div.edit-container {
+    margin: 1rem;
     max-width: 20rem;
     height: 100%;
 }
 
-.dream-list {
-    display: flex;
-    justify-content: space-evenly;
-    padding-top: 1rem;
-    padding-bottom: 3rem;
-    width:100%;
-    height:100%;
-}
-
-.containerDream {
-    background-color: #012345!important;
-}
-
-.card.containerDream {
+/* card styling */
+#root > div > div > div.dream-container > div > div.edit-container > div.dream-card > div.card{
     padding: 0;
     border-radius: 20px;
     border: 1px solid grey;
+    background-color: #012345; 
 }
 
-.popup {
+/* button wrap */
+#root > div > div > div.dream-container > div > div.edit-container > div > div > div > div.button-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* button */
+#root > div > div > div.dream-container > div > div.edit-container > div > div > div > div.button-wrapper > button.donate-button{
+    width: 40%;
+    margin: 0.5rem;
+}
+
+/* modal */
+#popup {
+    display: flex;
     position: fixed;
-    width: 100%!important;
-    height: 100%!important;
+    width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     margin: auto;
-    background-color:#194980;
+    background-image: linear-gradient(#194980, #3e1980);
     z-index: 1;
-    border-radius: 20px;
+    justify-content: center;
     
 }
-.popup_inner {
-    position: absolute;
-    left: 25%;
-    right: 25%;
-    top: 25%;
-    bottom: 25%;
-    margin: auto;
-    background-color:#194980;
+
+/* modal form */
+#popup > form {
+    margin: 1rem;
+    position: fixed;
+    width: 80%;
+    background-color: rgba(0,0,0,.5);
     font-family: 'roboto';
     font-size: 1.8rem;
+    display: flex;
+    flex-flow: column;
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+#popup > form > h1 {
+    display: flex;
     justify-content: center;
 }
 
-input.textarea {
-    width: 100%;
-    height: 3rem;
+/* text input */
+#popup > form > input{
+    height: 4rem;
     padding: 1rem;
+    margin: 1rem;
     box-sizing: border-box;
     border: 1px solid grey;
     border-radius: 20px;
@@ -69,19 +94,49 @@ input.textarea {
     font-family: 'roboto';
   }
 
-.edit-buttons {
+/* button wrapper */
+#popup > form > div {
     display: flex;
-    justify-content: space-evenly;
-    padding-top: 0.8rem;
+    justify-content: center;
+    padding: 0.8rem 4rem 0 4rem;
 }
 
-.edit-button {
-        height: 2.5rem;				
-        width: 46%;
-        border: 1px solid grey;
-        background-color: #ffd164;
-        border-radius: 2rem;
-        color: black;
-        font-size: 1rem;
-        margin-bottom: 0.6em;
+/* button */
+#popup > form > div > button {
+    height: 2.5rem;				
+    width: 30%;
+    border: 1px solid grey;
+    background-color: #ffd164;
+    border-radius: 2rem;
+    color: black;
+    font-size: 2rem;
+    margin-bottom: 0.6em;
 }
+
+/* responsive styling */
+@media only screen and (max-width: 600px) {
+    #root > div > div > div.dream-container {
+        padding: 0;
+    }
+
+    #popup > form {
+        margin: 0.3rem;
+        padding: 0.3rem;
+    }
+    #popup > form > div > button {			
+        width: 50%;
+    }
+    #root > div > div > div.dream-container > div > div.edit-container > div > div > div > div.user-name {
+        font-size: 2rem;
+    } 
+    #root > div > div > div.dream-container > div > div.edit-container > div > div > div > div.title-city-wrapper > div.dream-title{
+        font-size: 1.5rem;
+    } 
+    #root > div > div > div.dream-container > div > div.edit-container > div > div > div > div.description{
+        font-size: 1.5rem;
+    }
+    #root > div > div > div.dream-container > div > div.edit-container > div > div > div > div.goal-remaining{
+        font-size: 1rem;
+    }   
+  }
+  

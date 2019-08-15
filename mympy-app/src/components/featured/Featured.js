@@ -23,6 +23,7 @@ const FeaturedMain = styled.div`
 
     .slick-slide {
         padding: 0 3em;
+        height: 40%;
     }
 `
 
@@ -35,14 +36,15 @@ class Featured extends React.Component {
         }
     }
 
-    componentDidMount(){
+    async componentDidMount() {
         //sorts dreams from highest to lowest total donations
         //sets top 6 to state
-        let arr = this.props.dreams;
-        arr.sort( (a,b) => b.donationsReceived - a.donationsReceived )
+        await this.props.fetchAllDreams();
+        let arr = [...this.props.dreams];
+        arr.sort((a, b) => b.donationsReceived - a.donationsReceived)
         this.setState({
             ...this.state,
-            featured: arr.slice(0,this.state.displayed),
+            featured: arr.slice(0, this.state.displayed),
         });
     }
 
@@ -57,14 +59,27 @@ class Featured extends React.Component {
             speed: 1000,
             pauseOnHover: true
         };
-        return(
+        return (
             <FeaturedMain>
                 <h3>Featured Dreams</h3>
                 <Slider {...settings}>
-                    {this.state.featured.map( dream => {
-                        return <Card dream={dream} key={dream.id}/>
-                    })}
+                    {this.state.featured.map(dream => {
+                        return <Card dream={dream} key={dream.id} />
+                    })
+                    }
+                    {this.state.featured.length < 3 && <div></div>}
+                    {this.state.featured.length < 2 && <div></div>}
                 </Slider>
+                {/* {this.state.featured.length > 2 ? <Slider {...settings}>
+                    {this.state.featured.map(dream => {
+                        return <Card dream={dream} key={dream.id} />
+                    })}
+                </Slider> :
+                    <Slider {...settings, slidesToShow: this.state.featured.length }>
+                        {this.state.featured.map(dream => {
+                            return <Card dream={dream} key={dream.id} />
+                        })}
+                    </Slider>} */}
             </FeaturedMain>
         )
     }
@@ -72,7 +87,7 @@ class Featured extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        dreams: state.dreams.featured
+        dreams: state.dreams.dreams
     }
 }
 

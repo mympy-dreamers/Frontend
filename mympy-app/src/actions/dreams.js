@@ -52,7 +52,7 @@ export const fetchDreamById = (id) => (dispatch) => {
 export const fetchAllDreams = () => (dispatch) => {
     dispatch({ type: FETCH_DREAMS_START });
 
-    axios
+    return axios
         .get(`${BASE_URL}/api/dreams`, token)
         .then(res => {
             dispatch({
