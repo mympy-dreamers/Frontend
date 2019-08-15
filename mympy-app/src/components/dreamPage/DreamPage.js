@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Carousel from './Carousel.js';
 import Sidebar from './Sidebar.js';
 import DreamPageBody from './DreamPageBody.js';
-import { fetchDreamById } from '../../actions';
+import { fetchDreamById, fetchImage } from '../../actions';
 
 const DreamPageDiv = styled.div`
   background: linear-gradient(0deg, #7647b6 0%, #194980 100%);
@@ -27,6 +27,7 @@ class DreamPage extends React.Component {
 
   componentDidMount() {
     this.props.fetchDreamById(this.props.match.params.id);
+    this.props.fetchImage(this.props.match.params.id);
   }
 
   componentDidUpdate(prevProps) {
@@ -62,7 +63,8 @@ class DreamPage extends React.Component {
 const mapStateToProps = ({ dreams }) => {
   return {
     currDream: dreams.currDream,
+    dreamImg: dreams.imageById
   }
 }
 
-export default connect(mapStateToProps, { fetchDreamById })(DreamPage);
+export default connect(mapStateToProps, { fetchDreamById, fetchImage })(DreamPage);
