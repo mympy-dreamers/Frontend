@@ -106,8 +106,8 @@ class ProjectInfo extends React.Component {
 				</div>
 
 				<p className="donationText">Goal</p>
-				<p className="donationNums">{this.props.currDream.donation_goal}</p><br /><br />
-				<p className="donationText">Received<br /></p> <p className="donationNums">{this.props.currDream.donations_received}</p><br />>
+				<p className="donationNums">${this.props.currDream.donation_goal}</p><br /><br />
+				<p className="donationText">Received<br /></p> <p className="donationNums">${this.props.currDream.donations_received}</p><br />>
 
 				{/* <h3 className="days-left">7 Days Left</h3> */}
 				<button className="donate-btn">Donate</button>
