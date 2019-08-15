@@ -28,9 +28,13 @@ export const DELETE_DREAM_START = 'DELETE_DREAM_START';
 export const DELETE_DREAM_SUCCESS = 'DELETE_DREAM_SUCCESS';
 export const DELETE_DREAM_FAILURE = 'DELETE_DREAM_FAILURE';
 
+export const UPDATE_DREAM_USER = 'UPDATE_DREAM_USER'
+
+
 const token = {
     headers: { authorization: localStorage.getItem('jwt') }
 }
+
 
 const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
 
@@ -43,6 +47,9 @@ export const fetchDreamById = (id) => (dispatch) => {
             dispatch({
                 type: FETCH_DREAM_SUCCESS,
                 payload: res.data
+            })
+            dispatch({
+                type: UPDATE_DREAM_USER
             })
         })
         .catch(err => {
