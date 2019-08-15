@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { addImage } from '../../actions';
 import { Button, FormGroup, Label, Input, FormText } from 'reactstrap';
-import SubmitModel from "./formModel";
+import SubmitModal from "./formModel";
 class imageForm extends React.Component {
     constructor(props) {
         super(props);
@@ -12,7 +12,7 @@ class imageForm extends React.Component {
             img: {
                 image: null,
             },
-            showModel:false
+            showModal:false
             
         };
     }
@@ -30,8 +30,11 @@ class imageForm extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
+        this.setState({
+            showModal:true
+        })
         setTimeout(()=> {
-            this.props.history.push(``)
+            this.props.history.push(`/market`)
         }, 2000)
     }
 
@@ -51,7 +54,7 @@ class imageForm extends React.Component {
                         </FormGroup>
                         <Button onClick={this.handleSubmit}>Submit</Button>
                     </div>
-                   {this.state.showModel && <SubmitModel/>}
+                   {this.state.showModal && <SubmitModal/>}
                 </div>  {/* dreamer-card-app end  */}
             </div> /* dream-Home-Page end */
         )

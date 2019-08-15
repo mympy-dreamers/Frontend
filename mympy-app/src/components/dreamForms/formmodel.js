@@ -15,7 +15,7 @@ const headStyle = {
  
 }
 
-class SubmitModel extends React.Component {
+class SubmitModal extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -39,7 +39,7 @@ class SubmitModel extends React.Component {
   }
 }
 
-export default SubmitModel;
+export default SubmitModal;
 
 
 
