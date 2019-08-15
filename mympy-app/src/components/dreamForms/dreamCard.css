@@ -1,7 +1,7 @@
  .dream-Home-Page {
     background-color: #012345;
     text-align: center;
-    height: 1500px;	
+    height: 100%;	
     width: 100%;
     margin:0px;
 }
@@ -82,8 +82,9 @@
     
 }
 
-button {
+.dreamer-card-app button {
     border-radius: 10%;
+    margin-bottom: 30px;
 }
 
 .dreambutton{
@@ -199,12 +200,17 @@ p{
 
 .alert {
     text-align: center;
-    margin-top: 30px;
-    width: 450px;
+    /* margin-top: 30px; */
+    width: 50%;
     height: 100px;
-    margin-left: 510px;
+    margin: 0 auto 30px;
     padding-left: 40px;
 }
+@media (max-width: 1250px){
+    .alert{
+        width: 80%;
+    }
+} 
 
 .alert h1 {
     font-size: 25px;
