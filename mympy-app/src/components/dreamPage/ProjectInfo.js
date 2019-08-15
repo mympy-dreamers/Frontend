@@ -20,6 +20,20 @@ const ProjectInfoDiv = styled.div`
 		margin-bottom: 16px;
 	}
 
+	.donationText {
+		color: white;
+		font-size: 2.8em;
+		font-family: Poppins Medium, sans-serif;
+		margin-bottom: 16px;
+	}
+
+	.donationNums {
+		color: #FFD164;
+		font-size: 2.8em;
+		font-family: Poppins Medium, sans-serif;
+		margin-bottom: 16px;
+	}
+
 	.user-name {
 		color: white;
 		font-size: 2em;
@@ -90,6 +104,11 @@ class ProjectInfo extends React.Component {
 						donationsReceived={this.props.currDream.donations_received}
 					/>
 				</div>
+
+				<p className="donationText">Goal</p>
+				<p className="donationNums">{this.props.currDream.donation_goal}</p><br /><br />
+				<p className="donationText">Received<br /></p> <p className="donationNums">{this.props.currDream.donations_received}</p><br />>
+
 				{/* <h3 className="days-left">7 Days Left</h3> */}
 				<button className="donate-btn">Donate</button>
 				<h4 className="share-title">SHARE PROJECT</h4>
