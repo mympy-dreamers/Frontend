@@ -2,13 +2,17 @@ import React from 'react';
 import {Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const bodyStyle = {
-  fontSize: "1.3rem",
-  height:"150px"
+  fontSize: "25px",
+  height:"120px",
+  marginTop:"40px",
+  
+
 }
 
 const headStyle = {
-  fontSize: "2.3rem",
-  color: 'green',
+  fontSize: "25px",
+  color: '#1B5485',
+ 
 }
 
 class SubmitModel extends React.Component {
