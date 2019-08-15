@@ -3,9 +3,8 @@ import './dreamCard.css';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { addImage } from '../../actions';
-import { Button, FormGroup, Label, Input, FormText , Alert } from 'reactstrap';
-
-
+import { Button, FormGroup, Label, Input, FormText, Alert } from 'reactstrap';
+import FormModal from "./FormModal";
 
 class imageForm extends React.Component {
     constructor(props) {
@@ -14,8 +13,10 @@ class imageForm extends React.Component {
             imageSize: '',
             visible: false,
             img: {
-                image: null
-            }
+                image: null,
+            },
+            showModal: false
+
         };
     }
 
@@ -29,16 +30,21 @@ class imageForm extends React.Component {
         console.log(data);
         this.setState({
             imageSize: size
-         }, () => this.props.addImage(data))        
+        }, () => this.props.addImage(data))
     };
 
     testImage = e => {
         console.log(this.state.imageSize)
-        if(this.state.imageSize < 10000) {
+        if (this.state.imageSize < 10000) {
             console.log(this.state.imageSize)
-            return this.props.history.push('/market')
+            this.setState({
+                showModal: true
+            })
+            setTimeout(() => {
+                this.props.history.push(`/market`)
+            }, 2000)
         } else {
-        this.toggle()
+            this.toggle()
         }
     }
 
@@ -50,19 +56,28 @@ class imageForm extends React.Component {
     toggle() {
         this.setState({
             visible: !this.state.visible
-        })   
-   }  
-// getImageSizeInBytes = (imgURL) => {
-//     var request = new XMLHttpRequest();
-//     request.open('HEAD', imgURL, false);
-//     request.send(null);
-//     var headerText = request.getAllResponseHeaders();
-//     var re = /Content\-Length\s*:\s*(\d+)/i;
-//     re.exec(headerText);
-//     return parseInt(RegExp.$1);
-//  }
+        })
+    }
+    // getImageSizeInBytes = (imgURL) => {
+    //     var request = new XMLHttpRequest();
+    //     request.open('HEAD', imgURL, false);
+    //     request.send(null);
+    //     var headerText = request.getAllResponseHeaders();
+    //     var re = /Content\-Length\s*:\s*(\d+)/i;
+    //     re.exec(headerText);
+    //     return parseInt(RegExp.$1);
+    //  }
 
 
+    handleSubmit = e => {
+        e.preventDefault();
+        this.setState({
+            showModal: true
+        })
+        setTimeout(() => {
+            this.props.history.push(`/market`)
+        }, 2000)
+    }
 
     render() {
         return (
@@ -79,20 +94,16 @@ class imageForm extends React.Component {
                                 <button onClick={this.testImage} className='dreambutton1'>Submit</button>
                             </div>
 
-                            {/* <FormText color="muted">
-                                This is some placeholder block-level help text for the above input.
-                                It's a bit lighter and easily wraps to a new line.
-                        </FormText> */}
                         </FormGroup>
                         {/* <Button onClick={this.testImage}>Submit</Button> */}
                     </div>
 
-                            <Alert className='alert2' color='danger' role='alert' isOpen={this.state.visible} toggle={this.toggle.bind(this)}>
-                            <h1>Uh Oh!</h1>
-                            <p>Images need to be less then 10mb!</p>
-                            <p>Your image is over 10 mb</p>
-                            </Alert>
-
+                    <Alert className='alert2' color='danger' role='alert' isOpen={this.state.visible} toggle={this.toggle.bind(this)}>
+                        <h1>Uh Oh!</h1>
+                        <p>Images need to be less then 10mb!</p>
+                        <p>Your image is over 10 mb</p>
+                    </Alert>
+                    {this.state.showModal && <FormModal />}
                 </div>  {/* dreamer-card-app end  */}
             </div> /* dream-Home-Page end */
         )
