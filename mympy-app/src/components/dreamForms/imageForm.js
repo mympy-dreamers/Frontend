@@ -31,9 +31,11 @@ class imageForm extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         this.setState({
-            showModel:true
-            
+            showModel:true 
         })
+        setTimeout(()=> {
+            this.props.history.push(`/market`)
+        }, 2000)
     }
 
     render() {
