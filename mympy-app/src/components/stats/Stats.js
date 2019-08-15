@@ -45,8 +45,6 @@ class Stats extends React.Component {
 
 
     render() {
-        console.log(this.state.dreamGoal, this.state.dreamCurr);
-        console.log(this.props.user); // shows up on update
         return(
             <div className="stats-main">
                 <div className="myDreams">
