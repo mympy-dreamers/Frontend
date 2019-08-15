@@ -16,6 +16,10 @@ export const ADD_IMAGE_START = 'ADD_IMAGE_START';
 export const ADD_IMAGE_SUCCESS = 'ADD_IMAGE_SUCCESS';
 export const ADD_IMAGE_FAILURE = 'ADD_IMAGE_FAILURE';
 
+export const FETCH_IMAGE_START = 'FETCH_IMAGE_START';
+export const FETCH_IMAGE_SUCCESS = 'FETCH_IMAGE_SUCCESS';
+export const FETCH_IMAGE_FAILURE = 'FETCH_IMAGE_FAILURE';
+
 export const UPDATE_DREAM_START = 'UPDATE_DREAM_START';
 export const UPDATE_DREAM_SUCCESS = 'UPDATE_DREAM_SUCCESS';
 export const UPDATE_DREAM_FAILURE = 'UPDATE_DREAM_FAILURE';
@@ -63,6 +67,25 @@ export const fetchAllDreams = () => (dispatch) => {
         .catch(err => {
             dispatch({
                 type: FETCH_DREAMS_FAILURE,
+                payload: err
+            })
+        })
+}
+
+export const fetchImage = (id) => (dispatch) => {
+    dispatch({ type: FETCH_IMAGE_START });
+
+    return axios
+        .get(`${BASE_URL}/api/dreams/image/${id}`, token)
+        .then(res => {
+            dispatch({
+                type: FETCH_IMAGE_SUCCESS,
+                payload: res.data
+            })
+        })
+        .catch(err => {
+            dispatch({
+                type: FETCH_IMAGE_FAILURE,
                 payload: err
             })
         })
