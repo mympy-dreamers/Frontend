@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { addDream } from '../../actions';
-import { Button, FormGroup, Label, Input } from 'reactstrap';
+import { Button, FormGroup, Label, Input, Alert } from 'reactstrap';
 import InputModal from "./inputModal";
 
 import './dreamCard.css';
@@ -10,18 +10,35 @@ class DreamInfo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            visible: false,
             dreamCard: {
                 dream_name: '',
                 dream_short_description: '',
                 dream_long_description: '',
                 donations_received: 0,
-                donation_goal: 0,
+                donation_goal: '',
                 user_id: null,
 
 
             },
             showModal: false
         };
+    }
+
+    toggle() {
+        this.setState({
+            visible: !this.state.visible
+        })
+    }
+
+    isFormValid = () => {
+        const state = this.state.dreamCard;
+
+        if (state.dream_name !== "" && Number.isInteger(Number(state.donation_goal)) && state.dream_long_description !== "" && state.dream_short_description !== "") {
+            return this.handleSubmit()
+        } else {
+            return this.toggle()
+        }
     }
 
     componentDidMount() {
@@ -48,6 +65,8 @@ class DreamInfo extends React.Component {
     handleFinalSubmit = e => {
 
         const newDream = { ...this.state.dreamCard, donation_goal: parseInt(this.state.dreamCard.donation_goal, 10) }
+        // e.preventDefault()
+        console.log('submittedDream: ', newDream);
         this.props.addDream(newDream)
         this.setState({ showModal: false }, () => {
             this.props.history.push('/addDream/image')
@@ -57,7 +76,7 @@ class DreamInfo extends React.Component {
 
     handleSubmit = e => {
 
-        e.preventDefault()
+        // e.preventDefault()
         this.setState({
             showModal: true
         })
@@ -93,9 +112,16 @@ class DreamInfo extends React.Component {
                             <Label className="dreamlable" for="exampleText">Give us a long descrption</Label>
                             <Input className="input-style" onChange={this.handleChanges} type="textarea" name="dream_long_description" id="dream_long_description" />
                         </FormGroup>
-                        <button className="dreambutton" onClick={this.handleSubmit}>Submit</button>
-
+                        <Button onClick={this.isFormValid} >Submit</Button>
                     </div>
+
+                    <Alert className='alert' color='danger' role='alert' isOpen={this.state.visible} toggle={this.toggle.bind(this)}>
+                        <h1>Uh Oh!</h1>
+                        <p>All field needs to be filled!</p>
+                    </Alert>
+                    {/* <button className="dreambutton" onClick={this.handleSubmit}>Submit</button> */}
+
+
                     {<InputModal handleFinalSubmit={this.handleFinalSubmit} showModal={this.state.showModal} closeModal={this.closeModal} />}
 
                 </div>  {/* dreamer-card-app end  */}
