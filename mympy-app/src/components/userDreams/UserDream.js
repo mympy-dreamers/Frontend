@@ -106,7 +106,7 @@ class UserDream extends React.Component {
                         currentUser={this.props.currentUser} />
 
                     :
-                    <div className="dream-card">
+                    <div className="dream-card w3-animate-left">
                         <CardDiv className="card">
                             <img className="card-img" src={this.props.dream.img_url} alt="" />
 
