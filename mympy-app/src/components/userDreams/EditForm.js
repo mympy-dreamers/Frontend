@@ -41,8 +41,8 @@ class EditForm extends React.Component {
 
     render() {
         return (
-            <div id="popup">
-                <form className="popup_inner">
+            <div id="popup" className="w3-animate-bottom">
+                <form className="popup_inner w3-animate-zoom">
                     <h1>Title:</h1>
                     <input
                         className="textarea"
