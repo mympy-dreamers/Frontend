@@ -1,9 +1,10 @@
 .main{
+    justify-content: space-evenly;
     @include box-shadow;
+  
 
     .nav-wrap {
         display: flex;
-        justify-content: space-between;
         @include main-margin;
 
         @include small-desktop {
@@ -37,7 +38,18 @@
     }
 
     .right{
-        width: 60%;
+        width: 50%;
+        justify-content: space-evenly;
+        position:absolute;
+       margin-left: 510px;
+        margin-top: 15px;
+      
+       
+        
+        @include mobile {
+            margin-top: 45px;
+            margin-left:0px;
+        }
 
         @include nav-break {
             width: 100%;
@@ -50,6 +62,8 @@
             justify-content: space-evenly;
             align-items: center;
             height: 100%;
+          
+    
 
             @include nav-break {
                 margin-bottom: 1%;
@@ -84,6 +98,7 @@
                     border: none;
                     margin:0 auto;
                     padding: 0 ;
+                    margin-left: 20px;
                 }
                 a:hover, button:hover{
                     color: $cornflowerBlue;
@@ -92,3 +107,4 @@
         }
     }
 }
+
