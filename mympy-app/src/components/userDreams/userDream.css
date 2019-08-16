@@ -29,6 +29,7 @@
     border-radius: 20px;
     border: 1px solid grey;
     background-color: #012345; 
+    font-family: 'Open Sans';
 }
 
 /* button wrap */
@@ -43,6 +44,7 @@
 #root > div > div > div.dream-container > div > div.edit-container > div > div > div > div.button-wrapper > button.donate-button{
     width: 40%;
     margin: 0.5rem;
+    font-family: 'Roboto';
 }
 
 /* modal */
