@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Carousel from './Carousel.js';
 import Sidebar from './Sidebar.js';
 import DreamPageBody from './DreamPageBody.js';
-import { fetchDreamById } from '../../actions';
+import { fetchDreamById, fetchImage } from '../../actions';
 
 const DreamPageDiv = styled.div`
   background: linear-gradient(0deg, #7647b6 0%, #194980 100%);
@@ -24,36 +24,10 @@ const DreamPageDiv = styled.div`
 `;
 
 class DreamPage extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      dream: {
-        id: null,
-        cardImg: '',
-        shortDescription: "",
-        longDescription: "",
-        donationsReceived: 0,
-        donationGoal: 0,
-        recentDonations: [],
-      },
-      user: {
-        username: "",
-        firstname: "",
-        lastname: "",
-        city: "",
-      },
-      // allUserDreams: []
-    };
-  }
 
   componentDidMount() {
     this.props.fetchDreamById(this.props.match.params.id);
-    //Finds dream and sets to state
-    // const thisDream = this.props.dreams.find(dream =>
-    //   (parseInt(dream.id) === parseInt(this.props.match.params.id))
-    // );
-
+    this.props.fetchImage(this.props.match.params.id);
   }
 
   componentDidUpdate(prevProps) {
@@ -69,14 +43,16 @@ class DreamPage extends React.Component {
     }
   }
 
+
   render() {
+    console.log(this.props.currDream)
     return (
       <DreamPageDiv>
         <div className="dream-page">
           <Carousel />
           <div className="sidebar-body">
-            <Sidebar dream={this.props.currDream} user={this.state.user} />
-            <DreamPageBody dream={this.state.dream} />
+            <Sidebar />
+            <DreamPageBody />
           </div>
         </div>
       </DreamPageDiv>
@@ -84,12 +60,11 @@ class DreamPage extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ dreams }) => {
   return {
-    currDream: state.dreams.currDream,
-    // user: state.auth.user,
-
+    currDream: dreams.currDream,
+    dreamImg: dreams.imageById
   }
 }
 
-export default connect(mapStateToProps, { fetchDreamById })(DreamPage);
+export default connect(mapStateToProps, { fetchDreamById, fetchImage })(DreamPage);

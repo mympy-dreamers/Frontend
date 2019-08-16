@@ -19,6 +19,9 @@ import {
 	FETCH_USER_DREAMS_START,
 	FETCH_USER_DREAMS_SUCCESS,
 	FETCH_USER_DREAMS_FAILURE,
+	FETCH_IMAGE_START,
+	FETCH_IMAGE_SUCCESS,
+	FETCH_IMAGE_FAILURE,
 	DELETE_DREAM_FAILURE,
 	SET_DREAMCARDS,
 	UPDATE_SEARCH
@@ -33,7 +36,9 @@ const INITIAL_STATE = {
 	dreamId: null,
 	userDreams: [],
 	isUpdating: false,
+	fetchingImage: false,
 	dreams: [],
+	imageById: [],
 	dreamCards: {},
 	searchDreams: "",
 	featured: [
@@ -187,6 +192,23 @@ export default function dreamsReducer(state = INITIAL_STATE, action) {
 				postingImage: false,
 			}
 		case ADD_IMAGE_FAILURE:
+			return {
+				...state,
+				postingImage: false,
+				errors: action.payload
+			}
+		case FETCH_IMAGE_START:
+			return {
+				...state,
+				fetchingImage: true,
+			}
+		case FETCH_IMAGE_SUCCESS:
+			return {
+				...state,
+				postingImage: false,
+				imageById: action.payload
+			}
+		case FETCH_IMAGE_FAILURE:
 			return {
 				...state,
 				postingImage: false,

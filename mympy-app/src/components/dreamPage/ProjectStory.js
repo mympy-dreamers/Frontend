@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 
 const ProjectStoryDiv = styled.div`
 	margin-bottom: 36px;
@@ -23,15 +24,23 @@ const ProjectStoryDiv = styled.div`
 	}
 `
 
-const ProjectStory = ({ dream, user }) => {
-	return (
-		<ProjectStoryDiv>
-			<h2 className="PS-title">Project Story</h2>
-			<div className="PS-body">
-				<p className="PS-story">{dream.dream_long_description}</p>
-			</div>
-		</ProjectStoryDiv>
-	);
+class ProjectStory extends React.Component {
+	render() {
+		return (
+			<ProjectStoryDiv>
+				<h2 className="PS-title">Project Story</h2>
+				<div className="PS-body">
+					<p className="PS-story">{this.props.currDream.dream_long_description}</p>
+				</div>
+			</ProjectStoryDiv>
+		);
+	}
 }
 
-export default ProjectStory;
+const mapStateToProps = ({ dreams }) => {
+	return {
+		currDream: dreams.currDream
+	}
+}
+
+export default connect(mapStateToProps)(ProjectStory);

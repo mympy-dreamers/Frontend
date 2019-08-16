@@ -1,7 +1,7 @@
  .dream-Home-Page {
     background-color: #012345;
     text-align: center;
-    height: 1500px;	
+    height: 100%;	
     width: 100%;
     margin:0px;
 }
@@ -12,6 +12,13 @@
     /* margin-top: 60px;
     margin-left: 120px; */
   
+}
+#cancel-button{
+    background: rgb(245, 139, 139);
+}
+.modal-footer{
+    display:flex;
+    justify-content: space-between;
 }
 
 .inputs {
@@ -75,8 +82,9 @@
     
 }
 
-button {
+.dreamer-card-app button {
     border-radius: 10%;
+    margin-bottom: 30px;
 }
 
 .dreambutton{
@@ -169,5 +177,63 @@ Link:hover
     flex-direction: column;
 }
 
+/*   */
 
+.popup{
+   
+    width:500px;
+    height:50px;
+    background-color:#FFD164;
+    margin-left: 250px;
+    margin-top: 20px;
+
+}
+
+p{
+  font-size:20px;
+  padding:10px; 
+  text-align: center;
+
+}
+
+ 
+
+.alert {
+    text-align: center;
+    /* margin-top: 30px; */
+    width: 50%;
+    height: 100px;
+    margin: 0 auto 30px;
+    padding-left: 40px;
+}
+@media (max-width: 1250px){
+    .alert{
+        width: 80%;
+    }
+} 
+
+.alert h1 {
+    font-size: 25px;
+}
+
+.alert p {
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.alert2 {
+    text-align: center;
+    margin-top: 30px;
+    width: 450px;
+    height: 160px;
+    margin-left: 506px;
+    padding-left: 40px;
+}
+
+
+
+
+
+
+ 
 

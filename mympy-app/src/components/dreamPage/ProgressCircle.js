@@ -1,5 +1,6 @@
 import React from "react";
 import { VictoryPie, VictoryLabel, VictoryAnimation } from "victory";
+import { connect } from 'react-redux';
 
 import styled from 'styled-components';
 
@@ -8,7 +9,7 @@ const PCdiv = styled.div`
   border-radius: 50%;
 `
 
-export default class ProgressCircle extends React.Component {
+class ProgressCircle extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,9 +20,9 @@ export default class ProgressCircle extends React.Component {
   componentDidMount() {
     //if component mounts set state to given percent at an interval(constantly updating)
     //change percent to donationsRecived/donationGoal when back-end is seeded
-    let percent = 75;
+
     this.setStateInterval = window.setInterval(() => {
-      // percent += (Math.random() * 25);
+      let percent = (this.props.currDream.donations_received / this.props.currDream.donation_goal) * 100;
       percent = (percent > 100) ? 100 : percent;
 
       this.setState({
@@ -53,11 +54,13 @@ export default class ProgressCircle extends React.Component {
             cornerRadius={25}
             labels={() => null}
             style={{
-              data: { fill: (d) => {
-                /*Sets color of path based on percentage it's current at*/
-                const color = d.y > 30 ? "#FFD164" : "red";
-                return d.x === 1 ? color : "white";
-              }}
+              data: {
+                fill: (d) => {
+                  /*Sets color of path based on percentage it's current at*/
+                  const color = d.y > 30 ? "#FFD164" : "red";
+                  return d.x === 1 ? color : "white";
+                }
+              }
             }}
           />
           <VictoryAnimation duration={1000} data={this.state}>
@@ -78,3 +81,11 @@ export default class ProgressCircle extends React.Component {
     );
   }
 }
+
+const mapStateToProps = ({ dreams }) => {
+  return {
+    currDream: dreams.currDream
+  }
+}
+
+export default connect(mapStateToProps)(ProgressCircle);

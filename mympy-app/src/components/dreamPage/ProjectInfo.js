@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 // import { Button } from 'reactstrap';
-import { sendMail } from '../../actions';
+import { sendMail, fetchUserById } from '../../actions';
 
 import ProgressCircle from './ProgressCircle.js';
 import EmailModal from '../emailModal/EmailModal';
@@ -15,6 +15,20 @@ const ProjectInfoDiv = styled.div`
 	
 	.title {
 		color: white;
+		font-size: 2.8em;
+		font-family: Poppins Medium, sans-serif;
+		margin-bottom: 16px;
+	}
+
+	.donationText {
+		color: white;
+		font-size: 2.8em;
+		font-family: Poppins Medium, sans-serif;
+		margin-bottom: 16px;
+	}
+
+	.donationNums {
+		color: #FFD164;
 		font-size: 2.8em;
 		font-family: Poppins Medium, sans-serif;
 		margin-bottom: 16px;
@@ -78,26 +92,34 @@ const ProjectInfoDiv = styled.div`
 
 
 class ProjectInfo extends React.Component {
-	constructor({ dream, user, currUser }) {
-		super({ dream, user, currUser });
-		this.state = {
-			dreamId: '',
-			userId: '',
+
+	componentDidUpdate(prevProps) {
+		/* console.log(this.props.refreshVar)
+		console.log(prevProps) */
+
+		if (this.props.refreshVar !== prevProps.refreshVar) {
+			this.props.fetchUserById(this.props.currDream.user_id)
 		}
+
 	}
 
 	render() {
 		return (
 			<ProjectInfoDiv>
-				<h2 className="title">PROJECT NOMAD</h2>
-				<h3 className="user-name">{this.props.user.username}{/*"BY " + user.firstname + " " + user.lastname*/}</h3>
+				<h2 className="title">{this.props.currDream.dream_name}</h2>
+				<h3 className="user-name">{this.props.dreamUser.username}{/*"BY " + user.firstname + " " + user.lastname*/}</h3>
 				<div className="data-viz">
 					<ProgressCircle
-						donationGoal={this.props.dream.donationGoal}
-						donationsReceived={this.props.dream.donationsReceived}
+						donationGoal={this.props.currDream.donations_goal}
+						donationsReceived={this.props.currDream.donations_received}
 					/>
 				</div>
-				<h3 className="days-left">7 Days Left</h3>
+
+				<p className="donationText">Goal</p>
+				<p className="donationNums">${this.props.currDream.donation_goal}</p><br /><br />
+				<p className="donationText">Received<br /></p> <p className="donationNums">${this.props.currDream.donations_received}</p><br />>
+
+				{/* <h3 className="days-left">7 Days Left</h3> */}
 				<button className="donate-btn">Donate</button>
 				<h4 className="share-title">SHARE PROJECT</h4>
 				<div className="share-buttons">
@@ -114,16 +136,13 @@ class ProjectInfo extends React.Component {
 	}
 }
 
-// const mapStateToProps = ({ auth }) => {
-// 	return {
-// 		currUser: auth.user,
-// 	}
-// }
-
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ auth, dreams, users }) => {
 	return {
-		loggedUser: state.auth.user,
+		loggedUser: auth.user,
+		currDream: dreams.currDream,
+		dreamUser: users.user,
+		refreshVar: users.refreshUser
 	}
 }
 
-export default connect(mapStateToProps, { sendMail })(ProjectInfo);
+export default connect(mapStateToProps, { sendMail, fetchUserById })(ProjectInfo);

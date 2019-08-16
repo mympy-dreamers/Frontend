@@ -16,6 +16,10 @@ export const ADD_IMAGE_START = 'ADD_IMAGE_START';
 export const ADD_IMAGE_SUCCESS = 'ADD_IMAGE_SUCCESS';
 export const ADD_IMAGE_FAILURE = 'ADD_IMAGE_FAILURE';
 
+export const FETCH_IMAGE_START = 'FETCH_IMAGE_START';
+export const FETCH_IMAGE_SUCCESS = 'FETCH_IMAGE_SUCCESS';
+export const FETCH_IMAGE_FAILURE = 'FETCH_IMAGE_FAILURE';
+
 export const UPDATE_DREAM_START = 'UPDATE_DREAM_START';
 export const UPDATE_DREAM_SUCCESS = 'UPDATE_DREAM_SUCCESS';
 export const UPDATE_DREAM_FAILURE = 'UPDATE_DREAM_FAILURE';
@@ -24,9 +28,13 @@ export const DELETE_DREAM_START = 'DELETE_DREAM_START';
 export const DELETE_DREAM_SUCCESS = 'DELETE_DREAM_SUCCESS';
 export const DELETE_DREAM_FAILURE = 'DELETE_DREAM_FAILURE';
 
+export const UPDATE_DREAM_USER = 'UPDATE_DREAM_USER'
+
+
 const token = {
     headers: { authorization: localStorage.getItem('jwt') }
 }
+
 
 const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
 
@@ -39,6 +47,9 @@ export const fetchDreamById = (id) => (dispatch) => {
             dispatch({
                 type: FETCH_DREAM_SUCCESS,
                 payload: res.data
+            })
+            dispatch({
+                type: UPDATE_DREAM_USER
             })
         })
         .catch(err => {
@@ -63,6 +74,25 @@ export const fetchAllDreams = () => (dispatch) => {
         .catch(err => {
             dispatch({
                 type: FETCH_DREAMS_FAILURE,
+                payload: err
+            })
+        })
+}
+
+export const fetchImage = (id) => (dispatch) => {
+    dispatch({ type: FETCH_IMAGE_START });
+
+    return axios
+        .get(`${BASE_URL}/api/dreams/image/${id}`, token)
+        .then(res => {
+            dispatch({
+                type: FETCH_IMAGE_SUCCESS,
+                payload: res.data
+            })
+        })
+        .catch(err => {
+            dispatch({
+                type: FETCH_IMAGE_FAILURE,
                 payload: err
             })
         })
