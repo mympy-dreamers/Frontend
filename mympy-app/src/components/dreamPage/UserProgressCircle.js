@@ -19,10 +19,10 @@ export default class ProgressCircle extends React.Component {
   componentDidMount() {
     //if component mounts set state to given percent at an interval(constantly updating)
     //change percent to donationsRecived/donationGoal when back-end is seeded
-
+    let percent = 0; // = (this.props.donationsReceived / this.props.donationGoal) * 100;
     this.setStateInterval = window.setInterval(() => {
       // percent += (Math.random() * 25);
-      let percent = (this.props.donationsReceived / this.props.donationGoal) * 100
+      percent = (this.props.donationsReceived / this.props.donationGoal) * 100;
       percent = (percent >= 100) ? 100 : percent;
 
       this.setState({
