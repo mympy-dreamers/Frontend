@@ -18,11 +18,11 @@ import Footer from './view/footer/footer';
 
 class App extends React.Component {
 
-  componentDidUpdate(prevProps) {
+  async componentDidUpdate(prevProps) {
     if (this.props.authZeroUser && this.props.users && this.props.users !== prevProps.users) {
       const isUser = this.props.users.reduce((acc, curr) =>
         (curr.auth_id === this.props.authZeroUser.sub) ? true : acc, false)
-      this.props.zeroLogin(this.props.authZeroUser, isUser)
+      await this.props.zeroLogin(this.props.authZeroUser, isUser)
     }
   }
 
