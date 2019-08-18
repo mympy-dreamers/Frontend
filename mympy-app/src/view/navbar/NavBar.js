@@ -43,7 +43,7 @@ const NavBar = (props) => {
 
                             {isAuthenticated && (props.onAccountPage ? (<button onClick={(e) => {
                                 e.preventDefault();
-                                const envUrl = process.env.REACT_APP_FE_URL;
+                                const envUrl = process.env.REACT_APP_FE_URL || 'http://localhost:3000';
                                 const logoutUrl = envUrl.split('').map(char => {
                                     if (char === '/') return '%2F';
                                     if (char === ':') return '%3A';

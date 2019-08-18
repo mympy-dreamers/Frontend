@@ -1,4 +1,5 @@
-import React, { Component  } from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Slider from "react-slick";
 import styled from 'styled-components';
 
@@ -57,33 +58,41 @@ const Wrapper = styled.div`
 	  }
 `;
 
-export default class Carousel extends Component {
+class Carousel extends Component {
+
   render() {
     const settings = {
-      dots: true, 
+      dots: true,
       arrows: true,
       infinite: true, // infinite scroll
       speed: 500, // delay per slide
       slidesToShow: 1, // slides per view
       slidesToScroll: 1, // scroll 1 view at a time 
     };
+    console.log(this.props);
     return (
+
+
       <Wrapper>
+
         <Slider {...settings}>
-          <div>
-            <img src="https://images.unsplash.com/photo-1478416272538-5f7e51dc5400?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1944&q=80" alt="" />
-          </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1478416272538-5f7e51dc5400?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1944&q=80" alt="" />
-          </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1478416272538-5f7e51dc5400?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1944&q=80" alt="" />
-          </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1478416272538-5f7e51dc5400?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1944&q=80" alt="" />
-          </div>
+          {this.props.dreamImg.map((pic) => {
+            return <div>
+              <img src={pic && pic.img_url} />
+            </div>
+          })}
         </Slider>
       </Wrapper>
     );
   }
 }
+
+const mapStateToProps = ({ dreams }) => {
+  return {
+    currDream: dreams.currDream,
+    dreamImg: dreams.imageById
+  }
+}
+
+export default connect(mapStateToProps)(Carousel);
+
