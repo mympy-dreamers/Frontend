@@ -27,11 +27,11 @@ class Footer extends React.Component {
                     </div>
 
                     <div className='footer-home-link'>
-                        <h4><span>Myphy Dream</span> <span>124 Conch Street, Bikini Bottom 95476</span> <span>mymphydream@gmail.com</span></h4>
+                        <h4><span>Mympy Dreams</span> <span></span> <span>mymphydream@gmail.com</span></h4>
                     </div> {/* footer-home-link end */}
 
                     <div className='copyright'>
-                        <p>Copyright © 2019, Myphy Dream. All Rights Reserved.</p>
+                        <p>Copyright © 2019, Mympy Dreams. All Rights Reserved.</p>
                     </div>
                 </div> {/* menu-footer end */}
 
