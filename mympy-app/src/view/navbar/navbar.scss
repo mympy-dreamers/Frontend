@@ -27,6 +27,7 @@
     }
 
     .left{
+        width: 25%;
 
         img {
             margin: 2%;
@@ -36,8 +37,12 @@
         }
     }
 
+    .mid {
+        width: 25%;
+    }
+
     .right{
-        width: 60%;
+        width: 50%;
 
         @include nav-break {
             width: 100%;
