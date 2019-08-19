@@ -19,16 +19,16 @@ class EmailModal extends React.Component {
     this.state = {
       modal: false,
       mailings: {
-				userId: '',
-				dreamId: '',
-			}
+        userId: '',
+        dreamId: '',
+      }
     };
 
     this.toggle = this.toggle.bind(this);
   }
 
   componentDidUpdate(prevProps) {
-    if(this.props.currDream !== prevProps.currDream) {
+    if (this.props.currDream !== prevProps.currDream) {
       this.setState({
         mailings: {
           userId: this.props.user.id,
@@ -38,11 +38,11 @@ class EmailModal extends React.Component {
     }
   }
 
-	handleMail = e => {
-		e.preventDefault();
-    this.props.sendMail(this.state.mailings);
+  handleMail = e => {
+    e.preventDefault();
+    this.props.sendMail({ user_id: this.state.mailings.userId, dreamer_id: this.state.mailings.dreamId });
     this.toggle();
-	}
+  }
 
   toggle() {
     this.setState(prevState => ({
@@ -51,17 +51,28 @@ class EmailModal extends React.Component {
   }
 
   render() {
+    console.log(this.props.isAuthenticated)
     return (
       <div>
         <Button onClick={this.toggle} className="contact-button" outline color="info">Contact Dreamer</Button>{' '}
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader style={ headStyle } toggle={this.toggle}>WARNING</ModalHeader>
-          <ModalBody style={ bodyStyle }>
-            Are you sure you would like to share your e-mail address with this Dreamer?
+          <ModalHeader style={headStyle} toggle={this.toggle}>WARNING</ModalHeader>
+          {this.props.isAuthenticated ?
+            <ModalBody style={bodyStyle}>
+              Are you sure you would like to share your e-mail address with this Dreamer?
           </ModalBody>
-          <ModalFooter>
-            <Button color="primary" onClick={this.handleMail}>Submit</Button>
-          </ModalFooter>
+
+            :
+            <ModalBody style={bodyStyle}><br></br>
+              You must be signed in to contact a dreamer!
+            </ModalBody>
+          }
+
+          {this.props.isAuthenticated &&
+            <ModalFooter>
+              <Button color="primary" onClick={this.handleMail}>Submit</Button>
+            </ModalFooter>
+          }
         </Modal>
       </div>
     );
@@ -72,6 +83,8 @@ const mapStateToProps = ({ auth, dreams }) => {
   return {
     user: auth.user,
     currDream: dreams.currDream,
+    isAuthenticated: auth.auth.isAuthenticated
+
   }
 }
 
