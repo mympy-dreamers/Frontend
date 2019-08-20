@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route } from "react-router-dom";
 import { connect } from "react-redux";
+import {StripeProvider} from 'react-stripe-elements';
 
 import Login from './components/login/Login';
 import NavBar from './view/navbar/NavBar';
@@ -10,11 +11,14 @@ import DreamPage from './components/dreamPage/DreamPage.js';
 import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/login/PrivateRoute';
 import About from './view/aboutPage/AboutUs';
-import UserDreamsList from './components/userDreams/UserDreamsList'
+import UserDreamsList from './components/userDreams/UserDreamsList';
+import Donate from './components/stripe/Donate';
 
 import DreamerProfile from './components/dreamForms/dreamerProfile';
 import ImageForm from './components/dreamForms/imageForm';
 import Footer from './view/footer/footer';
+
+const pkTest = process.env.PK_TEST;
 
 class App extends React.Component {
 
@@ -28,38 +32,41 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="app-wrap">
+      <StripeProvider apikey={pkTest}>
+        <div className="App">
+          <div className="app-wrap">
 
-          <Route path="/" render={(props) => <NavBar
-            {...props}
-            show={this.props.location.pathname.includes('market')}
-            onAccountPage={this.props.location.pathname.includes('dashboard')}
-          />} />
-          <Route exact path="/" render={(props) => <Home {...props} />} />
-          <Route path="/login" render={(props) => (
-            <Login
+            <Route path="/" render={(props) => <NavBar
               {...props}
-              type="login"
-            />
-          )} />
-          <Route path="/register" render={(props) => (
-            <Login
-              {...props}
-              type="register"
-            />
-          )} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/market" component={DreamMarket} />
-          <Route path="/market/:id" component={DreamPage} />
-          <PrivateRoute path="/user-dreams" component={UserDreamsList} />
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              show={this.props.location.pathname.includes('market')}
+              onAccountPage={this.props.location.pathname.includes('dashboard')}
+            />} />
+            <Route exact path="/" render={(props) => <Home {...props} />} />
+            <Route path="/login" render={(props) => (
+              <Login
+                {...props}
+                type="login"
+              />
+            )} />
+            <Route path="/register" render={(props) => (
+              <Login
+                {...props}
+                type="register"
+              />
+            )} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/market" component={DreamMarket} />
+            <Route path="/market/:id" component={DreamPage} />
+            <Route path="/support" component={Donate} />
+            <PrivateRoute path="/user-dreams" component={UserDreamsList} />
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
 
-          <PrivateRoute exact path="/addDream" component={DreamerProfile} />
-          <PrivateRoute exact path="/addDream/image" component={ImageForm} />
-          <Footer />
-        </div>
-      </div >
+            <PrivateRoute exact path="/addDream" component={DreamerProfile} />
+            <PrivateRoute exact path="/addDream/image" component={ImageForm} />
+            <Footer />
+          </div>
+        </div >
+      </StripeProvider>
     );
   }
 }
