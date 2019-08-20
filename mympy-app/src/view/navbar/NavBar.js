@@ -16,7 +16,7 @@ const NavBar = (props) => {
                         <img src={logo} alt="Company Logo" />
                     </Link>
                 </div>
-                <div>
+                <div className="mid">
                     {props.show && <Searchbar />}
                 </div>
                 <div className="right">
