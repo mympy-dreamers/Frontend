@@ -12,6 +12,9 @@ const headStyle = {
   fontSize: "2.3rem",
   color: 'red',
 }
+const headStyleNotLog = {
+  fontSize: "2.3rem"
+}
 
 class EmailModal extends React.Component {
   constructor() {
@@ -52,25 +55,41 @@ class EmailModal extends React.Component {
 
   render() {
     console.log(this.props.isAuthenticated)
+    const { isAuthenticated, loginWithRedirect } = this.props;
     return (
       <div>
         <Button onClick={this.toggle} className="contact-button" outline color="info">Contact Dreamer</Button>{' '}
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader style={headStyle} toggle={this.toggle}>WARNING</ModalHeader>
-          {this.props.isAuthenticated ?
+          {isAuthenticated ? <ModalHeader style={headStyle} toggle={this.toggle}>WARNING</ModalHeader> :
+            <ModalHeader style={headStyleNotLog} toggle={this.toggle}>You must be logged in to contact a dreamer</ModalHeader>}
+
+          {isAuthenticated &&
             <ModalBody style={bodyStyle}>
               Are you sure you would like to share your e-mail address with this Dreamer?
           </ModalBody>
 
-            :
-            <ModalBody style={bodyStyle}><br></br>
-              You must be signed in to contact a dreamer!
-            </ModalBody>
+
+            // <ModalBody style={bodyStyle}>
+            //   You must be signed in to contact a dreamer!
+            // </ModalBody>
           }
 
-          {this.props.isAuthenticated &&
+          {isAuthenticated ?
             <ModalFooter>
               <Button color="primary" onClick={this.handleMail}>Submit</Button>
+              <Button color="danger" onClick={this.toggle}>Cancel</Button>
+            </ModalFooter>
+            :
+            <ModalFooter>
+              <Button
+                onClick={(e) => {
+                  e.preventDefault();
+                  loginWithRedirect({})
+                }}
+              >
+                Log in
+                            </Button>
+              <Button color="danger" onClick={this.toggle}>Cancel</Button>
             </ModalFooter>
           }
         </Modal>
@@ -83,7 +102,8 @@ const mapStateToProps = ({ auth, dreams }) => {
   return {
     user: auth.user,
     currDream: dreams.currDream,
-    isAuthenticated: auth.auth.isAuthenticated
+    isAuthenticated: auth.auth.isAuthenticated,
+    loginWithRedirect: auth.auth.loginWithRedirect
 
   }
 }

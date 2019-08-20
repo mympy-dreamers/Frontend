@@ -38,7 +38,7 @@ class Home extends React.Component {
     render() {
         return (
             <div className="home-main">
-                <Carousel id="top" />
+                <Carousel history={this.props.history} id="top" />
                 <div className="break" style={breakStyle}>
                 </div>
                 <div className="rocket-contain">

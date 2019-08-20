@@ -28,8 +28,12 @@ const MidSec = () => {
                         <h1>Are you a Dreamer or Supporter?</h1>
                     </div>
                     <div className="btns">
-                        <button className="dreamer">Dreamer</button>
-                        <button className="supporter">Supporter</button>
+                        <button onClick={() =>
+                            document.getElementById("dream-main").scrollIntoView()
+                        } className="dreamer">Dreamer</button>
+                        <button onClick={() =>
+                            document.getElementById("support-main").scrollIntoView()
+                        } className="supporter">Supporter</button>
                     </div>
                     <div className="meteor">
                         <img className="meteor-img" src={meteor} alt="meteor" />

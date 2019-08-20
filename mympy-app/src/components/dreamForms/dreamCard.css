@@ -47,6 +47,7 @@
         }
     } 
 
+
 .dreamlable {
     font-size: 30px;
     color:white;
@@ -230,7 +231,11 @@ p{
     padding-left: 40px;
 }
 
-
+#dream_long_description{
+    height: 350px;
+    text-align: left;
+    padding: 30px;
+}
 
 
 
