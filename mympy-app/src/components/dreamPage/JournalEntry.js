@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import JournalList from './JournalList';
 import comingSoon from '../../img/coming-soon.png';
-import { fetchDreamJournals } from '../../actions'
+import { fetchDreamJournals, deleteJournal } from '../../actions'
 
 const JournalEntryDiv = styled.div`
 	.JE-title {
@@ -69,9 +69,10 @@ render() {
 						id={journal.id}
 						title={journal.title}
 						body={journal.body}
-						post_date={journal.created_at}
+						posted_on={journal.created_at}
 						edited_on={journal.updated_at}
-						currentUser={this.props.user} />
+						currentUser={this.props.user}
+						deleteJournal={this.props.deleteJournal} />
 					)}
 				{/* <div className="coming-soon">
 					<img src={comingSoon} alt='Coming Soon' />
@@ -93,8 +94,9 @@ function mapStateToProps(state) {
   
   export default connect(
 	mapStateToProps,
-	{
-		fetchDreamJournals
+	{	
+		fetchDreamJournals,
+		deleteJournal
 	}
   )(JournalEntry);
   
