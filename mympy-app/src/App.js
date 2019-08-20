@@ -56,7 +56,7 @@ class App extends React.Component {
           <Route exact path="/about" component={About} />
           <Route exact path="/market" component={DreamMarket} />
           <Route path="/market/:id" component={DreamPage} />
-          <Route path="/support" component={Donate} />
+          <Route path="/donate" component={Donate} />
           <PrivateRoute path="/user-dreams" component={UserDreamsList} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
 
