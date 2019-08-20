@@ -11,10 +11,12 @@ import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/login/PrivateRoute';
 import About from './view/aboutPage/AboutUs';
 import UserDreamsList from './components/userDreams/UserDreamsList'
-
+import Journal from './components/journal/Journal.js'
 import DreamerProfile from './components/dreamForms/dreamerProfile';
 import ImageForm from './components/dreamForms/imageForm';
 import Footer from './view/footer/footer';
+import JournalManager from './components/journal/JournalManager';
+
 
 class App extends React.Component {
 
@@ -52,6 +54,7 @@ class App extends React.Component {
           <Route exact path="/about" component={About} />
           <Route exact path="/market" component={DreamMarket} />
           <Route path="/market/:id" component={DreamPage} />
+          <Route path="/journal/:id" component={JournalManager} />
           <PrivateRoute path="/user-dreams" component={UserDreamsList} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
 
