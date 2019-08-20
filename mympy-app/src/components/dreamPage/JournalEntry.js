@@ -60,7 +60,7 @@ class JournalEntry extends Component {
 render() {
 	return (
 		<JournalEntryDiv>
-			<h2 className="JE-title">Journal Entry</h2>
+			<h2 className="JE-title">Journal Entries</h2>
 			<div className="JE-body">
 					{this.props.journals.map(journal =>
 						<JournalList
