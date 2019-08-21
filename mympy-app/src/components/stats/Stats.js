@@ -14,8 +14,6 @@ class Stats extends React.Component {
     }
 
     getDreamData(){
-        console.log(this.state)
-        console.log(this.props.user)
 
         this.props.user.dreams && this.props.user.dreams.map(dream => {
             return (
@@ -25,32 +23,26 @@ class Stats extends React.Component {
                 })
             )
         })
-        console.log('after method' + this.state);
     }
 
 
     componentDidMount(){
-        console.log(this.props.user) // 2nd {}
-        console.log(this.state); // 3rd {dreamGoal: 0, dreamCurr: 0}
         // setTimeout(() => {
             this.getDreamData();
         // }, 900);
     }
 
     componentDidUpdate(prevProps) {
-        console.log(this.props.user); // 5th correct user info
 
         if (this.props.user.dreams !== prevProps.user.dreams) {
 
             this.getDreamData();
 
         }
-        console.log('after update' + this.state) // 8th [object object] // 10th [object object]
     }
 
 
     render() {
-        console.log(this.state) // 1st {dreamGoal: 0, dreamCurr: 0} // 4th {dreamGoal: 0, dreamCurr: 0} // 9th {dreamGoal: 300, dreamCurr: 0}
         return(
             <div className="stats-main">
                 <div className="myDreams">
