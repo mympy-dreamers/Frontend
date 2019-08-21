@@ -3,8 +3,8 @@
 
  .search-bar{
   position: relative;
-  top: 50%;
-  margin-left:158px;
+  top: 47%;
+  margin-left:150px;
   transform: translate(-50%,-50%);
   transition: all 1s;
   width: 50px;
@@ -16,9 +16,10 @@
   padding: 5px;
 }
 
- @media(max-width:400px) {
+ @media(max-width:500px) {
   .search-bar {
-    margin-left: 0px;
+    margin-top: 60px;
+    margin-left: 245px;
   } 
 } 
 
@@ -42,10 +43,11 @@ input[type="text"]
   padding: 0 20px;
 }
 
-@media(max-width:400px) {
+@media(max-width:500px) {
   .searchBox {
-    height: 30px;
-  }
+    height: 27.5px;
+    margin-top: 5px;
+}
 }
 
 #searchicon{
@@ -67,6 +69,19 @@ input[type="text"]
   text-align: center;
   font-size: 1.2em;
   transition: all 1s;
+}
+
+@media(max-width:500px) {
+  .fa {
+   
+    padding: 5px;
+    width: 28.5px;
+    height: 27.5px;
+    margin-top: 5px;
+    /* margin-right: -76px; */
+   
+ 
+}
 }
 
 form:hover{
