@@ -33,8 +33,6 @@ class DreamPage extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.currDream !== prevProps.currDream) {
       const thisDream = this.props.currDream;
-      console.log(thisDream)
-      console.log(this.props.dreams)
       this.setState({
         dream: thisDream,
         user: { username: thisDream.username }
@@ -45,7 +43,6 @@ class DreamPage extends React.Component {
 
 
   render() {
-    console.log(this.props.currDream)
     return (
       <DreamPageDiv>
         <div className="dream-page">
