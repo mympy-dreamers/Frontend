@@ -2,7 +2,7 @@ import React from 'react';
 import {CardElement, injectStripe} from 'react-stripe-elements';
 
 class CheckoutForm extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             complete: false,
@@ -11,23 +11,26 @@ class CheckoutForm extends React.Component {
         this.submit = this.submit.bind(this);
     }
 
-    async submit(ev)
-    {
+    async submit(ev) {
         let { token } = await this.props.stripe.createToken({name: 'name'});
-        let response = await fetch("/charge", {
+        let response = await fetch("http://localhost:5000/stripe/charge", {
             method: "POST",
             headers: {"Content-Type": "text/plain"},
-            body: token.id
+            body: {
+                token: token.id,
+                amount: this.props.donationTotal
+            }
         });
 
         if (response.ok) {
+            this.setState({complete: true});
             alert("Purchase Complete!");
         } else {
             alert("Forms not filled correctly");
         }
     }
 
-    render(){
+    render() {
         return (
             <div className="checkout-main">
                 <div className="stripe-form">
