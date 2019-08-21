@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
-
+import JournalList from './JournalList';
 import comingSoon from '../../img/coming-soon.png';
+import { fetchDreamJournals } from '../../actions'
 
 const JournalEntryDiv = styled.div`
 	.JE-title {
@@ -46,20 +48,54 @@ const JournalEntryDiv = styled.div`
 	}
 `
 
-const JournalEntry = ({ dream, user }) => {
+class JournalEntry extends Component {
+	state = {
+	}
+  
+	componentDidMount() {
+	  this.props.fetchDreamJournals(this.props.currDream.id);
+
+	}
+
+
+render() {
 	return (
 		<JournalEntryDiv>
 			<h2 className="JE-title">Journal Entry</h2>
 			<div className="JE-body">
-				{/*<h2 className="JE-entry-title">The Beging of Nomad</h2>
-    		<p className="JE-entry">{dream.longDescription.slice(0, 500) + "..."}</p>
-    		<div className="read-more">Read More</div>*/}
-				<div className="coming-soon">
+					{this.props.journals.map(journal =>
+						<JournalList
+						dream={this.props.dream}
+						key={journal.id}
+						id={journal.id}
+						title={journal.title}
+						body={journal.body}
+						post_date={journal.created_at}
+						edited_on={journal.updated_at}
+						currentUser={this.props.user} />
+					)}
+				{/* <div className="coming-soon">
 					<img src={comingSoon} alt='Coming Soon' />
-				</div>
+				</div> */}
 			</div>
 		</JournalEntryDiv>
-	);
-}
+		)
+	}
+}	
 
-export default JournalEntry;
+function mapStateToProps(state) {
+	return {
+	  user: state.auth.user,
+	  journals: state.journals.dreamJournals,
+	  currDream: state.dreams.currDream
+	}
+  }
+  
+  
+  export default connect(
+	mapStateToProps,
+	{
+		fetchDreamJournals
+	}
+  )(JournalEntry);
+  
