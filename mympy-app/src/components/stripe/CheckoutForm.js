@@ -1,5 +1,8 @@
 import React from 'react';
 import {CardElement, injectStripe} from 'react-stripe-elements';
+import { connect } from 'react-redux';
+
+const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
 
 class CheckoutForm extends React.Component {
     constructor(props) {
@@ -12,8 +15,10 @@ class CheckoutForm extends React.Component {
     }
 
     async submit(ev) {
-        let { token } = await this.props.stripe.createToken({name: 'name'});
-        let response = await fetch("http://localhost:5000/stripe/charge", {
+        let { token } = await this.props.stripe.createToken({name: 'name'});  // name will be the customer's name passed in
+        console.log(token);
+        console.log(this.props.donationTotal);
+        let response = await fetch(`${BASE_URL}/stripe/charge`, {
             method: "POST",
             headers: {"Content-Type": "text/plain"},
             body: {
