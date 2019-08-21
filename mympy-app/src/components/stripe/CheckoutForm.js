@@ -1,25 +1,28 @@
 import React from 'react';
 import {CardElement, injectStripe} from 'react-stripe-elements';
+import styled from 'styled-components';
+
+const StyledCheckoutForm = styled.div`
+`
 
 class CheckoutForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             complete: false,
-
         }
         this.submit = this.submit.bind(this);
     }
 
-    async submit(ev) {
+    async submit() {
         let { token } = await this.props.stripe.createToken({name: 'name'});
         let response = await fetch("http://localhost:5000/stripe/charge", {
             method: "POST",
-            headers: {"Content-Type": "text/plain"},
-            body: {
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
                 token: token.id,
                 amount: this.props.donationTotal
-            }
+            })
         });
 
         if (response.ok) {
@@ -32,13 +35,13 @@ class CheckoutForm extends React.Component {
 
     render() {
         return (
-            <div className="checkout-main">
+            <StyledCheckoutForm className="checkout-main">
                 <div className="stripe-form">
                     <p>Would you like to donate?</p>
                     <CardElement />
                     <button onClick={this.submit}>Donate</button>
                 </div>
-            </div>
+            </StyledCheckoutForm>
         )
     }
 }
