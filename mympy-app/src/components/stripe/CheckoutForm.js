@@ -1,9 +1,12 @@
 import React from 'react';
 import {CardElement, injectStripe} from 'react-stripe-elements';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 
 const StyledCheckoutForm = styled.div`
 `
+
+const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
 
 class CheckoutForm extends React.Component {
     constructor(props) {
@@ -14,9 +17,9 @@ class CheckoutForm extends React.Component {
         this.submit = this.submit.bind(this);
     }
 
-    async submit() {
-        let { token } = await this.props.stripe.createToken({name: 'name'});
-        let response = await fetch("http://localhost:5000/stripe/charge", {
+    async submit(ev) {
+        let { token } = await this.props.stripe.createToken({name: 'name'});  // name will be the customer's name passed in
+        let response = await fetch(`${BASE_URL}/stripe/charge`, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
