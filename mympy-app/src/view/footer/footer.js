@@ -11,13 +11,19 @@ class Footer extends React.Component {
 
                     <div className='menu-icons'>
                         <div id='fb-icon'>
-                            <a href='#'><i className="fab fa-facebook-f"></i></a>
+                            {/* <a href='#'> */}
+                            <i className="fab fa-facebook-f"></i>
+                            {/* </a> */}
                         </div>
                         <div id='ig-icon'>
-                            <a href='#'><i className="fab fa-instagram"></i></a>
+                            {/* <a href='#'> */}
+                            <i className="fab fa-google"></i>
+                            {/* </a> */}
                         </div>
                         <div id='yelp-icon'>
-                            <a href='#'><i className="fab fa-yelp"></i></a>
+                            {/* <a href='#'> */}
+                            <i className="fab fa-yelp"></i>
+                            {/* </a> */}
                         </div>
                     </div> {/* menu-icons end */}
 
