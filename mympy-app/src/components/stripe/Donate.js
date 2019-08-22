@@ -118,6 +118,10 @@ class Donate extends React.Component {
         }
     }
 
+    componentDidMount() {
+        
+    }
+
     donationHandler = e => {
         let classes = e.target.className;
         e.target.className = (classes === 'button') ? classes+' active' : classes.replace(' active', '');
@@ -172,9 +176,10 @@ class Donate extends React.Component {
     }
 }
 
-const mapStateToProps = ({ user }) => {
+const mapStateToProps = ({ user, dreams }) => {
   return {
     user: user.authZeroUser
+    currDream: dreams.currDream,
   }
 }
 
