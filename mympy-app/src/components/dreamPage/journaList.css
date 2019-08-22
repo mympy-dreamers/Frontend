@@ -1,0 +1,22 @@
+.journal-post {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-bottom: 1px solid darkgrey;
+    padding: 15px 0;
+}
+
+.journal-post button {
+    height: 36px;
+    width: 97px;
+    border-radius: 5rem;
+    border: 1px solid yellow;
+    color: gray;
+    margin-right: 15px;
+    /* margin-top: 5px; */
+}
+
+.journal-post h1 {
+    margin-top: 13px;
+    margin-left: 50px;
+}
