@@ -69,16 +69,16 @@ class Carousel extends Component {
       slidesToShow: 1, // slides per view
       slidesToScroll: 1, // scroll 1 view at a time 
     };
-    console.log(this.props);
+
     return (
 
 
       <Wrapper>
 
         <Slider {...settings}>
-          {this.props.dreamImg.map((pic) => {
+          {this.props.dreamImg.map((pic, i) => {
             return <div>
-              <img src={pic && pic.img_url} />
+              <img src={pic && pic.img_url} key={i} />
             </div>
           })}
         </Slider>

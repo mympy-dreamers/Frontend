@@ -2,12 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 import Searchbar from '../../components/search_bar/DreamSearchbar'
+import TokenCall from '../../auth/ExternalApi.js';
 
 import logo from '../../img/MIMPYlogo.svg';
 
 
 const NavBar = (props) => {
-    const { isAuthenticated, loginWithRedirect, loading } = props.auth;
+    const { isAuthenticated, loginWithRedirect, loading, getTokenSilently } = props.auth;
     return (
         <div className="main">
             <div className="nav-wrap">
@@ -27,9 +28,11 @@ const NavBar = (props) => {
                         <li className="item">
                             <Link to="/market">Search For Dreams</Link>
                         </li>
+                        {/* <li className="item">
+                            <TokenCall />
+                        </li> */}
 
                         <li className="item">
-                            {loading && <p>loading</p>}
                             {!isAuthenticated && (
                                 <button
                                     onClick={(e) => {
@@ -43,6 +46,7 @@ const NavBar = (props) => {
 
                             {isAuthenticated && (props.onAccountPage ? (<button onClick={(e) => {
                                 e.preventDefault();
+                                localStorage.removeItem("curr_user");
                                 const envUrl = process.env.REACT_APP_FE_URL || 'http://localhost:3000';
                                 const logoutUrl = envUrl.split('').map(char => {
                                     if (char === '/') return '%2F';

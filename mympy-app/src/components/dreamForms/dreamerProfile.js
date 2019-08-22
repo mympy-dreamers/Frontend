@@ -66,7 +66,6 @@ class DreamInfo extends React.Component {
 
         const newDream = { ...this.state.dreamCard, donation_goal: parseInt(this.state.dreamCard.donation_goal, 10) }
         // e.preventDefault()
-        console.log('submittedDream: ', newDream);
         this.props.addDream(newDream)
         this.setState({ showModal: false }, () => {
             this.props.history.push('/addDream/image')
@@ -88,7 +87,6 @@ class DreamInfo extends React.Component {
     }
 
     render() {
-        console.log(this.state)
         return (
             <div className='dream-Home-Page'>
                 <div className='dreamer-card-app'>

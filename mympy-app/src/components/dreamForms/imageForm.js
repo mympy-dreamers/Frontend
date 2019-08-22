@@ -57,10 +57,10 @@ class imageForm extends React.Component {
                     <div className='form-title'>
                         <h1>Make your dream in reality!</h1>
                     </div>
-                    
+
                     <div>
                         <FormGroup className='image-icons'>
-                            <Label id="image-button" for="exampleFile"><i class="fas fa-folder-plus"><h2> Image File </h2></i></Label>
+                            <Label id="image-button" for="exampleFile"><i className="fas fa-folder-plus"><h2> Image File </h2></i></Label>
                             <div className='images'>
                                 <Input className="fileInput" type="file" onChange={this.uploadFile} name="file" id="exampleFile" />
                                 <button onClick={this.handleSubmit} className='dreambutton1'>Submit</button>
