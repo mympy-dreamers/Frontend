@@ -1,9 +1,8 @@
 import React from 'react';
 import './dreamCard.css';
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { addImage } from '../../actions';
-import { Button, FormGroup, Label, Input, FormText, Alert } from 'reactstrap';
+import { FormGroup, Label, Input, Alert } from 'reactstrap';
 import FormModal from "./FormModal";
 
 class imageForm extends React.Component {
