@@ -1,29 +1,31 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
+import Accordion from 'react-bootstrap/Accordion';
+import { Button, Card } from 'react-bootstrap';
 class JournalList extends Component {
   state = {
   }
 
   render() {
     return (
-    // <div className='journal-page'>
-    //   <div className='journal-post'>
-    //     <h1>Post</h1>
-    //     <button>ADD NEW POST</button>
-    //   </div>
-      <div className="journal-element">
-        <h3>Posted on:</h3> {this.props.posted_on}
-        <h3>Edited on:</h3> {this.props.edited_on}
-        <h1>{this.props.body}</h1> 
-        <p>{this.props.posted_on}</p>
-        <button 
-          className="delete-button" 
-          onClick={()=>
-          window.confirm("Are you sure you wish to delete this item?") &&
-          this.props.deleteJournal(this.props.id)}>Delete</button>
-      </div>
-    // </div>
+      <Card>
+						<Card.Header>
+						<Accordion.Toggle as={Button} variant="link" eventKey={this.props.id}>
+							{this.props.title}
+						</Accordion.Toggle> 
+            <div className="pull-right">
+              {this.props.posted_on}
+              <button 
+              className="delete-button" 
+              onClick={()=>
+              window.confirm("Are you sure you wish to delete this item?") &&
+              this.props.deleteJournal(this.props.id)}>Delete
+            </button>
+            </div>
+						</Card.Header>
+						<Accordion.Collapse eventKey={this.props.id}>
+						<Card.Body>{this.props.body}</Card.Body>
+						</Accordion.Collapse>
+			</Card>
     );
   }
 }
