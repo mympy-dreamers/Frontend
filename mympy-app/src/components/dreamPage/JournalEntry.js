@@ -5,6 +5,9 @@ import JournalList from './JournalList';
 import comingSoon from '../../img/coming-soon.png';
 import { fetchDreamJournals, deleteJournal } from '../../actions'
 import './journaList.css'
+import InputModal from "../dreamPage/JournalForm";
+
+
 
 const JournalEntryDiv = styled.div`
 	.JE-title {
@@ -51,23 +54,43 @@ const JournalEntryDiv = styled.div`
 
 class JournalEntry extends Component {
 	state = {
+		showModal: false
 	}
   
 	componentDidMount() {
 		setTimeout(() =>this.props.fetchDreamJournals(this.props.currDream.id), 1000);
 	}
 
+	handleSubmit = () => {
+	this.setState({
+				showModal: true
+		})
+	}
+
 
 render() {
 	return (
+		
 		<JournalEntryDiv>
 			<h2 className="JE-title">Journal Entry</h2>
 
 		<div className='journal-page'>
       				<div className='journal-post'>
         				<h1>Post</h1>
-        				<button>ADD NEW POST</button>
+        				<button onClick={this.handleSubmit}>ADD NEW POST</button>
+						{this.state.showModal && <InputModal/>}
       				</div>
+
+					  {/* <div className='bg-modal'>
+							<div className='modal-content '>
+								<img className='journal-img' src='https://truelifediva.files.wordpress.com/2014/02/journal-cartoon.jpg' alt='journal book'></img>
+
+								<form>
+									<input type='text' placeholder='Journal Title'></input>
+									<input type='text' placeholder='Add Journal'></input>
+								</form>
+							</div>
+					  </div> */}
 
 			<div className="JE-body">
 					{this.props.journals.map(journal =>

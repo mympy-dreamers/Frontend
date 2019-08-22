@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './journaList.css'
+// import '../dreamPage/InputModal'
 
 class JournalList extends Component {
   state = {
