@@ -103,7 +103,7 @@ class DreamInfo extends React.Component {
                             <Input className="input-style" onChange={this.handleChanges} name="donation_goal" id="donation_goal" placeholder="Enter Donation goal here" />
                         </FormGroup>
                         <FormGroup>
-                            <Label className="dreamlable" className="dreamlable" for="exampleText">Give us a one scentence summary of your dream</Label>
+                            <Label className="dreamlable" for="exampleText">Give us a one scentence summary of your dream</Label>
                             <Input className="input-style" onChange={this.handleChanges} type="textarea" name="dream_short_description" id="dream_short_description" />
                         </FormGroup>
                         <FormGroup>
