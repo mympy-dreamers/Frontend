@@ -1,8 +1,5 @@
 import React from 'react';
-
 import bigImage from '../../img/Galaxyvr/galaxyvr2x.png';
-import { Link } from 'react-router-dom';
-
 
 const Carousel = (props) => {
     console.log(props)
