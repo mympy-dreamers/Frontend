@@ -1,6 +1,8 @@
 import React from 'react';
 import {Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import './journaList.css'
+import './journaList.css';
+import { connect } from "react-redux";
+import { addJournal } from '../../actions';
 
 const bodyStyle = {
   fontSize: "25px",
@@ -32,7 +34,7 @@ class FormModal extends React.Component {
 
   handleChanges = e => {
     e.preventDefault()
-    console.log(this.journal)
+    console.log(this.state.journal)
     this.setState({
         ...this.state,
         journal: {
@@ -44,12 +46,23 @@ class FormModal extends React.Component {
 }
 
 handleSubmit = e => {
-
   // e.preventDefault()
   this.setState({
       modal: true
   })
 
+}
+
+handleFinalSubmit = e => {
+
+  const newJournal = { ...this.state.journal,}
+  // e.preventDefault()
+  console.log('submittedJournal: ', newJournal);
+  this.props.addJournal(newJournal)
+  this.setState({ showModal: false }, () => {
+      this.props.history.push('/')
+
+  })
 }
 
 
@@ -65,7 +78,7 @@ handleSubmit = e => {
                   <input name='title' id='title' onChange={this.handleChanges}></input>
                   <h1>Share Your Thoughts</h1>
                   <input name='body' id='body' onChange={this.handleChanges}></input> 
-                  <button>Submit</button>
+                  <button onClick={this.handleFinalSubmit}>Submit</button>
            </form>
           </div>
            
@@ -79,7 +92,14 @@ handleSubmit = e => {
   }
 }
 
-export default FormModal;
+const mapStateToProps = ({ users, auth }) => {
+    return {
+        authZeroUser: users.authZeroUser,
+        user: auth.user
+    }
+}
+
+export default connect(mapStateToProps, { addJournal })(FormModal);
 
 
 
