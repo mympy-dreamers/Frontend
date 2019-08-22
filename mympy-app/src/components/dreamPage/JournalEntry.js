@@ -82,12 +82,10 @@ render() {
 						posted_on={journal.created_at}
 						edited_on={journal.updated_at}
 						currentUser={this.props.user}
+						user_id={journal.user_id}
 						deleteJournal={this.props.deleteJournal} />
 					)}
 				</Accordion>
-				{/* <div className="coming-soon">
-					<img src={comingSoon} alt='Coming Soon' />
-				</div> */}
 			</div>
 		</div>
 		</JournalEntryDiv>
