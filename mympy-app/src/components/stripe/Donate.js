@@ -83,7 +83,6 @@ class Donate extends React.Component {
     }
 
     donationHandler = e => {
-<<<<<<< HEAD
         let classes = e.target.className;
         e.target.className = classes.includes('active') ? classes.replace(' active', '') : classes+' active';
         this.setState({
@@ -94,12 +93,6 @@ class Donate extends React.Component {
                 Number(e.target.value):
                 Number(-e.target.value)
             ),
-=======
-        console.log(e.target.value);
-        this.setState({
-            ...this.state,
-            donationAmount: e.target.value,
-            donationTotal: Number(this.state.donationTotal) + Number(e.target.value),
         })
     }
 
@@ -108,13 +101,12 @@ class Donate extends React.Component {
             ...this.state,
             mympyDonation: e.target.value,
             donationTotal: Number(this.state.donationTotal) + Number(e.target.value),
->>>>>>> 93275426b5aa601ee6206fa319b131c6ff817c3d
+
         })
     }
 
     render(){
         return(
-<<<<<<< HEAD
             <StyledDonate>
                 <h1 className='title'>Donate to</h1>
                 <h1 className='title name'>Project {this.props.given_name +' '+ this.props.family_name}</h1>
@@ -130,23 +122,6 @@ class Donate extends React.Component {
                 </div>
                 <div>
                     <div><img src=''/>{this.state.mympyDonation}</div>
-=======
-            <div>
-                <h1>Donate to</h1>
-                <h1>Project {this.props.given_name +' '+ this.props.family_name}</h1>
-                <div className='donation-amounts'>
-                    <button onClick={this.donationHandler} value={10}>$10</button> {/* value is in cents */}
-                    <button onClick={this.donationHandler} value={15}>$15</button>
-                    <button onClick={this.donationHandler} value={20}>$20</button>
-                    <button onClick={this.donationHandler} value={25}>$25</button>
-                </div>
-                <div className='custom-amount'>
-                    <p>Custom Amount</p>
-                    <input onChange={this.customHandler} value={this.state.mympyDonation} />
-                </div>
-                <div>
-                    <div><img src='#' alt='' />{}</div>
->>>>>>> 93275426b5aa601ee6206fa319b131c6ff817c3d
                     <div>Help with Mympy's cost</div>
                 </div>
                 <button>total {this.state.donationTotal}</button>
