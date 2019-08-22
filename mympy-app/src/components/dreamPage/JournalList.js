@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './journaList.css'
 
 class JournalList extends Component {
   state = {
@@ -8,10 +9,10 @@ class JournalList extends Component {
   render() {
     return (
       <div className="journal-element">
-        <h3>Posted on:</h3> {this.props.posted_on}
-        <h3>Edited on:</h3> {this.props.edited_on}
-        <h3>Title:</h3> {this.props.title}
-        <h3>Body:</h3> {this.props.body}
+        {/* <h3>Posted on:</h3> {this.props.posted_on}
+        <h3>Edited on:</h3> {this.props.edited_on} */}
+        <h1>{this.props.body}</h1> 
+        <h2>{this.props.posted_on}</h2>
         <button 
           className="delete-button" 
           onClick={()=>
