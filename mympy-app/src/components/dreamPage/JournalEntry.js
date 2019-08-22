@@ -5,7 +5,7 @@ import JournalList from './JournalList';
 import comingSoon from '../../img/coming-soon.png';
 import { fetchDreamJournals, deleteJournal } from '../../actions'
 import './journaList.css'
-import InputModal from "../dreamPage/JournalForm";
+import FormModal from "../dreamPage/JournalForm";
 
 
 
@@ -78,7 +78,7 @@ render() {
       				<div className='journal-post'>
         				<h1>Post</h1>
         				<button onClick={this.handleSubmit}>ADD NEW POST</button>
-						{this.state.showModal && <InputModal/>}
+						{this.state.showModal && <FormModal/>}
       				</div>
 
 					  {/* <div className='bg-modal'>
