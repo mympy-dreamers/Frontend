@@ -8,19 +8,14 @@ const Us = () => {
             <div className="left">
                 <div className="inner-left">
                     <h1>What Do We Do?</h1>
-                    <p>Drinking vinegar next level affogato,
-                    iPhone yuccie pabst wolf 3 wolf moon dreamcatcher
-                    normcore raclette godard PBR&B. Hoodie tattooed
-                    copper mug intelligentsia sustainable. Pork belly
-                    quinoa vice subway tile, 8-bit four dollar toast
-                    neutra blue bottle gastropub. Typewriter chia
-                    heirloom truffaut cliche hella celiac health goth
-                    synth roof party disrupt hexagon gluten-free.</p><br />
+                    <p>
+                        Mympy is a program that lowers the entry barriers to incoming future VR developers.
+                        Our mission is to empower underrepresented communities by providing emerging technologies education, access, carrer development, and entrepreneurship skills.
+                        </p>
 
-                    <p className="secondLeft">Viral bitters portland cronut chartreuse vinyl palo
-                    santo taxidermy hoodie vice retro kickstarter aesthetic
-                    messenger bag dreamcatcher. Flannel gastropub gluten-free,
-                    blog blue bottle wayfarers lomo cold-pressed.
+                    <p className="secondLeft">
+                        Combined with a social impact marketplace called Mympy Dream.
+                        Mympy Dreams helps many talented entrepreneurs, artists, and dreamers who want to create new projects in the VR space, but lack access to capital and equipment to make their dreams a reality.
                     </p>
                 </div>
             </div>
@@ -28,12 +23,9 @@ const Us = () => {
                 <div className="imgDiv"><img src="https://source.unsplash.com/random/600x400" alt="" /></div>
                 <div className="inner-right">
                     <h1>How Do We Do It?</h1>
-                    <p>Drinking vinegar next level affogato,
-                    iPhone yuccie pabst wolf 3 wolf moon dreamcatcher
-                    normcore raclette godard PBR&B. Hoodie tattooed
-                    copper mug intelligentsia sustainable. Pork belly
-                    quinoa vice subway tile, 8-bit four dollar toast
-                    neutra blue bottle gastropub. <br /><br />
+                    <p>
+                        Mympy dreams connect investors that are excited and optimistic about VR and want to support those projects and dreamers through a crowd funding platform.
+                        <br /><br />
                     </p>
 
                 </div>
