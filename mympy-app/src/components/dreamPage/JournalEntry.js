@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import JournalList from './JournalList';
 import comingSoon from '../../img/coming-soon.png';
 import { fetchDreamJournals, deleteJournal } from '../../actions'
+import './journaList.css'
 
 const JournalEntryDiv = styled.div`
 	.JE-title {
@@ -60,7 +61,14 @@ class JournalEntry extends Component {
 render() {
 	return (
 		<JournalEntryDiv>
-			<h2 className="JE-title">Journal Entries</h2>
+			<h2 className="JE-title">Journal Entry</h2>
+
+		<div className='journal-page'>
+      				<div className='journal-post'>
+        				<h1>Post</h1>
+        				<button>ADD NEW POST</button>
+      				</div>
+
 			<div className="JE-body">
 					{this.props.journals.map(journal =>
 						<JournalList
@@ -78,6 +86,7 @@ render() {
 					<img src={comingSoon} alt='Coming Soon' />
 				</div> */}
 			</div>
+		</div>
 		</JournalEntryDiv>
 		)
 	}
