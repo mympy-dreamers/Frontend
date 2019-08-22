@@ -98,8 +98,6 @@ const Card = ({ dream }) => {
   );
 }
 
-const mapStateToProps = ({ }) => ({
 
-});
 
-export default connect(mapStateToProps)(Card)
+export default connect({})(Card)
