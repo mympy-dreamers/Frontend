@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import JournalList from './JournalList';
 import comingSoon from '../../img/coming-soon.png';
 import { fetchDreamJournals, deleteJournal } from '../../actions'
-import './journaList.css'
+import './journaList.css';
+import Accordion from 'react-bootstrap/Accordion';
 
 const JournalEntryDiv = styled.div`
 	.JE-title {
@@ -61,15 +62,16 @@ class JournalEntry extends Component {
 render() {
 	return (
 		<JournalEntryDiv>
-			<h2 className="JE-title">Journal Entry</h2>
+			<h2 className="JE-title">Journal Entries</h2>
 
 		<div className='journal-page'>
-      				<div className='journal-post'>
-        				<h1>Post</h1>
-        				<button>ADD NEW POST</button>
-      				</div>
+			<div className='journal-post'>
+				<h1>Post</h1>
+				<button>ADD NEW POST</button>
+			</div>
 
 			<div className="JE-body">
+				<Accordion>
 					{this.props.journals.map(journal =>
 						<JournalList
 						dream={this.props.dream}
@@ -82,6 +84,7 @@ render() {
 						currentUser={this.props.user}
 						deleteJournal={this.props.deleteJournal} />
 					)}
+				</Accordion>
 				{/* <div className="coming-soon">
 					<img src={comingSoon} alt='Coming Soon' />
 				</div> */}
