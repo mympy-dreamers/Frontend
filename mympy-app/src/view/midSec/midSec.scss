@@ -1,11 +1,15 @@
 .mid-main {
-    // background-color: black;
-    // height: 100vh;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-content: center;
-    // align-items: flex-end;
+    height: 1100px;
+    background-image: url('img/midSwirl.png'), url('img/midSecImg.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-end;
 
     .top-mid {
         width: 100%;
