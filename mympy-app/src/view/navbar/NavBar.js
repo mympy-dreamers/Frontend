@@ -2,13 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 import Searchbar from '../../components/search_bar/DreamSearchbar'
-import TokenCall from '../../auth/ExternalApi.js';
 
 import logo from '../../img/MIMPYlogo.svg';
 
 
 const NavBar = (props) => {
-    const { isAuthenticated, loginWithRedirect, loading, getTokenSilently } = props.auth;
+    const { isAuthenticated, loginWithRedirect } = props.auth;
     return (
         <div className="main">
             <div className="nav-wrap">
@@ -28,9 +27,6 @@ const NavBar = (props) => {
                         <li className="item">
                             <Link to="/market">Search For Dreams</Link>
                         </li>
-                        {/* <li className="item">
-                            <TokenCall />
-                        </li> */}
 
                         <li className="item">
                             {!isAuthenticated && (
