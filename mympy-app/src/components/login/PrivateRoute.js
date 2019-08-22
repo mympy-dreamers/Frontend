@@ -15,7 +15,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     } else {
       setlogin(false)
     }
-  }, [])
+  }, [isAuthenticated])
 
   return (
     <Route
