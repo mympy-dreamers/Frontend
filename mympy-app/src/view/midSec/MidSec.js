@@ -1,27 +1,11 @@
 import React from 'react';
-
 // import midSwirl from '../../img/midSwirl.png';
 import meteor from '../../img/meteor.png';
 import female from '../../img/female.svg';
-import midSecImg from '../../img/midSecImg.jpg';
-
-const midMain = {
-    height: "900px",
-    backgroundImage: `url(${midSecImg})`,
-    backgroundAttachment: "fixed",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignContent: "center",
-    alignItems: "flex-end",
-}
 
 const MidSec = () => {
     return (
-        <div className="mid-main" style={midMain}>
+        <div className="mid-main" >
             <div className="top-mid">
                 <div className="div-wrap">
                     <div className="top-div">
