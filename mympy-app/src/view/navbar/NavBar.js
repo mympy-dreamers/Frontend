@@ -7,7 +7,7 @@ import logo from '../../img/MIMPYlogo.svg';
 
 
 const NavBar = (props) => {
-    const { isAuthenticated, loginWithRedirect, loading } = props.auth;
+    const { isAuthenticated, loginWithRedirect } = props.auth;
     return (
         <div className="main">
             <div className="nav-wrap">
@@ -29,7 +29,6 @@ const NavBar = (props) => {
                         </li>
 
                         <li className="item">
-                            {loading && <p>loading</p>}
                             {!isAuthenticated && (
                                 <button
                                     onClick={(e) => {
@@ -43,6 +42,7 @@ const NavBar = (props) => {
 
                             {isAuthenticated && (props.onAccountPage ? (<button onClick={(e) => {
                                 e.preventDefault();
+                                localStorage.removeItem("curr_user");
                                 const envUrl = process.env.REACT_APP_FE_URL || 'http://localhost:3000';
                                 const logoutUrl = envUrl.split('').map(char => {
                                     if (char === '/') return '%2F';
