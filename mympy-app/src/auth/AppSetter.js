@@ -6,6 +6,7 @@ import { setAuth, setUser, setLog, zeroLogin, fetchUsers } from '../actions/inde
 
 const AppSetter = (props) => {
     const auth = useAuth0();
+    //checks if local storage works
     let { isAuthenticated, loginWithRedirect, logout, loading, user, getTokenSilently } = localStorage.getItem('curr_user') ? JSON.parse(localStorage.getItem('curr_user')) : auth
 
     if (user && user.sub !== props.user.sub) {
