@@ -4,7 +4,7 @@ import cx from '../../img/janetwide.png';
 
 const Supporter = () => {
     return (
-        <div className="support-main" id="support-main">
+        <div className="support-main contain" id="support-main">
             <div className="top">
                 <div>
                     <h1>Be a Supporter</h1>
