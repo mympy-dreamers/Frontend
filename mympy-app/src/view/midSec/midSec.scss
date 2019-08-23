@@ -1,23 +1,44 @@
 .mid-main {
     height: 1100px;
-    background-image: url('img/midSwirl.png'), url('img/midSecImg.jpg');
+    background-image:  url('img/midSecImg.jpg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-content: center;
     align-items: flex-end;
+    @include small-desktop {
+        height: 1000px;
+    }
+
+    @include div-width {
+        height: 700px;
+    }
+
+    @include sevenPxBreak {
+        height: 500px;
+    }
+    .midSwirl{
+        position: absolute;
+        left: 31%;
+        margin-left:-258px;
+        width: 1200px;
+        @include largeBreak{
+           width: 65%; 
+        }
+
+    }
 
     .top-mid {
         width: 100%;
         display: flex;
         justify-content: center;
-        align-content: center;
-        align-items: flex-end;
-
+        align-content: flex-end;
+        align-items: flex-start;
+        position: relative;
         @include div-width {
             align-items: center;
             padding: 5%;
@@ -25,10 +46,10 @@
 
 
         .div-wrap {
-            height: 700px;
-            width: 1000px;
+            height: 630px;
+            width: 730px;
             background-color: white;
-            padding: 5%;
+            padding:  30px 3% 3%;
 
             @include small-desktop {
                 height: 600px;
@@ -45,7 +66,7 @@
 
             .meteor {
                 position: relative;
-                top: 10%;
+                top: 20%;
 
                 @include small-desktop {
                     display: flex;
@@ -59,12 +80,12 @@
 
                 .meteor-img {
                     position: relative;
-                    left: 80%;
+                    left: 85%;
                     opacity: 1;
-                    width: 23%;
+                    width: 28%;
 
                     @include small-desktop {
-                        left: 10%;
+                        left: 6%;
                     }
                 }
             }
@@ -76,7 +97,7 @@
                 
                 h1 {
                     margin-top: 2%;
-                    font-size: 3.8rem;
+                    font-size: 2.5rem;
                     font-weight: 900;
                     font-family: $large-font;
                     color: $nav-font-color;
@@ -100,6 +121,8 @@
                     flex-direction: column;
                     align-items: center;
                 }
+
+                
                 
                 .dreamer {
                     @include mid-btn($dreamer-btn-color, margin-right);
@@ -108,7 +131,6 @@
                 .supporter {
                     @include mid-btn($support-btn-color, margin-left);
                 }
-
             }
 
         }
@@ -116,30 +138,34 @@
     }
 
     .empty {
-        height: 15%;
+        height: 108px;
         width: 100%;
-
-        @include small-desktop {
-            display: none;
-        }
 
         img {
             position: relative;
             bottom: 23.8rem;
             left: 36%;
-            width: 28%;
-
-            @include largeBreak {
-                bottom: 22.5rem;
+            width: 480px;
+            @include small-desktop {
+            display: none;
             }
+            // @include largeBreak {
+            //     bottom: 22.5rem;
+            // }
 
-            @include mediumBreak {
-                bottom: 20.7rem;
-            }
+            // @include mediumBreak {
+            //     bottom: 20.7rem;
+            // }
 
-            @include lastBreak {
-                bottom: 18.9rem;
-            }
+            // @include lastBreak {
+            //     bottom: 18.9rem;
+            // }
         }
     }
+    // .empty {
+    //     height: 100px;
+    //     width: 100%;
+
+       
+    // }
 }
