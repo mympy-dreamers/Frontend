@@ -1,8 +1,9 @@
 import React from 'react';
 import { Elements } from 'react-stripe-elements';
-
+import { connect } from 'react-redux';
 import CheckoutForm from './CheckoutForm';
 import styled from 'styled-components';
+import { userPayFetch, dreamPayFetch } from '../../actions/stripe.js';
 
 import mini_logo from '../../img/mympy-logo-mini.PNG'
 
@@ -119,7 +120,8 @@ class Donate extends React.Component {
     }
 
     componentDidMount() {
-        
+        this.props.userPayFetch(this.props.user_id);
+        this.props.dreamPayFetch(this.props.currDream_id);
     }
 
     donationHandler = e => {
@@ -145,6 +147,7 @@ class Donate extends React.Component {
     }
 
     render(){
+        console.log(this.props.authUser, this.props.user);
         return(
             <StyledDonate>
                 <h1 className='title'>Donate to</h1>
@@ -176,11 +179,12 @@ class Donate extends React.Component {
     }
 }
 
-const mapStateToProps = ({ user, dreams }) => {
+const mapStateToProps = ({ users, dreams, auth }) => {
   return {
-    user: user.authZeroUser
-    currDream: dreams.currDream,
+    authUser: users.authZeroUser,
+    currDream_id: dreams.currDream.id,
+    user_id: auth.user.id
   }
 }
 
-export default Donate;
+export default connect(mapStateToProps, { userPayFetch, dreamPayFetch })(Donate);
