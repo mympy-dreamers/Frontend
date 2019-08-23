@@ -4,7 +4,7 @@ import React from 'react';
 
 const Us = () => {
     return (
-        <div className="us-main">
+        <div className="us-main contain">
             <div className="left">
                 <div className="inner-left">
                     <h1>What Do We Do?</h1>

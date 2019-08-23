@@ -1,19 +1,19 @@
 .us-main {
-    @include main-margin;
+    // width: auto;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
+    // @include main-margin;
+    // @include small-desktop {
+    //     @include small-desktop-margin;
+    // }
 
-    @include small-desktop {
-        @include small-desktop-margin;
-    }
-
-    @include mid-break {
-        width: 100%;
-    }
+    // @include mid-break {
+    // }
 
     .left {
-        margin-bottom: 5%;
+        margin-bottom: 80px;
 
         .inner-left {
             display: flex;
@@ -32,10 +32,13 @@
                 font-size: 2.4rem;
                 font-family: $large-font;
                 color: $large-font-color;
+                margin-bottom: 50px;
                 margin-left: 2%;
 
                 @include mid-break {
-                    align-self: center;
+                    align-self: left;
+                    margin-left: 10%;
+
                 }
             }
 
@@ -44,13 +47,17 @@
                 text-align: left;
                 padding: 1% 1% 0;
                 font-size: 1.6rem;
+                line-height: 2.2rem;
                 width: 100%;
                 font-family: $body-font;
                 color: $new-dream-color;
                 
                 @include mid-break {
-                    width: 60%;
+                    width: 80%;
                 }
+            }
+            .secondLeft{
+                padding-top:5px;
             }
         }
     }
@@ -59,10 +66,10 @@
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        margin-bottom: 5%;
+        margin-bottom: 130px;
 
         .imgDiv {
-            width: 30%;
+            width: 400px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -79,36 +86,46 @@
         }
 
         .inner-right {
-            width: 40%;
+            width: 50%;
+            margin: 10px 0 0 10px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
 
             @include mid-break {
                 width: 100%;
-                align-self: center;
+                align-self: flex-end;
             }
 
         }
 
         h1 {
             font-size: 2.4rem;
+            align-self: flex-start;
             font-family: $large-font;
-            color: $large-font-color
+            color: $large-font-color;
+                margin-bottom: 50px;
+                margin-left: 2%;
+
+                @include mid-break {
+                    align-self: left;
+                    margin-left: 10%;
+
+                }
 
         }
 
         p {
-            text-align: center;
             padding: 1%;
             font-size: 1.6rem;
-            width: 100%;
+                line-height: 2.2rem;
+                width: 100%;
             font-family: $body-font;
             color: $new-dream-color;
 
             @include mid-break {
-                width: 60%;
+                width: 80%;
             }
         }
     }
