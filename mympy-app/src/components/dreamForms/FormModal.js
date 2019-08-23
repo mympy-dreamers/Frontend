@@ -29,7 +29,7 @@ class FormModal extends React.Component {
         <Modal isOpen={this.state.modal}>
         <ModalHeader style={ headStyle } >Congratulation!!!</ModalHeader>
           <ModalBody style={ bodyStyle }>
-            Your dream was sucessfully created!
+          { this.props.body }
           </ModalBody>
           <ModalFooter>
           </ModalFooter>

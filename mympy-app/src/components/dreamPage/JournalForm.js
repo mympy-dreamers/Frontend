@@ -2,7 +2,7 @@ import React from 'react';
 import {Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import './journaList.css';
 import { connect } from "react-redux";
-import { addJournal } from '../../actions';
+import { addJournal } from '../../actions/journals';
 
 const bodyStyle = {
   fontSize: "25px",
@@ -28,10 +28,20 @@ class FormModal extends React.Component {
         title: '',
         body: '',
         user_id: null,
-      }
+        dream_id: null
+      },
+      showModal: false
     };
   }
 
+  componentDidMount = () => {
+    this.setState({
+      journal: {
+        user_id: this.props.user,
+        dream_id: this.props.dreams
+      }
+    })
+  }
   handleChanges = e => {
     e.preventDefault()
     console.log(this.state.journal)
@@ -41,8 +51,10 @@ class FormModal extends React.Component {
             ...this.state.journal,
             [e.target.name]: e.target.value
         },
+        showModal: true
 
     })
+  
 }
 
 handleSubmit = e => {
@@ -59,10 +71,6 @@ handleFinalSubmit = e => {
   // e.preventDefault()
   console.log('submittedJournal: ', newJournal);
   this.props.addJournal(newJournal)
-  this.setState({ showModal: false }, () => {
-      this.props.history.push('/')
-
-  })
 }
 
 
@@ -78,10 +86,10 @@ handleFinalSubmit = e => {
                   <input name='title' id='title' onChange={this.handleChanges}></input>
                   <h1>Share Your Thoughts</h1>
                   <input name='body' id='body' onChange={this.handleChanges}></input> 
-                  <button onClick={this.handleFinalSubmit}>Submit</button>
+                  <button  onClick={this.handleFinalSubmit}>Submit</button>
            </form>
+
           </div>
-           
 
           </ModalBody>
           <ModalFooter>
@@ -92,10 +100,11 @@ handleFinalSubmit = e => {
   }
 }
 
-const mapStateToProps = ({ users, auth }) => {
+const mapStateToProps = ({ users, auth, dreams }) => {
     return {
         authZeroUser: users.authZeroUser,
-        user: auth.user
+        user: dreams.currDream.user_id,
+        dreams: dreams.currDream.id
     }
 }
 
