@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import JournalList from './JournalList';
 import comingSoon from '../../img/coming-soon.png';
-import { fetchDreamJournals, deleteJournal } from '../../actions'
+import { fetchDreamJournals, deleteJournal, updateJournal } from '../../actions'
 import './journaList.css'
 import FormModal from "../dreamPage/JournalForm";
 
@@ -103,6 +103,7 @@ render() {
 						posted_on={journal.created_at}
 						edited_on={journal.updated_at}
 						currentUser={this.props.user}
+						updateJournal={this.props.updateJournal}
 						deleteJournal={this.props.deleteJournal} />
 					)}
 				{/* <div className="coming-soon">
@@ -128,7 +129,8 @@ function mapStateToProps(state) {
 	mapStateToProps,
 	{	
 		fetchDreamJournals,
-		deleteJournal
+		deleteJournal,
+		updateJournal,
 	}
   )(JournalEntry);
   

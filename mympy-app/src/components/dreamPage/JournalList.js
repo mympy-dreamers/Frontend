@@ -7,9 +7,19 @@ import { addJournal } from '../../actions';
 
 
 
+
 class JournalList extends Component {
   state = {
+    isUpdating: false
   }
+
+
+  toggleUpdate = () => {
+    this.setState({ isUpdating: !this.state.isUpdating })
+}
+
+ 
+  
 
   render() {
     return (
@@ -19,15 +29,20 @@ class JournalList extends Component {
     //     <button>ADD NEW POST</button>
     //   </div>
       <div className="journal-element">
+      
         {/* <h3>Posted on:</h3> {this.props.posted_on}
         <h3>Edited on:</h3> {this.props.edited_on} */}
-        <h1>{this.props.body}</h1> 
+        <div>
+        <h1>{this.props.title}</h1>
         <p>{this.props.posted_on}</p>
-        <button 
-          className="delete-button" 
+        </div>
+        <div className='journalButtons'>
+        <a className="edit-button"><i id='edit-icon' class="far fa-edit"></i></a>
+        <a id='delete-icon' className="delete-button" 
           onClick={()=>
           window.confirm("Are you sure you wish to delete this item?") &&
-          this.props.deleteJournal(this.props.id)}>Delete</button>
+          this.props.deleteJournal(this.props.id)}><i class="far fa-minus-square"></i></a>
+        </div>
       </div>
     // </div>
     );
