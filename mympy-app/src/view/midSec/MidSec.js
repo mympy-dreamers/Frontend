@@ -1,11 +1,13 @@
 import React from 'react';
-// import midSwirl from '../../img/midSwirl.png';
+import midSwirl from '../../img/midSwirl.png';
 import meteor from '../../img/meteor.png';
 import female from '../../img/female.svg';
 
 const MidSec = () => {
     return (
         <div className="mid-main" >
+            <div className='empty2'></div>
+            <img className='midSwirl' src={midSwirl} alt="midSwirl" />
             <div className="top-mid">
                 <div className="div-wrap">
                     <div className="top-div">

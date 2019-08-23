@@ -9,12 +9,11 @@ const Supporter = () => {
                 <div>
                     <h1>Be a Supporter</h1>
                 </div>
-                <p>Poster can be one of the effective marketing and advertising materials.
-                    It is also a great tool to use when you want to present your services to a
-                    new league or as a point of sale display on picture day. The poster must show
-                    your products that are available, along with your company name and contact information.
-                    If you having trouble about creating a good 4 color poster print, a 4 color printing
-                    company that has 4 color poster printing service may be able to help you made your poster.
+                <p>
+                    As a supporter you don't only contribute to someones project and or dream but you are supporting their future. At Mympy we pride ourselfs in being transparent and that you have a peace of mind giving and supporting.
+                </p>
+                <p>
+                    Start supporting now, search through the website and find that perfect project to donate to.
                 </p>
             </div>
             <div className="yellow-div">
@@ -23,10 +22,10 @@ const Supporter = () => {
                         <img src={cx} alt="Janet Wide" />
                     </div>
                     <div className="info">
-                        <h1>Full Name</h1>
-                        <p>Poster can be one of the effective marketing and advertising materials.
-                        It is also a great tool to use when you want to present your services to a
-                        new league or as a point of sale display on picture day.</p>
+                        <h1>Jonathon Anklam</h1>
+                        <p>
+                            22 yr old performer in Caracas, Venezuela. Has a dream to be the first VR concert venue owner. People can come and see me play live without leacing their homes.
+                        </p>
                     </div>
                 </div>
             </div>
