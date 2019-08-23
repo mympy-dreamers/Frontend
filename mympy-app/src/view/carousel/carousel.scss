@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-between;
     height: 770px;
+    width: 80%;
     @include main-margin;
 
     @include small-desktop {
@@ -53,7 +54,7 @@
         align-items: flex-start;
         position: absolute;
         z-index: 1;
-        margin: 1em 0 0 18em;
+        // margin: 1em 0 0 18em;
 
         @include small-desktop {
             margin: 0;
@@ -146,37 +147,40 @@
                 width: 25%;
                 font-family: $body-font;
                 color: $body-font-color;
-                font-size: 1.2rem;
+                font-size: 1.3rem;
                 
-                line-height: 2rem;
+                line-height: 1.85rem;
                 text-align: left;
 
                 @include small-desktop {
-                    font-size: 2rem; 
+                    font-size: 1.2rem; 
                     margin-top: 1%;
-                    width: 40%;
-                    line-height: 2.5rem;
+                    width: 30%;
+                    // line-height: 2.5rem;
                 }
 
                 @include btn-break {
                     margin-top: 0;
-                    width: 60%;
+                    width: 50%;
                 }
 
                 @include tablet-landscape {
-                    font-size: 1.7rem;
+                    font-size: 1.2rem;
+                    width: 65%;
+                    text-align: center;
                 }
 
                 @include tablet-portrait {
                     width: 100%;
                     padding: 3%;
+                    
                 }
 
                 @include mobile {
                     width: 100%;
-                    line-height: inherit;
+                    // line-height: inherit;
                     margin: 0;
-                    font-size: 1.6rem;
+                    font-size: 1.2rem;
                 }
 
             } // end of p
@@ -190,7 +194,7 @@
                 width: 35%;
 
                 @include small-desktop {
-                    margin: 0;
+                    // margin: 0;
                 }
 
                 @include btn-break {
@@ -209,8 +213,7 @@
                 }
 
                 button {
-                    height: 2em;
-
+                    height: 100%;
                     @include small-desktop {
                         height: inherit;
                     }
