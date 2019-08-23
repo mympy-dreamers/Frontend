@@ -24,22 +24,24 @@
     // align-self: $self-align;
     border: none;
     font-family: $large-font;
-    font-size: 1.5rem;
+    font-size: 1.158rem;
     background-color: $bg-color;
     color: $nav-font-color;
-    padding: 15px;
+    padding: 19px 15px 15px;
     border-radius: 25px;
     #{$margin}: 3%;
     margin-top: 4%;
-    width: 13em;
+    width: 18em;
 
     @include small-desktop {
-        font-size: 1.3rem;
-        margin-top: 2%;
+        // font-size: 1.158rem;
+        // margin-top: 4%;
+        width: 40em;
     }
 
     @include btn-break {
         #{$margin}: 5%;
+        width: 13em;
     }
 
     @include btn-font {
@@ -89,12 +91,12 @@
 // gives each page the correct margin to be centered
 
 @mixin main-margin {
-    width: 1440px;
+    width: 55%;
     margin: 0 auto;
 }
 
 @mixin small-desktop-margin {
-    width: 1100px;
+    width: 80%;
     margin: 0 auto;
 }
 
