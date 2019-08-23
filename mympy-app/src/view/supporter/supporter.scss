@@ -1,10 +1,12 @@
-.support-main {
+.app-wrap .support-main {
     @include main-margin;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
 
     @include small-desktop {
         @include small-desktop-margin;
+        margin-top: 75px;
     }
 
     @include btn-break {
@@ -31,12 +33,12 @@
             h1 {
                 align-self: flex-start;
                 padding: 2%;
-                width: 40%;
+                width: 65%;
                 font-family: $large-font;
                 font-size: 6rem;
                 font-weight: 900;
                 color: $new-dream-color;
-
+                margin: 0;
                 @include mobile {
                     width: 100%;
                     font-size: 3rem;
@@ -52,7 +54,7 @@
             font-family: $body-font;
             color: $new-dream-color;
             font-size: 1.6rem;
-            line-height: 3.3rem;
+            line-height: 2.5rem;
 
             @include tablet-landscape {
                 width: 100%;
@@ -66,13 +68,15 @@
 
     .yellow-div {
         align-self: center;
-        width: 65%;
+        width: 100%;
         background-color: $support-btn-color;
+        border-radius: 10px;
         display: flex;
         justify-content: center;
         align-content: center;
-        padding: 2%;
+        padding: 4%;
         margin: 3%;
+        margin-bottom: 80px;
 
         @include small-desktop {
             margin: 2%;
@@ -85,30 +89,34 @@
         }
 
         .white-div {
+            border-radius: 10px;
             width: 97%;
             background-color: white;
             display: flex;
+            padding: 30px;
             @include box-shadow;
 
             @include sevenPxBreak {
                 flex-direction: column;
                 align-items: center;
                 width: 80%;
-                padding: 5%;
+                // padding: 5%;
             }
 
             .img {
-                width: 49.5%;
+                width: 35.5%;
+                margin-right: 4%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
 
                 @include sevenPxBreak {
                     width: 100%;
+                    // height: auto;
                 }
 
                 img {
-                    
+                    width: 100%;
 
                     @include mobile {
                         width: 100%;
@@ -119,7 +127,7 @@
             }
 
             .info {
-                width: 49.5%;
+                width: 59.5%;
 
                 @include sevenPxBreak {
                     width: 100%;
@@ -135,6 +143,7 @@
 
                     @include mobile {
                         font-size: 1.8rem;
+                        margin-top:30px;
 
                     }
                 }
@@ -142,7 +151,7 @@
                 p {
                     font-family: $body-font;
                     font-size: 1.7rem;
-                    line-height: 3.3rem;
+                    line-height: 2.2rem;
                     color: $new-dream-color; 
                     padding: 2%;
 

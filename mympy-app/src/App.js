@@ -29,13 +29,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div className="app-wrap">
 
-          <Route path="/" render={(props) => <NavBar
-            {...props}
-            show={this.props.location.pathname.includes('market')}
-            onAccountPage={this.props.location.pathname.includes('dashboard')}
-          />} />
+
+        <Route path="/" render={(props) => <NavBar
+          {...props}
+          show={this.props.location.pathname.includes('market')}
+          onAccountPage={this.props.location.pathname.includes('dashboard')}
+        />} />
+        <div className="app-wrap">
           <Route exact path="/" render={(props) => <Home {...props} />} />
           <Route path="/login" render={(props) => (
             <Login
