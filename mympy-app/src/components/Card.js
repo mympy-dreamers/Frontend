@@ -100,4 +100,4 @@ const Card = ({ dream }) => {
 
 
 
-export default connect({})(Card)
+export default Card;
