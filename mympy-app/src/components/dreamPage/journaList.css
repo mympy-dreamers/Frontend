@@ -20,3 +20,8 @@
     margin-top: 13px;
     margin-left: 50px;
 }
+
+div.card-header > div > button.delete-button{
+    height: 0.5rem;
+    width: 0.5rem;
+}
