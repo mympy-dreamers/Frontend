@@ -32,9 +32,15 @@ class JournalList extends Component {
       
         {/* <h3>Posted on:</h3> {this.props.posted_on}
         <h3>Edited on:</h3> {this.props.edited_on} */}
-        <div>
-        <h1>{this.props.title}</h1>
-        <p>{this.props.posted_on}</p>
+        <div className='journalTitle'>
+
+          <div className='titleStyle'>
+          <h1>{this.props.title}</h1>
+          </div>
+          <div className='dateStyle'>
+          <p>{this.props.posted_on}</p>
+          </div>
+            
         </div>
         <div className='journalButtons'>
         <a className="edit-button"><i id='edit-icon' class="far fa-edit"></i></a>

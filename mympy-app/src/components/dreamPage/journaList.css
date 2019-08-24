@@ -1,6 +1,6 @@
 /* post section */
 
-.journal-post {
+/* .journal-post {
     display: flex;
     justify-content: space-between;
     background-color: white;
@@ -19,11 +19,12 @@
 }
 
 .journal-post h1 {
-    margin-top: 13px;
+    margin-top: 8px;
     margin-left: 50px;
-    font-size: 17px;
+    font-size: 22px;
     font-weight: bolder;
-}
+  
+} */
 
 /* form section */
 
@@ -39,26 +40,31 @@
     border: 1px solid #DBD82C;
 }
 
-.journal-element h1 {
+.journalTitle h1 {
     font-size: 20px;
     font-weight: bolder;
-    margin-top: 25px;
+    font-family: 'Cabin Sketch', cursive;
     margin-left: 20px;
+}
+
+.dateStyle p {
+    text-align: start;
+    font-size: 18px;
 }
 
 .journal-element {
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    margin-bottom: 30px;
 }
 
 .journalButtons {
-    padding-top: 9px;
-    padding-bottom: 10px;
+    padding-bottom: 24px;
     width: 78px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 33px;
+    margin-top: 14px;
     margin-right: 5px;
 }
 
@@ -75,11 +81,17 @@
 }
 
 #edit-icon {
-    color: #B9DB58;
+    /* color: #B7B7B6; */
+    text-shadow: 1px 1px #DBD82C; 
 }
 
 #delete-icon {
     color: #E2002F;
+    text-shadow: 1px 1px #DBD82C;
+}
+
+p {
+    margin-left: 11px;
 }
 
 
