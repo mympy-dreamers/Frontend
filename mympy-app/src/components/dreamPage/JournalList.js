@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import { Button, Card } from 'react-bootstrap';
 class JournalList extends Component {
+  state = {
+  }
+
   render() {
     return (
       <Card>
