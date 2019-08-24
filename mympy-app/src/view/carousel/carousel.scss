@@ -3,15 +3,18 @@
     padding: 1%;
     display: flex;
     justify-content: space-between;
-    height: 850px;
+    height: 770px;
+    width: 80%;
     @include main-margin;
 
     @include small-desktop {
         @include small-desktop-margin;
+        height: 800px;
     }
 
     @include tablet-landscape {
         margin-bottom: 2%;
+        height: 750px;
     }
 
     @include tablet-portrait {
@@ -20,12 +23,12 @@
     }
 
     @include mobile {
-        height: 70vh;
+     height: 700px;
     }
 
-    @include small-mobile {
-        height: 100vh;
-    }
+    // @include small-mobile {
+    //     height: 100vh;
+    // }
 
     .empty {
         width: 40%;
@@ -51,7 +54,7 @@
         align-items: flex-start;
         position: absolute;
         z-index: 1;
-        margin: 1em 0 0 18em;
+        // margin: 1em 0 0 18em;
 
         @include small-desktop {
             margin: 0;
@@ -93,18 +96,18 @@
             h1{
                 font-family: $large-font;
                 font-weight: 900;
-                font-size: 10rem;
+                font-size: 7rem;
                 color: $new-dream-color;
                 line-height: .5;
                
                 padding: 20px;
 
                 @include small-desktop {
-                    font-size: 10rem;
+                    font-size: 7rem;
                 }
 
                 @include tablet-landscape {
-                    font-size: 8rem;
+                    font-size: 5rem;
                 }
 
                 @include mobile {
@@ -125,7 +128,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                text-align: center;
+                text-align: left;
                 margin-top: 10%;
             }
 
@@ -144,36 +147,40 @@
                 width: 25%;
                 font-family: $body-font;
                 color: $body-font-color;
-                font-size: 2.4rem;
-                font-weight: bold;
-                line-height: 2.3rem;
+                font-size: 1.3rem;
+                
+                line-height: 1.85rem;
+                text-align: left;
 
                 @include small-desktop {
-                    font-size: 2rem; 
+                    font-size: 1.2rem; 
                     margin-top: 1%;
-                    width: 40%;
-                    line-height: 2.5rem;
+                    width: 30%;
+                    // line-height: 2.5rem;
                 }
 
                 @include btn-break {
                     margin-top: 0;
-                    width: 60%;
+                    width: 50%;
                 }
 
                 @include tablet-landscape {
-                    font-size: 1.7rem;
+                    font-size: 1.2rem;
+                    width: 65%;
+                    text-align: center;
                 }
 
                 @include tablet-portrait {
                     width: 100%;
                     padding: 3%;
+                    
                 }
 
                 @include mobile {
                     width: 100%;
-                    line-height: inherit;
+                    // line-height: inherit;
                     margin: 0;
-                    font-size: 1.6rem;
+                    font-size: 1.2rem;
                 }
 
             } // end of p
@@ -187,7 +194,7 @@
                 width: 35%;
 
                 @include small-desktop {
-                    margin: 0;
+                    // margin: 0;
                 }
 
                 @include btn-break {
@@ -206,8 +213,7 @@
                 }
 
                 button {
-                    height: 2em;
-
+                    height: 100%;
                     @include small-desktop {
                         height: inherit;
                     }
@@ -230,12 +236,13 @@
     } // end of left
 
     .right{
-        width: 60%;
-        height: 100%;
+        width: 50%;
+        height: 75%;
         // margin: 3em 0 0 43em;
 
         @include small-desktop {
-            height: 64vh
+            width: 60%;
+            height: 70%;
         }
 
         @include tablet-landscape {

@@ -1,4 +1,12 @@
- .App {
+.contain {
+    @include main-margin;
+    @include small-desktop {
+        @include small-desktop-margin;
+    }
+
+    @include tablet-portrait {
+        width: 100%
+    }
 //   display: flex;
 //   flex-direction: column;
 //   // align-items: center;

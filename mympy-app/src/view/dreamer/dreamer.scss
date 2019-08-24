@@ -1,6 +1,7 @@
 .dream-main {
 
     @include main-margin;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
 
@@ -53,7 +54,7 @@
             font-family: $body-font;
             color: $new-dream-color;
             font-size: 1.6rem;
-            line-height: 3.3rem;
+            line-height: 2.5rem;
 
             @include tablet-landscape {
                 width: 100%;
