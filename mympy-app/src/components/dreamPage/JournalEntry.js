@@ -92,7 +92,7 @@ class JournalEntry extends Component {
 		if(prevProps.journals !== this.props.journals)
 			this.props.fetchDreamJournals(this.props.currDream.id)
 	}
-	
+
 	handleSubmit = () => {
 	this.setState({
 				showModal: true
@@ -112,8 +112,8 @@ render() {
 		<JournalEntryDiv>
 			<h2 className="JE-title">Journal Entry</h2>
 
-		<div className='journal-page'>
-      				<div className='journal-post'>
+		<div  className='journal-page'>
+      				<div  style={journalPost} className='journal-post'>
         				<h1 style={journalPostH1}>Post</h1>
         				<button  style={journalPostButton} onClick={this.handleSubmit}>ADD NEW POST</button>
 						{this.state.showModal && <FormModal  button="Sumit" showModal={this.state.showModal} closeModal={this.closeModal} />}
