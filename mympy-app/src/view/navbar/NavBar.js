@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { connect } from "react-redux";
 import Searchbar from '../../components/search_bar/DreamSearchbar'
 
@@ -22,10 +22,10 @@ const NavBar = (props) => {
                 <div className="right">
                     <ul className="list">
                         <li className="item">
-                            <Link to="/about">About</Link>
+                            <NavLink activeClassName="selected" to="/about">About</NavLink>
                         </li>
                         <li className="item">
-                            <Link to="/market">Search For Dreams</Link>
+                            <NavLink activeClassName="selected" to="/market">Search For Dreams</NavLink>
                         </li>
 
                         <li className="item">
@@ -52,7 +52,7 @@ const NavBar = (props) => {
                                 console.log(logoutUrl);
                                 props.history.go(`https://mympy-dreamer.auth0.com/v2/logout?returnTo=${logoutUrl}`)
                             }}>Log out</button>)
-                                : <Link to="/dashboard">Account</Link>)}
+                                : <NavLink activeClassName="selected" to="/dashboard">Account</NavLink>)}
                         </li>
                     </ul>
                 </div>
