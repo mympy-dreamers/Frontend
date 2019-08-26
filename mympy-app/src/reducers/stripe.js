@@ -15,6 +15,10 @@ import {
 
 const INITIAL_STATE = {
     fetching: false,
+    dreamPaymentId: null,
+    userPaymentId: null,
+    dreamPayments: [],
+    userPayments: [],
     errors: [],
 }
 
@@ -28,7 +32,7 @@ export default function stripeReducer(state = INITIAL_STATE, action) {
         case DREAM_PAY_SUCCESS:
             return {
                 ...state,
-
+                dreamPayments: action.payload
             }
         case DREAM_PAY_FAILURE:
             return {
@@ -42,6 +46,7 @@ export default function stripeReducer(state = INITIAL_STATE, action) {
         case DREAMPAY_POST_SUCCESS:
             return {
                 ...state,
+                dreamPaymentId: action.payload
             }
         case DREAMPAY_POST_FAILURE:
             return {
@@ -55,6 +60,7 @@ export default function stripeReducer(state = INITIAL_STATE, action) {
         case USER_PAY_SUCCESS:
             return {
                 ...state,
+                userPayments: action.payload
             }
         case USER_PAY_FAILURE:
             return {
@@ -68,6 +74,7 @@ export default function stripeReducer(state = INITIAL_STATE, action) {
         case USERPAY_POST_SUCCESS:
             return {
                 ...state,
+                userPaymentId: action.payload
             }
         case USERPAY_POST_FAILURE:
             return {
