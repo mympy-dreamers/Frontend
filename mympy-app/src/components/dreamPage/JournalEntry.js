@@ -93,9 +93,7 @@ class JournalEntry extends Component {
 		})
 	}
 
-	closeModal = () => {
-        this.setState({ showModal: false })
-    }
+	
 
 
 render() {

@@ -1,35 +1,66 @@
-import React, { Component } from 'react';
-import { connect} from 'react-redux';
-import './journaList.css'
-import { addJournal } from '../../actions';
-// import '../dreamPage/InputModal'
-
-
-
+import React, { Component } from "react";
+import "./journaList.css";
+import FormModal from "../dreamPage/JournalForm";
 
 class JournalList extends Component {
   state = {
+    showModal: false,
+    body: '',
+    title: '',
+    journalId: ''
+  };
+
+  toggleUpdate = () => {
+    this.setState({
+      showModal: true
+    });
+    
+  };
+
+  componentDidMount = () => {
+    this.setState({
+      body: this.props.body,
+      title:this.props.title,
+      journalId: this.props.id
+    })
   }
+
+  closeModal = () => {
+    this.setState({ showModal: false })
+}
 
   render() {
     return (
-    // <div className='journal-page'>
-    //   <div className='journal-post'>
-    //     <h1>Post</h1>
-    //     <button>ADD NEW POST</button>
-    //   </div>
       <div className="journal-element">
-        {/* <h3>Posted on:</h3> {this.props.posted_on}
-        <h3>Edited on:</h3> {this.props.edited_on} */}
-        <h1>{this.props.body}</h1> 
-        <p>{this.props.posted_on}</p>
-        <button 
-          className="delete-button" 
-          onClick={()=>
-          window.confirm("Are you sure you wish to delete this item?") &&
-          this.props.deleteJournal(this.props.id)}>Delete</button>
+          <div>
+            <h1>{this.props.body}</h1>
+            <p>{this.props.posted_on}</p>
+           <a> <i id='edit-icon' class="far fa-edit fa-2x"  onClick={this.toggleUpdate}>
+             
+            </i> </a>
+            {this.state.showModal && (
+              <FormModal
+                button="Update"
+                body={this.state.body}
+                title={this.state.title}
+                journalId={this.state.journalId}
+                showModal={this.state.showModal}
+             
+              />
+            )}
+           <a><i class="far fa-trash-alt fa-2x"
+              
+              onClick={() =>
+                window.confirm("Are you sure you wish to delete this item?") &&
+                this.props.deleteJournal(this.props.id)
+              
+              }
+            >
+             
+            </i></a> 
+           
+          </div>
       </div>
-    // </div>
     );
   }
 }
