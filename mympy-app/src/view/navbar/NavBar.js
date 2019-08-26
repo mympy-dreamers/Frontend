@@ -25,7 +25,7 @@ const NavBar = (props) => {
                             <NavLink activeClassName="selected" to="/about">About</NavLink>
                         </li>
                         <li className="item">
-                            <NavLink activeClassName="selected" to="/market">Search For Dreams</NavLink>
+                            <NavLink activeClassName="selected" to="/market">Dream Market</NavLink>
                         </li>
 
                         <li className="item">
