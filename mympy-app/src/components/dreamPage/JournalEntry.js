@@ -88,11 +88,18 @@ class JournalEntry extends Component {
 		setTimeout(() =>this.props.fetchDreamJournals(this.props.currDream.id), 1000);
 	}
 
+	componentDidUpdate(prevProps){
+		if(prevProps.journals !== this.props.journals)
+			this.props.fetchDreamJournals(this.props.currDream.id)
+	}
+	
 	handleSubmit = () => {
 	this.setState({
 				showModal: true
 		})
 	}
+
+	
 
 	closeModal = () => {
 		this.setState({ showModal: false })
@@ -109,7 +116,7 @@ render() {
       				<div className='journal-post'>
         				<h1 style={journalPostH1}>Post</h1>
         				<button  style={journalPostButton} onClick={this.handleSubmit}>ADD NEW POST</button>
-						{this.state.showModal && <FormModal button="Sumit" showModal={this.state.showModal} closeModal={this.closeModal} />}
+						{this.state.showModal && <FormModal  button="Sumit" showModal={this.state.showModal} closeModal={this.closeModal} />}
       				</div>
 
 					  {/* <div className='bg-modal'>

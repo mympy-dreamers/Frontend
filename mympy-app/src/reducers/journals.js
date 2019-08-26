@@ -24,7 +24,8 @@ const INITIAL_STATE = {
     dreamJournals: [],
     currentJournal: {},
     errors: {},
-    fetching: false
+	fetching: false,
+	
 }
 
 export default function journalsReducer(state = INITIAL_STATE, action) {
@@ -83,8 +84,9 @@ export default function journalsReducer(state = INITIAL_STATE, action) {
 		case ADD_JOURNAL_SUCCESS:
 			return {
                 ...state,
-                journals: [action.payload, ...state],
-                userDreams: [action.payload, ...state]
+                journals: [action.payload, ...state.journals],
+				dreamJournals: [action.payload, ...state.dreamJournals]
+				
 			}
 		case ADD_JOURNAL_FAILURE:
 			return {

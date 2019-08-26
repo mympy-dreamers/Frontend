@@ -3,8 +3,7 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import "./journaList.css";
 import { connect } from "react-redux";
 import { addJournal, updateJournal } from "../../actions/journals";
-
-
+import PopupsubimtModal from "../dreamPage/popupsubmit";
 
 const bodyStyle = {
   fontSize: "25px",
@@ -88,7 +87,7 @@ class FormModal extends React.Component {
         body: this.props.body,
         id: this.props.journalId
       },
-      showModal: true
+    
     });
   };
 
@@ -100,34 +99,41 @@ class FormModal extends React.Component {
         ...this.state.journal,
         [e.target.name]: e.target.value
       },
-      showModal: true
+      // showModal: true
     });
   };
 
   handleFinalSubmit = e => {
-  
+    e.preventDefault()
+ 
     const newJournal = { ...this.state.journal };
-    // e.preventDefault()
     if (newJournal.id) {
-      this.props.updateJournal(newJournal)
+      this.props.updateJournal(newJournal);
     } else {
       this.props.addJournal(newJournal);
     }
-   
+    
   };
 
-  
-  closeModal = () => {
-		this.setState({ showModal: false })
-	}	
+ 
+ 
 
+  closeModal = () => {
+    this.setState({ showModal: false });
+    this.props.closeModal()
+  };
 
   render() {
     return (
       <div style={journalFormStyle}>
         <Modal isOpen={this.state.modal}>
-          <ModalHeader style={headStyle}> Journal Form
-          <i class="far fa-window-close" onClick={() => this.props.closeModal()}></i>
+          <ModalHeader style={headStyle}>
+            {" "}
+            Journal Form
+            <i
+              class="far fa-window-close"
+              onClick={() => this.props.closeModal()}
+            ></i>
           </ModalHeader>
           <ModalBody style={bodyStyle}>
             <div>
@@ -148,22 +154,19 @@ class FormModal extends React.Component {
                   onChange={this.handleChanges}
                   value={this.state.journal.body}
                 />
-                <button
-                  style={journalSubmitButton}
-                  onClick={this.handleFinalSubmit}
-                 
-                >
-                 {this.props.button}
+                <button style={journalSubmitButton}
+                  onClick={(e)=>{
+                    e.preventDefault()
+                    this.setState({...this.state,showModal:true})}}>
+                  {this.props.button}
                 </button>
-                
-                
+
+                {this.state.showModal && (<PopupsubimtModal handleFinalSubmit ={this.handleFinalSubmit} showModal={this.state.showModal} closeModal={this.closeModal}/>)}
               </form>
-              
             </div>
           </ModalBody>
           <ModalFooter />
         </Modal>
-        
       </div>
     );
   }

@@ -18,7 +18,7 @@ const headStyle = {
 
 
 
-class Popupsubimt extends React.Component {
+class PopupsubimtModal extends React.Component {
 
   render() {
     return (
@@ -30,9 +30,10 @@ class Popupsubimt extends React.Component {
           </ModalBody>
           <ModalFooter>
             <Button id='cancel-button' onClick={() => this.props.closeModal()}>Cancel</Button>
-            <Button onClick={() => {
+            <Button onClick={(e) => {
+              
+              this.props.handleFinalSubmit(e)
               this.props.closeModal()
-              this.props.handleFinalSubmit()
             }}>Submit Dream</Button>
           </ModalFooter>
         </Modal>
@@ -41,4 +42,4 @@ class Popupsubimt extends React.Component {
   }
 }
 
-export default Popupsubimt ;
+export default PopupsubimtModal ;

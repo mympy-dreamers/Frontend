@@ -33,14 +33,17 @@ class JournalList extends Component {
   render() {
     return (
       <div className="journal-element">
-          <div>
-            <div>
+          <div className="journalTitle">
+            <div className='titleStyle'>
             <h1>{this.props.title}</h1>
             </div>
-            <div>
+            <div className="dateStyle">
             <p>{this.props.posted_on}</p>
             </div>
-           <a> <i id='edit-icon' class="far fa-edit fa-2x"  onClick={this.toggleUpdate}>
+          </div>
+
+          <div>
+           <a> <i  id='edit-icon' class="far fa-edit fa-2x"  onClick={this.toggleUpdate}>
              
             </i> </a>
             {this.state.showModal && (
@@ -54,7 +57,7 @@ class JournalList extends Component {
              
               />
             )}
-           <a><i class="far fa-trash-alt fa-2x"
+           <a><i  id='delete-icon' class="far fa-trash-alt fa-2x"
               
               onClick={() =>
                 window.confirm("Are you sure you wish to delete this item?") &&
@@ -65,7 +68,7 @@ class JournalList extends Component {
              
             </i></a> 
            
-          </div>
+            </div>
       </div>
     );
   }
