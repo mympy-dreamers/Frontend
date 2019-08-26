@@ -3,7 +3,11 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import JournalList from './JournalList';
 import comingSoon from '../../img/coming-soon.png';
+<<<<<<< HEAD
 import { fetchDreamJournals, deleteJournal ,updateJournal} from '../../actions'
+=======
+import { fetchDreamJournals, deleteJournal, updateJournal } from '../../actions'
+>>>>>>> 32df23d504a272093580afdab4500f32d093a914
 import './journaList.css'
 import FormModal from "../dreamPage/JournalForm";
 
@@ -77,6 +81,30 @@ const JournalEntryDiv = styled.div`
 
 
 `
+const journalPost = {
+	display: "flex",
+	justifyContent: "space-between",
+	backgroundColor: "white",
+	borderBottom: "1px solid darkgrey",
+	padding: "15px 0"
+  }; 
+
+const journalPostButton  = {
+	height: "36px",
+    width: "124px",
+    borderRadius: "5rem",
+    border: "1px solid #DBD82C",
+    color: "gray",
+    marginRight: "15px",
+    fontSize: "12px"
+}
+
+const journalPostH1 = {
+	marginTop: "8px",
+    marginLeft: "50px",
+    fontSize: "22px",
+    fontWeight: "bolder",
+}
 
 class JournalEntry extends Component {
 	state = {

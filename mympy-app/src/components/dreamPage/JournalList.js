@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./journaList.css";
 import FormModal from "../dreamPage/JournalForm";
 
+
 class JournalList extends Component {
   state = {
     showModal: false,
