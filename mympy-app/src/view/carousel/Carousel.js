@@ -22,10 +22,10 @@ const Carousel = (props) => {
                     <div className="btn-div">
                         <button onClick={() =>
                             document.getElementById("dream-main").scrollIntoView()
-                        } className="dreamer">Start Dreaming</button>
+                        } className="dreamer">START DREAMING</button>
                         <button onClick={() =>
                             document.getElementById("support-main").scrollIntoView()
-                        } className="supporter">Start Supporting</button>
+                        } className="supporter">START SUPPORTING</button>
                     </div>
                 </div>
             </div>
