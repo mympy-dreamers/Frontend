@@ -2,6 +2,7 @@ import React from 'react';
 import {CardElement, injectStripe} from 'react-stripe-elements';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+import { dreamPayPost, userPayPost } from '../../actions/stripe.js';
 
 const StyledCheckoutForm = styled.div`
     // width: 90%;
@@ -38,7 +39,8 @@ const StyledCheckoutForm = styled.div`
     }
 `
 
-const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
+// const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
+const BASE_URL = 'http://localhost:5000';
 
 class CheckoutForm extends React.Component {
     constructor(props) {
@@ -62,9 +64,17 @@ class CheckoutForm extends React.Component {
 
         if (response.ok) {
             this.setState({complete: true});
-            alert("Purchase Complete!");
+            console.log("Purchase Complete!");
+            this.props.dreamPayPost({
+                "donation_amount": this.props.donationTotal,
+                "dream_id": this.props.currDream_id
+            });
+            this.props.userPayPost({
+                "donation_amount": this.props.donationTotal,
+                "user_id": this.props.user_id
+            });
         } else {
-            alert("Forms not filled correctly");
+            console.log("Forms not filled correctly");
         }
     }
 
@@ -82,4 +92,12 @@ class CheckoutForm extends React.Component {
     }
 }
 
-export default injectStripe(CheckoutForm);
+const mapStateToProps = ({ users, dreams, auth }) => {
+  return {
+    authUser: users.authZeroUser,
+    currDream_id: dreams.currDream.id,
+    user_id: auth.user.id
+  }
+}
+
+export default connect(mapStateToProps, { dreamPayPost, userPayPost })(injectStripe(CheckoutForm));
