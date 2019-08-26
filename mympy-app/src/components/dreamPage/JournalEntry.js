@@ -3,11 +3,35 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import JournalList from './JournalList';
 import comingSoon from '../../img/coming-soon.png';
-import { fetchDreamJournals, deleteJournal } from '../../actions'
+import { fetchDreamJournals, deleteJournal ,updateJournal} from '../../actions'
 import './journaList.css'
 import FormModal from "../dreamPage/JournalForm";
 
 
+const journalPost = {
+	display: "flex",
+	justifyContent: "space-between",
+	backgroundColor: "white",
+	borderBottom: "1px solid darkgrey",
+	padding: "15px 0"
+  }; 
+
+const journalPostButton  = {
+	height: "36px",
+    width: "124px",
+    borderRadius: "5rem",
+    border: "1px solid #DBD82C",
+    color: "gray",
+    marginRight: "15px",
+    fontSize: "12px"
+}
+
+const journalPostH1 = {
+	marginTop: "8px",
+    marginLeft: "50px",
+    fontSize: "22px",
+    fontWeight: "bolder",
+}
 
 const JournalEntryDiv = styled.div`
 	.JE-title {
@@ -50,6 +74,8 @@ const JournalEntryDiv = styled.div`
 			}
 		}
 	}
+
+
 `
 
 class JournalEntry extends Component {
@@ -67,6 +93,10 @@ class JournalEntry extends Component {
 		})
 	}
 
+	closeModal = () => {
+        this.setState({ showModal: false })
+    }
+
 
 render() {
 	return (
@@ -76,9 +106,9 @@ render() {
 
 		<div className='journal-page'>
       				<div className='journal-post'>
-        				<h1>Post</h1>
-        				<button onClick={this.handleSubmit}>ADD NEW POST</button>
-						{this.state.showModal && <FormModal/>}
+        				<h1 style={journalPostH1}>Post</h1>
+        				<button  style={journalPostButton} onClick={this.handleSubmit}>ADD NEW POST</button>
+						{this.state.showModal && <FormModal button="Sumit" />}
       				</div>
 
 					  {/* <div className='bg-modal'>
@@ -103,7 +133,8 @@ render() {
 						posted_on={journal.created_at}
 						edited_on={journal.updated_at}
 						currentUser={this.props.user}
-						deleteJournal={this.props.deleteJournal} />
+						deleteJournal={this.props.deleteJournal}
+						updateJournal={this.props.updateJournal} />
 					)}
 				{/* <div className="coming-soon">
 					<img src={comingSoon} alt='Coming Soon' />
@@ -119,7 +150,8 @@ function mapStateToProps(state) {
 	return {
 	  user: state.auth.user,
 	  journals: state.journals.dreamJournals,
-	  currDream: state.dreams.currDream
+	  currDream: state.dreams.currDream,
+	  isupdating: state.journals.isupdating
 	}
   }
   
@@ -128,7 +160,8 @@ function mapStateToProps(state) {
 	mapStateToProps,
 	{	
 		fetchDreamJournals,
-		deleteJournal
+		deleteJournal,
+		updateJournal
 	}
   )(JournalEntry);
   
