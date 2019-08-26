@@ -34,8 +34,12 @@ class JournalList extends Component {
     return (
       <div className="journal-element">
           <div>
-            <h1>{this.props.body}</h1>
+            <div>
+            <h1>{this.props.title}</h1>
+            </div>
+            <div>
             <p>{this.props.posted_on}</p>
+            </div>
            <a> <i id='edit-icon' class="far fa-edit fa-2x"  onClick={this.toggleUpdate}>
              
             </i> </a>

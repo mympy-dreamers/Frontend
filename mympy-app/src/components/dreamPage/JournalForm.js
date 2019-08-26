@@ -4,6 +4,8 @@ import "./journaList.css";
 import { connect } from "react-redux";
 import { addJournal, updateJournal } from "../../actions/journals";
 
+
+
 const bodyStyle = {
   fontSize: "25px",
   height: "440px",
@@ -103,6 +105,7 @@ class FormModal extends React.Component {
   };
 
   handleFinalSubmit = e => {
+  
     const newJournal = { ...this.state.journal };
     // e.preventDefault()
     if (newJournal.id) {
@@ -110,10 +113,13 @@ class FormModal extends React.Component {
     } else {
       this.props.addJournal(newJournal);
     }
+   
   };
 
   
-
+  closeModal = () => {
+		this.setState({ showModal: false })
+	}	
 
 
   render() {
@@ -149,11 +155,15 @@ class FormModal extends React.Component {
                 >
                  {this.props.button}
                 </button>
+                
+                
               </form>
+              
             </div>
           </ModalBody>
           <ModalFooter />
         </Modal>
+        
       </div>
     );
   }
