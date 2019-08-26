@@ -45,7 +45,8 @@ class JournalList extends Component {
                 body={this.state.body}
                 title={this.state.title}
                 journalId={this.state.journalId}
-                showModal={this.state.showModal}
+                showModal={this.state.showModal} 
+                closeModal={this.closeModal}
              
               />
             )}

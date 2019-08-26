@@ -8,30 +8,7 @@ import './journaList.css'
 import FormModal from "../dreamPage/JournalForm";
 
 
-// const journalPost = {
-// 	display: "flex",
-// 	justifyContent: "space-between",
-// 	backgroundColor: "white",
-// 	borderBottom: "1px solid darkgrey",
-// 	padding: "15px 0"
-//   }; 
 
-// const journalPostButton  = {
-// 	height: "36px",
-//     width: "124px",
-//     borderRadius: "5rem",
-//     border: "1px solid #DBD82C",
-//     color: "gray",
-//     marginRight: "15px",
-//     fontSize: "12px"
-// }
-
-// const journalPostH1 = {
-// 	marginTop: "8px",
-//     marginLeft: "50px",
-//     fontSize: "22px",
-//     fontWeight: "bolder",
-// }
 
 const JournalEntryDiv = styled.div`
 	.JE-title {
@@ -117,7 +94,9 @@ class JournalEntry extends Component {
 		})
 	}
 
-	
+	closeModal = () => {
+		this.setState({ showModal: false })
+	}	
 
 
 render() {
@@ -130,7 +109,7 @@ render() {
       				<div className='journal-post'>
         				<h1 style={journalPostH1}>Post</h1>
         				<button  style={journalPostButton} onClick={this.handleSubmit}>ADD NEW POST</button>
-						{this.state.showModal && <FormModal button="Sumit" />}
+						{this.state.showModal && <FormModal button="Sumit" showModal={this.state.showModal} closeModal={this.closeModal} />}
       				</div>
 
 					  {/* <div className='bg-modal'>
