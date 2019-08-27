@@ -30,7 +30,7 @@ class ProjectStory extends React.Component {
 			<ProjectStoryDiv>
 				<h2 className="PS-title">Project Story</h2>
 				<div className="PS-body">
-					<p className="PS-story">{this.props.currDream.dream_long_description}</p>
+					<p className="PS-story"><pre>{this.props.currDream.dream_long_description}</pre></p>
 				</div>
 			</ProjectStoryDiv>
 		);
