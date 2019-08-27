@@ -1,0 +1,22 @@
+.dream-Home-Page {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    .form-wrap {
+        margin: 2%;
+        width: 90%;
+        display: flex;
+
+        .left {
+            width: 54%;
+            border-radius: 20px 0 0 20px;
+        }
+    
+        .right {
+            width: 47%;
+            background-color: white;
+            border-radius: 0 20px 20px 0;
+        }
+    }
+}
