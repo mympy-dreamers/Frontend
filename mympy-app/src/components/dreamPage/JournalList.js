@@ -37,14 +37,15 @@ class JournalList extends Component {
                 <Accordion.Toggle as={Button} variant="link" eventKey={this.props.id}>
                   {this.props.title}
                 </Accordion.Toggle> 
-                <div className="journalButtons pull-right">
+                <h3>{this.props.posted_on}</h3>
+                {this.props.currentUser.id === this.props.user_id 
+                ? <div className="journalButtons pull-right">
                     <a>
-                      {" "}
                       <i
                         id="edit-icon"
                         class="far fa-edit fa-2x"
                         onClick={this.toggleUpdate}
-                      ></i>{" "}
+                      ></i>
                     </a>
                     {this.state.showModal && (
                       <FormModal
@@ -62,16 +63,8 @@ class JournalList extends Component {
                           window.confirm("Are you sure you wish to delete this item?") &&
                           this.props.deleteJournal(this.props.id)
                         }></i></a>
-                  {this.props.posted_on}
-                  {/* {this.props.currentUser.id === this.props.user_id 
-                  ? <button 
-                      className="delete-button" 
-                      onClick={()=>
-                      window.confirm("Are you sure you wish to delete this item?") &&
-                      this.props.deleteJournal(this.props.id)}><i className="fas fa-trash-alt fa-xs"></i>
-                    </button>
-                  : null} */}
-                </div>
+                 </div>
+                : null }
             
 						</Card.Header>
 						<Accordion.Collapse eventKey={this.props.id}>
