@@ -104,7 +104,7 @@ render() {
 
 		<div className='journal-page'>
 			<div style={journalPost} className="journal-post">
-				<h1 style={journalPostH1}>Project Ozone</h1>
+				<h1 style={journalPostH1}>Recent Posts</h1>
 				<button style={journalPostButton} onClick={this.handleSubmit}>
 				ADD NEW POST
 				</button>
