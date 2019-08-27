@@ -2,7 +2,7 @@ import React from 'react';
 import {CardElement, injectStripe} from 'react-stripe-elements';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { dreamPayPost, userPayPost } from '../../actions/stripe.js';
+import { dreamPayPost, userPayPost, updateDream } from '../../actions';
 
 const StyledCheckoutForm = styled.div`
     // width: 90%;
@@ -73,6 +73,11 @@ class CheckoutForm extends React.Component {
                 "donation_amount": this.props.donationTotal,
                 "user_id": this.props.user_id
             });
+            this.props.updateDream({
+                // ...this.props.currDream,
+                "id": this.props.currDream_id,
+                "donations_received": this.props.currDream.donations_received + this.props.donationTotal
+            })
         } else {
             console.log("Forms not filled correctly");
         }
@@ -95,9 +100,10 @@ class CheckoutForm extends React.Component {
 const mapStateToProps = ({ users, dreams, auth }) => {
   return {
     authUser: users.authZeroUser,
+    currDream: dreams.currDream,
     currDream_id: dreams.currDream.id,
     user_id: auth.user.id
   }
 }
 
-export default connect(mapStateToProps, { dreamPayPost, userPayPost })(injectStripe(CheckoutForm));
+export default connect(mapStateToProps, { dreamPayPost, userPayPost, updateDream })(injectStripe(CheckoutForm));
