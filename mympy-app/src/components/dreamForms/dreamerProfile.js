@@ -38,6 +38,7 @@ class DreamInfo extends React.Component {
             </div> /* dream-Home-Page end */
         )
     }
+  }
 }
 
 export default DreamInfo;

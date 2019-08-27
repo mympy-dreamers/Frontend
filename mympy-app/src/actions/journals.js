@@ -87,7 +87,6 @@ export const fetchDreamJournals = (id) => dispatch => {
 
 export const addJournal = (sentJournal) => dispatch => {
     dispatch({ type: ADD_JOURNAL_START });
-
     return axios
         .post(`${BASE_URL}/api/journals`, sentJournal)
         .then(res => {

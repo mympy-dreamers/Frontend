@@ -74,7 +74,7 @@ class imageForm extends React.Component {
                         <p>Images need to be less then 10mb!</p>
                         <p>Your image is over 10 mb</p>
                     </Alert>
-                    {this.state.showModal && <FormModal />}
+                    {this.state.showModal && <FormModal body='Your dream was sucessfully created!' />}
                 </div>  {/* dreamer-card-app end  */}
             </div> /* dream-Home-Page end */
         )

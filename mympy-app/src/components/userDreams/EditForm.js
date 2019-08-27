@@ -58,7 +58,7 @@ class EditForm extends React.Component {
                         onChange={this.handleChange}
                         value={this.state.dream_short_description} />
                     <h1>Dream Description:</h1>
-                    <input
+                    <textarea
                         className="textarea"
                         name='dream_long_description'
                         placeholder={this.props.dream.dream_long_description}

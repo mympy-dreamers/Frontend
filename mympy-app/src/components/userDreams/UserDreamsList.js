@@ -5,6 +5,7 @@ import UserDream from './UserDream';
 
 class UserDreamsList extends Component {
   state = {
+    isUpdating: false
   }
 
   componentDidMount() {
