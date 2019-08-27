@@ -110,7 +110,7 @@ render() {
 				</button>
 				{this.state.showModal && (
 				<FormModal
-					button="submit"
+					button="Sumit"
 					showModal={this.state.showModal}
 					closeModal={this.closeModal}
 				/>
