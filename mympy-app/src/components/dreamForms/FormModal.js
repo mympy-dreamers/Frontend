@@ -27,7 +27,7 @@ class FormModal extends React.Component {
     return (
       <div>
         <Modal isOpen={this.state.modal}>
-        <ModalHeader style={ headStyle } >Congratulation!!!</ModalHeader>
+        <ModalHeader style={ headStyle } >Success!</ModalHeader>
           <ModalBody style={ bodyStyle }>
           { this.props.body }
           </ModalBody>
