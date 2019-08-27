@@ -40,7 +40,7 @@ class JournalList extends Component {
                
                 {this.props.currentUser.id === this.props.user_id 
                 ? <div className="journalButtons pull-right">
-                  <h3 className="pull-right">{this.props.posted_on}</h3>
+                  <h3 className="">{this.props.posted_on}</h3>
                     <a>
                       <i
                         id="edit-icon"
