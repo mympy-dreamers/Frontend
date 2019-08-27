@@ -65,7 +65,7 @@
 
 /* modal form */
 #popup > form {
-    margin: 1rem;
+    margin: 0rem 3rem 0 0;
     position: fixed;
     width: 80%;
     background-color: rgba(0,0,0,.5);
@@ -80,11 +80,12 @@
 #popup > form > h1 {
     display: flex;
     justify-content: center;
+    font-size: 1.5rem;
 }
 
 /* text input */
 #popup > form > input{
-    height: 4rem;
+    height: 2rem;
     padding: 1rem;
     margin: 1rem;
     box-sizing: border-box;
@@ -92,7 +93,20 @@
     border-radius: 20px;
     background-color: #f8f8f8;
     resize: none;
-    font-family: 'roboto';
+    font-family: 'open sans';
+    font-size: 1rem;
+  }
+
+  #popup > form > textarea{
+    height: 5rem;
+    padding: 1rem;
+    margin: 1rem;
+    box-sizing: border-box;
+    border: 1px solid grey;
+    border-radius: 20px;
+    background-color: #f8f8f8;
+    font-family: 'open sans';
+    font-size: 1rem;
   }
 
 /* button wrapper */
