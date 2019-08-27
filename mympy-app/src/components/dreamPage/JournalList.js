@@ -31,7 +31,7 @@ class JournalList extends Component {
   };
 
   render() {
-    const date = this.props.posted_on.split("T")[0];
+    const date = this.props.posted_on ? this.props.posted_on.split("T")[0] : null
     return (
       <Card>
 						<Card.Header>
