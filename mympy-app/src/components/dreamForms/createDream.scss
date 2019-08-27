@@ -11,12 +11,28 @@
         .left {
             width: 54%;
             border-radius: 20px 0 0 20px;
+
+            @include small-desktop {
+                width: 62%;
+            }
+
+            @include twelveEighty {
+                width: 67%;
+            }
         }
     
         .right {
             width: 47%;
             background-color: white;
             border-radius: 0 20px 20px 0;
+
+            @include small-desktop {
+                width: 40%;
+            }
+
+            @include twelveEighty {
+                width: 33%;
+            }
         }
     }
 }
