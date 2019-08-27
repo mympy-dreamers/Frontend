@@ -8,7 +8,7 @@ const leftStyle = {
     backgroundSize: 'cover',
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    width: "100%",
+    width: "80%",
 }
 
 class DreamInfo extends React.Component {
@@ -25,7 +25,7 @@ class DreamInfo extends React.Component {
                 <div className='form-wrap'>
 
                     <div className="left" style={ leftStyle }>
-                        {/* this div will hold the image on the left 50% */}
+                        {/* this div will hold the image */}
                     </div>
 
                     <div className='right'>  {/* previously dreamer-card-app */}
