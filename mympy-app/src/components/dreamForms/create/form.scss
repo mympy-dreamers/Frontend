@@ -1,0 +1,63 @@
+.form-main {
+
+    .formTitle {
+        font-size: 30px;
+        // text-align: center;
+        // padding-top: 10px;
+        // font-weight: bolder;
+        // color: white;
+        // text-shadow: 1px 1px grey;
+        // font-weight: bolder;
+        // margin-bottom: 50px;
+        h1 {
+            // font-size: 80px;
+            // text-align: center;
+            // margin-top: 235px;
+            // margin-bottom: 100px;
+        }
+
+        p {
+
+        } // end of p
+
+    } // end of form-title
+
+    .alert0 {
+        text-align: center;
+        /* margin-top: 30px; */
+        width: 50%;
+        height: 100px;
+        margin: 0 auto 30px;
+        padding-left: 40px;
+    }
+    @media (max-width: 1250px){
+        .alert0 {
+            width: 80%;
+        }
+    } 
+    
+    .alert0 h1 {
+        font-size: 25px;
+    }
+    
+    .alert0 p {
+        margin-top: 30px;
+        font-size: 18px;
+    }
+    
+    .alert2 {
+        text-align: center;
+        margin-top: 30px;
+        width: 450px;
+        height: 160px;
+        margin-left: 506px;
+        padding-left: 40px;
+    }
+    
+    #dream_long_description{
+        height: 350px;
+        text-align: left;
+        padding: 30px;
+    }
+
+} // end of form-main
