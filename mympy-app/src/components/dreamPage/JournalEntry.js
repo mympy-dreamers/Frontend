@@ -111,9 +111,11 @@ render() {
 		<div className='journal-page'>
 			<div style={journalPost} className="journal-post">
 				<h1 style={journalPostH1}>Recent Posts</h1>
-				<button style={journalPostButton} onClick={this.handleSubmit}>
+				{this.props.currDream.user_id === this.props.user.id 
+				? <button style={journalPostButton} onClick={this.handleSubmit}>
 				ADD NEW POST
 				</button>
+				: null}
 				{this.state.showModal && (
 				<FormModal
 					button="Submit"
