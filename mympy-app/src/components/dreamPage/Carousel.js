@@ -46,13 +46,13 @@ const Wrapper = styled.div`
 	  }
 	 	.slick-next { 
       background-image: url(${arrowRight});
-      background-size: contain;
+      background-size: cover;
 		  right: 1%;
       &:before { display: none; }
 	  }
 	 	.slick-prev {
       background-image: url(${arrowLeft});
-      background-size: contain;
+      background-size: cover;
 	    left: 1%;
       &:before { display: none; }
 	  }

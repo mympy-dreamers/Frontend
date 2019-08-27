@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-
+import {Modal, Button, Row, Col, Form} from 'react-bootstrap'
 import Carousel from './Carousel.js';
 import Sidebar from './Sidebar.js';
 import DreamPageBody from './DreamPageBody.js';
@@ -14,7 +14,7 @@ const DreamPageDiv = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    max-width: 1124px;
+    max-width: 100%;
     padding-bottom: 100px;
 
     .sidebar-body {
@@ -24,7 +24,9 @@ const DreamPageDiv = styled.div`
 `;
 
 class DreamPage extends React.Component {
-
+ 
+ 
+   
   componentDidMount() {
     this.props.fetchDreamById(this.props.match.params.id);
     this.props.fetchImage(this.props.match.params.id);
@@ -44,9 +46,15 @@ class DreamPage extends React.Component {
   }
 
 
+
   render() {
     console.log(this.props.currDream)
     return (
+
+  <div>
+
+  
+
       <DreamPageDiv>
         <div className="dream-page">
           <Carousel />
@@ -56,6 +64,8 @@ class DreamPage extends React.Component {
           </div>
         </div>
       </DreamPageDiv>
+
+  </div>    
     );
   }
 }
