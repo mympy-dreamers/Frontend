@@ -90,7 +90,6 @@ export const addJournal = (sentJournal) => dispatch => {
     return axios
         .post(`${BASE_URL}/api/journals`, sentJournal)
         .then(res => {
-            debugger
             dispatch({
                 type: ADD_JOURNAL_SUCCESS,
                 payload: res.data

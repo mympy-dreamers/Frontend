@@ -1,8 +1,8 @@
 import React from "react";
-import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Modal, ModalHeader, ModalBody, ModalFooter , Alert } from "reactstrap";
 import "./journaList.css";
 import { connect } from "react-redux";
-import { addJournal, updateJournal } from "../../actions/journals";
+import { addJournal, updateJournal, fetchDreamJournals } from "../../actions/journals";
 import PopupsubimtModal from "../dreamPage/popupsubmit";
 
 const bodyStyle = {
@@ -66,6 +66,7 @@ class FormModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      // _visible: false,
       modal: true,
       journal: {
         title: "",
@@ -77,6 +78,22 @@ class FormModal extends React.Component {
       showModal: false
     };
   }
+
+//   toggle() {
+//     this.setState({
+//         visible: !this.state.visible
+//     })
+// }
+
+// isFormValid = () => {
+//   const state = this.state.journal;
+
+//   if (this.state.title !== "" && this.state.body !== "") {
+//       return this.handleSubmit()
+//   } else {
+//       return this.toggle()
+//   }
+// }
 
   componentDidMount = () => {
     this.setState({
@@ -112,16 +129,28 @@ class FormModal extends React.Component {
     } else {
       this.props.addJournal(newJournal);
     }
-    
+    this.props.fetchDreamJournals(this.props.dreams)
   };
 
  
- 
+  handleSubmit = e => {
+
+    // e.preventDefault()
+    this.setState({
+        showModal: true
+    })
+
+}
 
   closeModal = () => {
     this.setState({ showModal: false });
     this.props.closeModal()
   };
+
+
+  
+
+
 
   render() {
     return (
@@ -158,8 +187,13 @@ class FormModal extends React.Component {
                   onClick={(e)=>{
                     e.preventDefault()
                     this.setState({...this.state,showModal:true})}}>
-                  {this.props.button}
+                  {this.props.button} 
                 </button>
+
+                {/* <Alert className='alert' color='danger' role='alert' isOpen={this.state.visible} toggle={this.toggle.bind(this)}>
+                        <h1>Uh Oh!</h1>
+                        <p>All field needs to be filled!</p>
+                    </Alert> */}
 
                 {this.state.showModal && (<PopupsubimtModal handleFinalSubmit ={this.handleFinalSubmit} showModal={this.state.showModal} closeModal={this.closeModal}/>)}
               </form>
@@ -182,5 +216,5 @@ const mapStateToProps = ({ users, dreams }) => {
 
 export default connect(
   mapStateToProps,
-  { addJournal, updateJournal }
+  { addJournal, updateJournal, fetchDreamJournals }
 )(FormModal);
