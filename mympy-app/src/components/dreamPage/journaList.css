@@ -24,4 +24,37 @@
 div.card-header > div > button.delete-button{
     height: 0.5rem;
     width: 0.5rem;
+    font-size: 0.5rem;
+}
+
+#root > div > div.app-wrap > div > div > div.sidebar-body > div > nav {
+
+}
+
+/* about tab */
+#dream-page-body-tab-about{
+
+}
+
+/* Journal Tab */
+#dream-page-body-tab-Journal{
+
+}
+
+/* Sidebar and dream body */
+#root > div > div.app-wrap > div > div > div.sidebar-body{
+    margin-top: -5rem;
+    z-index: 1;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-break: keep-all;
+    text-align: left;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+pre::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
 }
