@@ -8,7 +8,7 @@ import Tabs from 'react-bootstrap/Tabs'
 
 const BodyDiv = styled.div`
 	margin-top: 2px;
-	width: 70%;
+	width: 80%;
 	margin: 0 auto;
 `
 
