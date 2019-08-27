@@ -37,9 +37,10 @@ class JournalList extends Component {
                 <Accordion.Toggle as={Button} variant="link" eventKey={this.props.id}>
                   {this.props.title}
                 </Accordion.Toggle> 
-                <h3>{this.props.posted_on}</h3>
+               
                 {this.props.currentUser.id === this.props.user_id 
                 ? <div className="journalButtons pull-right">
+                  <h3 className="pull-right">{this.props.posted_on}</h3>
                     <a>
                       <i
                         id="edit-icon"
@@ -64,7 +65,7 @@ class JournalList extends Component {
                           this.props.deleteJournal(this.props.id)
                         }></i></a>
                  </div>
-                : null }
+                :  <h3 className="pull-right">{this.props.posted_on}</h3> }
             
 						</Card.Header>
 						<Accordion.Collapse eventKey={this.props.id}>

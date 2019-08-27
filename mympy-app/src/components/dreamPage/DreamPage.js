@@ -14,7 +14,7 @@ const DreamPageDiv = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    max-width: 1124px;
+    max-width: 100%;
     padding-bottom: 100px;
 
     .sidebar-body {
