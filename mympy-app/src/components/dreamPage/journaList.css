@@ -47,6 +47,9 @@ div.card-header > div > button.delete-button{
 #root > div > div.app-wrap > div > div > div > div.sidebar-body{
     margin-top: -5rem;
     z-index: 1;
+    max-width: 100%;
+    margin-left: 3rem;
+    margin-right: 3rem;
 }
 
 pre {
@@ -143,4 +146,7 @@ p {
     margin-right: 0.5rem;
 }
 
-
+/* side bar */
+#root > div > div.app-wrap > div > div > div > div.sidebar-body > div {
+    margin-right: 0.5rem;
+}
