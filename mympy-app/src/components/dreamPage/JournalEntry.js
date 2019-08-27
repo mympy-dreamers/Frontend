@@ -72,8 +72,8 @@ const journalPostButton = {
 
 const journalPostH1 = {
   marginTop: "8px",
-  marginLeft: "50px",
-  fontSize: "22px",
+  marginLeft: "1rem",
+  fontSize: "1rem",
   fontWeight: "bolder"
 };
 
@@ -104,7 +104,7 @@ render() {
 
 		<div className='journal-page'>
 			<div style={journalPost} className="journal-post">
-				<h1 style={journalPostH1}>Post</h1>
+				<h1 style={journalPostH1}>Project Ozone</h1>
 				<button style={journalPostButton} onClick={this.handleSubmit}>
 				ADD NEW POST
 				</button>
