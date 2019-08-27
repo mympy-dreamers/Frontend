@@ -89,10 +89,10 @@ class JournalEntry extends Component {
     );
   }
 
-//   componentDidUpdate(prevProps){
-//   	if(prevProps.journals !== this.props.journals)
-//   		this.props.fetchDreamJournals(this.props.currDream.id)
-//   }
+  componentDidUpdate(prevProps){
+  	if(prevProps.journals !== this.props.journals)
+  		this.props.fetchDreamJournals(this.props.currDream.id)
+  }
 
   handleSubmit = () => {
     this.setState({

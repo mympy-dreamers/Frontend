@@ -45,7 +45,7 @@ class JournalList extends Component {
             {" "}
             <i
               id="edit-icon"
-              class="far fa-edit fa-2x"
+              className="far fa-edit fa-2x"
               onClick={this.toggleUpdate}
             ></i>{" "}
           </a>
@@ -60,7 +60,7 @@ class JournalList extends Component {
             />
           )}
           <a><i id="delete-icon"
-              class="far fa-trash-alt fa-2x"
+              className="far fa-trash-alt fa-2x"
               onClick={() =>
                 window.confirm("Are you sure you wish to delete this item?") &&
                 this.props.deleteJournal(this.props.id)

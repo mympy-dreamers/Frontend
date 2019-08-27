@@ -1,8 +1,12 @@
 import React from "react";
-import { Modal, ModalHeader, ModalBody, ModalFooter , Alert } from "reactstrap";
+import { Modal, ModalHeader, ModalBody, ModalFooter, Alert } from "reactstrap";
 import "./journaList.css";
 import { connect } from "react-redux";
-import { addJournal, updateJournal, fetchDreamJournals } from "../../actions/journals";
+import {
+  addJournal,
+  updateJournal,
+  fetchDreamJournals
+} from "../../actions/journals";
 import PopupsubimtModal from "../dreamPage/popupsubmit";
 
 const bodyStyle = {
@@ -66,7 +70,7 @@ class FormModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // _visible: false,
+      visible: false,
       modal: true,
       journal: {
         title: "",
@@ -79,21 +83,45 @@ class FormModal extends React.Component {
     };
   }
 
-//   toggle() {
-//     this.setState({
-//         visible: !this.state.visible
-//     })
-// }
+  toggle() {
+    this.setState({
+      visible: !this.state.visible
+    });
+  }
 
-// isFormValid = () => {
-//   const state = this.state.journal;
+  isFormValid = () => {
+    //  e.preventDefault();
+    const state = this.state.journal;
 
-//   if (this.state.title !== "" && this.state.body !== "") {
-//       return this.handleSubmit()
-//   } else {
-//       return this.toggle()
-//   }
-// }
+   if ( state.body && state.title) {
+
+     if (state.title !== "" && state.body !== "") {
+       this.handleSubmit();
+     } else {
+       this.toggle()
+     }
+   } else {
+    alert('stop')
+    console.log(`I am here`)
+     this.toggle();
+   }
+    // if ((state.title !== "" && state.body !== "") || ( (state.body) &&  (state.title)) ) {
+    //    this.handleSubmit();
+    // } else {
+    //   alert(`I am here`)
+    //    this.toggle();
+    // }
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const isValid = this.validate();
+    if (isValid) {
+      console.log(this.state);
+      // clear form
+      // this.setState(initialState);
+    }
+  };
 
   componentDidMount = () => {
     this.setState({
@@ -103,8 +131,7 @@ class FormModal extends React.Component {
         title: this.props.title,
         body: this.props.body,
         id: this.props.journalId
-      },
-    
+      }
     });
   };
 
@@ -115,42 +142,34 @@ class FormModal extends React.Component {
       journal: {
         ...this.state.journal,
         [e.target.name]: e.target.value
-      },
+      }
       // showModal: true
     });
   };
 
   handleFinalSubmit = e => {
-    e.preventDefault()
- 
+    e.preventDefault();
+
     const newJournal = { ...this.state.journal };
     if (newJournal.id) {
       this.props.updateJournal(newJournal);
     } else {
       this.props.addJournal(newJournal);
     }
-    this.props.fetchDreamJournals(this.props.dreams)
+    this.props.fetchDreamJournals(this.props.dreams);
   };
 
- 
   handleSubmit = e => {
-
     // e.preventDefault()
     this.setState({
-        showModal: true
-    })
-
-}
-
-  closeModal = () => {
-    this.setState({ showModal: false });
-    this.props.closeModal()
+      showModal: true
+    });
   };
 
-
-  
-
-
+  closeModal = () => {
+    this.setState({ showModal: false});
+    this.props.closeModal();
+  };
 
   render() {
     return (
@@ -160,7 +179,7 @@ class FormModal extends React.Component {
             {" "}
             Journal Form
             <i
-              class="far fa-window-close"
+              className="far fa-window-close"
               onClick={() => this.props.closeModal()}
             ></i>
           </ModalHeader>
@@ -183,19 +202,34 @@ class FormModal extends React.Component {
                   onChange={this.handleChanges}
                   value={this.state.journal.body}
                 />
-                <button style={journalSubmitButton}
+                <button
+                  onClick={this.isFormValid}
+                  style={journalSubmitButton}
                   onClick={(e)=>{
                     e.preventDefault()
                     this.setState({...this.state,showModal:true})}}>
-                  {this.props.button} 
+                
+                  {this.props.button}
                 </button>
 
-                {/* <Alert className='alert' color='danger' role='alert' isOpen={this.state.visible} toggle={this.toggle.bind(this)}>
-                        <h1>Uh Oh!</h1>
-                        <p>All field needs to be filled!</p>
-                    </Alert> */}
+                <Alert
+                  className="alert"
+                  color="danger"
+                  role="alert"
+                  isOpen={this.state.visible}
+                  toggle={this.toggle.bind(this)}
+                >
+                  <h1>Uh Oh!</h1>
+                  <p>All field needs to be filled!</p>
+                </Alert>
 
-                {this.state.showModal && (<PopupsubimtModal handleFinalSubmit ={this.handleFinalSubmit} showModal={this.state.showModal} closeModal={this.closeModal}/>)}
+                {this.state.showModal && (
+                  <PopupsubimtModal
+                    handleFinalSubmit={this.handleFinalSubmit}
+                    showModal={this.state.showModal}
+                    closeModal={this.closeModal}
+                  />
+                )}
               </form>
             </div>
           </ModalBody>
