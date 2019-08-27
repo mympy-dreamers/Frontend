@@ -23,7 +23,7 @@ class UserBar extends React.Component {
                 <div className="wrapper">
                     <div className="user-left">
                         <h3>Hello {this.props.authZeroUser.given_name.toUpperCase() + " " + this.props.authZeroUser.family_name.toUpperCase()}!</h3>
-                        <img src={demo} alt='user' />
+                        <img src={this.props.authZeroUser.picture} alt='user' />
                     </div>
                     <div className="flexing">
                         <Link to="/addDream">
