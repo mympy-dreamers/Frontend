@@ -1,63 +1,135 @@
 .form-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 
     .formTitle {
-        font-size: 30px;
-        // text-align: center;
-        // padding-top: 10px;
-        // font-weight: bolder;
-        // color: white;
-        // text-shadow: 1px 1px grey;
-        // font-weight: bolder;
-        // margin-bottom: 50px;
+        margin: 4%;
+
         h1 {
-            // font-size: 80px;
+            font-family: $large-font;
+            color: $large-font-color;
+            font-size: 4.2rem;
+            font-weight: 900;
             // text-align: center;
             // margin-top: 235px;
             // margin-bottom: 100px;
         }
 
         p {
-
+            font-family: $large-font;
+            color: $large-font-color;
+            font-size: 1.3rem;
+            font-weight: 900;
         } // end of p
 
     } // end of form-title
 
-    .alert0 {
-        text-align: center;
-        /* margin-top: 30px; */
-        width: 50%;
-        height: 100px;
-        margin: 0 auto 30px;
-        padding-left: 40px;
-    }
-    @media (max-width: 1250px){
-        .alert0 {
-            width: 80%;
-        }
-    } 
-    
-    .alert0 h1 {
-        font-size: 25px;
-    }
-    
-    .alert0 p {
-        margin-top: 30px;
-        font-size: 18px;
-    }
-    
-    .alert2 {
-        text-align: center;
-        margin-top: 30px;
-        width: 450px;
-        height: 160px;
-        margin-left: 506px;
-        padding-left: 40px;
-    }
-    
-    #dream_long_description{
-        height: 350px;
+    .form {
         text-align: left;
-        padding: 30px;
-    }
+
+        .question {
+            display: flex;
+            flex-direction: column;
+
+            .dreamLabel {
+                font-family: $large-font;
+                color: $large-font-color;
+                font-size: 1.3rem;
+                font-weight: 900;
+                padding: 20% 0 8% 0;
+            }
+
+            .inputStyle {
+                border-radius: 10px;
+                width: 90%;
+            }
+
+            .four {
+                width: 98%;
+                height: 150px;
+            }
+
+        } // end of question
+
+        .btn-div {
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            padding: 5% 0 5% 0;
+
+            .rectangle-copy-3 {
+                height: 45px;
+                width: 118px;
+                border-radius: 12px;
+                background-color: $dreamer-btn-color;
+                font-family: $body-font;
+                color: $large-font-color;
+                font-size: 2.1rem;
+                font-weight: 900;
+
+                &:hover {
+                    color: $dreamer-btn-color;
+                    background-color: $large-font-color;
+                }
+            }
+
+            .rectangle-copy-2 {
+                height: 45px;
+                width: 118px;
+                border: 3px solid $dreamer-btn-color;
+                border-radius: 12px;
+                font-family: $body-font;
+                color: $large-font-color;
+                font-size: 2.1rem;
+                font-weight: 900;
+
+                &:hover {
+                    border: 3px solid $large-font-color;
+                    background-color: $large-font-color;
+                    color: $dreamer-btn-color;
+                }
+            }
+        }
+
+    } // end of form
+
+    // .alert0 {
+    //     text-align: center;
+    //     /* margin-top: 30px; */
+    //     width: 50%;
+    //     height: 100px;
+    //     margin: 0 auto 30px;
+    //     padding-left: 40px;
+    // }
+    // @media (max-width: 1250px){
+    //     .alert0 {
+    //         width: 80%;
+    //     }
+    // } 
+    
+    // .alert0 h1 {
+    //     font-size: 25px;
+    // }
+    
+    // .alert0 p {
+    //     margin-top: 30px;
+    //     font-size: 18px;
+    // }
+    
+    // .alert2 {
+    //     text-align: center;
+    //     margin-top: 30px;
+    //     width: 450px;
+    //     height: 160px;
+    //     margin-left: 506px;
+    //     padding-left: 40px;
+    // }
+    
+    // #dream_long_description{
+    //     height: 350px;
+    //     text-align: left;
+    //     padding: 30px;
+    // }
 
 } // end of form-main
