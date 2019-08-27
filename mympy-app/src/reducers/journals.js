@@ -83,8 +83,8 @@ export default function journalsReducer(state = INITIAL_STATE, action) {
         case ADD_JOURNAL_SUCCESS:
             return {
                 ...state,
-                journals: [action.payload, ...state],
-                userDreams: [action.payload, ...state]
+                journals: [action.payload, ...state.journals],
+                userDreams: [action.payload, ...state.userDreams]
             }
         case ADD_JOURNAL_FAILURE:
             return {
