@@ -206,11 +206,12 @@ class FormModal extends React.Component {
   }
 }
 
-const mapStateToProps = ({ users, dreams }) => {
+const mapStateToProps = ({ users, dreams, journals }) => {
   return {
     authZeroUser: users.authZeroUser,
     user: dreams.currDream.user_id,
-    dreams: dreams.currDream.id
+    dreams: dreams.currDream.id,
+    journals: journals.dreamJournals
   };
 };
 
