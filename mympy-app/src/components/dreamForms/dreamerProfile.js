@@ -66,6 +66,7 @@ class DreamInfo extends React.Component {
 
         const newDream = { ...this.state.dreamCard, donation_goal: parseInt(this.state.dreamCard.donation_goal, 10) }
         // e.preventDefault()
+        console.log('submittedDream: ', newDream);
         this.props.addDream(newDream)
         this.setState({ showModal: false }, () => {
             this.props.history.push('/addDream/image')
@@ -87,6 +88,7 @@ class DreamInfo extends React.Component {
     }
 
     render() {
+        console.log(this.state)
         return (
             <div className='dream-Home-Page'>
                 <div className='dreamer-card-app'>
@@ -103,7 +105,7 @@ class DreamInfo extends React.Component {
                             <Input className="input-style" onChange={this.handleChanges} name="donation_goal" id="donation_goal" placeholder="Enter Donation goal here" />
                         </FormGroup>
                         <FormGroup>
-                            <Label className="dreamlable" for="exampleText">Give us a one scentence summary of your dream</Label>
+                            <Label className="dreamlable" className="dreamlable" for="exampleText">Give us a one scentence summary of your dream</Label>
                             <Input className="input-style" onChange={this.handleChanges} type="textarea" name="dream_short_description" id="dream_short_description" />
                         </FormGroup>
                         <FormGroup>

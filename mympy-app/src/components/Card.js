@@ -98,6 +98,4 @@ const Card = ({ dream }) => {
   );
 }
 
-
-
-export default (Card)
+export default Card;

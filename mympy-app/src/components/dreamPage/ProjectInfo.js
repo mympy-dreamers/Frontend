@@ -6,6 +6,10 @@ import { sendMail, fetchUserById } from '../../actions';
 
 import ProgressCircle from './ProgressCircle.js';
 import EmailModal from '../emailModal/EmailModal';
+import { Link } from 'react-router-dom';
+
+import DonationModal from './DonationModal.js';
+
 
 const ProjectInfoDiv = styled.div`
 	display: flex;
@@ -54,20 +58,6 @@ const ProjectInfoDiv = styled.div`
 		margin-bottom: 50px;
 	}
 
-	.donate-btn {
-		width: 144px;
-		height: 70px;
-		border-radius: 40px;
-		background-color: #FFD164;
-		color: black;
-		font-size: 2.8em;
-		font-weight: bold;
-		font-family: Helvetica, sans-serif;;
-		border: none;
-		outline: none;
-		margin-bottom: 56px;
-	}
-
 	.share-title {
 		font-size: 1.8em;
 		font-weight: bold;
@@ -89,8 +79,6 @@ const ProjectInfoDiv = styled.div`
 	}
 `
 
-
-
 class ProjectInfo extends React.Component {
 
 	componentDidUpdate(prevProps) {
@@ -104,6 +92,7 @@ class ProjectInfo extends React.Component {
 	}
 
 	render() {
+		console.log(this.props.loggedUser)
 		return (
 			<ProjectInfoDiv>
 				<h2 className="title">{this.props.currDream.dream_name}</h2>
@@ -120,7 +109,10 @@ class ProjectInfo extends React.Component {
 				<p className="donationText">Received<br /></p> <p className="donationNums">${this.props.currDream.donations_received}</p><br />>
 
 				{/* <h3 className="days-left">7 Days Left</h3> */}
-				<button className="donate-btn">Donate</button>
+
+				<div>
+					<DonationModal />
+				</div>
 				<h4 className="share-title">SHARE PROJECT</h4>
 				<div className="share-buttons">
 					<i className="fab fa-facebook fa-5x"></i>
