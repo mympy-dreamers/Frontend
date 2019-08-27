@@ -87,6 +87,12 @@ class JournalEntry extends Component {
 			this.props.fetchDreamJournals(this.props.currDream.id), 1000
 		);
 	}
+
+	componentDidUpdate(prevProps){
+		if(prevProps.journals.length !== this.props.journals.length)
+			this.props.fetchDreamJournals(this.props.currDream.id)
+	}
+  
 	handleSubmit = () => {
 		this.setState({
 		  showModal: true
