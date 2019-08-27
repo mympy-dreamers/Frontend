@@ -31,16 +31,58 @@ div.card-header > div > button.delete-button{
 
 #root > div > div.app-wrap > div > div > div.sidebar-body > div > nav {
 
+}*/
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+    color: black;
 }
 
 /* about tab */
-#dream-page-body-tab-about{
 
+#dream-page-body-tab-about{
+    font-size: 1rem;
+    color: white;
 }
 
-/* Journal Tab */
-#dream-page-body-tab-Journal{
+#dream-page-body-tab-about.nav-item.nav-link.active{
+    font-size: 1rem;
+    color: black;
+}
 
+/* journal tab */
+
+#dream-page-body-tab-Journal{
+    font-size: 1rem;
+    color: white;
+}
+
+#dream-page-body-tab-Journal.nav-item.nav-link.active{
+    font-size: 1rem;
+    color: black;
+}
+
+/* Journal Tab Body */
+#dream-page-body-tabpane-Journal > div > div > div.JE-body{
+    margin: 0;
+    padding: 0;
+}
+
+#dream-page-body-tabpane-Journal > div > div > div.JE-body > div > div > div.card-header{
+    border: none;
+    border-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#dream-page-body-tabpane-Journal > div > div > div.JE-body > div > div > div.card-header > div > a {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+
+/* side bar */
+#root > div > div.app-wrap > div > div > div > div.sidebar-body > div {
+    margin-right: 1rem;
 }
 
 /* Sidebar and dream body */
@@ -48,8 +90,8 @@ div.card-header > div > button.delete-button{
     margin-top: -5rem;
     z-index: 1;
     max-width: 100%;
-    margin-left: 3rem;
-    margin-right: 3rem;
+    margin-left: 6rem;
+    margin-right: 7rem;
 }
 
 pre {
@@ -129,24 +171,4 @@ p {
     margin-left: 11px;
 }
 
-#dream-page-body-tabpane-Journal > div > div > div.JE-body{
-    margin: 0;
-    padding: 0;
-}
 
-#dream-page-body-tabpane-Journal > div > div > div.JE-body > div > div > div.card-header{
-    border: none;
-    border-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-#dream-page-body-tabpane-Journal > div > div > div.JE-body > div > div > div.card-header > div > a {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-}
-
-/* side bar */
-#root > div > div.app-wrap > div > div > div > div.sidebar-body > div {
-    margin-right: 0.5rem;
-}
