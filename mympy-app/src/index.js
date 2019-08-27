@@ -37,7 +37,7 @@ const onRedirectCallback = appState => {
 };
 const AppwithRouter = withRouter(App);
 
-const pkTest = process.env.PK_TEST;
+// const pkTest = process.env.PK_TEST;
 // ^^ PK = Publishable Key ^^
 
 ReactDOM.render(

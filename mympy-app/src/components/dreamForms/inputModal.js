@@ -12,9 +12,9 @@ const bodyStyle = {
 }
 
 const headStyle = {
-  color: "red",
-  fontSize: "22px",
   color: '#1B5485',
+  fontSize: "22px",
+  // color: '#1B5485',
 
 }
 

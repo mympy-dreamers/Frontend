@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import JournalList from './JournalList';
-import comingSoon from '../../img/coming-soon.png';
 import { fetchDreamJournals } from '../../actions'
 
 const JournalEntryDiv = styled.div`

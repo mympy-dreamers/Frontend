@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
 import { connect } from 'react-redux';
 import { sendMail } from '../../actions';
 import Donate from '../stripe/Donate.js';
