@@ -176,7 +176,7 @@ class FormModal extends React.Component {
                   value={this.state.journal.title}
                 />
                 <h1 style={h2}>Share Your Thoughts</h1>
-                <input
+                <textarea
                   style={inputStyle2}
                   name="body"
                   id="body"
