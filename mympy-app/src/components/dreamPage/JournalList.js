@@ -31,6 +31,7 @@ class JournalList extends Component {
   };
 
   render() {
+    const date = this.props.posted_on.split("T")[0];
     return (
       <Card>
 						<Card.Header>
@@ -40,7 +41,6 @@ class JournalList extends Component {
                
                 {this.props.currentUser.id === this.props.user_id 
                 ? <div className="journalButtons pull-right">
-                  <h3 className="">{this.props.posted_on}</h3>
                     <a>
                       <i
                         id="edit-icon"
@@ -65,11 +65,11 @@ class JournalList extends Component {
                           this.props.deleteJournal(this.props.id)
                         }></i></a>
                  </div>
-                :  <h3 className="pull-right">{this.props.posted_on}</h3> }
+                :  <h3 className="pull-right">{date}</h3> }
             
 						</Card.Header>
 						<Accordion.Collapse eventKey={this.props.id}>
-						<Card.Body><pre>{this.props.body}</pre></Card.Body>
+						<Card.Body><p><pre>{this.props.body}</pre></p></Card.Body>
 						</Accordion.Collapse>
 			</Card>
     );
