@@ -44,7 +44,7 @@ div.card-header > div > button.delete-button{
 }
 
 /* Sidebar and dream body */
-#root > div > div.app-wrap > div > div > div.sidebar-body{
+#root > div > div.app-wrap > div > div > div > div.sidebar-body{
     margin-top: -5rem;
     z-index: 1;
 }
@@ -125,3 +125,22 @@ pre::-webkit-scrollbar {
 p {
     margin-left: 11px;
 }
+
+#dream-page-body-tabpane-Journal > div > div > div.JE-body{
+    margin: 0;
+    padding: 0;
+}
+
+#dream-page-body-tabpane-Journal > div > div > div.JE-body > div > div > div.card-header{
+    border: none;
+    border-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#dream-page-body-tabpane-Journal > div > div > div.JE-body > div > div > div.card-header > div > a {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+
