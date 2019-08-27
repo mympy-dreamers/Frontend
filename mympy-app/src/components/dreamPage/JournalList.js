@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import { Button, Card } from 'react-bootstrap';
+
 class JournalList extends Component {
 
   render() {
@@ -17,7 +18,7 @@ class JournalList extends Component {
                       className="delete-button" 
                       onClick={()=>
                       window.confirm("Are you sure you wish to delete this item?") &&
-                      this.props.deleteJournal(this.props.id)}>Delete
+                      this.props.deleteJournal(this.props.id)}><i className="fas fa-trash-alt fa-xs"></i>
                     </button>
                   : null}
                 </div>
