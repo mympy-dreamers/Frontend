@@ -83,14 +83,14 @@ class JournalEntry extends Component {
   };
 
   componentDidMount() {
-    setTimeout(
-      () => this.props.fetchDreamJournals(this.props.currDream.id),
-      1000
+     setTimeout(
+      () => this.props.fetchDreamJournals(this.props.currDream.id),1000,
+      
     );
   }
 
   componentDidUpdate(prevProps){
-  	if(prevProps.journals !== this.props.journals)
+  	if(prevProps.journals.length !== this.props.journals.length)
   		this.props.fetchDreamJournals(this.props.currDream.id)
   }
 
