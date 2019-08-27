@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { addDream } from '../../../actions';
 import { FormGroup, Label, Input, Alert } from 'reactstrap';
 import InputModal from "../inputModal";
@@ -65,10 +65,8 @@ class Form extends React.Component {
         // e.preventDefault()
         console.log('submittedDream: ', newDream);
         this.props.addDream(newDream)
-        this.setState({ showModal: false }, () => {
-            this.props.history.push('/addDream/image')
-
-        })
+        this.setState({ showModal: false }, () => this.props.history.push('/addDream/image'))
+        // <Link to='/addDream/image' />
     }
 
     handleSubmit = e => {
@@ -132,4 +130,4 @@ const mapStateToProps = ({ users, auth }) => {
     }
 }
 
-export default connect(mapStateToProps, { addDream })(Form);
+export default withRouter(connect(mapStateToProps, { addDream })(Form));
