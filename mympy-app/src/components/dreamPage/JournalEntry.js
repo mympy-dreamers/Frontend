@@ -51,9 +51,7 @@ const JournalEntryDiv = styled.div`
 `
 
 class JournalEntry extends Component {
-	state = {
-	}
-  
+
 	componentDidMount() {
 		setTimeout(() =>this.props.fetchDreamJournals(this.props.currDream.id), 1000);
 	}
