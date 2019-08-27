@@ -47,40 +47,10 @@
         }
     } 
 
-
-.dreamlable {
-    font-size: 30px;
-    color:white;
-    margin-bottom: 10px;
-}
-
 .textlable {
     font-size: 30px;
     color:white;
     margin-bottom: 10px;
-}
-
-.dreamlable input {
-    margin-left: 100px;
-}
-
-.form-title {
-    font-size: 30px;
-    text-align: center;
-    padding-top: 10px;
-    font-weight: bolder;
-    color: white;
-    text-shadow: 1px 1px grey;
-    font-weight: bolder;
-    margin-bottom: 50px;
-}
-
-.form-title h1 {
-    font-size: 80px;
-    text-align: center;
-    margin-top: 235px;
-    margin-bottom: 100px;
-    
 }
 
 .dreamer-card-app button {
@@ -99,11 +69,11 @@
     
 }
 
-button:hover {
+/* button:hover {
     background-color: #012345;
     color: #FFD164;
     text-shadow: 1px 1px white;
-}
+} */
 
 Link:hover 
 {
