@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-//const BASE_URL = https://mympy-dreamers-staging.herokuapp.com;
+// const BASE_URL = 'https://mympy-dreamers-staging.herokuapp.com';
 const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
 
 // Dream specific endpoints for payments below

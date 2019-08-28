@@ -1,7 +1,6 @@
 import React from 'react';
 import { fetchAllDreams } from '../actions/index';
 import { connect } from "react-redux";
-import ProgressBar from 'react-bootstrap/ProgressBar';
 import styled from 'styled-components';
 
 import Card from './Card.js'

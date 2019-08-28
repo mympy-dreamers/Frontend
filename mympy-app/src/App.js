@@ -65,7 +65,7 @@ class App extends React.Component {
           <PrivateRoute exact path="/addDream/image" component={ImageForm} />
           <Footer />
         </div>
-      </div >
+      </div>
     );
   }
 }

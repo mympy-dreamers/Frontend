@@ -11,14 +11,12 @@ const bodyStyle = {
 
 const headStyle = {
   color: "red",
-  fontSize: "22px",
-  color: '#1B5485',
-
+  fontSize: "22px"
 }
 
 
 
-class PopupsubimtModal extends React.Component {
+class PopupSubmit extends React.Component {
 
   render() {
     return (
@@ -26,7 +24,7 @@ class PopupsubimtModal extends React.Component {
         <Modal isOpen={this.props.showModal}>
           <ModalHeader style={headStyle}>Warning!!</ModalHeader>
           <ModalBody style={bodyStyle}>
-            "Are you sure you want to save your journal"
+            "Post a new Journal Entry?"
           </ModalBody>
           <ModalFooter>
             <Button id='cancel-button' onClick={() => this.props.closeModal()}>Cancel</Button>
@@ -42,4 +40,4 @@ class PopupsubimtModal extends React.Component {
   }
 }
 
-export default PopupsubimtModal ;
+export default PopupSubmit ;

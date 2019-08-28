@@ -1,9 +1,8 @@
 import React from 'react';
 import './dreamCard.css';
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { addImage } from '../../actions';
-import { Button, FormGroup, Label, Input, FormText, Alert } from 'reactstrap';
+import { FormGroup, Label, Input, Alert } from 'reactstrap';
 import FormModal from "./FormModal";
 
 class imageForm extends React.Component {
@@ -60,7 +59,7 @@ class imageForm extends React.Component {
                     
                     <div>
                         <FormGroup className='image-icons'>
-                            <Label id="image-button" for="exampleFile"><i class="fas fa-folder-plus"><h2> Image File </h2></i></Label>
+                            <Label id="image-button" for="exampleFile"><i className="fas fa-folder-plus"><h2> Image File </h2></i></Label>
                             <div className='images'>
                                 <Input className="fileInput" type="file" onChange={this.uploadFile} name="file" id="exampleFile" />
                                 <button onClick={this.handleSubmit} className='dreambutton1'>Submit</button>
