@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
-// import { StripeProvider } from 'react-stripe-elements';
+import { StripeProvider } from 'react-stripe-elements';
 import thunk from 'redux-thunk';
 import Logger from 'redux-logger'; // REMOVE FOR PRODUCTION -----------------------------------------------------------^^^^^^^^^^^^^^^^^^^^^\\\\\\\\\\\\\\\\\\\\
 import { BrowserRouter as Router, withRouter } from 'react-router-dom';
@@ -47,13 +47,13 @@ ReactDOM.render(
         redirect_uri={window.location.origin}
         onRedirectCallback={onRedirectCallback}
     >
-        {/* <StripeProvider apiKey='pk_test_1d72AL8UO1qMdLmncaIcIaEx00n89i0APd'> */}
+        <StripeProvider apiKey='pk_test_1d72AL8UO1qMdLmncaIcIaEx00n89i0APd'>
             <Provider store={store}>
                 <Router>
                     <AppwithRouter />
                 </Router>
             </Provider>
-        {/* </StripeProvider> */}
+        </StripeProvider>
     </Auth0Provider>,
     document.getElementById('root')
 );
