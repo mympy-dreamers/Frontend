@@ -67,7 +67,9 @@ class CheckoutForm extends React.Component {
             console.log("Purchase Complete!");
             this.props.dreamPayPost({
                 "donation_amount": this.props.donationTotal,
-                "dream_id": this.props.currDream_id
+                "dream_id": this.props.currDream_id,
+                "img_url": this.props.authUser.picture,
+                "user_name": this.props.authUser.name
             });
             this.props.userPayPost({
                 "donation_amount": this.props.donationTotal,
