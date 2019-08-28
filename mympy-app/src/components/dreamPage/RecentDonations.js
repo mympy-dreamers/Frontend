@@ -9,7 +9,14 @@ class RecentDonations extends React.Component {
 
 	componentDidMount() {
 		console.log(this.props.currDream)
+
 		this.props.dreamPayFetch(this.props.currDream.id);
+	}
+
+	componentDidUpdate(prevProps) {
+		if (this.props.donoFetch !== prevProps.donoFetch && this.props.donoFetch == true) {
+			this.props.dreamPayFetch(this.props.currDream.id);
+		}
 	}
 
 	render() {
@@ -39,6 +46,7 @@ const mapStateToProps = ({ stripe, dreams }) => {
 	return {
 		dreamPayments: stripe.dreamPayments,
 		currDream: dreams.currDream,
+		donoFetch: dreams.donoFetch
 	}
 }
 
