@@ -60,32 +60,37 @@ Dreamers(users) can:
 
 ### Front end built using:
 
-#### React.js
+#### React + Redux
 
-We chose this because...
+React alone doesn't have efficient data flow (since you must pass down the data locally, which gets incredibly complicated if you have different branched child components). Redux solves this issue by having one store, which stores all the different states needed for the entire application. Then any component from the app can just connect to the store, pulling the data and avoiding multi-level data flow from parent components, avoiding data tracking mistakes, which in turn increases the productivity of the developers. 
 
--    Faster loading times.
--    Most of team knows React
+Overall, the integration of React + Redux allows for the app to be scalable, efficient, and clean.
 
-Other Libraries
 
-#### Redux
-
--   React can be complicated, Redux can help mitigate some of this issue.
+### Other Libraries:
 
 #### Axios
 
--   Most Members know Axios as a way to handle promises
+Axios is used to preform CRUD (create, read, update, delete) requests to our backend. Our app, in turn, receives responses from our backend that subsequently renders such data in the related components.
 
 #### ReactStrap
 
--   Quick and easy reusable components
--   Using Bootstrap and Reacstrap to implement forms and search bars can save       time on simple yet sometimes time consuming engineering tasks.
--   Using SCSS everywhere else allows us to design everything else in a             completely custom manner.
+Using ReactStrap allows us to be more structural, organizational, and clean in design. It also boosts functional productivity, as we have more time researching on feature creation and less time on manual design creation.
 
-#### Formidable Victory
+#### Font Awesome
 
--   Formidable's Victory is open source and aesthetically pleasing. 
+We use font awesome icons throughout the app for a clean, appealing design.
+
+#### Slick Carousel
+
+We use this library in order to create stunning carousel designs.
+
+#### Jwt-decode
+
+Used for decoding tokens received from the backend.
+
+
+
 
 ##### Front end deployed to [![Netlify Status](https://api.netlify.com/api/v1/badges/1dd77115-62b5-421c-af16-aab2a0ed6de9/deploy-status)](https://app.netlify.com/sites/mympydreamers/deploys)
 
@@ -105,11 +110,14 @@ We chose this because...
 
 #### Express
 
--   
+- It is used for easier creation of web applications and services.
+- Consistent routing to modules.
+- Consistent, customizable middleware interface.
+- Handling post data, session management, static file serving, etc.
 
 #### BCrypt.js
 
--   Library for securing passwords 
+- Library for securing passwords 
 
 # APIs
 
