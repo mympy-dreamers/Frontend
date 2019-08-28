@@ -203,11 +203,13 @@ class JournalForm extends React.Component {
                   value={this.state.journal.body}
                 />
                 <button
-                  onClick={this.isFormValid}
                   style={journalSubmitButton}
                   onClick={(e)=>{
+                    this.isFormValid()
                     e.preventDefault()
-                    this.setState({...this.state, showModal:true})}}>
+                    this.setState({...this.state, showModal:true})}
+                    }
+                  >
                 
                   {this.props.button}
                 </button>
