@@ -10,17 +10,26 @@ import cloudPlus from '../../img/userbar-img/cloudPlus.png';
 import journal from '../../img/userbar-img/journal.png';
 import messageLogo from '../../img/userbar-img/messageLogo.png';
 import userLogo from '../../img/userbar-img/userLogo.png';
-
+import arrow from '../../img/arrow-down.png';
 
 class UserBar extends React.Component {
 
     componentDidMount(){
         console.log(this.props.authZeroUser);
     }
+
+    clickHandler = e => {
+        console.log(document.querySelector('.nav-tab-wrapper'))
+        // const classes = document.querySelector('.nav-tab-wrapper').className
+        // classes.inludes(' active') ?
+        // classes.replace(' active', '') :
+        // (classes += ' active')
+    }
+
     render() {
         return (
             <div className="user-main">
-                <div className="wrapper">
+                <div className="nav-tab-wrapper" >
                     <div className="user-left">
                         <h3>Hello {this.props.authZeroUser.given_name.toUpperCase() + " " + this.props.authZeroUser.family_name.toUpperCase()}!</h3>
                         <img src={this.props.authZeroUser.picture} alt='user' />
@@ -60,6 +69,9 @@ class UserBar extends React.Component {
                         </div>
                         {/* </Link> */}
                     </div>
+                </div>
+                <div className="arrow" onClick={this.clickHandler()} >
+                    <img src={arrow} alt='' />
                 </div>
             </div>
         )
