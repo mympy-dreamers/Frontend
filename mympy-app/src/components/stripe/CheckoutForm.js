@@ -1,5 +1,5 @@
 import React from 'react';
-import {CardElement, injectStripe} from 'react-stripe-elements';
+import { CardElement, injectStripe } from 'react-stripe-elements';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { dreamPayPost, userPayPost, updateDream } from '../../actions';
@@ -56,7 +56,7 @@ class CheckoutForm extends React.Component {
         let { token } = await this.props.stripe.createToken({ name: this.props.authUser.name });  // name will be the customer's name passed in
         let response = await fetch(`${BASE_URL}/stripe/charge`, {
             method: "POST",
-            headers: {"Content-Type": "application/json"},
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 token: token.id,
                 amount: this.props.donationTotal
@@ -64,8 +64,7 @@ class CheckoutForm extends React.Component {
         });
 
         if (response.ok) {
-            console.log(response.ok);
-            this.setState({complete: true});
+            this.setState({ complete: true });
             console.log("Purchase Complete!");
 
             this.props.dreamPayPost({
@@ -109,12 +108,12 @@ class CheckoutForm extends React.Component {
 }
 
 const mapStateToProps = ({ users, dreams, auth }) => {
-  return {
-    authUser: users.authZeroUser,
-    currDream: dreams.currDream,
-    currDream_id: dreams.currDream.id,
-    user_id: auth.user.id
-  }
+    return {
+        authUser: users.authZeroUser,
+        currDream: dreams.currDream,
+        currDream_id: dreams.currDream.id,
+        user_id: auth.user.id
+    }
 }
 
 export default connect(mapStateToProps, { dreamPayPost, userPayPost, updateDream })(injectStripe(CheckoutForm));

@@ -24,11 +24,13 @@ import {
 	FETCH_IMAGE_FAILURE,
 	DELETE_DREAM_FAILURE,
 	SET_DREAMCARDS,
-	UPDATE_SEARCH
+	UPDATE_SEARCH,
+	DONO_FETCH
 } from '../actions'
 
 const INITIAL_STATE = {
 	fetching: false,
+	donoFetch: false,
 	errors: [],
 	deletingDream: false,
 	posting: false,
@@ -124,12 +126,18 @@ export default function dreamsReducer(state = INITIAL_STATE, action) {
 				...state,
 				fetching: false,
 				currDream: action.payload,
-				currDreamId: action.payload.id
+				currDreamId: action.payload.id,
+				donoFetch: true,
 			}
 		case FETCH_DREAM_FAILURE:
 			return {
 				...state,
 				fetching: false
+			}
+		case DONO_FETCH:
+			return {
+				...state,
+				donoFetch: false
 			}
 		case FETCH_USER_DREAMS_START:
 			return {

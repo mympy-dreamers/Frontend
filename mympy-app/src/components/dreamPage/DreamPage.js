@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import {Modal, Button, Row, Col, Form} from 'react-bootstrap'
+import { Modal, Button, Row, Col, Form } from 'react-bootstrap'
 import Carousel from './Carousel.js';
 import Sidebar from './Sidebar.js';
 import DreamPageBody from './DreamPageBody.js';
@@ -24,9 +24,7 @@ const DreamPageDiv = styled.div`
 `;
 
 class DreamPage extends React.Component {
- 
- 
-   
+
   componentDidMount() {
     this.props.fetchDreamById(this.props.match.params.id);
     this.props.fetchImage(this.props.match.params.id);
@@ -35,8 +33,6 @@ class DreamPage extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.currDream !== prevProps.currDream) {
       const thisDream = this.props.currDream;
-      console.log(thisDream)
-      console.log(this.props.dreams)
       this.setState({
         dream: thisDream,
         user: { username: thisDream.username }
@@ -48,24 +44,23 @@ class DreamPage extends React.Component {
 
 
   render() {
-    console.log(this.props.currDream)
     return (
 
-  <div>
+      <div>
 
-  
 
-      <DreamPageDiv>
-        <div className="dream-page">
-          <Carousel />
-          <div className="sidebar-body">
-            <Sidebar />
-            <DreamPageBody />
+
+        <DreamPageDiv>
+          <div className="dream-page">
+            <Carousel />
+            <div className="sidebar-body">
+              <Sidebar />
+              <DreamPageBody />
+            </div>
           </div>
-        </div>
-      </DreamPageDiv>
+        </DreamPageDiv>
 
-  </div>    
+      </div>
     );
   }
 }

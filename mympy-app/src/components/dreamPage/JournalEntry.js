@@ -8,7 +8,7 @@ import {
 	updateJournal } from '../../actions'
 import './journaList.css';
 import Accordion from 'react-bootstrap/Accordion';
-import FormModal from "../dreamPage/JournalForm";
+import JournalForm from "../dreamPage/JournalForm";
 
 const JournalEntryDiv = styled.div`
   .JE-title {
@@ -117,7 +117,7 @@ render() {
 				</button>
 				: null}
 				{this.state.showModal && (
-				<FormModal
+				<JournalForm
 					button="Submit"
 					showModal={this.state.showModal}
 					closeModal={this.closeModal}

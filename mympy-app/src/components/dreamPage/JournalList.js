@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./journaList.css";
-import FormModal from "../dreamPage/JournalForm";
+import JournalForm from "./JournalForm";
 import Accordion from 'react-bootstrap/Accordion';
 import { Button, Card } from 'react-bootstrap';
 
@@ -49,7 +49,7 @@ class JournalList extends Component {
                       ></i>
                     </a>
                     {this.state.showModal && (
-                      <FormModal
+                      <JournalForm
                         button="Update"
                         body={this.state.body}
                         title={this.state.title}

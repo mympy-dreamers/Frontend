@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import RecentDonations from './RecentDonations.js';
 import ProjectInfo from './ProjectInfo.js';
+// import { prependOnceListener } from 'cluster';
 
 const SidebarDiv = styled.div`
 	display: flex;
@@ -15,7 +16,7 @@ const SidebarDiv = styled.div`
 	position: relative;
 `
 
-const Sidebar = ({ dream, user }) => {
+const Sidebar = ({ dream, user, match }) => {
 	return (
 		<SidebarDiv>
 			<ProjectInfo dream={dream} user={user} />
