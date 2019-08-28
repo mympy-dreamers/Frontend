@@ -16,7 +16,7 @@ const SidebarDiv = styled.div`
 	position: relative;
 `
 
-const Sidebar = ({ dream, user }) => {
+const Sidebar = ({ dream, user, match }) => {
 	return (
 		<SidebarDiv>
 			<ProjectInfo dream={dream} user={user} />
