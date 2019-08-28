@@ -26,9 +26,6 @@ const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk))
 );
 
 
-const pkTest = process.env.PK_TEST;
-// ^^ PK = Publishable Key ^^
-
 // redirect for auth0
 const onRedirectCallback = appState => {
     window.history.replaceState(
