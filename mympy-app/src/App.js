@@ -34,41 +34,64 @@ class App extends React.Component {
     return (
       <div className="App">
 
+        {/* render attr used to pass props into component */}
+        <Route path="/" render={(props) => (
+          <NavBar
+            {...props}
+            show={this.props.location.pathname.includes('market')}
+            onAccountPage={this.props.location.pathname.includes('dashboard')}
+          />
+        )} />
 
-        <Route path="/" render={(props) => <NavBar
-          {...props}
-          show={this.props.location.pathname.includes('market')}
-          onAccountPage={this.props.location.pathname.includes('dashboard')}
-        />} />
         <div className="app-wrap">
+
           <Route exact path="/" render={(props) => <Home {...props} />} />
+
+          {/* render attr used to pass history props into component */}
           <Route path="/login" render={(props) => (
+            
             <Login
-              {...props}
+              {...props} 
               type="login"
             />
+
           )} />
+
+          {/* render attr used to pass history props into component */}
           <Route path="/register" render={(props) => (
+
             <Login
               {...props}
               type="register"
             />
+
           )} />
+
           <Route exact path="/about" component={About} />
           <Route exact path="/market" component={DreamMarket} />
           <Route path="/market/:id" component={DreamPage} />
           <Route path="/donate" component={Donate} />
-          <PrivateRoute path="/user-dreams" component={UserDreamsList} />
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
 
+     {/* Private Routes Below */}
+
+          <PrivateRoute path="/user-dreams" component={UserDreamsList} />
+          <Route exact path="/dashboard" component={Dashboard} />
           <PrivateRoute exact path="/addDream" component={DreamerProfile} />
           <PrivateRoute exact path="/addDream/image" component={ImageForm} />
+
           <Footer />
+
         </div>
+
       </div >
+
     );
+
   }
+
 }
+
+
 const mapStateToProps = ({ users }) => {
   return {
     users: users.users,
