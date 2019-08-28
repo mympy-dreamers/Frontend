@@ -25,6 +25,8 @@ const AppSetter = (props) => {
 
 
 }
+
+// Let's try it 
 const mapStateToProps = ({ auth, users }) => {
     return { auth: auth.auth, user: users.authZeroUser, users: users }
 }
