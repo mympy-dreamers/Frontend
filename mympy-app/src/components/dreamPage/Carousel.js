@@ -77,7 +77,7 @@ class Carousel extends Component {
         <Slider {...settings}>
           {this.props.dreamImg.map((pic, i) => {
             return <div>
-              <img src={pic && pic.img_url} key={i} />
+              <img src={pic && pic.img_url} alt="" />
             </div>
           })}
         </Slider>

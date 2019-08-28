@@ -26,9 +26,6 @@ const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk, Lo
 );
 
 
-const pkTest = process.env.PK_TEST;
-// ^^ PK = Publishable Key ^^
-
 // redirect for auth0
 const onRedirectCallback = appState => {
     window.history.replaceState(
@@ -40,6 +37,9 @@ const onRedirectCallback = appState => {
     );
 };
 const AppwithRouter = withRouter(App);
+
+// const pkTest = process.env.PK_TEST;
+// ^^ PK = Publishable Key ^^
 
 ReactDOM.render(
     <Auth0Provider
