@@ -18,7 +18,7 @@ const headStyle = {
 
 
 
-class PopupsubimtModal extends React.Component {
+class PopupSubmit extends React.Component {
 
   render() {
     return (
@@ -42,4 +42,4 @@ class PopupsubimtModal extends React.Component {
   }
 }
 
-export default PopupsubimtModal ;
+export default PopupSubmit ;
