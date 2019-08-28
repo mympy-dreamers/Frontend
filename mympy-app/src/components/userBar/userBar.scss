@@ -22,6 +22,10 @@
                 font-weight: bold;
                 margin: 2% auto;
                 color: $body-font-color;
+
+                @include userBar-break {
+                    font-size: 1.4rem;
+                }
             } // end of h3
 
             img {
@@ -69,6 +73,12 @@
                     padding: 2%;
                     margin: 2% auto;
 
+                    @include userBar-break {
+                        height: 53px;
+                        width: 60px;
+                        // paddin
+                    }
+
                 }
 
                 p {
@@ -77,6 +87,9 @@
                     margin: 3% auto;
                     // align-self: flex-end;
 
+                    @include userBar-break {
+                        font-size: 1.3rem;
+                    }
                 }
 
             } // end of user-tab
