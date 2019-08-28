@@ -3,24 +3,24 @@
 **You can find the deployed project at [Mympy Dreamers](https://mympydreamers.netlify.com/).**
 
 
-# 4️⃣ Installation Instructions
+### Installation Instructions
 
 Start at the root folder `Mympy-Dreamers/FrontEnd` in the `CLI`. `cd` inside `mympy-app`, once inside run `npm install`. After that is finished, run `npm start`.
 
-## Other Scripts
+### Other Scripts
 
     * eject - stops the application
     * build - creates a build of the application
     * start - starts the production server after a build is created
     * test - runs tests in **tests** directory \* eject - copy the configuration files and dependencies into the project so you have full control over them
 
-# Contributing
+### Contributing
 
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
 
 Please note we have a [code of conduct](./CODE_OF_CONDUCT.md). Please follow it in all your interactions with the project.
 
-## Issue/Bug Request
+### Issue/Bug Request
    
  **If you are having an issue with the existing project code, please submit a bug report under the following guidelines:**
  - Check first to see if your issue has already been reported.
