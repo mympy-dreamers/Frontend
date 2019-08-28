@@ -1,6 +1,7 @@
 import React from 'react';
 import { Elements } from 'react-stripe-elements';
 import { connect } from 'react-redux';
+import { StripeProvider } from 'react-stripe-elements';
 import CheckoutForm from './CheckoutForm';
 import styled from 'styled-components';
 
@@ -114,8 +115,34 @@ class Donate extends React.Component {
         this.state = {
             donationAmount: 0,
             mympyDonation: 3,
-            donationTotal: 3
+            donationTotal: 3,
+            stripe: null,
         }
+    }
+
+    componentDidMount () {
+    // ln 125 - 131 | creates a script that attaches to the index.html doc
+        // const script = document.createElement("script");
+      
+        // script.id="stripe-js";
+        // script.src = "https://js.stripe.com/v3/";
+        // script.async = true;
+      
+        // document.body.appendChild(script);
+
+    // ln 123 - 143 | checks if the script has loaded or not and updates state
+        if (window.Stripe) {
+
+            this.setState({stripe: window.Stripe('pk_test_1d72AL8UO1qMdLmncaIcIaEx00n89i0APd')});
+
+          } else {
+
+            document.querySelector('#stripe-js').addEventListener('load', () => {
+              // Create Stripe instance once Stripe.js loads
+              this.setState({stripe: window.Stripe('pk_test_1d72AL8UO1qMdLmncaIcIaEx00n89i0APd')});
+            });
+        }
+
     }
 
     donationHandler = e => {
@@ -161,12 +188,14 @@ class Donate extends React.Component {
                     />
                 </div>
                 <div>
-                    <div className='mympy-donation'><img src={mini_logo}/><h3>{'$' + this.state.mympyDonation +'.00'}</h3></div>
-                    <div className='mympy-cost-msg'>Help with Mympy's cost</div>
+                    <div className='mympy-donation'><img src={mini_logo} alt="" /><h3>{'$' + this.state.mympyDonation +'.00'}</h3></div>
+                    <div className='mympy-cost-msg'>Help with Mympys cost</div>
                 </div>
-                <Elements>
-                    <CheckoutForm donationTotal={this.state.donationTotal}/>
-                </Elements>
+                <StripeProvider stripe={this.state.stripe}>
+                    <Elements>
+                        <CheckoutForm donationTotal={this.state.donationTotal}/>
+                    </Elements>
+                </StripeProvider>
             </StyledDonate>
         )
     }
