@@ -207,7 +207,7 @@ class JournalForm extends React.Component {
                   style={journalSubmitButton}
                   onClick={(e)=>{
                     e.preventDefault()
-                    this.setState({...this.state,showModal:true})}}>
+                    this.setState({...this.state, showModal:true})}}>
                 
                   {this.props.button}
                 </button>
