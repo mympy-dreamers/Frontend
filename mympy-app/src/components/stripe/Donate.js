@@ -1,6 +1,5 @@
 import React from 'react';
 import { Elements } from 'react-stripe-elements';
-import { connect } from 'react-redux';
 import CheckoutForm from './CheckoutForm';
 import styled from 'styled-components';
 
@@ -161,7 +160,7 @@ class Donate extends React.Component {
                     />
                 </div>
                 <div>
-                    <div className='mympy-donation'><img src={mini_logo}/><h3>{'$' + this.state.mympyDonation +'.00'}</h3></div>
+                    <div className='mympy-donation'><img src={mini_logo} alt=""/><h3>{'$' + this.state.mympyDonation +'.00'}</h3></div>
                     <div className='mympy-cost-msg'>Help with Mympy's cost</div>
                 </div>
                 <Elements>
@@ -172,10 +171,4 @@ class Donate extends React.Component {
     }
 }
 
-const mapStateToProps = ({ }) => {
-  return {
-
-  }
-}
-
-export default connect(mapStateToProps)(Donate);
+export default Donate;

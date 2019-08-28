@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import ProgressBar from 'react-bootstrap/ProgressBar';
-import { connect } from "react-redux";
 import styled from 'styled-components';
 
 const StyledCard = styled.div`
