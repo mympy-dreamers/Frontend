@@ -105,7 +105,7 @@ Dreamers(users) can:
 - Receive mentorship.
 - Communicate privately with other members.
 
-## :three: Tech Stack
+## :four: Tech Stack
 
 **Front end deployed to [![Netlify Status](https://api.netlify.com/api/v1/badges/1dd77115-62b5-421c-af16-aab2a0ed6de9/deploy-status)](https://app.netlify.com/sites/mympydreamers/deploys)**
 
@@ -165,7 +165,7 @@ We chose this because...
 
 - Library for securing passwords 
 
-## :four: APIs
+## :five: APIs
 
 ### Auth0
 
@@ -186,7 +186,7 @@ We chose this because...
 
 -   emails, for payments and interactions
 
-## :five: Environment Variables
+## :six: Environment Variables
 
 In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
 
@@ -195,12 +195,14 @@ In order for the app to function correctly, the user must set up their own envir
     * PROD_TOKEN - holds the token to the Mixpanel production tracker
     * DEV_TOKEN - holds the token to the MixPanel development token
 
-## :six: Content Licenses
+## :seven: Content Licenses
 
 🚫For all content - images, icons, etc, use this table to document permission of use. Remove the two placeholders and add you content to this table
 
-| Image Filename | Source / Creator | License                                                                      |
+| File/Content   | Source / Creator | License                                                                      |
 | -------------- | ---------------- | ---------------------------------------------------------------------------- |
 | doodles.png    | Nicole Bennett   | [Creative Commons](https://www.toptal.com/designers/subtlepatterns/doodles/) |
 | rings.svg      | Sam Herbert      | [MIT](https://github.com/SamHerbert/SVG-Loaders)                             |
+| All icons      | Font awesome     | [CC By 4.0 License](https://fontawesome.com/license/free)                    |
+| Bootstrap      | Stephen J. Collings, Matthew Honnibal, Pieter Vanderwerff       | [MIT License](https://github.com/react-bootstrap/react-bootstrap/blob/master/LICENSE)|
 
