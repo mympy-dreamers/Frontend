@@ -6,7 +6,6 @@ import { sendMail, fetchUserById } from '../../actions';
 
 import ProgressCircle from './ProgressCircle.js';
 import EmailModal from '../emailModal/EmailModal';
-import { Link } from 'react-router-dom';
 
 import DonationModal from './DonationModal.js';
 

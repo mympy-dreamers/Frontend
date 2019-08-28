@@ -55,8 +55,8 @@ const onRedirectCallback = appState => {
 
 const AppwithRouter = withRouter(App);
 
-const pkTest = process.env.PK_TEST;
-// ^^ PK = Publishable Key ^^ per stripe is allowed to be uploaded i.e 'publish'able key
+// const pkTest = process.env.PK_TEST;
+// ^^ PK = Publishable Key ^^
 
 ReactDOM.render(
     <Auth0Provider

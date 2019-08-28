@@ -208,3 +208,7 @@
 @mixin userBar-break {
     @media (max-width: 1050px) { @content; }
 }
+
+@mixin twelveEighty {
+    @media (max-width: 1280px) { @content; }
+}

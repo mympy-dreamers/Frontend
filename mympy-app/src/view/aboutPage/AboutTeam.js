@@ -47,16 +47,16 @@ const AboutTeam = () => {
                         <i className="fab fa-github fa-2x" />
                       </a>
                     </li>
-                    <li>
-                      <a target="_blank" href="#">
+                    {/* <li>
+                      <a target="_blank" rel="noopener noreferrer" href="#">
                         <i className="fab fa-linkedin fa-2x" />
                       </a>
-                    </li>
-                    <li>
-                      <a target="_blank" href="#">
+                    </li> */}
+                    {/* <li>
+                      <a target="_blank" rel="noopener noreferrer" href="#">
                         <i className="fab fa-twitter-square fa-2x" />
                       </a>
-                    </li>
+                    </li> */}
                   </div>
                 </ul>
               </div>
@@ -74,18 +74,19 @@ const AboutTeam = () => {
                     <li>
                       <a
                         target="_blank"
+                        rel="noopener noreferrer"
                         href="https://github.com/YorAlexVargas"
                       >
                         <i className="fab fa-github fa-2x" />
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="https://www.linkedin.com/in/uxalexvargas">
+                      <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/uxalexvargas">
                         <i className="fab fa-linkedin fa-2x" />
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="https://twitter.com/Yor_AlexVargas">
+                      <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/Yor_AlexVargas">
                         <i className="fab fa-twitter-square fa-2x" />
                       </a>
                     </li>
@@ -104,20 +105,20 @@ const AboutTeam = () => {
                   <li>Full-Stack Developer</li>
                   <div className="icons">
                     <li>
-                      <a target="_blank" href="https://github.com/ParrishJ">
+                      <a target="_blank" rel="noopener noreferrer" href="https://github.com/ParrishJ">
                         <i className="fab fa-github fa-2x" />
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="https://www.linkedin.com/in/jared-parrish/">
+                      <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/jared-parrish/">
                         <i className="fab fa-linkedin fa-2x" />
                       </a>
                     </li>
-                    <li>
-                      <a target="_blank" href="#">
+                    {/* <li>
+                      <a target="_blank" rel="noopener noreferrer" href="#">
                         <i className="fab fa-twitter-square fa-2x" />
                       </a>
-                    </li>
+                    </li> */}
                   </div>
                 </ul>
               </div>
@@ -133,17 +134,17 @@ const AboutTeam = () => {
                   <li>Full Stack Developer</li>
                   <div className="icons">
                     <li>
-                      <a target="_blank" href="https://github.com/HitzeD ">
+                      <a target="_blank" rel="noopener noreferrer" href="https://github.com/HitzeD ">
                         <i className="fab fa-github fa-2x" />
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="https://www.linkedin.com/in/dakotah-hitze-2a9042100/">
+                      <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/dakotah-hitze-2a9042100/">
                         <i className="fab fa-linkedin fa-2x" />
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="#">
+                      <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/DakotahHitze">
                         <i className="fab fa-twitter-square fa-2x" />
                       </a>
                     </li>
@@ -162,20 +163,20 @@ const AboutTeam = () => {
                   <li>Full Stack Developer</li>
                   <div className="icons">
                     <li>
-                      <a target="_blank" href="https://github.com/Tai510">
+                      <a target="_blank" rel="noopener noreferrer" href="https://github.com/Tai510">
                         <i className="fab fa-github fa-2x" />
                       </a>
                     </li>
-                    <li>
-                      <a target="_blank" href="#">
+                    {/* <li>
+                      <a target="_blank" rel="noopener noreferrer" href="#">
                         <i className="fab fa-linkedin fa-2x" />
                       </a>
-                    </li>
-                    <li>
-                      <a target="_blank" href="#">
+                    </li> */}
+                    {/* <li>
+                      <a target="_blank" rel="noopener noreferrer" href="#">
                         <i className="fab fa-twitter-square fa-2x" />
-                      </a>
-                    </li>
+                    </a>
+                    </li> */}
                   </div>
                 </ul>
               </div>
@@ -191,20 +192,20 @@ const AboutTeam = () => {
                   <li>Full Stack Developer</li>
                   <div className="icons">
                     <li>
-                      <a target="_blank" href="https://github.com/nmylynh">
+                      <a target="_blank" rel="noopener noreferrer" href="https://github.com/nmylynh">
                         <i className="fab fa-github fa-2x" />
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="https://www.linkedin.com/in/mylynh-nguyen-1b8055126">
+                      <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/mylynh-nguyen-1b8055126">
                         <i className="fab fa-linkedin fa-2x" />
                       </a>
                     </li>
-                    <li>
-                      <a target="_blank" href="#">
+                    {/* <li>
+                      <a target="_blank" rel="noopener noreferrer" href="#">
                         <i className="fab fa-twitter-square fa-2x" />
                       </a>
-                    </li>
+                    </li> */}
                   </div>
                 </ul>
               </div>
@@ -219,24 +220,25 @@ const AboutTeam = () => {
                   <li>Manju KC</li>
                   <li>Full Stack Developer</li>
                   <div className="icons">
-                    <li>
+                    {/* <li>
                       <a
                         target="_blank"
+                        rel="noopener noreferrer"
                         href="https://github.com/Manjukcthapa?tab=repositories"
                       >
                         <i className="fab fa-github fa-2x" />
                       </a>
-                    </li>
-                    <li>
-                      <a target="_blank" href="#">
+                    </li> */}
+                    {/* <li>
+                      <a target="_blank" rel="noopener noreferrer" href="#">
                         <i className="fab fa-linkedin fa-2x" />
                       </a>
-                    </li>
-                    <li>
+                    </li> */}
+                    {/* <li>
                       <a target="_blank" href="#">
                         <i className="fab fa-twitter-square fa-2x" />
                       </a>
-                    </li>
+                    </li> */}
                   </div>
                 </ul>
               </div>
@@ -252,20 +254,20 @@ const AboutTeam = () => {
                   <li>Full Stack Developer</li>
                   <div className="icons">
                     <li>
-                      <a target="_blank" href="https://github.com/krislidimo">
+                      <a target="_blank" rel="noopener noreferrer" href="https://github.com/krislidimo">
                         <i className="fab fa-github fa-2x" />
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="https://www.linkedin.com/in/krislidimo/">
+                      <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/krislidimo/">
                         <i className="fab fa-linkedin fa-2x" />
                       </a>
                     </li>
-                    <li>
-                      <a target="_blank" href="#">
+                    {/* <li>
+                      <a target="_blank" rel="noopener noreferrer" href="#">
                         <i className="fab fa-twitter-square fa-2x" />
                       </a>
-                    </li>
+                    </li> */}
                   </div>
                 </ul>
               </div>
@@ -283,20 +285,21 @@ const AboutTeam = () => {
                     <li>
                       <a
                         target="_blank"
+                        rel="noopener noreferrer"
                         href="https://www.instagram.com/mr.luisv/" >
                         <i className="fab fa-instagram fa-2x"></i>
                       </a>
                     </li>
                     <li>
-                      <a target="_blank" href="https://www.linkedin.com/in/luisdoesux/">
+                      <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/luisdoesux/">
                         <i className="fab fa-linkedin fa-2x" />
                       </a>
                     </li>
-                    <li>
-                      <a target="_blank" href="#">
+                    {/* <li>
+                      <a target="_blank" rel="noopener noreferrer" href="#">
                         <i className="fab fa-twitter-square fa-2x" />
                       </a>
-                    </li>
+                    </li> */}
                   </div>
                 </ul>
               </div>
@@ -307,7 +310,7 @@ const AboutTeam = () => {
       </div>
 
       <div className='div'>
-        <div className="wave"> <img className="img2" src={rainbowball} /></div>
+        <div className="wave"> <img className="img2" src={rainbowball} alt="" /></div>
       </div>
 
     </div> /* main div */

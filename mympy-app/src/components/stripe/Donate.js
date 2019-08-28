@@ -201,10 +201,4 @@ class Donate extends React.Component {
     }
 }
 
-const mapStateToProps = ({ }) => {
-  return {
-
-  }
-}
-
-export default connect(mapStateToProps)(Donate);
+export default Donate;
