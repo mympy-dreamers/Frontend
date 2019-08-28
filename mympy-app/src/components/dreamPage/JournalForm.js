@@ -7,7 +7,7 @@ import {
   updateJournal,
   fetchDreamJournals
 } from "../../actions/journals";
-import PopupsubimtModal from "../dreamPage/popupsubmit";
+import PopupSubmit from "./PopupSubmit.js";
 
 const bodyStyle = {
   fontSize: "25px",
@@ -66,7 +66,7 @@ const journalFormStyle = {
   width: "120%"
 };
 
-class FormModal extends React.Component {
+class JournalForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -93,18 +93,18 @@ class FormModal extends React.Component {
     //  e.preventDefault();
     const state = this.state.journal;
 
-   if ( state.body && state.title) {
+    if (state.body && state.title) {
 
-     if (state.title !== "" && state.body !== "") {
-       this.handleSubmit();
-     } else {
-       this.toggle()
-     }
-   } else {
-    alert('stop')
-    console.log(`I am here`)
-     this.toggle();
-   }
+      if (state.title !== "" && state.body !== "") {
+        this.handleSubmit();
+      } else {
+        this.toggle()
+      }
+    } else {
+      alert('stop')
+      console.log(`I am here`)
+      this.toggle();
+    }
     // if ((state.title !== "" && state.body !== "") || ( (state.body) &&  (state.title)) ) {
     //    this.handleSubmit();
     // } else {
@@ -167,7 +167,7 @@ class FormModal extends React.Component {
   };
 
   closeModal = () => {
-    this.setState({ showModal: false});
+    this.setState({ showModal: false });
     this.props.closeModal();
   };
 
@@ -205,10 +205,11 @@ class FormModal extends React.Component {
                 <button
                   onClick={this.isFormValid}
                   style={journalSubmitButton}
-                  onClick={(e)=>{
+                  onClick={(e) => {
                     e.preventDefault()
-                    this.setState({...this.state,showModal:true})}}>
-                
+                    this.setState({ ...this.state, showModal: true })
+                  }}>
+
                   {this.props.button}
                 </button>
 
@@ -224,7 +225,7 @@ class FormModal extends React.Component {
                 </Alert>
 
                 {this.state.showModal && (
-                  <PopupsubimtModal
+                  <PopupSubmit
                     handleFinalSubmit={this.handleFinalSubmit}
                     showModal={this.state.showModal}
                     closeModal={this.closeModal}
@@ -252,4 +253,4 @@ const mapStateToProps = ({ users, dreams, journals }) => {
 export default connect(
   mapStateToProps,
   { addJournal, updateJournal, fetchDreamJournals }
-)(FormModal);
+)(JournalForm);

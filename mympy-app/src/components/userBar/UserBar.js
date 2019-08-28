@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { fetchAllDreams, fetchUserById } from '../../actions';
-import demo from '../../img/demo.jpg'
 import cloudPencil from '../../img/userbar-img/cloudPencil.png';
 import cloudPlus from '../../img/userbar-img/cloudPlus.png';
 import journal from '../../img/userbar-img/journal.png';

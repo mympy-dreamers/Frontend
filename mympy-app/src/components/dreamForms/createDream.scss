@@ -7,17 +7,27 @@
         margin: 2%;
         width: 90%;
         display: flex;
+        background-color: #F1F5FB;
 
         .left {
             width: 50%;
             border-radius: 20px 0 0 20px;
 
-            @include small-desktop {
-                width: 62%;
-            }
+            // @include small-desktop {
+            //     width: 50%;
+            // }
 
-            @include twelveEighty {
-                width: 67%;
+            // @include twelveEighty {
+            //     width: 50%;
+            // }
+            // .left-bottom{
+            //     background-color: #F1F5FB;
+            //     height:30%;
+            // }
+            .left-top{
+                @include small-desktop {
+                    width: 40%;
+                }
             }
         }
     
@@ -28,13 +38,13 @@
             background-color: white;
             border-radius: 0 20px 20px 0;
 
-            @include small-desktop {
-                width: 40%;
-            }
+            // @include small-desktop {
+            //     width: 40%;
+            // }
 
-            @include twelveEighty {
-                width: 33%;
-            }
+            // @include twelveEighty {
+            //     width: 33%;
+            // }
         }
     }
 }

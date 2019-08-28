@@ -9,7 +9,7 @@ const leftStyle = {
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     width: "100%",
-    // height: "60%",
+    height: "70%",
 }
 
 class DreamInfo extends React.Component {
@@ -25,9 +25,9 @@ class DreamInfo extends React.Component {
             <div className='dream-Home-Page'>
                 <div className='form-wrap'>
 
-                    <div className="left" >
-                        <div style={leftStyle}></div>
-                        <div className='left-bottom'></div>
+                    <div className="left"  >
+                        <div className='left-top' style={leftStyle}></div>
+                        {/* <div className='left-bottom'></div> */}
                     </div>
 
                     <div className='right'>  {/* previously dreamer-card-app */}
