@@ -9,7 +9,7 @@
         display: flex;
 
         .left {
-            width: 54%;
+            width: 50%;
             border-radius: 20px 0 0 20px;
 
             @include small-desktop {
@@ -22,7 +22,9 @@
         }
     
         .right {
-            width: 47%;
+            width: 50%;
+            padding-left: 5%;
+            // background-color: #F1F5FB;
             background-color: white;
             border-radius: 0 20px 20px 0;
 
