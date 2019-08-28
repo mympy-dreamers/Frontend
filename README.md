@@ -109,7 +109,7 @@ Dreamers(users) can:
 
 ### COMPONENT STRUCTURE:
 
-This flow chart depicts data flow and UI flow between the components. Please contact Mylynh Nguyen if you want the pdf and editing links.
+To facilitate hand off to future developers of this project, a flow chart was created. This flow chart depicts data flow and UI flow between the components. Please contact Mylynh Nguyen if you want the pdf and editing links.
 
 
 [<img src="https://i.imgur.com/diibj7g.jpg">](https://i.imgur.com/diibj7g.jpg)
