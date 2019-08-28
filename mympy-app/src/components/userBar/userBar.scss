@@ -1,10 +1,11 @@
 .user-main {
     // background-color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-content: center;
 
-    .wrapper {
+    .nav-tab-wrapper {
         width: 100%;
         background-color: white;
         border-radius: 0 0 20px 20px;
@@ -85,4 +86,19 @@
 
     } // end of wrapper
 
+    .arrow {
+        background: white;
+        margin: 0 auto;
+        width: 6rem;
+        height: 1.5rem;
+        border-radius: 0 0 20px 20px;
+
+        img {
+            width: 1.4rem;
+        }
+    }
+
+    .active {
+        display: none;
+    }
 } // end of user-main
