@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route } from "react-router-dom";
 import { connect } from "react-redux";
-// import {StripeProvider} from 'react-stripe-elements';
 
 import Login from './components/login/Login';
 import NavBar from './view/navbar/NavBar';
@@ -32,58 +31,59 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+	  
+		<div className="App">
+		
+			{/* render attr used to pass props into component */}
+			<Route path="/" render={(props) => (
+			<NavBar
+				{...props}
+				show={this.props.location.pathname.includes('market')}
+				onAccountPage={this.props.location.pathname.includes('dashboard')}
+			/>
+			)} />
 
-        {/* render attr used to pass props into component */}
-        <Route path="/" render={(props) => (
-          <NavBar
-            {...props}
-            show={this.props.location.pathname.includes('market')}
-            onAccountPage={this.props.location.pathname.includes('dashboard')}
-          />
-        )} />
+			<div className="app-wrap">
 
-        <div className="app-wrap">
+			<Route exact path="/" render={(props) => <Home {...props} />} />
 
-          <Route exact path="/" render={(props) => <Home {...props} />} />
+			{/* render attr used to pass history props into component */}
+			<Route path="/login" render={(props) => (
+				
+				<Login
+				{...props} 
+				type="login"
+				/>
 
-          {/* render attr used to pass history props into component */}
-          <Route path="/login" render={(props) => (
-            
-            <Login
-              {...props} 
-              type="login"
-            />
+			)} />
 
-          )} />
+			{/* render attr used to pass history props into component */}
+			<Route path="/register" render={(props) => (
 
-          {/* render attr used to pass history props into component */}
-          <Route path="/register" render={(props) => (
+				<Login
+				{...props}
+				type="register"
+				/>
 
-            <Login
-              {...props}
-              type="register"
-            />
+			)} />
 
-          )} />
+			<Route exact path="/about" component={About} />
+			<Route exact path="/market" component={DreamMarket} />
+			<Route path="/market/:id" component={DreamPage} />
+			<Route path="/donate" component={Donate} />
 
-          <Route exact path="/about" component={About} />
-          <Route exact path="/market" component={DreamMarket} />
-          <Route path="/market/:id" component={DreamPage} />
-          <Route path="/donate" component={Donate} />
+		{/* Private Routes Below */}
 
-     {/* Private Routes Below */}
+			<PrivateRoute path="/user-dreams" component={UserDreamsList} />
+			<Route exact path="/dashboard" component={Dashboard} />
+			<PrivateRoute exact path="/addDream" component={DreamerProfile} />
+			<PrivateRoute exact path="/addDream/image" component={ImageForm} />
 
-          <PrivateRoute path="/user-dreams" component={UserDreamsList} />
-          <Route exact path="/dashboard" component={Dashboard} />
-          <PrivateRoute exact path="/addDream" component={DreamerProfile} />
-          <PrivateRoute exact path="/addDream/image" component={ImageForm} />
+			<Footer />
 
-          <Footer />
+			</div>
 
-        </div>
-
-      </div >
+		</div >
 
     );
 
