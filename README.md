@@ -205,4 +205,5 @@ In order for the app to function correctly, the user must set up their own envir
 | rings.svg      | Sam Herbert      | [MIT](https://github.com/SamHerbert/SVG-Loaders)                             |
 | All icons      | Font awesome     | [CC By 4.0 License](https://fontawesome.com/license/free)                    |
 | Bootstrap      | Stephen J. Collings, Matthew Honnibal, Pieter Vanderwerff       | [MIT License](https://github.com/react-bootstrap/react-bootstrap/blob/master/LICENSE)|
+| Slick          | Slick            | [MIT](https://github.com/kenwheeler/slick/blob/master/LICENSE)|
 
