@@ -14,15 +14,34 @@ import {
 
 import jwtDecode from 'jwt-decode';
 
-
 const INITIAL_STATE = (token => ({
     loggedIn: false,
     currentUser: token ? jwtDecode(token) : null,
     registerSuccess: false,
     auth: {},
     user: {},
+    userDonations: null,
+    userGoal: null,
     errors: []
 }))(localStorage.getItem('jwt'))
+
+const donationSum = function(dreams) {
+    let total=0;
+    dreams.forEach( dream => { 
+        total += dream.donations_received;
+    })
+    console.log(total);
+    return total;
+}
+
+const goalSum = function(dreams) {
+    let total=0;
+    dreams.forEach( dream => { 
+        total += dream.donation_goal;
+    })
+    console.log(total);
+    return total;
+}
 
 export default function authReducer(state = INITIAL_STATE, action) {
     switch (action.type) {
@@ -80,6 +99,8 @@ export default function authReducer(state = INITIAL_STATE, action) {
                 ...state,
                 fetching: false,
                 user: action.payload,
+                userDonations: donationSum(action.payload.dreams),
+                userGoal: goalSum(action.payload.dreams),
             }
         case ZERO_LOGIN_FAILURE:
             return {

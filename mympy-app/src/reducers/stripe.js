@@ -19,7 +19,17 @@ const INITIAL_STATE = {
     userPaymentId: null,
     dreamPayments: [],
     userPayments: [],
+    userDonations: null,
     errors: [],
+}
+
+const donationSum = function(dreamPayments) {
+    let total=0;
+    dreamPayments.forEach( payment => { 
+        total += payment.donation_amount;
+    })
+    console.log(total);
+    return total;
 }
 
 export default function stripeReducer(state = INITIAL_STATE, action) {
@@ -60,7 +70,8 @@ export default function stripeReducer(state = INITIAL_STATE, action) {
         case USER_PAY_SUCCESS:
             return {
                 ...state,
-                userPayments: action.payload
+                userPayments: action.payload,
+                userDonations: donationSum(action.payload)
             }
         case USER_PAY_FAILURE:
             return {
