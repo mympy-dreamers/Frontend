@@ -48,8 +48,8 @@ const Us = () => {
 
         </div>
 
-    )   {/* End of return */}
+    )
 
-}   {/* End of render */}
+}
 
 export default Us;
