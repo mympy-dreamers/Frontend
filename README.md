@@ -1,4 +1,4 @@
-# Mympy Dreamers
+# Mympy Dreams
 
 **You can find the deployed project at [Mympy Dreamers](https://mympydreamers.netlify.com/).**
 
@@ -86,7 +86,7 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 
 - [UX Design files](https://xd.adobe.com/spec/37d3d449-4a08-454e-438d-e6815d9468d8-41e2/screen/9ed441a3-4c11-442d-b649-9a754aeee717/DASHBOARD-1/)
 
-## :three: About Mympy Dreamers
+## :three: About Mympy Dreams
 
 Mympy Dreams is a marketplace where individuals can create a profile, post their VR project idea(DREAMS), define their needs/goals, and receive funding from the Mympy Dreams community.
 
