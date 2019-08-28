@@ -200,6 +200,7 @@ In order for the app to function correctly, the user must set up their own envir
     * REACT_APP_BE_URL - holds the value of our Backend url used in our `actions` folder.
     * PROD_TOKEN - holds the token to the Mixpanel production tracker
     * DEV_TOKEN - holds the token to the MixPanel development token
+    * PK_TEST=*PK KEY FOR STRIPE*
 
 ## :seven: Content Licenses
 
