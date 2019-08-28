@@ -109,7 +109,9 @@ Dreamers(users) can:
 
 ### COMPONENT STRUCTURE:
 
-This flow chart shows data flow and UI flow between the components. Please contact Mylynh Nguyen if you want the pdf and editing link.s
+This flow chart depicts data flow and UI flow between the components. Please contact Mylynh Nguyen if you want the pdf and editing links.
+
+
 [<img src="https://i.imgur.com/diibj7g.jpg">](https://i.imgur.com/diibj7g.jpg)
 **Front end deployed to [![Netlify Status](https://api.netlify.com/api/v1/badges/1dd77115-62b5-421c-af16-aab2a0ed6de9/deploy-status)](https://app.netlify.com/sites/mympydreamers/deploys)**
 
