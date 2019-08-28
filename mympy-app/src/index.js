@@ -25,7 +25,11 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk, Logger))
 );
 
-// redorect for auth0
+
+const pkTest = process.env.PK_TEST;
+// ^^ PK = Publishable Key ^^
+
+// redirect for auth0
 const onRedirectCallback = appState => {
     window.history.replaceState(
         {},
@@ -37,14 +41,12 @@ const onRedirectCallback = appState => {
 };
 const AppwithRouter = withRouter(App);
 
-const pkTest = process.env.PK_TEST;
-// ^^ PK = Publishable Key ^^
-
 ReactDOM.render(
     <Auth0Provider
         domain={config.domain}
         client_id={config.clientId}
         redirect_uri={window.location.origin}
+        audience={config.audience}
         onRedirectCallback={onRedirectCallback}
     >
         <StripeProvider apiKey='pk_test_1d72AL8UO1qMdLmncaIcIaEx00n89i0APd'>

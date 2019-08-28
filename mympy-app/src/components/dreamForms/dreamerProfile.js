@@ -70,7 +70,6 @@ class DreamInfo extends React.Component {
       donation_goal: parseInt(this.state.dreamCard.donation_goal, 10)
     };
     // e.preventDefault()
-    console.log("submittedDream: ", newDream);
     this.props.addDream(newDream);
     this.setState({ showModal: false }, () => {
       this.props.history.push("/addDream/image");
@@ -89,7 +88,6 @@ class DreamInfo extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className="dream-Home-Page">
         <div className="dreamer-card-app">
@@ -127,7 +125,7 @@ class DreamInfo extends React.Component {
                 className="dreamlable"
                 for="exampleText"
               >
-                Give us a one scentence summary of your dream
+                Summarize your dream in one sentence.
               </Label>
               <Input
                 className="input-style"
