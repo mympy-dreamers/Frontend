@@ -12,6 +12,7 @@ const leftStyle = {
     // height: "60%",
 }
 
+// create a dream component imports Form.js on the right
 class DreamInfo extends React.Component {
     constructor(props) {
         super(props);
@@ -23,6 +24,7 @@ class DreamInfo extends React.Component {
     render() {
         return (
             <div className='dream-Home-Page'>
+
                 <div className='form-wrap'>
 
                     <div className="left" >
