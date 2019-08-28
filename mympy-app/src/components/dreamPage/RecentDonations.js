@@ -8,7 +8,15 @@ import { dreamPayFetch } from '../../actions/stripe.js';
 class RecentDonations extends React.Component {
 
 	componentDidMount() {
+		console.log(this.props.currDream)
+
 		this.props.dreamPayFetch(this.props.currDream.id);
+	}
+
+	componentDidUpdate(prevProps) {
+		if (this.props.donoFetch !== prevProps.donoFetch && this.props.donoFetch == true) {
+			this.props.dreamPayFetch(this.props.currDream.id);
+		}
 	}
 
 	render() {
@@ -16,9 +24,9 @@ class RecentDonations extends React.Component {
 			<div>
 				{this.props.dreamPayments[0] && <div className="recent-donations">
 					<h2 className="header">Recent Donations</h2>
-		  		
-		  		<div className="donations-container">
-						{this.props.dreamPayments.slice(0,5).map( donation => {
+
+					<div className="donations-container">
+						{this.props.dreamPayments.slice(0, 5).map(donation => {
 							return <div className="donation" key={donation.id}>
 								<img className="user-img" src={donation.img_url} alt="" />
 								<div className="donations-name-wrapper">
@@ -27,18 +35,19 @@ class RecentDonations extends React.Component {
 								</div>
 							</div>
 						})}
-		  		</div>
-		   	</div>}
-	   	</div>
+					</div>
+				</div>}
+			</div>
 		)
 	}
 }
 
 const mapStateToProps = ({ stripe, dreams }) => {
-  return {
-    dreamPayments: stripe.dreamPayments,
-    currDream: dreams.currDream,
-  }
+	return {
+		dreamPayments: stripe.dreamPayments,
+		currDream: dreams.currDream,
+		donoFetch: dreams.donoFetch
+	}
 }
 
 export default connect(mapStateToProps, { dreamPayFetch })(RecentDonations);
