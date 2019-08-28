@@ -7,7 +7,7 @@ import {
   updateJournal,
   fetchDreamJournals
 } from "../../actions/journals";
-import PopupSubmit from "./PopupSubmit";
+import PopupSubmit from "./PopupSubmit.js";
 
 const bodyStyle = {
   fontSize: "25px",
@@ -148,7 +148,7 @@ class JournalForm extends React.Component {
   };
 
   closeModal = () => {
-    this.setState({ showModal: false});
+    this.setState({ showModal: false });
     this.props.closeModal();
   };
 
