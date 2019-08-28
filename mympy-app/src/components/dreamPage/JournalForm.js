@@ -7,7 +7,7 @@ import {
   updateJournal,
   fetchDreamJournals
 } from "../../actions/journals";
-import PopupSubmit from "./PopupSubmit";
+import PopupSubmit from "./PopupSubmit.js";
 
 const bodyStyle = {
   fontSize: "25px",
@@ -93,18 +93,18 @@ class JournalForm extends React.Component {
     //  e.preventDefault();
     const state = this.state.journal;
 
-   if ( state.body && state.title) {
+    if (state.body && state.title) {
 
-     if (state.title !== "" && state.body !== "") {
-       this.handleSubmit();
-     } else {
-       this.toggle()
-     }
-   } else {
-    alert('stop')
-    console.log(`I am here`)
-     this.toggle();
-   }
+      if (state.title !== "" && state.body !== "") {
+        this.handleSubmit();
+      } else {
+        this.toggle()
+      }
+    } else {
+      alert('stop')
+      console.log(`I am here`)
+      this.toggle();
+    }
     // if ((state.title !== "" && state.body !== "") || ( (state.body) &&  (state.title)) ) {
     //    this.handleSubmit();
     // } else {
@@ -167,7 +167,7 @@ class JournalForm extends React.Component {
   };
 
   closeModal = () => {
-    this.setState({ showModal: false});
+    this.setState({ showModal: false });
     this.props.closeModal();
   };
 
@@ -205,10 +205,11 @@ class JournalForm extends React.Component {
                 <button
                   onClick={this.isFormValid}
                   style={journalSubmitButton}
-                  onClick={(e)=>{
+                  onClick={(e) => {
                     e.preventDefault()
-                    this.setState({...this.state, showModal:true})}}>
-                
+                    this.setState({ ...this.state, showModal: true })
+                  }}>
+
                   {this.props.button}
                 </button>
 
