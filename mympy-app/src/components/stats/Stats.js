@@ -2,45 +2,21 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import UserProgressCircle from '../dreamPage/UserProgressCircle';
+import { dreamPayFetch } from '../../actions';
+
 
 class Stats extends React.Component {
     constructor() {
         super();
         this.state = {
             dreamGoal: 0,
-            dreamCurr: 0,
-            
+            dreamDonations: 0,
         }
     }
 
-    getDreamData(){
-
-        this.props.user.dreams && this.props.user.dreams.map(dream => {
-            return (
-                this.setState({
-                    dreamGoal: dream.donation_goal,
-                    dreamCurr: dream.donations_received,
-                })
-            )
-        })
+    componentDidMount() {
+        this.props.dreamPayFetch(this.props.userId);
     }
-
-
-    componentDidMount(){
-        // setTimeout(() => {
-            this.getDreamData();
-        // }, 900);
-    }
-
-    componentDidUpdate(prevProps) {
-
-        if (this.props.user.dreams !== prevProps.user.dreams) {
-
-            this.getDreamData();
-
-        }
-    }
-
 
     render() {
         return(
@@ -49,20 +25,17 @@ class Stats extends React.Component {
                     <h1>My Dreams</h1>
                     <div className="bar">
                         <UserProgressCircle 
-                            donationGoal={!this.state.dreamGoal ? 0 : this.state.dreamGoal}
-                            donationsReceived={!this.state.dreamCurr ? 0 : this.state.dreamCurr}
+                            donationGoal={this.props.userGoal}
+                            donationsReceived={this.props.receivedDonations}
                         />
                     </div>
                     {/* <button>more info</button> */}
                 </div>
                 <div className="support-dreams">
-                    <h1>Dreams Supported</h1>
-                    <div className="bar">
-                        {/* <UserProgressCircle 
-                            donationGoal={100}
-                            donationsReceived={100}
-                        /> */}
-                        </div>
+                    <h1>Total Donations</h1>
+                    <div className="bar total-donations">
+                        ${this.props.receivedDonations}
+                    </div>
                     {/* <button>more info</button> */}
                 </div>
             </div>
@@ -70,10 +43,13 @@ class Stats extends React.Component {
     }
 }
 
-const mapStateToProps = ({ auth }) => {
+const mapStateToProps = ({ auth, stripe }) => {
     return {
-      user: auth.user,
+        userId: auth.user.id,
+        totalUserDonations: stripe.userDonations,
+        receivedDonations: auth.userDonations,
+        userGoal: auth.userGoal
     }
   }
 
-export default connect(mapStateToProps, { })(Stats);
+export default connect(mapStateToProps, { dreamPayFetch })(Stats);

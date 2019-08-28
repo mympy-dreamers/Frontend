@@ -30,7 +30,6 @@ const NavBar = (props) => {
                         </li>
 
                         <li className="item">
-                            {loading && <p>loading</p>}
                             {!isAuthenticated && (
                                 <button
                                     onClick={(e) => {
