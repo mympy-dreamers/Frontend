@@ -91,7 +91,8 @@ const INITIAL_STATE = {
 			}
 		}
 	],
-	currDream: {}
+	currDream: {},
+	currDreamId: null
 }
 
 export default function dreamsReducer(state = INITIAL_STATE, action) {
@@ -122,7 +123,8 @@ export default function dreamsReducer(state = INITIAL_STATE, action) {
 			return {
 				...state,
 				fetching: false,
-				currDream: action.payload
+				currDream: action.payload,
+				currDreamId: action.payload.id
 			}
 		case FETCH_DREAM_FAILURE:
 			return {

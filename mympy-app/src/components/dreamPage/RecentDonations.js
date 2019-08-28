@@ -2,26 +2,45 @@ import React from 'react';
 
 import './recentDonations.scss';
 import demo from '../../img/demo.jpg';
+import { connect } from 'react-redux';
+import { dreamPayFetch } from '../../actions/stripe.js';
 
-const RecentDonations = (props) => {
-	console.log(props.donations);
-	return (
-		<div className="recent-donations">
-			<h2 className="header">Recent Donations</h2>
-  		
-  		<div className="donations-container">
-				{props.donations.slice(0,5).map( donation => {
-					return <div className="donation" key={donation.donation}>
-						<img className="user-img" src={demo} alt="" />
-						<div className="donations-name-wrapper">
-							<h2 className="amount">{"$" + donation.donation}</h2>
-							<p className="name">{"by " + donation.user.firstname}</p>
+class RecentDonations extends React.Component {
+
+	componentDidMount() {
+		console.log('****************HERE****************');
+		this.props.dreamPayFetch(this.props.currDream.id);
+		console.log('****************HERE****************');
+		console.log(this.props.dreamPayments);
+	}
+
+	render() {
+		console.log('*****HERE******' + this.props.currDream.id);
+		return (
+			<div className="recent-donations">
+				<h2 className="header">Recent Donations</h2>
+	  		
+	  		<div className="donations-container">
+					{this.props.dreamPayments.slice(0,5).map( donation => {
+						return <div className="donation" key={donation.id}>
+							{/*<img className="user-img" src={demo} alt="" />*/}
+							<div className="donations-name-wrapper">
+								<h2 className="amount">{"$" + donation.donation_amount}</h2>
+								{/*<p className="name">{"by " + donation.user.firstname}</p>*/}
+							</div>
 						</div>
-					</div>
-				})}
-  		</div>
-   	</div>
-	)
+					})}
+	  		</div>
+	   	</div>
+		)
+	}
 }
 
-export default RecentDonations;
+const mapStateToProps = ({ stripe, dreams }) => {
+  return {
+    dreamPayments: stripe.dreamPayments,
+    currDream: dreams.currDream,
+  }
+}
+
+export default connect(mapStateToProps, { dreamPayFetch })(RecentDonations);
