@@ -33,22 +33,28 @@
 
 1️⃣ [Trello Board](https://trello.com/b/zTEE5gJy/labs14mympy)
 
-1️⃣ [Product Canvas](https://www.notion.so/Mympy-Dreams-SIXR-69cc926207334efa9f833df97517fe38)
+:two: [Product Canvas](https://www.notion.so/Mympy-Dreams-SIXR-69cc926207334efa9f833df97517fe38)
 
-1️⃣ [UX Design files](https://xd.adobe.com/spec/37d3d449-4a08-454e-438d-e6815d9468d8-41e2/screen/9ed441a3-4c11-442d-b649-9a754aeee717/DASHBOARD-1/)
+:three: [UX Design files](https://xd.adobe.com/spec/37d3d449-4a08-454e-438d-e6815d9468d8-41e2/screen/9ed441a3-4c11-442d-b649-9a754aeee717/DASHBOARD-1/)
 
 ### About Mympy Dreamers
 
-Mympy Dreams is a marketplace where individuals can create a profile and post their project and needs and find funding from the Mymphy Dreams community.
+Mympy Dreams is a marketplace where individuals can create a profile, post their VR project idea(DREAMS), define their needs/goals, and receive funding from the Mympy Dreams community.
 
 
 ### 4️⃣ Key Features
 
--    feature one
--    feature two
--    feature three
--    feature four
--    feature five
+Dreamers(users) can:
+
+- Create a project(Dream) that describes their project. With each dream, dreamers can:
+    * Share their story.
+    * Receive funding, after setting fiscal goal.
+    * Create journal entries to update donors.
+    * Have an email list.
+- Donate to other projects.
+- Become a mentor.
+- Receive mentorship.
+- Communicate privately with other members.
 
 ## 1️⃣ Tech Stack
 
