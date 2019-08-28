@@ -135,12 +135,13 @@ class Donate extends React.Component {
 
             this.setState({stripe: window.Stripe('pk_test_1d72AL8UO1qMdLmncaIcIaEx00n89i0APd')});
 
-          } else {
+        } else {
 
             document.querySelector('#stripe-js').addEventListener('load', () => {
               // Create Stripe instance once Stripe.js loads
               this.setState({stripe: window.Stripe('pk_test_1d72AL8UO1qMdLmncaIcIaEx00n89i0APd')});
             });
+
         }
 
     }
@@ -191,11 +192,13 @@ class Donate extends React.Component {
                     <div className='mympy-donation'><img src={mini_logo} alt="" /><h3>{'$' + this.state.mympyDonation +'.00'}</h3></div>
                     <div className='mympy-cost-msg'>Help with Mympys cost</div>
                 </div>
+
                 <StripeProvider stripe={this.state.stripe}>
                     <Elements>
                         <CheckoutForm donationTotal={this.state.donationTotal}/>
                     </Elements>
                 </StripeProvider>
+
             </StyledDonate>
         )
     }
