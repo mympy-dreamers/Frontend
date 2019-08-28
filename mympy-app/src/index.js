@@ -45,6 +45,7 @@ ReactDOM.render(
         domain={config.domain}
         client_id={config.clientId}
         redirect_uri={window.location.origin}
+        audience={config.audience}
         onRedirectCallback={onRedirectCallback}
     >
         {/* <StripeProvider apiKey='pk_test_1d72AL8UO1qMdLmncaIcIaEx00n89i0APd'> */}
