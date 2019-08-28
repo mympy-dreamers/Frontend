@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import RecentDonations from './RecentDonations.js';
 import ProjectInfo from './ProjectInfo.js';
+// import { prependOnceListener } from 'cluster';
 
 const SidebarDiv = styled.div`
 	display: flex;

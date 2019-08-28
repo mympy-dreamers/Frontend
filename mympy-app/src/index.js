@@ -26,7 +26,7 @@ const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk))
 );
 
 
-const pkTest = process.env.PK_TEST;
+
 // ^^ PK = Publishable Key ^^
 
 // redirect for auth0
@@ -43,7 +43,8 @@ const AppwithRouter = withRouter(App);
 
 // const pkTest = process.env.PK_TEST;
 // ^^ PK = Publishable Key ^^
-
+const pkTest = process.env.REACT_APP_PK_TEST;
+console.log('PK', pkTest)
 ReactDOM.render(
     <Auth0Provider
         domain={config.domain}

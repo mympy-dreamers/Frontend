@@ -32,6 +32,7 @@
     #{$margin}: 3%;
     margin-top: 4%;
     width: 18em;
+    box-shadow: 0 3px 4px #888888;
 
     @include small-desktop {
         // font-size: 1.158rem;

@@ -236,8 +236,8 @@
     } // end of left
 
     .right{
-        width: 50%;
-        height: 75%;
+        width: 60%;
+        height: 70%;
         // margin: 3em 0 0 43em;
 
         @include small-desktop {
@@ -257,15 +257,10 @@
 
         img {
             width: 100%;
-            height: 100%;
+            height: auto;
 
-            @include small-desktop {
-                width: 100%;
-                height: 100%;
-            }
             @include tablet-landscape {
                 width: 90%;
-                height: 90%;
             }
 
         } // end of img
