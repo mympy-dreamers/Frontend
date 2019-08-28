@@ -7,7 +7,7 @@ import {
   updateJournal,
   fetchDreamJournals
 } from "../../actions/journals";
-import PopupsubimtModal from "../dreamPage/popupsubmit";
+import PopupSubmit from "./PopupSubmit";
 
 const bodyStyle = {
   fontSize: "25px",
@@ -66,7 +66,7 @@ const journalFormStyle = {
   width: "120%"
 };
 
-class FormModal extends React.Component {
+class JournalForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -224,7 +224,7 @@ class FormModal extends React.Component {
                 </Alert>
 
                 {this.state.showModal && (
-                  <PopupsubimtModal
+                  <PopupSubmit
                     handleFinalSubmit={this.handleFinalSubmit}
                     showModal={this.state.showModal}
                     closeModal={this.closeModal}
@@ -252,4 +252,4 @@ const mapStateToProps = ({ users, dreams, journals }) => {
 export default connect(
   mapStateToProps,
   { addJournal, updateJournal, fetchDreamJournals }
-)(FormModal);
+)(JournalForm);
