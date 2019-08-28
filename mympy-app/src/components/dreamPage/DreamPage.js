@@ -25,8 +25,6 @@ const DreamPageDiv = styled.div`
 
 class DreamPage extends React.Component {
 
-
-
   componentDidMount() {
     this.props.fetchDreamById(this.props.match.params.id);
     this.props.fetchImage(this.props.match.params.id);

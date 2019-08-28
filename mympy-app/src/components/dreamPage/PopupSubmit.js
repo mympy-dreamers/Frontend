@@ -22,9 +22,9 @@ class PopupSubmit extends React.Component {
     return (
       <div>
         <Modal isOpen={this.props.showModal}>
-          <ModalHeader style={headStyle}>Warning!!</ModalHeader>
+          <ModalHeader style={headStyle}>Confirm</ModalHeader>
           <ModalBody style={bodyStyle}>
-            "Post a new Journal Entry?"
+            Are you sure?
           </ModalBody>
           <ModalFooter>
             <Button id='cancel-button' onClick={() => this.props.closeModal()}>Cancel</Button>
@@ -32,7 +32,7 @@ class PopupSubmit extends React.Component {
               
               this.props.handleFinalSubmit(e)
               this.props.closeModal()
-            }}>Submit Dream</Button>
+            }}>Submit</Button>
           </ModalFooter>
         </Modal>
       </div>

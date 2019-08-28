@@ -79,49 +79,38 @@ class JournalForm extends React.Component {
         dream_id: null,
         id: null
       },
-      showModal: false
+      showModal: false,
+      valid: true
     };
   }
 
-  toggle() {
+  toggle = () => {
     this.setState({
       visible: !this.state.visible
     });
   }
 
-  isFormValid = () => {
-    //  e.preventDefault();
-    const state = this.state.journal;
+  isFormValid = (e) => {
+    e.preventDefault()
+    const journal = this.state.journal;
 
-    if (state.body && state.title) {
-
-      if (state.title !== "" && state.body !== "") {
-        this.handleSubmit();
+    if(journal.body && journal.title){
+      this.setState({ valid: true });
+      this.handleSubmit()  //making showModal true 
+       //if showModal is true, PopupSubmit modal will render, click submit to send
       } else {
-        this.toggle()
+        this.setState({ valid: false });
+        this.toggle();
       }
-    } else {
-      alert('stop')
-      console.log(`I am here`)
-      this.toggle();
     }
-    // if ((state.title !== "" && state.body !== "") || ( (state.body) &&  (state.title)) ) {
-    //    this.handleSubmit();
-    // } else {
-    //   alert(`I am here`)
-    //    this.toggle();
-    // }
+
+
+  handleSubmit = () => {
+    this.setState({
+      showModal: true
+    });
   };
 
-  handleSubmit = event => {
-    event.preventDefault();
-    const isValid = this.validate();
-    if (isValid) {
-      console.log(this.state);
-      // clear form
-      // this.setState(initialState);
-    }
-  };
 
   componentDidMount = () => {
     this.setState({
@@ -143,7 +132,6 @@ class JournalForm extends React.Component {
         ...this.state.journal,
         [e.target.name]: e.target.value
       }
-      // showModal: true
     });
   };
 
@@ -157,13 +145,6 @@ class JournalForm extends React.Component {
       this.props.addJournal(newJournal);
     }
     this.props.fetchDreamJournals(this.props.dreams);
-  };
-
-  handleSubmit = e => {
-    // e.preventDefault()
-    this.setState({
-      showModal: true
-    });
   };
 
   closeModal = () => {
@@ -203,26 +184,16 @@ class JournalForm extends React.Component {
                   value={this.state.journal.body}
                 />
                 <button
-                  onClick={this.isFormValid}
                   style={journalSubmitButton}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    this.setState({ ...this.state, showModal: true })
-                  }}>
-
+                  onClick={async(e)=>{
+                    await this.isFormValid(e);
+                    if(!this.state.valid){
+                      alert("Fields are missing.")
+                    }
+                  }}
+                > 
                   {this.props.button}
                 </button>
-
-                <Alert
-                  className="alert"
-                  color="danger"
-                  role="alert"
-                  isOpen={this.state.visible}
-                  toggle={this.toggle.bind(this)}
-                >
-                  <h1>Uh Oh!</h1>
-                  <p>All field needs to be filled!</p>
-                </Alert>
 
                 {this.state.showModal && (
                   <PopupSubmit
