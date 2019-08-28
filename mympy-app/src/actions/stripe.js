@@ -9,23 +9,25 @@ const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
 export const DREAM_PAY_START = 'DREAM_PAY_START';
 export const DREAM_PAY_SUCCESS = 'DREAM_PAY_SUCCESS';
 export const DREAM_PAY_FAILURE = 'DREAM_PAY_FAILURE';
+export const DONO_FETCH = 'DONO_FETCH';
 
 export const dreamPayFetch = (id) => dispatch => {
     dispatch({ type: DREAM_PAY_START });
+    dispatch({ type: DONO_FETCH });
 
     axios.get(`${BASE_URL}/dreampayment/${id}`)
-    .then(res => {
-        dispatch({
-            type: DREAM_PAY_SUCCESS,
-            payload: res.data
+        .then(res => {
+            dispatch({
+                type: DREAM_PAY_SUCCESS,
+                payload: res.data
+            })
         })
-    })
-    .catch(err => {
-        dispatch({
-            type: DREAM_PAY_FAILURE,
-            payload: err
-        })
-    });
+        .catch(err => {
+            dispatch({
+                type: DREAM_PAY_FAILURE,
+                payload: err
+            })
+        });
 }
 
 export const DREAMPAY_POST_START = 'DREAMPAY_POST_START';
@@ -36,18 +38,18 @@ export const dreamPayPost = (data) => dispatch => {
     dispatch({ type: DREAMPAY_POST_START });
 
     axios.post(`${BASE_URL}/dreampayment`, data)
-    .then(res => {
-        dispatch({
-            type: DREAMPAY_POST_SUCCESS,
-            payload: res.data
+        .then(res => {
+            dispatch({
+                type: DREAMPAY_POST_SUCCESS,
+                payload: res.data
+            })
         })
-    })
-    .catch(err => {
-        dispatch({
-            type: DREAMPAY_POST_FAILURE,
-            payload: err
+        .catch(err => {
+            dispatch({
+                type: DREAMPAY_POST_FAILURE,
+                payload: err
+            })
         })
-    })
 }
 
 // User specific endpoints for payments below
@@ -60,19 +62,19 @@ export const userPayFetch = (id) => dispatch => {
     dispatch({ type: USER_PAY_START });
 
     axios.get(`${BASE_URL}/userpayment/${id}`)
-    .then(res => {
-        dispatch({
-            type: USER_PAY_SUCCESS,
-            payload: res.data
+        .then(res => {
+            dispatch({
+                type: USER_PAY_SUCCESS,
+                payload: res.data
+            })
         })
-    })
-    .catch(err => {
-        console.log(err)
-        dispatch({
-            type: USER_PAY_FAILURE,
-            payload: err
-        })
-    });
+        .catch(err => {
+            console.log(err)
+            dispatch({
+                type: USER_PAY_FAILURE,
+                payload: err
+            })
+        });
 }
 
 export const USERPAY_POST_START = 'USERPAY_POST_START';
@@ -83,16 +85,16 @@ export const userPayPost = (data) => dispatch => {
     dispatch({ type: USERPAY_POST_START });
 
     axios.post(`${BASE_URL}/userpayment`, data)
-    .then(res => {
-        dispatch({
-            type: USERPAY_POST_SUCCESS,
-            payload: res.data
+        .then(res => {
+            dispatch({
+                type: USERPAY_POST_SUCCESS,
+                payload: res.data
+            })
         })
-    })
-    .catch(err => {
-        dispatch({
-            type: USERPAY_POST_FAILURE,
-            payload: err
+        .catch(err => {
+            dispatch({
+                type: USERPAY_POST_FAILURE,
+                payload: err
+            })
         })
-    })
 }
