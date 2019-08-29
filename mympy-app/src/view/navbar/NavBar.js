@@ -8,28 +8,49 @@ import logo from '../../img/MIMPYlogo.svg';
 
 
 const NavBar = (props) => {
+
     const { isAuthenticated, loginWithRedirect, loading, getTokenSilently } = props.auth;
+
     return (
+
         <div className="main">
+
             <div className="nav-wrap">
+
                 <div className="left">
+
                     <Link to="/">
+
                         <img src={logo} alt="Company Logo" />
+
                     </Link>
+
                 </div>
+
                 <div className="mid">
+
                     {props.show && <Searchbar />}
+
                 </div>
+
                 <div className="right">
+
                     <ul className="list">
+
                         <li className="item">
+
                             <NavLink activeClassName="selected" to="/about" onClick={() => props.clickHandler()}>About</NavLink>
-                        </li>
-                        <li className="item">
-                            <NavLink activeClassName="selected" to="/market" onClick={() => props.clickHandler()}>Dream Market</NavLink>
+
                         </li>
 
                         <li className="item">
+
+                            <NavLink activeClassName="selected" to="/market" onClick={() => props.clickHandler()}>Dream Market</NavLink>
+                        
+                        </li>
+
+                        <li className="item">
+
                             {!isAuthenticated && (
                                 <button
                                     onClick={(e) => {
@@ -38,9 +59,9 @@ const NavBar = (props) => {
                                     }}
                                 >
                                     Log in
-                            </button>
+                                </button>
                             )}
-
+                                    {/* determines whether you have been logged in previously or not */}
                             {isAuthenticated && (props.onAccountPage ? (<button onClick={(e) => {
                                 e.preventDefault();
                                 localStorage.removeItem("curr_user");
@@ -50,17 +71,23 @@ const NavBar = (props) => {
                                     if (char === ':') return '%3A';
                                     return char
                                 }).join('')
-                                console.log(logoutUrl);
                                 props.history.go(`https://mympy-dreamer.auth0.com/v2/logout?returnTo=${logoutUrl}`)
                             }}>Log out</button>)
                                 : <NavLink activeClassName="selected" to="/dashboard">Account</NavLink>)}
                         </li>
+
                     </ul>
+
                 </div>
+
             </div>
+
         </div>
+
     )
+
 }
+
 const mapStateToProps = ({ auth }) => {
     return {
         auth: auth.auth
