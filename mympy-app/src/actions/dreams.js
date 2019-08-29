@@ -28,16 +28,15 @@ export const DELETE_DREAM_START = 'DELETE_DREAM_START';
 export const DELETE_DREAM_SUCCESS = 'DELETE_DREAM_SUCCESS';
 export const DELETE_DREAM_FAILURE = 'DELETE_DREAM_FAILURE';
 
-export const UPDATE_DREAM_USER = 'UPDATE_DREAM_USER'
+export const UPDATE_DREAM_USER = 'UPDATE_DREAM_USER';
 
+// VARIABLES BELOW
 
+    // grabs token and holds it in a variable to be used across the file
 const token = {
     headers: { authorization: localStorage.getItem('jwt') }
-}
-
-
+};
 const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
-// const BASE_URL = 'https://mympy-dreamers-staging.herokuapp.com';
 
 export const fetchDreamById = (id) => (dispatch) => {
     dispatch({ type: FETCH_DREAM_START });
