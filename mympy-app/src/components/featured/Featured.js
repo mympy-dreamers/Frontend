@@ -27,6 +27,19 @@ const FeaturedMain = styled.div`
     }
 `
 
+//Carousel settings
+const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    speed: 1000,
+    pauseOnHover: true
+};
+
+//Featured component
 class Featured extends React.Component {
     constructor() {
         super();
@@ -46,7 +59,6 @@ class Featured extends React.Component {
             ...this.state,
             featured: arr.slice(0, this.state.displayed),
         });
-
         let classes = document.querySelector('.nav-tab-wrapper').className;
         document.querySelector('.nav-tab-wrapper').className = (
             classes.replace(' active', '')
@@ -55,24 +67,14 @@ class Featured extends React.Component {
         if (appEle) {
             let appClasses = appEle.className;
             document.querySelector('.page-container').className = (
-                (appClasses.includes('page-container') && appClasses.includes('user-nav-active')) ?
-                    appClasses.replace(' user-nav-active', '') :
-                    (appClasses + ' user-nav-active')
+                ( appClasses.includes('page-container') && appClasses.includes('user-nav-active') ) ?
+                ( appClasses.replace(' user-nav-active', '') ):
+                ( appClasses + ' user-nav-active' )
             )
         }
     }
 
     render() {
-        const settings = {
-            dots: true,
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 5000,
-            speed: 1000,
-            pauseOnHover: true
-        };
         return (
             <FeaturedMain>
                 <h3>Featured Dreams</h3>
@@ -97,7 +99,7 @@ class Featured extends React.Component {
             </FeaturedMain>
         )
     }
-}
+}//End of Featured
 
 const mapStateToProps = (state) => {
     return {

@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css"
 import arrowRight from '../../img/carousel-arrow-right.png';
 import arrowLeft from '../../img/carousel-arrow-left.png';
 
-const Wrapper = styled.div`
+const StyledCarousel = styled.div`
 	margin-bottom: 33px;
 	max-width: 100%
 
@@ -29,7 +29,6 @@ const Wrapper = styled.div`
 
 		  	img {
 		  		max-width: 100%;
-
 		  	}
 			}
 		}
@@ -44,12 +43,16 @@ const Wrapper = styled.div`
       height: 3rem;
 	    z-index: 1;
 	  }
+
+    //Right arrow class
 	 	.slick-next { 
       background-image: url(${arrowRight});
       background-size: cover;
 		  right: 1%;
       &:before { display: none; }
 	  }
+
+    //Left arrow class
 	 	.slick-prev {
       background-image: url(${arrowLeft});
       background-size: cover;
@@ -58,22 +61,21 @@ const Wrapper = styled.div`
 	  }
 `;
 
+//Carousel settings
+const settings = {
+  dots: true, // show dots
+  arrows: true, // show arrows
+  infinite: true, // infinite scroll
+  speed: 500, // delay per slide
+  slidesToShow: 1, // slides per view
+  slidesToScroll: 1, // scroll 1 view at a time 
+};
+
+//Carousel component
 class Carousel extends Component {
-
   render() {
-    const settings = {
-      dots: true,
-      arrows: true,
-      infinite: true, // infinite scroll
-      speed: 500, // delay per slide
-      slidesToShow: 1, // slides per view
-      slidesToScroll: 1, // scroll 1 view at a time 
-    };
     return (
-
-
-      <Wrapper>
-
+      <StyledCarousel>
         <Slider {...settings}>
           {this.props.dreamImg.map((pic, i) => {
             return <div>
@@ -81,17 +83,15 @@ class Carousel extends Component {
             </div>
           })}
         </Slider>
-      </Wrapper>
+      </StyledCarousel>
     );
   }
-}
+}//End of Carousel
 
 const mapStateToProps = ({ dreams }) => {
   return {
-    currDream: dreams.currDream,
     dreamImg: dreams.imageById
   }
 }
 
 export default connect(mapStateToProps)(Carousel);
-

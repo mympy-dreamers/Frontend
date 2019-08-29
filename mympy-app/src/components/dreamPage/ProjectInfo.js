@@ -78,16 +78,14 @@ const ProjectInfoDiv = styled.div`
 	}
 `
 
+//ProjectInfo component
+//Includes ProgressCircle as well as user info, contact/email, and share buttons.
 class ProjectInfo extends React.Component {
 
 	componentDidUpdate(prevProps) {
-		/* console.log(this.props.refreshVar)
-		console.log(prevProps) */
-
 		if (this.props.refreshVar !== prevProps.refreshVar) {
-			this.props.fetchUserById(this.props.currDream.user_id)
+			this.props.fetchUserById(this.props.currDream.user_id) //Fetches dream by id and sets it to currDream
 		}
-
 	}
 
 	render() {
@@ -119,13 +117,12 @@ class ProjectInfo extends React.Component {
 					<i className="fab fa-instagram fa-5x"></i>
 				</div>
 				<div>
-					{/* <Button onClick={this.handleMail} className="contact-button" outline color="info">Contact Dreamer</Button>{' '} */}
 					<EmailModal />
 				</div>
 			</ProjectInfoDiv>
 		);
 	}
-}
+}//End of ProjectInfo
 
 const mapStateToProps = ({ auth, dreams, users }) => {
 	return {

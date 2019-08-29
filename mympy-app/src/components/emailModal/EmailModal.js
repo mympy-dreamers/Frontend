@@ -12,10 +12,12 @@ const headStyle = {
   fontSize: "2.3rem",
   color: 'red',
 }
+
 const headStyleNotLog = {
   fontSize: "2.3rem"
 }
 
+//EmailModal component
 class EmailModal extends React.Component {
   constructor() {
     super();
@@ -26,8 +28,6 @@ class EmailModal extends React.Component {
         dreamId: '',
       }
     };
-
-    this.toggle = this.toggle.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -47,7 +47,7 @@ class EmailModal extends React.Component {
     this.toggle();
   }
 
-  toggle() {
+  toggle = () => {
     this.setState(prevState => ({
       modal: !prevState.modal
     }));
@@ -60,18 +60,15 @@ class EmailModal extends React.Component {
       <div>
         <Button onClick={this.toggle} className="contact-button" outline color="info">Contact Dreamer</Button>{' '}
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          {isAuthenticated ? <ModalHeader style={headStyle} toggle={this.toggle}>WARNING</ModalHeader> :
-            <ModalHeader style={headStyleNotLog} toggle={this.toggle}>You must be logged in to contact a dreamer</ModalHeader>}
+          {isAuthenticated ? 
+            <ModalHeader style={headStyle} toggle={this.toggle}>WARNING</ModalHeader> :
+            <ModalHeader style={headStyleNotLog} toggle={this.toggle}>You must be logged in to contact a dreamer</ModalHeader>
+          }
 
           {isAuthenticated &&
             <ModalBody style={bodyStyle}>
               Are you sure you would like to share your e-mail address with this Dreamer?
-          </ModalBody>
-
-
-            // <ModalBody style={bodyStyle}>
-            //   You must be signed in to contact a dreamer!
-            // </ModalBody>
+            </ModalBody>
           }
 
           {isAuthenticated ?
@@ -86,9 +83,7 @@ class EmailModal extends React.Component {
                   e.preventDefault();
                   loginWithRedirect({})
                 }}
-              >
-                Log in
-                            </Button>
+              > Log in </Button>
               <Button color="danger" onClick={this.toggle}>Cancel</Button>
             </ModalFooter>
           }
@@ -96,7 +91,7 @@ class EmailModal extends React.Component {
       </div>
     );
   }
-}
+}//End of EmailModal
 
 const mapStateToProps = ({ auth, dreams }) => {
   return {
@@ -104,7 +99,6 @@ const mapStateToProps = ({ auth, dreams }) => {
     currDream: dreams.currDream,
     isAuthenticated: auth.auth.isAuthenticated,
     loginWithRedirect: auth.auth.loginWithRedirect
-
   }
 }
 

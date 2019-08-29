@@ -5,6 +5,7 @@ import demo from '../../img/demo.jpg';
 import { connect } from 'react-redux';
 import { dreamPayFetch } from '../../actions/stripe.js';
 
+//RecentDonations component
 class RecentDonations extends React.Component {
 
 	componentDidMount() {
@@ -40,7 +41,7 @@ class RecentDonations extends React.Component {
 			</div>
 		)
 	}
-}
+}//End of RecentDonations
 
 const mapStateToProps = ({ stripe, dreams }) => {
 	return {

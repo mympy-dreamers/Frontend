@@ -24,6 +24,7 @@ const ProjectStoryDiv = styled.div`
 	}
 `
 
+//ProjectStory component 
 class ProjectStory extends React.Component {
 	render() {
 		return (
@@ -35,7 +36,7 @@ class ProjectStory extends React.Component {
 			</ProjectStoryDiv>
 		);
 	}
-}
+}//End of ProjectStory
 
 const mapStateToProps = ({ dreams }) => {
 	return {
