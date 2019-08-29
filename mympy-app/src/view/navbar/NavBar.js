@@ -23,10 +23,10 @@ const NavBar = (props) => {
                 <div className="right">
                     <ul className="list">
                         <li className="item">
-                            <NavLink activeClassName="selected" to="/about">About</NavLink>
+                            <NavLink activeClassName="selected" to="/about" onClick={() => props.clickHandler()}>About</NavLink>
                         </li>
                         <li className="item">
-                            <NavLink activeClassName="selected" to="/market">Dream Market</NavLink>
+                            <NavLink activeClassName="selected" to="/market" onClick={() => props.clickHandler()}>Dream Market</NavLink>
                         </li>
 
                         <li className="item">

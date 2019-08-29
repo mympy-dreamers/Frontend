@@ -30,11 +30,19 @@ class App extends React.Component {
       await this.props.zeroLogin(this.props.authZeroUser, isUser)
     }
   }
+  clickHandler = e => {
+    let classes = document.querySelector('.nav-tab-wrapper').className;
+    document.querySelector('.nav-tab-wrapper').className = (
+      (classes === 'nav-tab-wrapper') ?
+        (classes + ' active') :
+        classes.replace(' active', '')
+    )
+  }
 
   render() {
     return (
       <div className="App">
-        <Route path="/" render={(props) => <NavBar
+        <Route path="/" render={(props) => <NavBar clickHandler={this.clickHandler}
           {...props}
           show={this.props.location.pathname.includes('market')}
           onAccountPage={this.props.location.pathname.includes('dashboard')}
