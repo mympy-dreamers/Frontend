@@ -140,35 +140,60 @@ class Donate extends React.Component {
     }
 
     render(){
+
         return(
+
             <StyledDonate>
+
                 <h1 className='title'>Donate to</h1>
                 <h1 className='title name'>Project {this.props.given_name +' '+ this.props.family_name}</h1>
+
                 <div className='donation-buttons'>
+
+                        {/* each buttton holds it own value that is passed when it is clicked */}
+
                     <button className='button' onClick={this.donationHandler} value={10}>$10</button>
                     <button className='button' onClick={this.donationHandler} value={15}>$15</button>
                     <button className='button' onClick={this.donationHandler} value={20}>$20</button>
                     <button className='button' onClick={this.donationHandler} value={25}>$25</button>
+
                 </div>
+
                 <div className='custom-amount'>
+
                     <h5 className='custom-title'>Custom Amount</h5>
+
                     <input className='custom-input' 
                         type='number' 
                         step="1" 
                         placeholder='$0'
                         onChange={this.customHandler}
                     />
+
                 </div>
+
                 <div>
-                    <div className='mympy-donation'><img src={mini_logo} alt=""/><h3>{'$' + this.state.mympyDonation +'.00'}</h3></div>
+
+                    <div className='mympy-donation'>
+
+                        <img src={mini_logo} alt=""/>
+                        <h3>{'$' + this.state.mympyDonation +'.00'}</h3>
+                        
+                    </div>
+
                     <div className='mympy-cost-msg'>Help with Mympy's cost</div>
                 </div>
+
                 <Elements>
                     <CheckoutForm donationTotal={this.state.donationTotal}/>
                 </Elements>
+
             </StyledDonate>
+
         )
+
     }
+
 }
 
 export default Donate;
