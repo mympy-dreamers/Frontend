@@ -22,9 +22,9 @@ export const DELETE_USER_START = 'DELETE_USER_START';
 export const DELETE_USER_SUCCESS = 'DELETE_USER_SUCCESS';
 export const DELETE_USER_FAILURE = 'DELETE_USER_FAILURE';
 
+export const SET_LOG = 'SET_LOG';
 
 const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
-// const BASE_URL = 'https://mympy-dreamers-staging.herokuapp.com';
 
 const token = {
     headers: { authorization: localStorage.getItem('jwt') }
@@ -38,6 +38,7 @@ export const setUser = (user) => (dispatch) => {
     })
 }
 
+//Fetches all users
 export const fetchUsers = () => (dispatch) => {
     dispatch({ type: FETCH_USERS_START });
 
@@ -57,6 +58,7 @@ export const fetchUsers = () => (dispatch) => {
         })
 }
 
+//Fetches user by id
 export const fetchUserById = (id) => (dispatch) => {
     dispatch({ type: FETCH_USER_START })
 
@@ -76,6 +78,7 @@ export const fetchUserById = (id) => (dispatch) => {
         })
 }
 
+//Fetches all dream of a user by user id
 export const fetchUserDreams = (id) => (dispatch) => {
     dispatch({ type: FETCH_USER_DREAMS_START })
 
@@ -95,6 +98,7 @@ export const fetchUserDreams = (id) => (dispatch) => {
         })
 }
 
+//Update user by id
 export const updateUser = (id, changes) => dispatch => {
     dispatch({ type: UPDATE_USER_START });
 
@@ -114,6 +118,7 @@ export const updateUser = (id, changes) => dispatch => {
         })
 }
 
+//Delete user by id
 export const deleteUser = (id) => dispatch => {
     dispatch({ type: DELETE_USER_START });
 
@@ -132,8 +137,6 @@ export const deleteUser = (id) => dispatch => {
             })
         })
 }
-
-export const SET_LOG = 'SET_LOG';
 
 export const setLog = () => (dispatch) => {
     dispatch({ type: SET_LOG })

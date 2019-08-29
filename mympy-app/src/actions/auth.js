@@ -11,7 +11,7 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 
 export const LOGOUT_USER = 'LOGOUT_USER'
 
-// const BASE_URL = 'https://mympy-dreamers-staging.herokuapp.com';
+//Switches base_url based on environment variable
 const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
 
 export const register = (user) => dispatch => {

@@ -24,10 +24,11 @@ export const DELETE_JOURNAL_START = 'DELETE_JOURNAL_START';
 export const DELETE_JOURNAL_SUCCESS = 'DELETE_JOURNAL_SUCCESS';
 export const DELETE_JOURNAL_FAILURE = 'DELETE_JOURNAL_FAILURE';
 
-
+//Switches base_url based on environment variable
 const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
 
 
+//Fetches all journal entries
 export const fetchAllJournals = () => (dispatch) => {
     dispatch({ type: FETCH_JOURNALS_START });
 
@@ -47,6 +48,7 @@ export const fetchAllJournals = () => (dispatch) => {
         })
 }
 
+//Fetches single journal by id
 export const fetchJournalById = (id) => (dispatch) => {
     dispatch({ type: FETCH_JOURNAL_START });
 
@@ -66,6 +68,7 @@ export const fetchJournalById = (id) => (dispatch) => {
         })
 }
 
+//Fetches dream journal entries by dream id
 export const fetchDreamJournals = (id) => dispatch => {
     dispatch({ type: FETCH_DREAM_JOURNALS_START });
 
@@ -85,6 +88,7 @@ export const fetchDreamJournals = (id) => dispatch => {
         })
 }
 
+//Adds new journal entry
 export const addJournal = (sentJournal) => dispatch => {
     dispatch({ type: ADD_JOURNAL_START });
     return axios
@@ -103,6 +107,7 @@ export const addJournal = (sentJournal) => dispatch => {
         })
 }
 
+//Updates journal entry by id
 export const updateJournal = (editedJournal) => dispatch => {
     dispatch({ type: UPDATE_JOURNAL_START });
     axios
@@ -121,6 +126,7 @@ export const updateJournal = (editedJournal) => dispatch => {
         })
 }
 
+//Deletes journal entry byt id
 export const deleteJournal = (id) => dispatch => {
     dispatch({ type: DELETE_JOURNAL_START });
 
