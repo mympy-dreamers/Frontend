@@ -39,8 +39,7 @@ const StyledCheckoutForm = styled.div`
     }
 `
 
-// const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
 
 class CheckoutForm extends React.Component {
     constructor(props) {
