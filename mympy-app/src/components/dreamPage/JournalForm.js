@@ -18,7 +18,9 @@ const bodyStyle = {
 const headStyle = {
   fontSize: "30px",
   color: "#1B5485",
-  paddingLeft: "145px"
+  paddingLeft: "145px",
+  marginLeft: "23px",
+
 };
 
 const journalForm = {
