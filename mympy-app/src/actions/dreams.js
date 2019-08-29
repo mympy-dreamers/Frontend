@@ -80,6 +80,7 @@ export const fetchAllDreams = () => (dispatch) => {
         })
 }
 
+//fetches an image by id
 export const fetchImage = (id) => (dispatch) => {
     dispatch({ type: FETCH_IMAGE_START });
 
@@ -99,6 +100,7 @@ export const fetchImage = (id) => (dispatch) => {
         })
 }
 
+//adds a dream to the dream db
 export const addDream = (sentDream) => dispatch => {
     dispatch({ type: ADD_DREAM_START });
 
@@ -117,6 +119,8 @@ export const addDream = (sentDream) => dispatch => {
             })
         })
 }
+
+
 
 export const addImage = (image) => dispatch => {
     dispatch({ type: ADD_IMAGE_START });
