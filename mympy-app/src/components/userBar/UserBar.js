@@ -13,23 +13,33 @@ import arrow from '../../img/arrow-down.png';
 
 class UserBar extends React.Component {
 
-    componentDidMount(){
+    componentDidMount() {
         console.log(this.props.authZeroUser);
     }
 
     clickHandler = e => {
         let classes = document.querySelector('.nav-tab-wrapper').className;
         document.querySelector('.nav-tab-wrapper').className = (
-            (classes === 'nav-tab-wrapper') ? 
-            (classes + ' active') : 
-            classes.replace(' active', '')
+            (classes === 'nav-tab-wrapper') ?
+                (classes + ' active') :
+                classes.replace(' active', '')
         )
+        let appEle = document.querySelector('.page-container');
+        if (appEle) {
+            let appClasses = appEle.className;
+            document.querySelector('.page-container').className = (
+                (appClasses.includes('page-container') && appClasses.includes('user-nav-active')) ?
+                    appClasses.replace(' user-nav-active', '') :
+                    (appClasses + ' user-nav-active')
+            )
+        }
+
     }
 
     render() {
         return (
             <div className="user-main">
-                <div className="nav-tab-wrapper" >
+                <div className="nav-tab-wrapper active" >
                     <div className="user-left">
                         <img src={this.props.authZeroUser.picture} alt='user' />
                         <h3>Hello, {this.props.authZeroUser.given_name.toUpperCase() + " " + this.props.authZeroUser.family_name.toUpperCase()}!</h3>
