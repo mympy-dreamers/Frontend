@@ -5,7 +5,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { StripeProvider } from 'react-stripe-elements';
 import thunk from 'redux-thunk';
-import Logger from 'redux-logger'; // REMOVE FOR PRODUCTION -----------------------------------------------------------^^^^^^^^^^^^^^^^^^^^^\\\\\\\\\\\\\\\\\\\\
+// import Logger from 'redux-logger'; // REMOVE FOR PRODUCTION -----------------------------------------------------------^^^^^^^^^^^^^^^^^^^^^\\\\\\\\\\\\\\\\\\\\
 import { BrowserRouter as Router, withRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import config from "./auth/auth_config.json"
@@ -22,12 +22,9 @@ require("dotenv").config();
 
 // composeEnhancer allows for redux store dev view in chrome
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk, Logger))
+const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk))
 );
 
-
-const pkTest = process.env.PK_TEST;
-// ^^ PK = Publishable Key ^^
 
 // redirect for auth0
 const onRedirectCallback = appState => {
@@ -43,7 +40,8 @@ const AppwithRouter = withRouter(App);
 
 // const pkTest = process.env.PK_TEST;
 // ^^ PK = Publishable Key ^^
-
+const pkTest = process.env.REACT_APP_PK_TEST;
+console.log('PK', pkTest)
 ReactDOM.render(
     <Auth0Provider
         domain={config.domain}
