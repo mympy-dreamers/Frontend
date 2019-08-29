@@ -40,6 +40,7 @@ const StyledCheckoutForm = styled.div`
 `
 
 const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
+// const BASE_URL = 'https://mympy-dreamers-staging.herokuapp.com';
 
 class CheckoutForm extends React.Component {
     constructor(props) {
@@ -51,7 +52,8 @@ class CheckoutForm extends React.Component {
     }
 
     async submit(ev) {
-        let { token } = await this.props.stripe.createToken({ name: 'name' });  // name will be the customer's name passed in
+        // creates a stripe token with the information per customer name
+        let { token } = await this.props.stripe.createToken({ name: `${this.props.authUser.name} for Dream ID: ${this.props.currDream.id} NAME: ${this.props.currDream.dream_name}` });  // name will be the customer's name passed in
         console.log('WOW', token, this.props.donationTotal);
         let response = await fetch(`${BASE_URL}/stripe/charge`, {
             method: "POST",
