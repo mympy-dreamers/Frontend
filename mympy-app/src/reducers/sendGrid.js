@@ -10,6 +10,9 @@ const INITIAL_STATE = {
     errors: [],
 }
 
+// information is not currently used, but if needed it is saved in state!
+// response could be used it it receives 'email sent' back
+
 export default function sendGridReducer(state = INITIAL_STATE, action) {
     switch (action.type) {
         case SEND_EMAIL_START:
