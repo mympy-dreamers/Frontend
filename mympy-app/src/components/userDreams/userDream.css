@@ -61,6 +61,7 @@
     background-image: linear-gradient(#194980, #3e1980);
     z-index: 1;
     justify-content: center;
+    z-index: 3;
 }
 
 /* modal form */
