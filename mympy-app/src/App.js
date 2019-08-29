@@ -35,7 +35,7 @@ class App extends React.Component {
     document.querySelector('.nav-tab-wrapper').className = (
       (classes === 'nav-tab-wrapper') ?
         (classes + ' active') :
-        classes.replace(' active', '')
+        classes
     )
   }
 
