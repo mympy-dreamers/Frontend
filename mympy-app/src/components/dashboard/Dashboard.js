@@ -28,7 +28,7 @@ const StyledDashboard = styled.div`
 const Dashboard = () => {
 
     return (
-        <StyledDashboard>
+        <StyledDashboard className='page-container'>
             <div className="mid-sec">
                 <Stats />
                 <News />
@@ -40,5 +40,5 @@ const Dashboard = () => {
     )
 
 }
-    
+
 export default Dashboard;  

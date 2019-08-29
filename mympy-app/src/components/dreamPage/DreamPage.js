@@ -50,7 +50,7 @@ class DreamPage extends React.Component {
 
 
 
-        <DreamPageDiv>
+        <DreamPageDiv className='page-container'>
           <div className="dream-page">
             <Carousel />
             <div className="sidebar-body">
