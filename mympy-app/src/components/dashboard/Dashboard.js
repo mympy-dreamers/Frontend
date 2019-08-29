@@ -25,17 +25,27 @@ const StyledDashboard = styled.div`
     }
 `
 
+// was initially a stateful component, but transformed into a stateless due to state not being needed and abstration taking place
+
 const Dashboard = () => {
 
     return (
+
         <StyledDashboard className='page-container'>
+
             <div className="mid-sec">
+
                 <Stats />
                 <News />
+
             </div>
+
             <div className="feature">
+
                 <Featured />
+
             </div>
+
         </StyledDashboard>
     )
 
