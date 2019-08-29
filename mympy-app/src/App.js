@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 
 import Login from './components/login/Login';
 import NavBar from './view/navbar/NavBar';
+import UserBar from './components/userBar/UserBar.js'
 import Home from './view/home/Home';
 import DreamMarket from './components/DreamMarket.js'
 import DreamPage from './components/dreamPage/DreamPage.js';
@@ -33,13 +34,12 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-
-
         <Route path="/" render={(props) => <NavBar
           {...props}
           show={this.props.location.pathname.includes('market')}
           onAccountPage={this.props.location.pathname.includes('dashboard')}
         />} />
+        {this.props.isAuthenticated && <Route path='/' component={UserBar} />}
         <div className="app-wrap">
           <Route exact path="/" render={(props) => <Home {...props} />} />
           <Route path="/login" render={(props) => (
@@ -69,10 +69,11 @@ class App extends React.Component {
     );
   }
 }
-const mapStateToProps = ({ users }) => {
+const mapStateToProps = ({ users, auth }) => {
   return {
     users: users.users,
     authZeroUser: users.authZeroUser,
+    isAuthenticated: auth.auth.isAuthenticated
   }
 }
 

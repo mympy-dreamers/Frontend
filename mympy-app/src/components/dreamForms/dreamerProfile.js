@@ -22,7 +22,7 @@ class DreamInfo extends React.Component {
 
     render() {
         return (
-            <div className='dream-Home-Page'>
+            <div className='dream-Home-Page page-container'>
                 <div className='form-wrap'>
 
                     <div className="left"  >
