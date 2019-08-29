@@ -13,7 +13,7 @@ const NavBar = (props) => {
         <div className="main">
             <div className="nav-wrap">
                 <div className="left">
-                    <Link to="/">
+                    <Link to="/" onClick={() => props.clickHandler()}>
                         <img src={logo} alt="Company Logo" />
                     </Link>
                 </div>
