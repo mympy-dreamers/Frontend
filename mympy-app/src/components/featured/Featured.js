@@ -46,6 +46,20 @@ class Featured extends React.Component {
             ...this.state,
             featured: arr.slice(0, this.state.displayed),
         });
+
+        let classes = document.querySelector('.nav-tab-wrapper').className;
+        document.querySelector('.nav-tab-wrapper').className = (
+            classes.replace(' active', '')
+        )
+        let appEle = document.querySelector('.page-container');
+        if (appEle) {
+            let appClasses = appEle.className;
+            document.querySelector('.page-container').className = (
+                (appClasses.includes('page-container') && appClasses.includes('user-nav-active')) ?
+                    appClasses.replace(' user-nav-active', '') :
+                    (appClasses + ' user-nav-active')
+            )
+        }
     }
 
     render() {

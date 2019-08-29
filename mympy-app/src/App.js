@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 
 import Login from './components/login/Login';
 import NavBar from './view/navbar/NavBar';
+import UserBar from './components/userBar/UserBar.js'
 import Home from './view/home/Home';
 import DreamMarket from './components/DreamMarket.js'
 import DreamPage from './components/dreamPage/DreamPage.js';
@@ -27,6 +28,14 @@ class App extends React.Component {
         (curr.auth_id === this.props.authZeroUser.sub) ? true : acc, false)
       await this.props.zeroLogin(this.props.authZeroUser, isUser)
     }
+  }
+  clickHandler = e => {
+    let classes = document.querySelector('.nav-tab-wrapper').className;
+    document.querySelector('.nav-tab-wrapper').className = (
+      (classes === 'nav-tab-wrapper') ?
+        (classes + ' active') :
+        classes.replace(' active', '')
+    )
   }
 
   render() {
@@ -90,12 +99,11 @@ class App extends React.Component {
   }
 
 }
-
-
-const mapStateToProps = ({ users }) => {
+const mapStateToProps = ({ users, auth }) => {
   return {
     users: users.users,
     authZeroUser: users.authZeroUser,
+    isAuthenticated: auth.auth.isAuthenticated
   }
 }
 
