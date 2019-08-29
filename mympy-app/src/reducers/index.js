@@ -4,6 +4,7 @@ import authReducer from './auth';
 import dreamsReducer from './dreams';
 import usersReducer from './users';
 import journalsReducer from './journals';
+import sendGridReducer from './sendGrid';
 import stripeReducer from './stripe';
 
 export default combineReducers({
@@ -11,5 +12,6 @@ export default combineReducers({
     dreams: dreamsReducer,
     users: usersReducer,
     journals: journalsReducer,
+    sendGrid: sendGridReducer,
     stripe: stripeReducer,
 })
