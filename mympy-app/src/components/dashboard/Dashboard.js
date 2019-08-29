@@ -12,15 +12,11 @@ const StyledDashboard = styled.div`
     background: rgb(118,71,182);
     background: linear-gradient(0deg, rgba(118,71,182,1) 0%, rgba(25,73,128,1) 100%);
     padding: 0 10%;
-    font-family: Open Sans, sans-serif;
+    font-family: Roboto, sans-serif;
     padding-bottom: 2%;
 
-    .top-bar {
-        text-align: center;
-        margin-bottom: 3.4%;
-    }
-
     .mid-sec {
+        margin-top: 3.4%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -33,9 +29,6 @@ const Dashboard = () => {
 
     return (
         <StyledDashboard>
-            <div className="top-bar">
-                <UserBar />
-            </div>
             <div className="mid-sec">
                 <Stats />
                 <News />
