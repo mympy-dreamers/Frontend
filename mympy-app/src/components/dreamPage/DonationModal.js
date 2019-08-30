@@ -49,12 +49,12 @@ class DonationModal extends React.Component {
     const { isAuthenticated, loginWithRedirect } = this.props;
     return (
       <StyledDonationModal>
-        <button onClick={this.toggle} className="donate-btn" outline color="info">Donate</button>{' '}
+        <button onClick={this.toggle} className="donate-btn" outline="true" color="info">Donate</button>{' '}
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalBody>
-          {isAuthenticated ? 
-            <Donate /> : 
-            <h4 style={{fontSize: '1.4rem'}}>You must be logged in to contact a dreamer</h4>}
+            {isAuthenticated ?
+              <Donate /> :
+              <h4 style={{ fontSize: '1.4rem' }}>You must be logged in to contact a dreamer</h4>}
           </ModalBody>
 
           {isAuthenticated ?

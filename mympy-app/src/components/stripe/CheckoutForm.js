@@ -62,6 +62,7 @@ class CheckoutForm extends React.Component {
             success: false,
             fail: false
         }
+
         this.submit = this.submit.bind(this);
     }
 
