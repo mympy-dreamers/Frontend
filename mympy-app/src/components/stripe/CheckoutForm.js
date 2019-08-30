@@ -51,7 +51,7 @@ const StyledCheckoutForm = styled.div`
         font-size: 1rem;
     }
 `
-
+//Holds payment elements from stripe and submit donation button 
 const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
 
 class CheckoutForm extends React.Component {

@@ -15,7 +15,7 @@ const headStyle = {
 }
 
 
-
+//Is used to confirm entry into journal
 class PopupSubmit extends React.Component {
 
   render() {
@@ -29,7 +29,7 @@ class PopupSubmit extends React.Component {
           <ModalFooter>
             <Button id='cancel-button' onClick={() => this.props.closeModal()}>Cancel</Button>
             <Button onClick={(e) => {
-              
+
               this.props.handleFinalSubmit(e)
               this.props.closeModal()
             }}>Submit</Button>
@@ -40,4 +40,4 @@ class PopupSubmit extends React.Component {
   }
 }
 
-export default PopupSubmit ;
+export default PopupSubmit;

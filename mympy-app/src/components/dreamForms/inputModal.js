@@ -19,7 +19,7 @@ const headStyle = {
 }
 
 
-
+//Verifies if you want to create a dream 
 class InputModal extends React.Component {
 
   render() {
