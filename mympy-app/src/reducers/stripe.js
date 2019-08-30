@@ -1,14 +1,14 @@
-import { 
-    DREAM_PAY_START, 
-    DREAM_PAY_SUCCESS, 
+import {
+    DREAM_PAY_START,  //Fetches dream donations by dream id
+    DREAM_PAY_SUCCESS,
     DREAM_PAY_FAILURE,
-    DREAMPAY_POST_START,
+    DREAMPAY_POST_START, //Adds a donation to dreampayment table
     DREAMPAY_POST_SUCCESS,
     DREAMPAY_POST_FAILURE,
-    USER_PAY_START,
+    USER_PAY_START, //Fetches user donations by user id
     USER_PAY_SUCCESS,
     USER_PAY_FAILURE,
-    USERPAY_POST_START,
+    USERPAY_POST_START, //Adds a donation to the userpayments table
     USERPAY_POST_SUCCESS,
     USERPAY_POST_FAILURE,
 } from '../actions';
@@ -23,9 +23,9 @@ const INITIAL_STATE = {
     errors: [],
 }
 
-const donationSum = function(dreamPayments) {
-    let total=0;
-    dreamPayments.forEach( payment => { 
+const donationSum = function (dreamPayments) {
+    let total = 0;
+    dreamPayments.forEach(payment => {
         total += payment.donation_amount;
     })
     console.log(total);

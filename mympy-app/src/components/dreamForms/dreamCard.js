@@ -5,6 +5,8 @@ import {setDreamCards} from '../../actions';
 
 import './dreamCard.css';
 
+//Reusable card component that is used throughout the app to display dream data
+
 class DreamCard extends React.Component {
     constructor(props) {
         super(props);

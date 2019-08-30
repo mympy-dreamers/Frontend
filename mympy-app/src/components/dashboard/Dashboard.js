@@ -24,10 +24,8 @@ const StyledDashboard = styled.div`
         margin-bottom: 3.4%;
     }
 `
-
-// was initially a stateful component, but transformed into a stateless due to state not being needed and abstration taking place
 // Dashboard componenet uses abstracted components to render proper information
-
+// Container holding featured dreams 
 const Dashboard = () => {
 
     return (

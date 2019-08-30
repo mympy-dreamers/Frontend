@@ -104,7 +104,7 @@ const StyledDonate = styled.div`
         margin-bottom: 2em;
     }
 `
-
+//Modal that pops up when donation button is clicked. Allows you to enter payment information
 class Donate extends React.Component {
     constructor(props) {
         super(props);
@@ -178,7 +178,6 @@ class Donate extends React.Component {
 
                 <h1 className='title'>Donate to</h1>
                 <h1 className='title name'>Project {this.props.given_name + ' ' + this.props.family_name}</h1>
-
                 <div className='donation-buttons'>
 
                     {/* each buttton holds it own value that is passed when it is clicked */}
@@ -193,7 +192,6 @@ class Donate extends React.Component {
                 <div className='custom-amount'>
 
                     <h5 className='custom-title'>Custom Amount</h5>
-
                     <input className='custom-input'
                         type='number'
                         step="1"

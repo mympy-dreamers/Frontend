@@ -3,6 +3,7 @@ import { fetchUserDreams, updateDream, deleteDream } from '../../actions';
 import { connect } from 'react-redux';
 import UserDream from './UserDream';
 
+//Displays user dreams
 class UserDreamsList extends Component {
   state = {
     isUpdating: false

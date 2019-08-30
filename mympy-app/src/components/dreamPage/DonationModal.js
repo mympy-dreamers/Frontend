@@ -22,6 +22,7 @@ const StyledDonationModal = styled.div`
   }
 `
 
+//Checks to make sure user is logged in before they can contact a dreamer
 class DonationModal extends React.Component {
   constructor() {
     super();

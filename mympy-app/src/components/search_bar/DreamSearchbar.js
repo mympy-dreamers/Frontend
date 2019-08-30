@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { updateSearch } from '../../actions'
 import "./Dreams.css"
 
-
+//Search component that allows users to search through dreams in marketplace
 class SearchBar extends React.Component{
     state = {
         search: ''
