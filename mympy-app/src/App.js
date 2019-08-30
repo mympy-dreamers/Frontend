@@ -30,69 +30,74 @@ class App extends React.Component {
     }
   }
   clickHandler = e => {
-    let classes = document.querySelector('.nav-tab-wrapper').className;
-    document.querySelector('.nav-tab-wrapper').className = (
-      (classes === 'nav-tab-wrapper') ?
-        (classes + ' active') :
-        classes.replace(' active', '')
-    )
+    if (document.querySelector('.nav-tab-wrapper')) {
+      let classes = document.querySelector('.nav-tab-wrapper').className;
+      document.querySelector('.nav-tab-wrapper').className = (
+        (classes === 'nav-tab-wrapper') ?
+          (classes + ' active') :
+          classes
+      )
+    }
   }
 
   render() {
+    const navShow = this.props.location.pathname.split("/");
+    console.log(navShow);
     return (
-	  
-		<div className="App">
-		
-			{/* render attr used to pass props into component */}
-			<Route path="/" render={(props) => (
-			<NavBar
-				{...props}
-				show={this.props.location.pathname.includes('market')}
-				onAccountPage={this.props.location.pathname.includes('dashboard')}
-			/>
-			)} />
 
-			<div className="app-wrap">
+      <div className="App">
 
-			<Route exact path="/" render={(props) => <Home {...props} />} />
+        {/* render attr used to pass props into component */}
+        <Route path="/" render={(props) => (
+          <NavBar clickHandler={this.clickHandler}
+            {...props}
+            show={navShow[1] == 'market' && !navShow[2]}
+            onAccountPage={this.props.location.pathname.includes('dashboard')}
+          />
+        )} />
+        {this.props.isAuthenticated && <Route path='/' component={UserBar} />}
 
-			{/* render attr used to pass history props into component */}
-			<Route path="/login" render={(props) => (
-				
-				<Login
-				{...props} 
-				type="login"
-				/>
+        <div className="app-wrap">
 
-			)} />
+          <Route exact path="/" render={(props) => <Home {...props} />} />
 
-			{/* render attr used to pass history props into component */}
-			<Route path="/register" render={(props) => (
+          {/* render attr used to pass history props into component */}
+          <Route path="/login" render={(props) => (
 
-				<Login
-				{...props}
-				type="register"
-				/>
+            <Login
+              {...props}
+              type="login"
+            />
 
-			)} />
+          )} />
 
-			<Route exact path="/about" component={About} />
-			<Route exact path="/market" component={DreamMarket} />
-			<Route path="/market/:id" component={DreamPage} />
-			<Route path="/donate" component={Donate} />
+          {/* render attr used to pass history props into component */}
+          <Route path="/register" render={(props) => (
 
-		{/* Private Routes Below */}
+            <Login
+              {...props}
+              type="register"
+            />
 
-			<PrivateRoute path="/user-dreams" component={UserDreamsList} />
-			<Route exact path="/dashboard" component={Dashboard} />
-			<PrivateRoute exact path="/addDream" component={DreamerProfile} />
-			<PrivateRoute exact path="/addDream/image" component={ImageForm} />
+          )} />
 
-			<Footer />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/market" component={DreamMarket} />
+          <Route path="/market/:id" component={DreamPage} />
+          <Route path="/donate" component={Donate} />
 
-			</div>
+          {/* Private Routes Below */}
 
-		</div >
+          <PrivateRoute path="/user-dreams" component={UserDreamsList} />
+          <Route exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/addDream" component={DreamerProfile} />
+          <PrivateRoute exact path="/addDream/image" component={ImageForm} />
+
+          <Footer />
+
+        </div>
+
+      </div >
 
     );
 
