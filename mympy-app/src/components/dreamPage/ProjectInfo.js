@@ -23,18 +23,35 @@ const ProjectInfoDiv = styled.div`
 		margin-bottom: 16px;
 	}
 
-	.donationText {
-		color: white;
-		font-size: 2.8em;
-		font-family: Poppins Medium, sans-serif;
-		margin-bottom: 16px;
-	}
+	.received-goals-sections {
+		margin: 14px 0 46px;
 
-	.donationNums {
-		color: #FFD164;
-		font-size: 2.8em;
-		font-family: Poppins Medium, sans-serif;
-		margin-bottom: 16px;
+		.section-wrapper {
+			display: flex;
+			justify-content: center;
+
+			.donationText {
+				color: white;
+				font-size: 1.4rem;
+				font-family: Poppins Medium, sans-serif;
+			}
+
+			.donationNums {
+				margin-right: 6px;
+				color: #FFD164;
+				font-size: 1.4rem;
+				font-family: Poppins Medium, sans-serif;
+				display: inline;
+			}
+		}
+
+		.out-of {
+			width: 100%;
+			color: white;
+			margin: 18px 0;
+			font-size: 0.8rem;
+			text-align: center;
+		}
 	}
 
 	.user-name {
@@ -101,9 +118,19 @@ class ProjectInfo extends React.Component {
 					/>
 				</div>
 
-				<p className="donationText">Goal</p>
-				<p className="donationNums">${this.props.currDream.donation_goal}</p><br /><br />
-				<p className="donationText">Received<br /></p> <p className="donationNums">${this.props.currDream.donations_received}</p><br />>
+				<div className='received-goals-sections'>
+					<div className='section-wrapper'>
+						<div className="donationNums">${this.props.currDream.donations_received}</div>
+						<div className="donationText">{' Received'} </div>
+					</div>
+					<div className='out-of'>
+						<div>~ of ~</div>
+					</div>
+					<div className='section-wrapper'>
+						<div className="donationNums">${this.props.currDream.donation_goal}</div>
+						<div className="donationText">{' Goal'}</div>
+					</div>
+				</div>
 
 				{/* <h3 className="days-left">7 Days Left</h3> */}
 
