@@ -69,7 +69,7 @@ class JournalList extends Component {
 
         </Card.Header>
         <Accordion.Collapse eventKey={this.props.id}>
-          <Card.Body><pre>{this.props.body}</pre></Card.Body>
+          <Card.Body><pre><p>{this.props.body}</p></pre></Card.Body>
         </Accordion.Collapse>
       </Card>
     );
