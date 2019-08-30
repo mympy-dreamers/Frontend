@@ -77,11 +77,13 @@ const journalPostH1 = {
   fontWeight: "bolder"
 };
 
+//JournalEntry component
 class JournalEntry extends Component {
 	state = {
 		showModal: false
 	};
 
+	//Fetches journal content by dream id
 	componentDidMount() {
 		setTimeout(() =>
 			this.props.fetchDreamJournals(this.props.currDream.id), 1000
@@ -146,7 +148,7 @@ render() {
 		</JournalEntryDiv>
 		)
 	}
-}	
+}	//End of JournalEntry
 
 function mapStateToProps(state) {
   return {

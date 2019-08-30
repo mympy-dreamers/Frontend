@@ -12,6 +12,8 @@ const BodyDiv = styled.div`
 	margin: 0 auto;
 `
 
+//DreamPageBody compmonent
+//Holds project story and journal entry
 const DreamPageBody = ({ dream }) => {
 
 	return (
@@ -26,6 +28,6 @@ const DreamPageBody = ({ dream }) => {
 		</Tabs>
 	  </BodyDiv>
 	);
-}
+}//End of DreamPageBody
 
 export default DreamPageBody;

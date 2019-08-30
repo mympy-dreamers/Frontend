@@ -13,8 +13,6 @@ const StyledDonate = styled.div`
     max-width: 400px;
     margin: 8vh auto 8vh;
     padding: 1%;
-    // border: 1px solid black;
-
 
     .title {
         align-self: baseline;
@@ -28,7 +26,6 @@ const StyledDonate = styled.div`
     .name {
         color: yellow;
         margin-bottom: 1em;
-
     }
 
     .donation-buttons {
@@ -54,7 +51,6 @@ const StyledDonate = styled.div`
             border: 4px solid black;
         }
     }
-
 
     .custom-amount {
         display: flex;
@@ -168,10 +164,16 @@ class Donate extends React.Component {
         })
     }
 
+    capFirstLetter = (text) => {
+        text = text.toLowerCase()
+            .split(' ')
+            .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+            .join(' ');
+        return text;
+    }
+
     render() {
-
         return (
-
             <StyledDonate>
 
                 <h1 className='title'>Donate to</h1>
@@ -220,4 +222,10 @@ class Donate extends React.Component {
 
 }
 
-export default Donate;
+const mapStateToProps = ({ users, dreams, auth }) => {
+    return {
+        currDream: dreams.currDream,
+    }
+}
+
+export default connect(mapStateToProps)(Donate);

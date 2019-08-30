@@ -24,18 +24,19 @@ const ProjectStoryDiv = styled.div`
 	}
 `
 
+//ProjectStory component 
 class ProjectStory extends React.Component {
 	render() {
 		return (
 			<ProjectStoryDiv>
 				<h2 className="PS-title">Our Story</h2>
 				<div className="PS-body">
-					<p className="PS-story"><pre>{this.props.currDream.dream_long_description}</pre></p>
+					<pre className="PS-story">{this.props.currDream.dream_long_description}</pre>
 				</div>
 			</ProjectStoryDiv>
 		);
 	}
-}
+}//End of ProjectStory
 
 const mapStateToProps = ({ dreams }) => {
 	return {

@@ -23,11 +23,12 @@ const DreamPageDiv = styled.div`
   }
 `;
 
+//DreamPage component
 class DreamPage extends React.Component {
 
   componentDidMount() {
-    this.props.fetchDreamById(this.props.match.params.id);
-    this.props.fetchImage(this.props.match.params.id);
+    this.props.fetchDreamById(this.props.match.params.id); //Sets currDream in the reducer
+    this.props.fetchImage(this.props.match.params.id); //Fetches image by dream id
   }
 
   componentDidUpdate(prevProps) {
@@ -41,15 +42,9 @@ class DreamPage extends React.Component {
     }
   }
 
-
-
   render() {
     return (
-
       <div>
-
-
-
         <DreamPageDiv className='page-container'>
           <div className="dream-page">
             <Carousel />
@@ -59,11 +54,10 @@ class DreamPage extends React.Component {
             </div>
           </div>
         </DreamPageDiv>
-
       </div>
     );
   }
-}
+}//End of DreamPage
 
 const mapStateToProps = ({ dreams }) => {
   return {

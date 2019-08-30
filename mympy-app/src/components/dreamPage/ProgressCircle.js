@@ -9,6 +9,7 @@ const PCdiv = styled.div`
   border-radius: 50%;
 `
 
+//ProgressCircle component
 class ProgressCircle extends React.Component {
   constructor(props) {
     super(props);
@@ -22,17 +23,18 @@ class ProgressCircle extends React.Component {
     //change percent to donationsRecived/donationGoal when back-end is seeded
 
     this.setStateInterval = window.setInterval(() => {
+      //Calculates percentage and sets to state
       let percent = (this.props.currDream.donations_received / this.props.currDream.donation_goal) * 100;
-      percent = (percent > 100) ? 100 : percent;
+      percent = (percent > 100) ? 100 : percent; //If percent is >100 display 100
 
       this.setState({
-        percent, data: this.getData(percent)
+        percent, data: this.getData(percent) //Sets data using new pescent
       });
     }, 2000);
   }
 
   componentWillUnmount() {
-    //if component unmounts clear interval
+    //If component unmounts clear interval
     window.clearInterval(this.setStateInterval);
   }
 

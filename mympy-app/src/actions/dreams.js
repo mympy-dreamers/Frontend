@@ -32,12 +32,16 @@ export const UPDATE_DREAM_USER = 'UPDATE_DREAM_USER';
 
 // VARIABLES BELOW
 
-    // grabs token and holds it in a variable to be used across the file
+// grabs token and holds it in a variable to be used across the file
 const token = {
     headers: { authorization: localStorage.getItem('jwt') }
 };
+
+//Switches base_url based on environment variable
 const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
 
+
+//Fetches single dream by id
 export const fetchDreamById = (id) => (dispatch) => {
     dispatch({ type: FETCH_DREAM_START });
 
@@ -60,6 +64,7 @@ export const fetchDreamById = (id) => (dispatch) => {
         })
 }
 
+//Fetches all dreams from dream table
 export const fetchAllDreams = () => (dispatch) => {
     dispatch({ type: FETCH_DREAMS_START });
 
@@ -79,6 +84,7 @@ export const fetchAllDreams = () => (dispatch) => {
         })
 }
 
+//Fetched single image by dream id
 export const fetchImage = (id) => (dispatch) => {
     dispatch({ type: FETCH_IMAGE_START });
 
@@ -98,6 +104,7 @@ export const fetchImage = (id) => (dispatch) => {
         })
 }
 
+//Adds dream to dreams table
 export const addDream = (sentDream) => dispatch => {
     dispatch({ type: ADD_DREAM_START });
 
@@ -117,6 +124,7 @@ export const addDream = (sentDream) => dispatch => {
         })
 }
 
+//Adds image to images table
 export const addImage = (image) => dispatch => {
     dispatch({ type: ADD_IMAGE_START });
 
@@ -144,6 +152,7 @@ export const addImage = (image) => dispatch => {
         })
 }
 
+//Updates dream by id
 export const updateDream = (dream) => dispatch => {
     dispatch({ type: UPDATE_DREAM_START });
     axios
@@ -163,6 +172,7 @@ export const updateDream = (dream) => dispatch => {
         })
 }
 
+//Deletes dream by id from dreams table
 export const deleteDream = (id) => dispatch => {
     dispatch({ type: DELETE_DREAM_START });
 

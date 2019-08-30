@@ -16,6 +16,7 @@ const SidebarDiv = styled.div`
 	position: relative;
 `
 
+//Sidebar component 
 const Sidebar = ({ dream, user, match }) => {
 	return (
 		<SidebarDiv>
@@ -23,6 +24,6 @@ const Sidebar = ({ dream, user, match }) => {
 			<RecentDonations />
 		</SidebarDiv>
 	);
-}
+}//End of Sidebar
 
 export default Sidebar;

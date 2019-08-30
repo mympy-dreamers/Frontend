@@ -42,7 +42,6 @@ class App extends React.Component {
 
   render() {
     const navShow = this.props.location.pathname.split("/");
-    console.log(navShow);
     return (
 
       <div className="App">

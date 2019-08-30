@@ -4,6 +4,7 @@ export const SEND_EMAIL_START = 'SEND_EMAIL_START';
 export const SEND_EMAIL_SUCCESS = 'SEND_EMAIL_SUCCESS';
 export const SEND_EMAIL_FAILURE = 'SEND_EMAIL_FAILURE';
 
+//Switches base_url based on environment variable
 const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
 
 // `mailing` contains and object holding all the information required for the email
