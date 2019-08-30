@@ -16,6 +16,8 @@ const headStyleNotLog = {
   fontSize: "2.3rem"
 }
 
+
+// Used in the Dreamer page and pop ups when the 'contact dreamer' button is pressed
 class EmailModal extends React.Component {
   constructor() {
     super();
@@ -54,12 +56,17 @@ class EmailModal extends React.Component {
   }
 
   render() {
-    console.log(this.props.isAuthenticated)
+
     const { isAuthenticated, loginWithRedirect } = this.props;
+
     return (
+
       <div>
+
         <Button onClick={this.toggle} className="contact-button" outline color="info">Contact Dreamer</Button>{' '}
+
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
+
           {isAuthenticated ? <ModalHeader style={headStyle} toggle={this.toggle}>WARNING</ModalHeader> :
             <ModalHeader style={headStyleNotLog} toggle={this.toggle}>You must be logged in to contact a dreamer</ModalHeader>}
 
@@ -92,10 +99,15 @@ class EmailModal extends React.Component {
               <Button color="danger" onClick={this.toggle}>Cancel</Button>
             </ModalFooter>
           }
+
         </Modal>
+
       </div>
+
     );
+
   }
+  
 }
 
 const mapStateToProps = ({ auth, dreams }) => {

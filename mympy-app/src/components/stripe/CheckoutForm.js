@@ -47,7 +47,7 @@ class CheckoutForm extends React.Component {
         this.state = {
             complete: false,
         }
-        
+
         this.submit = this.submit.bind(this);
     }
 

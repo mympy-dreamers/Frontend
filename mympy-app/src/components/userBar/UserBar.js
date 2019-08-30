@@ -37,52 +37,96 @@ class UserBar extends React.Component {
     }
 
     render() {
+
         return (
+
             <div className="user-main">
+
                 <div className="nav-tab-wrapper active" >
+
                     <div className="user-left">
+                            {/* gets information from the redux state that is store through the zeroAuth reducer */}
+                            
                         <img src={this.props.authZeroUser.picture} alt='user' />
                         <h3>Hello, {this.props.authZeroUser.given_name.toUpperCase() + " " + this.props.authZeroUser.family_name.toUpperCase()}!</h3>
+
                     </div>
+
                     <div className="sub-nav">
+
                         <Link to="/addDream">
+
                             <div className="nav-icon" onClick={this.clickHandler}>
+
                                 <img src={cloudPlus} alt='cloud with a plus sign' />
                                 <p>Create Dream</p>
+
                             </div>
+
                         </Link>
+
                         <Link to="/user-dreams">
+
                             <div className="nav-icon" onClick={this.clickHandler}>
+
                                 <img src={cloudPencil} alt='cloud with pencil inside' />
                                 <p>Edit Dreams</p>
+
                             </div>
+
                         </Link>
 
-                        <div className="nav-icon develop">
-                            <img src={journal} alt='pencil scribbling' />
-                            <p>Journal</p>
-                        </div>
+                        {/* commented out Link tags were meant for future implementation */}
 
                         {/* <Link to="#"> */}
+
                         <div className="nav-icon develop">
+
+                            <img src={journal} alt='pencil scribbling' />
+                            <p>Journal</p>
+
+                        </div>
+
+                        {/* </Link> */}
+
+                        {/* <Link to="#"> */}
+
+                        <div className="nav-icon develop">
+
                             <img src={messageLogo} alt='message logo' />
                             <p>Messages</p>
+
                         </div>
+
                         {/* </Link> */}
+
                         {/* <Link to="#"> */}
+
                         <div className="nav-icon develop">
+
                             <img src={userLogo} alt='person with a pencil' />
                             <p>Edit Bio</p>
+
                         </div>
+
                         {/* </Link> */}
+                        
                     </div>
+
                 </div>
+
                 <div className="arrow-tab" onClick={this.clickHandler} >
+
                     <img src={arrow} alt='' />
+
                 </div>
+
             </div>
+
         )
+
     }
+
 }
 
 const mapStateToProps = ({ auth, users }) => {

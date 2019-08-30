@@ -110,7 +110,7 @@ const StyledDonate = styled.div`
 `
 
 class Donate extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             donationAmount: 0,
@@ -120,26 +120,26 @@ class Donate extends React.Component {
         }
     }
 
-    componentDidMount () {
-    // ln 125 - 131 | creates a script that attaches to the index.html doc
+    componentDidMount() {
+        // ln 125 - 131 | creates a script that attaches to the index.html doc
         // const script = document.createElement("script");
-      
+
         // script.id="stripe-js";
         // script.src = "https://js.stripe.com/v3/";
         // script.async = true;
-      
+
         // document.body.appendChild(script);
 
-    // ln 123 - 143 | checks if the script has loaded or not and updates state
+        // ln 123 - 143 | checks if the script has loaded or not and updates state
         if (window.Stripe) {
 
-            this.setState({stripe: window.Stripe('pk_test_1d72AL8UO1qMdLmncaIcIaEx00n89i0APd')});
+            this.setState({ stripe: window.Stripe('pk_test_1d72AL8UO1qMdLmncaIcIaEx00n89i0APd') });
 
         } else {
 
             document.querySelector('#stripe-js').addEventListener('load', () => {
-              // Create Stripe instance once Stripe.js loads
-              this.setState({stripe: window.Stripe('pk_test_1d72AL8UO1qMdLmncaIcIaEx00n89i0APd')});
+                // Create Stripe instance once Stripe.js loads
+                this.setState({ stripe: window.Stripe('pk_test_1d72AL8UO1qMdLmncaIcIaEx00n89i0APd') });
             });
 
         }
@@ -148,14 +148,14 @@ class Donate extends React.Component {
 
     donationHandler = e => {
         let classes = e.target.className;
-        e.target.className = (classes === 'button') ? classes+' active' : classes.replace(' active', '');
+        e.target.className = (classes === 'button') ? classes + ' active' : classes.replace(' active', '');
         this.setState({
             ...this.state,
             donationAmount: e.target.value,
             donationTotal: Number(this.state.donationTotal) + (
-                e.target.className.includes('button active') ? 
-                Number(e.target.value):
-                Number(-e.target.value)
+                e.target.className.includes('button active') ?
+                    Number(e.target.value) :
+                    Number(-e.target.value)
             ),
         })
     }
@@ -168,40 +168,56 @@ class Donate extends React.Component {
         })
     }
 
-    render(){
-        return(
+    render() {
+
+        return (
+
             <StyledDonate>
+
                 <h1 className='title'>Donate to</h1>
-                <h1 className='title name'>Project {this.props.given_name +' '+ this.props.family_name}</h1>
+                <h1 className='title name'>Project {this.props.given_name + ' ' + this.props.family_name}</h1>
+
                 <div className='donation-buttons'>
+
+                    {/* each buttton holds it own value that is passed when it is clicked */}
+
                     <button className='button' onClick={this.donationHandler} value={10}>$10</button>
                     <button className='button' onClick={this.donationHandler} value={15}>$15</button>
                     <button className='button' onClick={this.donationHandler} value={20}>$20</button>
                     <button className='button' onClick={this.donationHandler} value={25}>$25</button>
+
                 </div>
+
                 <div className='custom-amount'>
+
                     <h5 className='custom-title'>Custom Amount</h5>
-                    <input className='custom-input' 
-                        type='number' 
-                        step="1" 
+
+                    <input className='custom-input'
+                        type='number'
+                        step="1"
                         placeholder='$0'
                         onChange={this.customHandler}
                     />
+
                 </div>
+
                 <div>
-                    <div className='mympy-donation'><img src={mini_logo} alt="" /><h3>{'$' + this.state.mympyDonation +'.00'}</h3></div>
+                    <div className='mympy-donation'><img src={mini_logo} alt="" /><h3>{'$' + this.state.mympyDonation + '.00'}</h3></div>
                     <div className='mympy-cost-msg'>Help with Mympys cost</div>
                 </div>
 
                 <StripeProvider stripe={this.state.stripe}>
                     <Elements>
-                        <CheckoutForm donationTotal={this.state.donationTotal}/>
+                        <CheckoutForm donationTotal={this.state.donationTotal} />
                     </Elements>
                 </StripeProvider>
 
             </StyledDonate>
+
         )
+
     }
+
 }
 
 export default Donate;

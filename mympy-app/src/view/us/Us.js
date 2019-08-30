@@ -1,10 +1,10 @@
 import React from 'react';
 
-{/* used non stateful component for just rendering */}
+// stateless component for rendering purposes
 const Us = () => {
 
     return (
-        
+
         <div className="us-main contain">
 
             <div className="left">
@@ -12,6 +12,7 @@ const Us = () => {
                 <div className="inner-left">
 
                     <h1>What Do We Do?</h1>
+
                     <p>
                         Mympy is a program that lowers the entry barriers to incoming future VR developers.
                         Our mission is to empower underrepresented communities by providing emerging technologies education, access, carrer development, and entrepreneurship skills.
@@ -29,7 +30,6 @@ const Us = () => {
             <div className="right">
 
                 <div className="imgDiv">
-                    
                     <img src="https://source.unsplash.com/random/600x400" alt="" />
 
                 </div>
@@ -46,7 +46,7 @@ const Us = () => {
 
             </div>
 
-        </div>
+        </div >
 
     )
 

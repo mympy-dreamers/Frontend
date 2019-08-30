@@ -5,6 +5,8 @@ import { addDream } from '../../../actions';
 import { FormGroup, Label, Input, Alert } from 'reactstrap';
 import InputModal from "../inputModal";
 
+// Form was abstracted from a different component
+
 class Form extends React.Component {
     constructor(props){
         super(props);
@@ -42,43 +44,45 @@ class Form extends React.Component {
 
     // controls form input data
     componentDidMount() {
+
         if (this.props.user) {
             this.setState({
                 dreamCard: { ...this.state.dreamCard, user_id: this.props.user.id }
             })
-        } else {
-            console.log('cannot find user id for forms page')
         }
     }
 
     handleChanges = e => {
-        e.preventDefault()
+
+        e.preventDefault();
+
         this.setState({
             ...this.state,
             dreamCard: {
                 ...this.state.dreamCard,
                 [e.target.name]: e.target.value
             },
-
         })
+
     }
 
 
     handleFinalSubmit = e => {
+
         const newDream = { ...this.state.dreamCard, donation_goal: parseInt(this.state.dreamCard.donation_goal, 10) }
-        // e.preventDefault()
-        console.log('submittedDream: ', newDream);
-        this.props.addDream(newDream)
-        this.setState({ showModal: false }, () => this.props.history.push('/addDream/image'))
-        // <Link to='/addDream/image' />
+
+        this.props.addDream(newDream);
+
+        this.setState({ showModal: false }, () => this.props.history.push('/addDream/image'));
     }
 
     // triggers modal toggle
     handleSubmit = e => {
-        // e.preventDefault()
+
         this.setState({
             showModal: true
         })
+
     }
 
     closeModal = () => {
@@ -86,33 +90,45 @@ class Form extends React.Component {
     }
 
     render(){
+
         return (
+
             <div className="form-main">
+
                 <div className='formTitle'>
+
                     <h1>Tell me about yourself!</h1>
                     <p>(The process will take about 30 minutes to create.)</p>
+
                 </div>
+
                 <div className="form">
+
                     <FormGroup className="question">
                         <Label className="dreamLabel" for="exampleEmail">What is your name of the dream project?</Label>
                         <Input className="inputStyle one" onChange={this.handleChanges} name="dream_name" id="dream_name" placeholder="Step 1..." />
                     </FormGroup>
+
                     <FormGroup className="question">
                         <Label className="dreamLabel" for="examplePassword">What is your dreams donation goals?</Label>
                         <Input className="inputStyle two" onChange={this.handleChanges} name="donation_goal" id="donation_goal"  placeholder="Step 2..." />
                     </FormGroup>
+
                     <FormGroup className="question">
                         <Label className="dreamLabel" for="exampleText">In one sentence, What is your dream project about?</Label>
                         <Input className="inputStyle three" onChange={this.handleChanges} type="textarea" name="dream_short_description" id="dreamShortDescription"  placeholder="Step 3..." />
                     </FormGroup>
+
                     <FormGroup className="question">
                         <Label className="dreamLabel" for="exampleText">Describe, in detail, What is your dream project?</Label>
                         <Input className="inputStyle four" onChange={this.handleChanges} type="textarea" name="dream_long_description" id="dreamLongDescription"  placeholder="Step 4..." />
                     </FormGroup>
+
                     <div className="btn-div">
                         <button className="rectangle-copy-2" onClick={ () => <Link to="/dashboard" /> }> Back</button>
                         <button className="rectangle-copy-3" onClick={ this.isFormValid } >Finish</button>
                     </div>
+
                 </div>
 
                 <Alert className='alert0' color='danger' role='alert' isOpen={this.state.visible} toggle={this.toggle.bind(this)}>
@@ -123,9 +139,13 @@ class Form extends React.Component {
 
 
                 {<InputModal handleFinalSubmit={this.handleFinalSubmit} showModal={this.state.showModal} closeModal={this.closeModal} />}
+            
             </div>
+
         )
+
     }
+    
 }
 
 const mapStateToProps = ({ users, auth }) => {

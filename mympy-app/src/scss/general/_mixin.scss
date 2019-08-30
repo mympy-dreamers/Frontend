@@ -190,6 +190,8 @@
     @media (max-width: 1010px) { @content; }
 }
 
+// General media query mixins
+
 @mixin sevenPxBreak {
     @media (max-width: 710px) { @content; }
 }
