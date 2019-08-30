@@ -88,7 +88,7 @@ export const zeroLogin = (user, isRegistered) => dispatch => {
         .post(zeroUrl, signUser)
         .then(res => {
             // localStorage.setItem('jwt', res.data.token);
-            console.log('zeroLog', res)
+            // console.log('zeroLog', res)
             dispatch({
                 type: ZERO_LOGIN_SUCCESS,
                 payload: res.data

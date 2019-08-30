@@ -64,13 +64,13 @@ class EditForm extends React.Component {
                         placeholder={this.props.dream.dream_long_description}
                         onChange={this.handleChange}
                         value={this.state.dream_long_description} />
-                    <h1>Donations Received:</h1>
+                    {/* <h1>Donations Received:</h1>
                     <input
                         className="textarea"
                         name='donations_received'
                         placeholder={this.props.dream.donations_received}
                         onChange={this.handleChange}
-                        value={this.state.donations_received} />    
+                        value={this.state.donations_received} />     */}
                     <h1>Donation Goal:</h1>
                     <input
                         className="textarea"

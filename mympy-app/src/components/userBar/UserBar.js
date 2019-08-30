@@ -14,7 +14,7 @@ import arrow from '../../img/arrow-down.png';
 class UserBar extends React.Component {
 
     componentDidMount() {
-        console.log(this.props.authZeroUser);
+        // console.log(this.props.authZeroUser);
     }
 
     clickHandler = e => {
@@ -45,8 +45,8 @@ class UserBar extends React.Component {
                 <div className="nav-tab-wrapper active" >
 
                     <div className="user-left">
-                            {/* gets information from the redux state that is store through the zeroAuth reducer */}
-                            
+                        {/* gets information from the redux state that is store through the zeroAuth reducer */}
+
                         <img src={this.props.authZeroUser.picture} alt='user' />
                         <h3>Hello, {this.props.authZeroUser.given_name.toUpperCase() + " " + this.props.authZeroUser.family_name.toUpperCase()}!</h3>
 
@@ -110,7 +110,7 @@ class UserBar extends React.Component {
                         </div>
 
                         {/* </Link> */}
-                        
+
                     </div>
 
                 </div>

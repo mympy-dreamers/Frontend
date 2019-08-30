@@ -158,7 +158,6 @@ export const updateDream = (dream) => dispatch => {
     axios
         .put(`${BASE_URL}/api/dreams/${dream.id}`, dream, token)
         .then(res => {
-            console.log(res.data)
             dispatch({
                 type: UPDATE_DREAM_SUCCESS,
                 payload: res.data
