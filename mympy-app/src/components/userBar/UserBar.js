@@ -11,13 +11,15 @@ import messageLogo from '../../img/userbar-img/messageLogo.png';
 import userLogo from '../../img/userbar-img/userLogo.png';
 import arrow from '../../img/arrow-down.png';
 
+
+//Menu that appears for logged in users that allows for navigation throughout the site. 
 class UserBar extends React.Component {
 
     componentDidMount() {
         console.log(this.props.authZeroUser);
     }
 
-    clickHandler = e => {
+    clickHandler = e => { //Animates UserBar -- toggles opening and closing of bar
         let classes = document.querySelector('.nav-tab-wrapper').className;
         document.querySelector('.nav-tab-wrapper').className = (
             (classes === 'nav-tab-wrapper') ?

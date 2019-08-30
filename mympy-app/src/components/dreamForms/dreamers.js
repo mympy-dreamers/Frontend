@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import {connect} from "react-redux";
 import {setDreamCards} from '../../actions';
 
-
+//Unused component that could be used to submit user profile information
 class Dreamer extends React.Component {
     constructor(props) {
         super(props);

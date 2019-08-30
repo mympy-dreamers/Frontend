@@ -36,7 +36,7 @@ const StyledDreamMarket = styled.div`
     }
   }
 `
-
+//Displays all currently available dreams
 class DreamMarket extends React.Component {
 
   componentDidMount() {

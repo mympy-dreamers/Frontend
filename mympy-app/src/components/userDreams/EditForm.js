@@ -1,6 +1,8 @@
 import React from 'react';
 import './userDream.css';
 
+
+//Form for updating content for a dream
 class EditForm extends React.Component {
     state = {
         dream_name: '',
@@ -70,7 +72,7 @@ class EditForm extends React.Component {
                         name='donations_received'
                         placeholder={this.props.dream.donations_received}
                         onChange={this.handleChange}
-                        value={this.state.donations_received} />    
+                        value={this.state.donations_received} />
                     <h1>Donation Goal:</h1>
                     <input
                         className="textarea"

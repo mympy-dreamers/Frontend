@@ -38,7 +38,7 @@ const StyledCheckoutForm = styled.div`
         border-radius: 6px;
     }
 `
-
+//Holds payment elements from strip and submit donation button 
 const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
 
 class CheckoutForm extends React.Component {
@@ -65,17 +65,17 @@ class CheckoutForm extends React.Component {
         if (response.ok) {
             this.setState({ complete: true });
             console.log("Purchase Complete!");
-            this.props.dreamPayPost({
+            this.props.dreamPayPost({ //Posts to dreamPayment table when donation is made
                 "donation_amount": this.props.donationTotal,
                 "dream_id": this.props.currDream_id,
                 "img_url": this.props.authUser.picture,
                 "user_name": this.props.authUser.name
             });
-            this.props.userPayPost({
+            this.props.userPayPost({ //Posts to userPayment table when donation is made
                 "donation_amount": this.props.donationTotal,
                 "user_id": this.props.user_id
             });
-            this.props.updateDream({
+            this.props.updateDream({ //Makes put request to dream that payment is on that updates the total donation for that dream
                 // ...this.props.currDream,
                 "id": this.props.currDream_id,
                 "donations_received": this.props.currDream.donations_received + this.props.donationTotal

@@ -2,6 +2,8 @@ import React from 'react';
 
 import logo from '../../img/unusedImgs/logo.svg';
 
+
+//Component that can be used to display information on the dashboard. Currently displays mympy logo - under development. 
 class News extends React.Component {
     constructor() {
         super();
@@ -13,7 +15,7 @@ class News extends React.Component {
 
 
     render() {
-        return(
+        return (
             <div className="news-main">
                 <div className="img-wrap">
                     <img src={logo} alt="" />

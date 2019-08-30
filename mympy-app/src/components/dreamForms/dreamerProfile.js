@@ -12,6 +12,8 @@ const leftStyle = {
     height: "70%",
 }
 
+//Unused component <---------------------------------------------------
+
 class DreamInfo extends React.Component {
     constructor(props) {
         super(props);

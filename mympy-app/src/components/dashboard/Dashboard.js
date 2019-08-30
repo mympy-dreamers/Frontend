@@ -24,7 +24,7 @@ const StyledDashboard = styled.div`
         margin-bottom: 3.4%;
     }
 `
-
+// Container holding featured dreams 
 const Dashboard = () => {
 
     return (

@@ -106,9 +106,9 @@ const StyledDonate = styled.div`
         margin-bottom: 2em;
     }
 `
-
+//Modal that pops up when donation button is clicked. Allows you to enter payment information
 class Donate extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             donationAmount: 0,
@@ -119,14 +119,14 @@ class Donate extends React.Component {
 
     donationHandler = e => {
         let classes = e.target.className;
-        e.target.className = (classes === 'button') ? classes+' active' : classes.replace(' active', '');
+        e.target.className = (classes === 'button') ? classes + ' active' : classes.replace(' active', '');
         this.setState({
             ...this.state,
             donationAmount: e.target.value,
             donationTotal: Number(this.state.donationTotal) + (
-                e.target.className.includes('button active') ? 
-                Number(e.target.value):
-                Number(-e.target.value)
+                e.target.className.includes('button active') ?
+                    Number(e.target.value) :
+                    Number(-e.target.value)
             ),
         })
     }
@@ -139,11 +139,11 @@ class Donate extends React.Component {
         })
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <StyledDonate>
                 <h1 className='title'>Donate to</h1>
-                <h1 className='title name'>Project {this.props.given_name +' '+ this.props.family_name}</h1>
+                <h1 className='title name'>Project {this.props.given_name + ' ' + this.props.family_name}</h1>
                 <div className='donation-buttons'>
                     <button className='button' onClick={this.donationHandler} value={10}>$10</button>
                     <button className='button' onClick={this.donationHandler} value={15}>$15</button>
@@ -152,19 +152,19 @@ class Donate extends React.Component {
                 </div>
                 <div className='custom-amount'>
                     <h5 className='custom-title'>Custom Amount</h5>
-                    <input className='custom-input' 
-                        type='number' 
-                        step="1" 
+                    <input className='custom-input'
+                        type='number'
+                        step="1"
                         placeholder='$0'
                         onChange={this.customHandler}
                     />
                 </div>
                 <div>
-                    <div className='mympy-donation'><img src={mini_logo} alt=""/><h3>{'$' + this.state.mympyDonation +'.00'}</h3></div>
+                    <div className='mympy-donation'><img src={mini_logo} alt="" /><h3>{'$' + this.state.mympyDonation + '.00'}</h3></div>
                     <div className='mympy-cost-msg'>Help with Mympy's cost</div>
                 </div>
                 <Elements>
-                    <CheckoutForm donationTotal={this.state.donationTotal}/>
+                    <CheckoutForm donationTotal={this.state.donationTotal} />
                 </Elements>
             </StyledDonate>
         )

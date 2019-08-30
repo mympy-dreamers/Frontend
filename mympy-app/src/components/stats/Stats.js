@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import UserProgressCircle from '../dreamPage/UserProgressCircle';
 import { dreamPayFetch } from '../../actions';
 
-
+//Container for data viz on dashboard
 class Stats extends React.Component {
     constructor() {
         super();
@@ -19,12 +19,12 @@ class Stats extends React.Component {
     }
 
     render() {
-        return(
+        return (
             <div className="stats-main">
                 <div className="myDreams">
                     <h1>My Dreams</h1>
                     <div className="bar">
-                        <UserProgressCircle 
+                        <UserProgressCircle
                             donationGoal={this.props.userGoal}
                             donationsReceived={this.props.receivedDonations}
                         />
@@ -50,6 +50,6 @@ const mapStateToProps = ({ auth, stripe }) => {
         receivedDonations: auth.userDonations,
         userGoal: auth.userGoal
     }
-  }
+}
 
 export default connect(mapStateToProps, { dreamPayFetch })(Stats);

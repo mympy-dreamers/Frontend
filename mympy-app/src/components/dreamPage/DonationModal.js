@@ -22,6 +22,7 @@ const StyledDonationModal = styled.div`
   }
 `
 
+//Checks to make sure user is logged in before they can contact a dreamer
 class DonationModal extends React.Component {
   constructor() {
     super();
@@ -52,9 +53,9 @@ class DonationModal extends React.Component {
         <button onClick={this.toggle} className="donate-btn" outline color="info">Donate</button>{' '}
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalBody>
-          {isAuthenticated ? 
-            <Donate /> : 
-            <h4 style={{fontSize: '1.4rem'}}>You must be logged in to contact a dreamer</h4>}
+            {isAuthenticated ?
+              <Donate /> :
+              <h4 style={{ fontSize: '1.4rem' }}>You must be logged in to contact a dreamer</h4>}
           </ModalBody>
 
           {isAuthenticated ?
