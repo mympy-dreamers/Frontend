@@ -3,6 +3,7 @@ import { Route, Redirect } from 'react-router-dom';
 import { connect } from "react-redux";
 import { useAuth0 } from "../../react-auth0-wrapper.js";
 
+//Makes routes unavailable to users who are not authenticated
 const PrivateRoute = ({ component: Component, ...rest }) => {
   // const Component = props.component;
   const { isAuthenticated } = useAuth0();

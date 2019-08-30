@@ -126,7 +126,7 @@ export const updateJournal = (editedJournal) => dispatch => {
         })
 }
 
-//Deletes journal entry byt id
+//Deletes journal entry by id
 export const deleteJournal = (id) => dispatch => {
     dispatch({ type: DELETE_JOURNAL_START });
 

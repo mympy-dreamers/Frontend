@@ -74,7 +74,7 @@ const StyledCard = styled.div`
     }
 	}
 `
-
+//Reusable card component used to hold dream information
 const Card = ({ dream }) => {
   return (
     <StyledCard>

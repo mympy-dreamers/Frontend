@@ -12,7 +12,7 @@ const leftStyle = {
     height: "70%",
 }
 
-// create a dream component imports Form.js on the right
+//Unused component <---------------------------------------------------
 class DreamInfo extends React.Component {
     constructor(props) {
         super(props);

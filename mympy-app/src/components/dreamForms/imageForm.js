@@ -5,6 +5,8 @@ import { addImage } from '../../actions';
 import { FormGroup, Label, Input, Alert } from 'reactstrap';
 import FormModal from "./FormModal";
 
+
+//Form for uploading an image
 class imageForm extends React.Component {
     constructor(props) {
         super(props);
@@ -19,6 +21,7 @@ class imageForm extends React.Component {
         };
     }
 
+    //Uploads file - checks to make sure image is the correct size for cloudinary
     uploadFile = async e => {
         const files = e.target.files;
         this.state.data.append('dream_id', this.props.dreamId);
@@ -61,7 +64,7 @@ class imageForm extends React.Component {
                     <div className='form-title'>
                         <h1>Make your dream in reality!</h1>
                     </div>
-                    
+
                     <div>
 
                         <FormGroup className='image-icons'>

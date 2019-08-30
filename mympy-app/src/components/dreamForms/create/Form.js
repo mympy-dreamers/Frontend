@@ -6,9 +6,9 @@ import { FormGroup, Label, Input, Alert } from 'reactstrap';
 import InputModal from "../inputModal";
 
 // Form was abstracted from a different component
-
+//Input form for adding a dream
 class Form extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
 
@@ -90,7 +90,6 @@ class Form extends React.Component {
     }
 
     render(){
-
         return (
 
             <div className="form-main">
@@ -111,22 +110,22 @@ class Form extends React.Component {
 
                     <FormGroup className="question">
                         <Label className="dreamLabel" for="examplePassword">What is your dreams donation goals?</Label>
-                        <Input className="inputStyle two" onChange={this.handleChanges} name="donation_goal" id="donation_goal"  placeholder="Step 2..." />
+                        <Input className="inputStyle two" onChange={this.handleChanges} name="donation_goal" id="donation_goal" placeholder="Step 2..." />
                     </FormGroup>
 
                     <FormGroup className="question">
                         <Label className="dreamLabel" for="exampleText">In one sentence, What is your dream project about?</Label>
-                        <Input className="inputStyle three" onChange={this.handleChanges} type="textarea" name="dream_short_description" id="dreamShortDescription"  placeholder="Step 3..." />
+                        <Input className="inputStyle three" onChange={this.handleChanges} type="textarea" name="dream_short_description" id="dreamShortDescription" placeholder="Step 3..." />
                     </FormGroup>
 
                     <FormGroup className="question">
                         <Label className="dreamLabel" for="exampleText">Describe, in detail, What is your dream project?</Label>
-                        <Input className="inputStyle four" onChange={this.handleChanges} type="textarea" name="dream_long_description" id="dreamLongDescription"  placeholder="Step 4..." />
+                        <Input className="inputStyle four" onChange={this.handleChanges} type="textarea" name="dream_long_description" id="dreamLongDescription" placeholder="Step 4..." />
                     </FormGroup>
 
                     <div className="btn-div">
-                        <button className="rectangle-copy-2" onClick={ () => <Link to="/dashboard" /> }> Back</button>
-                        <button className="rectangle-copy-3" onClick={ this.isFormValid } >Finish</button>
+                        <button className="rectangle-copy-2" onClick={() => <Link to="/dashboard" />}> Back</button>
+                        <button className="rectangle-copy-3" onClick={this.isFormValid} >Finish</button>
                     </div>
 
                 </div>
