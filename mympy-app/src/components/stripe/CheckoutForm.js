@@ -66,55 +66,79 @@ class CheckoutForm extends React.Component {
     }
 
     async submit(ev) {
-        let { token } = await this.props.stripe.createToken({ name: 'name' });  // name will be the customer's name passed in
-        if(token) {
-            let response = await fetch(`${BASE_URL}/stripe/charge`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    token: token.id,
-                    amount: this.props.donationTotal
-                })
-            });
+        console.log("Purchase Complete!");
+        this.props.dreamPayPost({
+            "donation_amount": this.props.donationTotal,
+            "dream_id": this.props.currDream_id,
+            "img_url": this.props.authUser.picture,
+            "user_name": this.props.authUser.name
+        });
+        this.props.userPayPost({
+            "donation_amount": this.props.donationTotal,
+            "user_id": this.props.user_id
+        });
+        this.props.updateDream({
+            // ...this.props.currDream,
+            "id": this.props.currDream_id,
+            "donations_received": this.props.currDream.donations_received + this.props.donationTotal
+        })
+        this.setState({ 
+            complete: true,
+            success: true,
+            fail: false
+        });
+        
+        // Stripe Implementation Bellow // comment this back in and deleting everything above will reinstate stripe.
 
-            if (response.ok) {
-                console.log("Purchase Complete!");
-                this.props.dreamPayPost({
-                    "donation_amount": this.props.donationTotal,
-                    "dream_id": this.props.currDream_id,
-                    "img_url": this.props.authUser.picture,
-                    "user_name": this.props.authUser.name
-                });
-                this.props.userPayPost({
-                    "donation_amount": this.props.donationTotal,
-                    "user_id": this.props.user_id
-                });
-                this.props.updateDream({
-                    // ...this.props.currDream,
-                    "id": this.props.currDream_id,
-                    "donations_received": this.props.currDream.donations_received + this.props.donationTotal
-                })
-                this.setState({ 
-                    complete: true,
-                    success: true,
-                    fail: false
-                });
-            } else {
-                console.log("Forms not filled correctly");
-                this.setState({ 
-                    ...this.state,
-                    fail: true,
-                    success: false
-                });
-            }
-        } else {
-            console.log("Forms not filled correctly");
-            this.setState({ 
-                ...this.state,
-                fail: true,
-                success: false
-            });
-        }
+        // let { token } = await this.props.stripe.createToken({ name: 'name' });  // name will be the customer's name passed in
+        // if(token) {
+        //     let response = await fetch(`${BASE_URL}/stripe/charge`, {
+        //         method: "POST",
+        //         headers: { "Content-Type": "application/json" },
+        //         body: JSON.stringify({
+        //             token: token.id,
+        //             amount: this.props.donationTotal
+        //         })
+        //     });
+
+        //     if (response.ok) {
+        //         console.log("Purchase Complete!");
+        //         this.props.dreamPayPost({
+        //             "donation_amount": this.props.donationTotal,
+        //             "dream_id": this.props.currDream_id,
+        //             "img_url": this.props.authUser.picture,
+        //             "user_name": this.props.authUser.name
+        //         });
+        //         this.props.userPayPost({
+        //             "donation_amount": this.props.donationTotal,
+        //             "user_id": this.props.user_id
+        //         });
+        //         this.props.updateDream({
+        //             // ...this.props.currDream,
+        //             "id": this.props.currDream_id,
+        //             "donations_received": this.props.currDream.donations_received + this.props.donationTotal
+        //         })
+        //         this.setState({ 
+        //             complete: true,
+        //             success: true,
+        //             fail: false
+        //         });
+        //     } else {
+        //         console.log("Forms not filled correctly");
+        //         this.setState({ 
+        //             ...this.state,
+        //             fail: true,
+        //             success: false
+        //         });
+        //     }
+        // } else {
+        //     console.log("Forms not filled correctly");
+        //     this.setState({ 
+        //         ...this.state,
+        //         fail: true,
+        //         success: false
+        //     });
+        // }
     }
 
     render() {
