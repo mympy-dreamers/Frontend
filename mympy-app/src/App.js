@@ -31,20 +31,24 @@ class App extends React.Component {
     }
   }
   clickHandler = e => {
-    let classes = document.querySelector('.nav-tab-wrapper').className;
-    document.querySelector('.nav-tab-wrapper').className = (
-      (classes === 'nav-tab-wrapper') ?
-        (classes + ' active') :
-        classes
-    )
+    if (document.querySelector('.nav-tab-wrapper')) {
+      let classes = document.querySelector('.nav-tab-wrapper').className;
+      document.querySelector('.nav-tab-wrapper').className = (
+        (classes === 'nav-tab-wrapper') ?
+          (classes + ' active') :
+          classes
+      )
+    }
   }
 
   render() {
+    const navShow = this.props.location.pathname.split("/");
+    console.log(navShow);
     return (
       <div className="App">
         <Route path="/" render={(props) => <NavBar clickHandler={this.clickHandler}
           {...props}
-          show={this.props.location.pathname.includes('market')}
+          show={navShow[1] == 'market' && !navShow[2]}
           onAccountPage={this.props.location.pathname.includes('dashboard')}
         />} />
         {this.props.isAuthenticated && <Route path='/' component={UserBar} />}
