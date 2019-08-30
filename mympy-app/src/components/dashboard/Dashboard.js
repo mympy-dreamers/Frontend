@@ -25,17 +25,24 @@ const StyledDashboard = styled.div`
     }
 `
 
+// Dashboard componenet uses abstracted components to render proper information
+
 const Dashboard = () => {
 
     return (
         <StyledDashboard className='page-container'>
+
             <div className="mid-sec">
+
                 <Stats />
                 <News />
+                
             </div>
+
             <div className="feature">
                 <Featured />
             </div>
+
         </StyledDashboard>
     )
 

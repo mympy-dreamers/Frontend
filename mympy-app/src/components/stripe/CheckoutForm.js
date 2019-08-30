@@ -47,12 +47,12 @@ class CheckoutForm extends React.Component {
         this.state = {
             complete: false,
         }
+        
         this.submit = this.submit.bind(this);
     }
 
     async submit(ev) {
-        let { token } = await this.props.stripe.createToken({ name: 'name' });  // name will be the customer's name passed in
-        console.log('WOW', token, this.props.donationTotal);
+        let { token } = await this.props.stripe.createToken({ name: this.props.authUser.name });  // name will be the customer's name passed in
         let response = await fetch(`${BASE_URL}/stripe/charge`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -65,23 +65,30 @@ class CheckoutForm extends React.Component {
         if (response.ok) {
             this.setState({ complete: true });
             console.log("Purchase Complete!");
+
             this.props.dreamPayPost({
                 "donation_amount": this.props.donationTotal,
                 "dream_id": this.props.currDream_id,
                 "img_url": this.props.authUser.picture,
                 "user_name": this.props.authUser.name
             });
+
             this.props.userPayPost({
                 "donation_amount": this.props.donationTotal,
                 "user_id": this.props.user_id
             });
+
             this.props.updateDream({
                 // ...this.props.currDream,
                 "id": this.props.currDream_id,
                 "donations_received": this.props.currDream.donations_received + this.props.donationTotal
             })
+
         } else {
+
+            console.log(response.ok);
             console.log("Forms not filled correctly");
+
         }
     }
 

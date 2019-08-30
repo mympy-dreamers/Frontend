@@ -3,13 +3,17 @@
 @import './scss/general/variables', './scss/general/mixin';
 
 // End of Var & Mixins
+
 // -----------------------------------------------------------------------
+
 // Reset & Global styles
 
 @import './scss/general/reset', './scss/general/global';
 
 // End of Reset and Global
+
 // -----------------------------------------------------------------------
+
 // Components
 
 @import './App.scss';

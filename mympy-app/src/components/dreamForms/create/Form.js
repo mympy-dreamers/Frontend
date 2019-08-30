@@ -9,7 +9,9 @@ class Form extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+
             visible: false,
+            // dreamCard holds all the proper information to pass into the PUT operation
             dreamCard: {
                 dream_name: '',
                 dream_short_description: '',
@@ -38,6 +40,7 @@ class Form extends React.Component {
         }
     }
 
+    // controls form input data
     componentDidMount() {
         if (this.props.user) {
             this.setState({
@@ -60,6 +63,7 @@ class Form extends React.Component {
         })
     }
 
+
     handleFinalSubmit = e => {
         const newDream = { ...this.state.dreamCard, donation_goal: parseInt(this.state.dreamCard.donation_goal, 10) }
         // e.preventDefault()
@@ -69,6 +73,7 @@ class Form extends React.Component {
         // <Link to='/addDream/image' />
     }
 
+    // triggers modal toggle
     handleSubmit = e => {
         // e.preventDefault()
         this.setState({
