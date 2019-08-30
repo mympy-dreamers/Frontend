@@ -30,7 +30,6 @@ const Us = () => {
             <div className="right">
 
                 <div className="imgDiv">
-
                     <img src="https://source.unsplash.com/random/600x400" alt="" />
 
                 </div>
@@ -47,7 +46,7 @@ const Us = () => {
 
             </div>
 
-        </div>
+        </div >
 
     )
 

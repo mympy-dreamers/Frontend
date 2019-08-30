@@ -19,7 +19,7 @@ const NavBar = (props) => {
 
                 <div className="left">
 
-                    <Link to="/">
+                    <Link to="/" onClick={() => props.clickHandler()}>
 
                         <img src={logo} alt="Company Logo" />
 
@@ -46,7 +46,7 @@ const NavBar = (props) => {
                         <li className="item">
 
                             <NavLink activeClassName="selected" to="/market" onClick={() => props.clickHandler()}>Dream Market</NavLink>
-                        
+
                         </li>
 
                         <li className="item">
@@ -61,7 +61,7 @@ const NavBar = (props) => {
                                     Log in
                                 </button>
                             )}
-                                    {/* determines whether you have been logged in previously or not */}
+                            {/* determines whether you have been logged in previously or not */}
                             {isAuthenticated && (props.onAccountPage ? (<button onClick={(e) => {
                                 e.preventDefault();
                                 localStorage.removeItem("curr_user");

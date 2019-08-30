@@ -33,6 +33,10 @@
                 margin: 0.6rem auto;
                 padding: 0;
                 color: $body-font-color;
+
+                @include userBar-break {
+                    font-size: 1.4rem;
+                }
             } // end of h3
 
             img {

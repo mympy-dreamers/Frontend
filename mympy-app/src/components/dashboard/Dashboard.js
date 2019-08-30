@@ -26,6 +26,7 @@ const StyledDashboard = styled.div`
 `
 
 // was initially a stateful component, but transformed into a stateless due to state not being needed and abstration taking place
+// Dashboard componenet uses abstracted components to render proper information
 
 const Dashboard = () => {
 

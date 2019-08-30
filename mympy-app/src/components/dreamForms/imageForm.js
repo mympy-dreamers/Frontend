@@ -31,7 +31,9 @@ class imageForm extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        if (this.state.imageSize < 10000) {
+
+        // checks if the image is less than 10mb AND larger than 0
+        if (this.state.imageSize < 10000 && this.state.imageSize > 0) {
             this.setState({
                 showModal: true
             })
@@ -41,6 +43,7 @@ class imageForm extends React.Component {
         } else {
             this.toggle()
         }
+
     }
 
     toggle() {
@@ -52,12 +55,15 @@ class imageForm extends React.Component {
     render() {
         return (
             <div className='dream-Home-Page'>
+
                 <div className='dreamer-card-app'>
+
                     <div className='form-title'>
                         <h1>Make your dream in reality!</h1>
                     </div>
                     
                     <div>
+
                         <FormGroup className='image-icons'>
                             <Label id="image-button" for="exampleFile"><i className="fas fa-folder-plus"><h2> Image File </h2></i></Label>
                             <div className='images'>
@@ -67,6 +73,7 @@ class imageForm extends React.Component {
 
                         </FormGroup>
                         {/* <Button onClick={this.handleSubmit}>Submit</Button> */}
+
                     </div>
 
                     <Alert className='alert2' color='danger' role='alert' isOpen={this.state.visible} toggle={this.toggle.bind(this)}>
@@ -74,8 +81,11 @@ class imageForm extends React.Component {
                         <p>Images need to be less then 10mb!</p>
                         <p>Your image is over 10 mb</p>
                     </Alert>
+                    {/* if all was successful, we recieve a modal that says success */}
                     {this.state.showModal && <FormModal body='Your dream was sucessfully created!' />}
+
                 </div>  {/* dreamer-card-app end  */}
+
             </div> /* dream-Home-Page end */
         )
     }
