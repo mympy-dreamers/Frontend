@@ -71,7 +71,7 @@ export default function stripeReducer(state = INITIAL_STATE, action) {
             return {
                 ...state,
                 userPayments: action.payload,
-                userDonations: donationSum(action.payload)
+                userDonations: donationSum(action.payload) // donationSum() runs a function on the number received 
             }
         case USER_PAY_FAILURE:
             return {

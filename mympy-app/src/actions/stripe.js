@@ -1,27 +1,15 @@
 import axios from 'axios';
 
-export const DREAM_PAY_START = 'DREAM_PAY_START';
-export const DREAM_PAY_SUCCESS = 'DREAM_PAY_SUCCESS';
-export const DREAM_PAY_FAILURE = 'DREAM_PAY_FAILURE';
-export const DONO_FETCH = 'DONO_FETCH';
-
-export const DREAMPAY_POST_START = 'DREAMPAY_POST_START';
-export const DREAMPAY_POST_SUCCESS = 'DREAMPAY_POST_SUCCESS';
-export const DREAMPAY_POST_FAILURE = 'DREAMPAY_POST_FAILURE';
-
-export const USER_PAY_START = 'USER_PAY_START';
-export const USER_PAY_SUCCESS = 'USER_PAY_SUCCESS';
-export const USER_PAY_FAILURE = 'USER_PAY_FAILURE';
-
-export const USERPAY_POST_START = 'USERPAY_POST_START';
-export const USERPAY_POST_SUCCESS = 'USERPAY_POST_SUCCESS';
-export const USERPAY_POST_FAILURE = 'USERPAY_POST_FAILURE';
-
 //Switches base_url based on environment variable
 const BASE_URL = process.env.REACT_APP_BE_URL || 'http://localhost:5000';
 
 
 /***Dream specific endpoints for payments below***/
+
+export const DREAM_PAY_START = 'DREAM_PAY_START';
+export const DREAM_PAY_SUCCESS = 'DREAM_PAY_SUCCESS';
+export const DREAM_PAY_FAILURE = 'DREAM_PAY_FAILURE';
+export const DONO_FETCH = 'DONO_FETCH';
 
 //Fetches dream donations by dream id
 export const dreamPayFetch = (id) => dispatch => {
@@ -42,6 +30,10 @@ export const dreamPayFetch = (id) => dispatch => {
             })
         });
 }
+
+export const DREAMPAY_POST_START = 'DREAMPAY_POST_START';
+export const DREAMPAY_POST_SUCCESS = 'DREAMPAY_POST_SUCCESS';
+export const DREAMPAY_POST_FAILURE = 'DREAMPAY_POST_FAILURE';
 
 //Adds a donation to dreampayment table
 export const dreamPayPost = (data) => dispatch => {
@@ -65,6 +57,10 @@ export const dreamPayPost = (data) => dispatch => {
 
 /***User specific endpoints for payments below***/
 
+export const USER_PAY_START = 'USER_PAY_START';
+export const USER_PAY_SUCCESS = 'USER_PAY_SUCCESS';
+export const USER_PAY_FAILURE = 'USER_PAY_FAILURE';
+
 //Fetches user donations by user id
 export const userPayFetch = (id) => dispatch => {
     dispatch({ type: USER_PAY_START });
@@ -84,6 +80,10 @@ export const userPayFetch = (id) => dispatch => {
             })
         });
 }
+
+export const USERPAY_POST_START = 'USERPAY_POST_START';
+export const USERPAY_POST_SUCCESS = 'USERPAY_POST_SUCCESS';
+export const USERPAY_POST_FAILURE = 'USERPAY_POST_FAILURE';
 
 //Adds a donation to the userpayments table
 export const userPayPost = (data) => dispatch => {

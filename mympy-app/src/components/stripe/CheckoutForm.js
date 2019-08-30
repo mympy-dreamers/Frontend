@@ -62,12 +62,13 @@ class CheckoutForm extends React.Component {
             success: false,
             fail: false
         }
+
         this.submit = this.submit.bind(this);
     }
 
     async submit(ev) {
-        let { token } = await this.props.stripe.createToken({ name: 'name' });  // name will be the customer's name passed in
-        if(token) {
+        let { token } = await this.props.stripe.createToken({ name: this.props.authUser.name });  // name will be the customer's name passed in
+        if (token) {
             let response = await fetch(`${BASE_URL}/stripe/charge`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -94,14 +95,14 @@ class CheckoutForm extends React.Component {
                     "id": this.props.currDream_id,
                     "donations_received": this.props.currDream.donations_received + this.props.donationTotal
                 })
-                this.setState({ 
+                this.setState({
                     complete: true,
                     success: true,
                     fail: false
                 });
             } else {
                 console.log("Forms not filled correctly");
-                this.setState({ 
+                this.setState({
                     ...this.state,
                     fail: true,
                     success: false
@@ -109,7 +110,7 @@ class CheckoutForm extends React.Component {
             }
         } else {
             console.log("Forms not filled correctly");
-            this.setState({ 
+            this.setState({
                 ...this.state,
                 fail: true,
                 success: false

@@ -29,34 +29,63 @@ const bottomStyle = {
     backgroundImage: `url(${swirl})`,
 }
 
+// Home is the landing page that pulls in all the components for rendering
 class Home extends React.Component {
 
     componentDidUpdate(prevProps) {
+
         if (prevProps.firstLogin !== this.props.firstLogin) this.props.history.push('/dashboard')
+
     }
 
     render() {
+        
         return (
+
             <div className="home-main">
+
                 <Carousel history={this.props.history} id="top" />
+
                 <div className="break" style={breakStyle}>
+
+                    {/* this is an empty div for styling */}
+
                 </div>
+
                 <div className="rocket-contain">
+
                     <a href="#top">
                         <img className="rocket" src={rocket} alt="" />
                     </a>
+
                     <Us />
+
                     <MidSec />
+
                     <Support />
+
                     <div className="break" style={breakStyle}>
+
+                        {/* this is an empty div for stling */}
+
                     </div>
+
                     <Dreamer />
+
                     <div className="break" style={bottomStyle}>
+
+                        {/* this is an empty div for stling */}
+
                     </div>
+
                 </div>
+
             </div>
+
         )
+
     }
+
 }
 
 const mapStateToProps = ({ auth, users }) => {
@@ -65,4 +94,5 @@ const mapStateToProps = ({ auth, users }) => {
         firstLogin: users.firstLogin,
     }
 }
+
 export default connect(mapStateToProps, { setLog })(Home);

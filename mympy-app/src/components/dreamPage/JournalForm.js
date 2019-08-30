@@ -7,7 +7,7 @@ import {
   updateJournal,
   fetchDreamJournals
 } from "../../actions/journals";
-import PopupSubmit from "./PopupSubmit.js";
+import PopupSubmit from "./PopupSubmit";
 
 const bodyStyle = {
   fontSize: "25px",

@@ -22,8 +22,7 @@ require("dotenv").config();
 
 // composeEnhancer allows for redux store dev view in chrome
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk))
-);
+const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk)));
 
 
 // redirect for auth0
@@ -36,6 +35,9 @@ const onRedirectCallback = appState => {
             : window.location.pathname
     );
 };
+
+
+
 const AppwithRouter = withRouter(App);
 
 // const pkTest = process.env.PK_TEST;
@@ -50,13 +52,13 @@ ReactDOM.render(
         audience={config.audience}
         onRedirectCallback={onRedirectCallback}
     >
-        <StripeProvider apiKey='pk_test_1d72AL8UO1qMdLmncaIcIaEx00n89i0APd'>
-            <Provider store={store}>
-                <Router>
-                    <AppwithRouter />
-                </Router>
-            </Provider>
-        </StripeProvider>
+        
+        <Provider store={store}>
+            <Router>
+                <AppwithRouter />
+            </Router>
+        </Provider>
+    
     </Auth0Provider>,
     document.getElementById('root')
 );
