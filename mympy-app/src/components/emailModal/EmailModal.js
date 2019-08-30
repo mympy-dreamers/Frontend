@@ -2,7 +2,17 @@ import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { connect } from 'react-redux';
 import { sendMail } from '../../actions';
+import styled from 'styled-components';
 
+const StyledEmailModal = styled.div`
+  .contact-button {
+    background: #FFD164;
+    color: black;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: none
+  }
+`
 
 const bodyStyle = {
   fontSize: "1.3rem",
@@ -57,7 +67,7 @@ class EmailModal extends React.Component {
     console.log(this.props.isAuthenticated)
     const { isAuthenticated, loginWithRedirect } = this.props;
     return (
-      <div>
+      <StyledEmailModal>
         <Button onClick={this.toggle} className="contact-button" outline color="info">Contact Dreamer</Button>{' '}
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           {isAuthenticated ? 
@@ -88,7 +98,7 @@ class EmailModal extends React.Component {
             </ModalFooter>
           }
         </Modal>
-      </div>
+      </StyledEmailModal>
     );
   }
 }//End of EmailModal
