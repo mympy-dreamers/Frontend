@@ -25,21 +25,19 @@ const INITIAL_STATE = (token => ({
     errors: []
 }))(localStorage.getItem('jwt'))
 
-const donationSum = function(dreams) {
-    let total=0;
-    dreams.forEach( dream => { 
+const donationSum = function (dreams) {
+    let total = 0;
+    dreams.forEach(dream => {
         total += dream.donations_received;
     })
-    console.log(total);
     return total;
 }
 
-const goalSum = function(dreams) {
-    let total=0;
-    dreams.forEach( dream => { 
+const goalSum = function (dreams) {
+    let total = 0;
+    dreams.forEach(dream => {
         total += dream.donation_goal;
     })
-    console.log(total);
     return total;
 }
 

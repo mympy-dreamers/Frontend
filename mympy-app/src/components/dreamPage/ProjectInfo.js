@@ -106,7 +106,6 @@ class ProjectInfo extends React.Component {
 	}
 
 	render() {
-		console.log(this.props.loggedUser)
 		return (
 			<ProjectInfoDiv>
 				<h2 className="title">{this.props.currDream.dream_name}</h2>
