@@ -13,31 +13,34 @@
 	}
 
 	.donations-container {
-		padding: 60px 40px 30px;
+		padding: 30px 40px 30px;
 		.donation {
 			display: flex;
 			align-items: center;
 			margin-bottom: 12px;
 			.user-img {
-				box-shadow: -3px 3px 0 1px #FFD164;
+				box-shadow: -2px 2px 0 0 #FFD164;
 				background-color: #0A2243;
-				width:90px;
-				height:90px;
+				width: 70px;
+				height: 70px;
 				border-radius: 50%;
 				margin-right: 20px;
 			}
 
 			.donations-name-wrapper {
 				.amount {
-					font-size: 32px;
+					font-size: 28px;
 					font-weight: bold;
 					color: white;
 					margin-bottom: 8px;
 					margin-top: 6px;
 				}
 				.name {
-					font-size: 20px;
+					font-size: 14px;
 					font-weight: bold;
+					margin: 0;
+					padding: 0;
+					text-align: left;
 					color: white;	
 				}
 			}
